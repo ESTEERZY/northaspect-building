@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-zinc-50 pt-16">
       <div
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0"
         style={{
           backgroundImage: 'url(https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920)',
           backgroundSize: 'cover',
