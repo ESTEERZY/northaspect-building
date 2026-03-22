@@ -7,12 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'app-accent': '#E8F534',
-        'dark-blue': '#171F24',
+        // Utilizing Tailwind's built in zinc colors for the charcoal palette
       },
       fontFamily: {
-        sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        rubik: ['Rubik', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fade-in 0.8s ease-in-out',

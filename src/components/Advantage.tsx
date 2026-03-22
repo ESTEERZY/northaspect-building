@@ -1,36 +1,36 @@
 const Advantage = () => {
   const advantages = [
-    { name: 'Frame Installation', percentage: 90, color: 'bg-app-accent' },
-    { name: 'Electrical and Plumbing', percentage: 85, color: 'bg-app-accent' },
-    { name: 'Interior Finishing', percentage: 98, color: 'bg-app-accent' },
+    { name: 'Structural Tolerances', percentage: 99, color: 'bg-zinc-900' },
+    { name: 'Architectural Integration', percentage: 95, color: 'bg-zinc-900' },
+    { name: 'Systematic Execution', percentage: 98, color: 'bg-zinc-900' },
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 bg-dark-blue/10 px-4 py-2 rounded-full text-xs font-semibold text-dark-blue tracking-wide">
-              <span className="w-2 h-2 bg-app-accent rounded-full"></span>
-              HOME BUILDER CONTRACTOR
+            <div className="inline-flex items-center gap-3 border border-zinc-200 bg-zinc-50 px-4 py-2 text-xs font-semibold text-zinc-800 tracking-[0.2em] uppercase">
+              <span className="w-1.5 h-1.5 bg-zinc-900"></span>
+              STRUCTURAL ENGINEERING
             </div>
 
-            <h2 className="text-4xl lg:text-5xl font-normal text-dark-blue leading-[1.3]">
-              Our Craftsmanship Advantage
+            <h2 className="text-4xl lg:text-5xl font-light text-zinc-950 tracking-tight leading-[1.2]">
+              Architectural <span className="font-semibold">Precision</span> Advantage
             </h2>
 
-            <p className="text-sm text-gray-600 leading-relaxed">
-              Every project showcases our dedication to superior quality and meticulous attention to detail. Our expert team brings decades of combined experience to deliver construction excellence that defines modern home building standards.
+            <p className="text-base text-zinc-500 leading-relaxed font-light font-sans max-w-lg">
+              Every project manifests our dedication to exacting standards. We employ advanced engineering principles to deliver spaces with microscopic tolerances, ensuring long-term structural integrity and aesthetic perfection.
             </p>
 
             <div className="space-y-5">
               {advantages.map((item, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-dark-blue text-sm">{item.name}</span>
-                    <span className="font-bold text-dark-blue text-sm">{item.percentage}%</span>
+                    <span className="font-medium text-zinc-800 text-sm tracking-wide uppercase">{item.name}</span>
+                    <span className="font-light text-zinc-500 text-sm">{item.percentage}%</span>
                   </div>
-                  <div className="h-2.5 bg-gray-300 rounded-full overflow-hidden">
+                  <div className="h-1 bg-zinc-100 overflow-hidden">
                     <div
                       className={`h-full ${item.color} transition-all duration-1000 ease-out`}
                       style={{ width: `${item.percentage}%` }}
@@ -40,23 +40,23 @@ const Advantage = () => {
               ))}
             </div>
 
-            <p className="text-xs text-gray-500 italic pt-2">
-              Source: Foundation Showcase Quality Metrics 2024
+            <p className="text-xs text-zinc-400 font-light tracking-widest uppercase pt-4">
+              Data: Antigravity Quality Metrics 2026
             </p>
           </div>
 
           <div className="relative">
-            <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-2xl">
+            <div className="aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
               <img
                 src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Construction quality"
-                className="w-full h-full object-cover"
+                alt="Construction precision"
+                className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000"
               />
             </div>
 
-            <div className="absolute -top-6 -right-6 bg-blue-400 text-white p-6 rounded-xl shadow-xl">
-              <div className="text-3xl font-bold">50,000+</div>
-              <div className="text-xs mt-1">Completed Projects</div>
+            <div className="absolute -bottom-6 -left-6 bg-zinc-950 text-zinc-50 p-8 border border-zinc-800">
+              <div className="text-4xl font-light tracking-tight">Zero</div>
+              <div className="text-xs mt-2 uppercase tracking-widest text-zinc-400">Tolerance Policy</div>
             </div>
           </div>
         </div>

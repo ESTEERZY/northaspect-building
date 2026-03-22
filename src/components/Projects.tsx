@@ -30,20 +30,20 @@ const Projects = () => {
   ]
 
   return (
-    <section className="py-20 bg-dark-blue text-white">
+    <section className="py-24 bg-zinc-950 text-zinc-50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-semibold tracking-wide">
-              <span className="w-2 h-2 bg-app-accent rounded-full"></span>
-              OUR PROJECTS
+          <div className="space-y-4">
+            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-zinc-300 uppercase">
+              <span className="w-1.5 h-1.5 bg-zinc-50"></span>
+              PORTFOLIO
             </div>
-            <h2 className="text-4xl lg:text-5xl font-normal">Project Portfolio</h2>
+            <h2 className="text-4xl lg:text-5xl font-light tracking-tight">Architectural Works</h2>
           </div>
 
-          <button className="group bg-app-accent text-dark-blue px-7 py-3.5 rounded-lg font-bold hover:bg-app-accent/90 transition-all duration-300 inline-flex items-center gap-2 text-base">
+          <button className="group border border-zinc-50 text-zinc-50 px-8 py-3 text-sm tracking-widest uppercase hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500 inline-flex items-center gap-3">
             View All Projects
-            <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
+            <ArrowRight className="group-hover:translate-x-2 transition-transform" size={16} />
           </button>
         </div>
 
@@ -51,21 +51,21 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-xl ${
+              className={`group relative overflow-hidden rounded-none border border-zinc-800 ${
                 index === 0 ? 'md:col-span-2 md:row-span-2' : ''
-              } ${index === 1 ? 'md:col-span-1 md:row-span-1' : ''} aspect-square hover:scale-[1.02] transition-transform duration-300`}
+              } ${index === 1 ? 'md:col-span-1 md:row-span-1' : ''} aspect-square hover:scale-[1.02] transition-transform duration-500`}
             >
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-blue/90 via-dark-blue/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="text-xs text-app-accent font-semibold mb-1">
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="text-xs text-zinc-400 font-semibold tracking-widest uppercase mb-2">
                     {project.category}
                   </div>
-                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <h3 className="text-2xl font-light tracking-tight">{project.title}</h3>
                 </div>
               </div>
             </div>

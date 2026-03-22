@@ -18,38 +18,38 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-dark-blue text-white">
+    <footer className="bg-zinc-950 text-zinc-50 border-t border-zinc-900">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold">Foundation Showcase</h3>
-            <p className="text-gray-300 leading-relaxed">
-              Transforming visions into exceptional homes with superior craftsmanship, innovative design, and unwavering commitment to quality construction.
+            <h3 className="text-xl font-bold tracking-widest uppercase text-zinc-50">Antigravity</h3>
+            <p className="text-zinc-400 font-light leading-relaxed text-sm">
+              Structuring environments defined by precision, structural integrity, and architectural permanence.
             </p>
             <div className="flex gap-4">
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-app-accent hover:text-dark-blue transition-all duration-300"
+                className="w-10 h-10 border border-zinc-800 rounded-none flex items-center justify-center hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500"
               >
-                <Facebook size={18} />
+                <Facebook size={16} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-app-accent hover:text-dark-blue transition-all duration-300"
+                className="w-10 h-10 border border-zinc-800 rounded-none flex items-center justify-center hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500"
               >
-                <Twitter size={18} />
+                <Twitter size={16} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-app-accent hover:text-dark-blue transition-all duration-300"
+                className="w-10 h-10 border border-zinc-800 rounded-none flex items-center justify-center hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500"
               >
-                <Instagram size={18} />
+                <Instagram size={16} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-app-accent hover:text-dark-blue transition-all duration-300"
+                className="w-10 h-10 border border-zinc-800 rounded-none flex items-center justify-center hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500"
               >
-                <Linkedin size={18} />
+                <Linkedin size={16} />
               </a>
             </div>
           </div>
@@ -59,8 +59,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-300 hover:text-app-accent transition-colors duration-300 flex items-center gap-2 group">
-                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href="#" className="text-zinc-400 font-light hover:text-zinc-50 transition-colors duration-300 flex items-center gap-3 group text-sm">
+                    <ArrowRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {service}
                   </a>
                 </li>
@@ -73,8 +73,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-gray-300 hover:text-app-accent transition-colors duration-300 flex items-center gap-2 group">
-                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <a href={link.href} className="text-zinc-400 font-light hover:text-zinc-50 transition-colors duration-300 flex items-center gap-3 group text-sm">
+                    <ArrowRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
                   </a>
                 </li>
@@ -84,35 +84,35 @@ const Footer = () => {
 
           <div>
             <h4 className="text-lg font-bold mb-6">Newsletter</h4>
-            <p className="text-gray-300 mb-4">
-              Subscribe to get the latest updates and news.
+            <p className="text-zinc-400 text-sm font-light mb-6">
+              Subscribe to technical briefs and updates.
             </p>
-            <form className="space-y-3">
+            <form className="space-y-5">
               <input
                 type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-app-accent focus:border-transparent transition-all text-white placeholder-gray-400"
+                placeholder="Email address"
+                className="w-full px-0 py-2 bg-transparent rounded-none border-b border-zinc-700 focus:outline-none focus:border-zinc-50 transition-colors text-zinc-50 placeholder-zinc-500 text-sm"
               />
               <button
                 type="submit"
-                className="w-full bg-app-accent text-dark-blue px-6 py-3 rounded-lg font-bold hover:bg-app-accent/90 transition-all duration-300"
+                className="w-full border border-zinc-50 text-zinc-50 px-6 py-3 text-xs tracking-widest uppercase font-semibold hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500"
               >
-                Subscribe
+                Sign Up
               </button>
             </form>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
+        <div className="border-t border-zinc-900 pt-8 mt-12">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-zinc-500 tracking-wide uppercase">
             <div>
-              Copyright © {new Date().getFullYear()} Foundation Showcase. All rights reserved.
+              © {new Date().getFullYear()} Antigravity Systems. All rights reserved.
             </div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-app-accent transition-colors duration-300">
+            <div className="flex gap-8">
+              <a href="#" className="hover:text-zinc-50 transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-app-accent transition-colors duration-300">
+              <a href="#" className="hover:text-zinc-50 transition-colors duration-300">
                 Terms of Service
               </a>
             </div>
