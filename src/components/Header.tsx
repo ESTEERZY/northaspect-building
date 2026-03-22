@@ -13,11 +13,11 @@ const Header = () => {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-zinc-200">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold tracking-widest text-zinc-50 uppercase">
-            Antigravity
+          <div className="text-xl font-bold tracking-widest text-zinc-950 uppercase">
+            Foundation Showcase
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -25,19 +25,19 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-zinc-400 hover:text-zinc-50 transition-colors duration-300 text-sm font-medium tracking-wide uppercase"
+                className="text-zinc-600 hover:text-zinc-950 transition-colors duration-300 text-sm font-medium tracking-wide uppercase"
               >
                 {link.name}
               </a>
             ))}
-            <button className="border border-zinc-50 text-zinc-50 px-6 py-2 text-sm uppercase tracking-wider font-semibold hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300">
+            <button className="border border-zinc-950 text-zinc-950 px-6 py-2 text-sm uppercase tracking-wider font-semibold hover:bg-zinc-950 hover:text-zinc-50 transition-all duration-300">
               Request a Quote
             </button>
           </div>
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-zinc-50"
+            className="md:hidden text-zinc-950"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -50,13 +50,13 @@ const Header = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-zinc-400 hover:text-zinc-50 transition-colors duration-300 text-sm uppercase tracking-wide"
+                  className="text-zinc-600 hover:text-zinc-950 transition-colors duration-300 text-sm uppercase tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
-              <button className="border border-zinc-50 text-zinc-50 px-6 py-2 text-sm uppercase tracking-wider font-semibold hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300">
+              <button className="border border-zinc-950 text-zinc-950 px-6 py-2 text-sm uppercase tracking-wider font-semibold hover:bg-zinc-950 hover:text-zinc-50 transition-all duration-300">
                 Request a Quote
               </button>
             </div>

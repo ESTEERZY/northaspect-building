@@ -12,7 +12,7 @@ const Stats = () => {
       icon: Award,
       value: '4.8/5',
       label: 'Customer Rating',
-      color: 'bg-zinc-950',
+      color: 'border border-zinc-950 bg-zinc-950',
       textColor: 'text-zinc-50',
     },
     {
@@ -38,7 +38,7 @@ const Stats = () => {
               key={index}
               className={`${stat.color} ${stat.textColor || 'text-zinc-950'} p-8 rounded-none text-center space-y-4 hover:-translate-y-1 transition-transform duration-500`}
             >
-              <stat.icon className={`w-8 h-8 mx-auto ${stat.textColor === 'text-zinc-50' ? 'text-zinc-300' : 'text-zinc-800'}`} strokeWidth={1.5} />
+              <stat.icon className={`w-8 h-8 mx-auto ${stat.textColor === 'text-zinc-50' ? 'text-zinc-300' : 'text-zinc-600'}`} strokeWidth={1.5} />
               <div className="text-4xl font-light tracking-tight">{stat.value}</div>
               <div className={`text-xs font-semibold tracking-widest uppercase ${stat.textColor === 'text-zinc-50' ? 'text-zinc-400' : 'text-zinc-500'}`}>
                 {stat.label}

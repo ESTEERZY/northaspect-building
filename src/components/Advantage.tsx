@@ -41,7 +41,7 @@ const Advantage = () => {
             </div>
 
             <p className="text-xs text-zinc-400 font-light tracking-widest uppercase pt-4">
-              Data: Antigravity Quality Metrics 2026
+              Data: Foundation Showcase Quality Metrics 2026
             </p>
           </div>
 
@@ -54,9 +54,9 @@ const Advantage = () => {
               />
             </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-zinc-950 text-zinc-50 p-8 border border-zinc-800">
+            <div className="absolute -bottom-6 -left-6 bg-white text-zinc-950 p-8 border border-zinc-200">
               <div className="text-4xl font-light tracking-tight">Zero</div>
-              <div className="text-xs mt-2 uppercase tracking-widest text-zinc-400">Tolerance Policy</div>
+              <div className="text-xs mt-2 uppercase tracking-widest text-zinc-500">Tolerance Policy</div>
             </div>
           </div>
         </div>
