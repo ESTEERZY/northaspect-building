@@ -34,7 +34,7 @@ const Contact = () => {
               Commence Architectural <span className="font-semibold">Consultation</span>
             </h2>
 
-            <p className="text-base font-medium text-zinc-900 leading-relaxed max-w-lg">
+            <p className="text-base font-light text-zinc-700 leading-relaxed max-w-lg">
               Ready to construct environments defined by precision and permanence? Engage our team to discuss your project requirements, technical specifications, and architectural ambitions.
             </p>
 
@@ -100,7 +100,7 @@ const Contact = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="group w-full bg-zinc-950 text-white px-8 py-4 text-sm tracking-widest uppercase font-bold hover:bg-zinc-800 transition-all duration-500 inline-flex items-center justify-center gap-3 shadow-lg"
+                  className="group w-full border border-zinc-950 text-zinc-950 px-8 py-4 text-sm tracking-widest uppercase font-semibold hover:bg-zinc-950 hover:text-zinc-50 transition-all duration-500 inline-flex items-center justify-center gap-3"
                 >
                   Submit Inquiry
                   <ArrowRight className="group-hover:translate-x-2 transition-transform" size={16} />
