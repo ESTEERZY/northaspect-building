@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,21 +6,42 @@
 
 @layer base {
   * {
-    @apply border-zinc-200;
+    @apply border-zinc-800;
   }
 
   body {
-    @apply bg-zinc-50 text-zinc-950 font-sans antialiased;
+    @apply bg-black text-white font-sans antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-medium tracking-tight text-zinc-900;
+    @apply font-bold tracking-tight text-white;
+    line-height: 1.2;
+  }
+
+  h1 { @apply text-6xl lg:text-7xl font-extrabold; }
+  h2 { @apply text-4xl lg:text-5xl font-bold; }
+  h3 { @apply text-2xl lg:text-3xl font-bold; }
+
+  p {
+    line-height: 1.6;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .accent-gold {
+    color: #D4AF37;
+  }
+
+  .bg-accent-gold {
+    background-color: #D4AF37;
+  }
+
+  .border-accent-gold {
+    border-color: #D4AF37;
   }
 }

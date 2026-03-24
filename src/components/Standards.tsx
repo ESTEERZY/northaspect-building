@@ -1,58 +1,80 @@
-import { Award, Wrench, Clock, ArrowRight } from 'lucide-react'
+import { Chrome as Home, Building, Wrench, Hammer } from 'lucide-react'
 
 const Standards = () => {
-  const standards = [
+  const services = [
     {
-      icon: Award,
-      title: 'Stringent Tolerances',
-      description: 'We execute construction with unparalleled precision. Materials and methodology are constantly evaluated to meet exact architectural specifications.',
+      icon: Home,
+      title: 'Residential Construction',
+      description: 'Custom homes, renovations, and additions built to your exact specifications with premium materials and craftsmanship.',
+    },
+    {
+      icon: Building,
+      title: 'Commercial Projects',
+      description: 'Office buildings, retail spaces, and multi-unit developments delivered on time and within budget.',
     },
     {
       icon: Wrench,
-      title: 'Parametric Engineering',
-      description: 'Adapting to complex spatial requirements. Our advanced modeling and execution guarantee structural integrity and minimalist perfection.',
+      title: 'Renovation & Remodeling',
+      description: 'Transform existing spaces with expert renovations that enhance functionality and aesthetic appeal.',
     },
     {
-      icon: Clock,
-      title: 'Calculated Delivery',
-      description: 'Project timelines are managed through strict milestone tracking. We ensure seamless execution and handoff without friction or delays.',
+      icon: Hammer,
+      title: 'Project Management',
+      description: 'End-to-end project coordination ensuring quality, efficiency, and seamless execution from start to finish.',
     },
   ]
 
   return (
-    <section id="services" className="py-24 bg-zinc-950 text-zinc-50">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="space-y-6 mb-16">
-          <div className="inline-flex items-center gap-3 border border-zinc-800 bg-black/20 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-zinc-300 uppercase">
-            <span className="w-1.5 h-1.5 bg-zinc-50"></span>
-            ENGINEERING STANDARDS
+    <section id="services" className="py-24 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Section Header */}
+        <div className="text-center mb-16 space-y-6">
+          <div className="inline-flex items-center gap-3 bg-accent-gold/10 border border-accent-gold px-5 py-3">
+            <span className="w-2 h-2 bg-accent-gold"></span>
+            <span className="text-xs font-bold tracking-[0.2em] accent-gold uppercase">Our Services</span>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-light tracking-tight leading-[1.2] max-w-2xl">
-            Elevating Structural <span className="font-semibold">Tolerances</span>
+          <h2 className="text-5xl lg:text-6xl font-extrabold text-black leading-tight max-w-3xl mx-auto">
+            Comprehensive Construction <span className="accent-gold">Solutions</span>
           </h2>
 
-          <div className="pt-4">
-            <button className="group border border-zinc-50 text-zinc-50 px-8 py-3 text-sm tracking-widest uppercase hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500 inline-flex items-center gap-3">
-              View Specs
-              <ArrowRight className="group-hover:translate-x-2 transition-transform" size={16} />
-            </button>
-          </div>
+          <p className="text-xl text-gray-700 font-medium max-w-2xl mx-auto leading-relaxed">
+            From concept to completion, we deliver exceptional results across all construction disciplines.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {standards.map((standard, index) => (
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
             <div
               key={index}
-              className="border border-zinc-800 bg-zinc-900/30 p-8 hover:bg-zinc-800/50 transition-all duration-300 group"
+              className="bg-zinc-50 border-l-4 border-accent-gold p-10 hover:bg-white hover:shadow-2xl transition-all duration-300 group"
             >
-              <div className="w-12 h-12 border border-zinc-700 flex items-center justify-center mb-6 group-hover:border-zinc-500 transition-colors">
-                <standard.icon className="w-5 h-5 text-zinc-300" strokeWidth={1.5} />
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 bg-black flex items-center justify-center group-hover:bg-accent-gold transition-all duration-300">
+                    <service.icon className="w-8 h-8 text-accent-gold group-hover:text-black transition-colors" strokeWidth={2.5} />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-extrabold text-black mb-4">{service.title}</h3>
+                  <p className="text-base text-gray-700 leading-relaxed font-medium">{service.description}</p>
+                </div>
               </div>
-              <h3 className="text-xl font-medium tracking-wide mb-4">{standard.title}</h3>
-              <p className="text-zinc-300 font-light leading-relaxed text-sm">{standard.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center bg-black p-12">
+          <h3 className="text-3xl font-extrabold text-white mb-4">Need a Custom Solution?</h3>
+          <p className="text-lg text-gray-300 mb-8 font-medium">Let's discuss your unique project requirements and create a tailored approach.</p>
+          <a
+            href="#contact"
+            className="group bg-accent-gold text-black px-12 py-5 text-base font-bold tracking-wide uppercase hover:bg-white transition-all duration-300 inline-flex items-center gap-3 shadow-2xl shadow-accent-gold/20"
+          >
+            Schedule Consultation
+          </a>
         </div>
       </div>
     </section>

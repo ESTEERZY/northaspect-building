@@ -1,46 +1,43 @@
-import { Award, Building2, Chrome as Home, Users } from 'lucide-react'
+import { Award, Building2, CircleCheck as CheckCircle, Users } from 'lucide-react'
 
 const Stats = () => {
   const stats = [
     {
       icon: Building2,
-      value: '10+',
-      label: 'Years Experience',
-      color: 'border border-zinc-200 bg-white shadow-sm',
+      value: '1,300+',
+      label: 'Projects Completed',
     },
     {
       icon: Award,
-      value: '4.8/5',
-      label: 'Customer Rating',
-      color: 'bg-zinc-950',
-      textColor: 'text-zinc-50',
+      value: '10+',
+      label: 'Years Excellence',
     },
     {
       icon: Users,
       value: '20+',
-      label: 'Team Members',
-      color: 'border border-zinc-200 bg-zinc-50',
+      label: 'Expert Team',
     },
     {
-      icon: Home,
-      value: '1.3K',
-      label: 'Projects Done',
-      color: 'border border-zinc-200 bg-white shadow-sm',
+      icon: CheckCircle,
+      value: '98%',
+      label: 'On-Time Delivery',
     },
   ]
 
   return (
-    <section className="py-24 bg-zinc-50 border-y border-zinc-200">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`${stat.color} ${stat.textColor || 'text-zinc-950'} p-8 rounded-none text-center space-y-4 hover:-translate-y-1 transition-transform duration-500`}
+              className="text-center space-y-4 group"
             >
-              <stat.icon className={`w-8 h-8 mx-auto ${stat.textColor === 'text-zinc-50' ? 'text-zinc-300' : 'text-zinc-800'}`} strokeWidth={1.5} />
-              <div className="text-4xl font-light tracking-tight">{stat.value}</div>
-              <div className={`text-xs font-semibold tracking-widest uppercase ${stat.textColor === 'text-zinc-50' ? 'text-zinc-300' : 'text-zinc-700'}`}>
+              <div className="w-16 h-16 mx-auto bg-black border-2 border-accent-gold flex items-center justify-center group-hover:bg-accent-gold transition-all duration-300">
+                <stat.icon className="w-8 h-8 text-accent-gold group-hover:text-black transition-colors" strokeWidth={2} />
+              </div>
+              <div className="text-5xl lg:text-6xl font-extrabold text-black">{stat.value}</div>
+              <div className="text-sm font-bold tracking-widest uppercase text-gray-700">
                 {stat.label}
               </div>
             </div>

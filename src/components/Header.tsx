@@ -1,64 +1,80 @@
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Contact Us', href: '#contact' },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'About', href: '#about' },
+    { name: 'Contact', href: '#contact' },
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
-      <nav className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-lg border-b border-accent-gold/30">
+      <nav className="container mx-auto px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-bold tracking-widest text-zinc-50 uppercase">
-            Foundation Showroom
+          {/* Logo - High Contrast */}
+          <div className="text-2xl font-extrabold tracking-tight text-white uppercase">
+            Foundation <span className="accent-gold">Elite</span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - High Contrast Links */}
+          <div className="hidden lg:flex items-center space-x-10">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-zinc-400 hover:text-zinc-50 transition-colors duration-300 text-sm font-medium tracking-wide uppercase"
+                className="text-white hover:accent-gold transition-colors duration-300 text-base font-semibold tracking-wide uppercase relative group"
               >
                 {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-gold group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
-            <button className="border border-zinc-50 text-zinc-50 px-6 py-2 text-sm uppercase tracking-wider font-semibold hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300">
-              Request a Quote
-            </button>
+
+            {/* Dominant CTA Button - Solid Gold */}
+            <a
+              href="#contact"
+              className="bg-accent-gold text-black px-8 py-3 text-base font-bold tracking-wide uppercase hover:bg-white transition-all duration-300 inline-flex items-center gap-2 shadow-lg shadow-accent-gold/20"
+            >
+              <Phone size={18} />
+              Get Quote
+            </a>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-zinc-50"
+            className="lg:hidden text-white"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
+        {/* Mobile Menu - High Contrast */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
-            <div className="flex flex-col space-y-4">
+          <div className="lg:hidden mt-6 pb-6 border-t border-accent-gold/20 pt-6">
+            <div className="flex flex-col space-y-5">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-zinc-400 hover:text-zinc-50 transition-colors duration-300 text-sm uppercase tracking-wide"
+                  className="text-white hover:accent-gold transition-colors duration-300 text-lg font-semibold uppercase tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
-              <button className="border border-zinc-50 text-zinc-50 px-6 py-2 text-sm uppercase tracking-wider font-semibold hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-300">
-                Request a Quote
-              </button>
+              <a
+                href="#contact"
+                className="bg-accent-gold text-black px-8 py-4 text-base font-bold tracking-wide uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Phone size={18} />
+                Get Quote
+              </a>
             </div>
           </div>
         )}
