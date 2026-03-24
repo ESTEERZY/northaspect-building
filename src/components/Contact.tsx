@@ -40,7 +40,7 @@ const Contact = () => {
 
             <div className="relative aspect-[4/3] rounded-none overflow-hidden border border-zinc-200">
               <img
-                src="https://images.pexels.com/photos/3862379/pexels-photo-3862379.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
                 alt="Engineering consultation"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />

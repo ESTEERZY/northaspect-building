@@ -6,7 +6,7 @@ const Hero = () => {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920)',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -14,7 +14,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center py-12">
-          <div className="text-zinc-950 space-y-8 animate-fade-in">
+          <div className="text-zinc-950 space-y-8 animate-fade-in backdrop-blur-sm bg-white/80 p-8 border border-white/50" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
             <div className="inline-flex items-center gap-3 bg-white border border-zinc-200 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-zinc-600">
               <span className="w-1.5 h-1.5 bg-zinc-950 animate-pulse"></span>
               PRECISION CONSTRUCTION
@@ -50,7 +50,7 @@ const Hero = () => {
           <div className="relative hidden lg:block">
             <div className="aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
               <img
-                src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80"
                 alt="Modern structural construction"
                 className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000"
               />

@@ -3,27 +3,27 @@ import { ArrowRight } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
       title: 'Modern Villa Design',
       category: 'Residential',
     },
     {
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
       title: 'Contemporary House',
       category: 'Luxury Home',
     },
     {
-      image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
       title: 'Urban Architecture',
       category: 'Modern Design',
     },
     {
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80',
       title: 'Elegant Residence',
       category: 'Premium Build',
     },
     {
-      image: 'https://images.pexels.com/photos/1115804/pexels-photo-1115804.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80',
       title: 'Sustainable Home',
       category: 'Eco-Friendly',
     },
@@ -61,11 +61,11 @@ const Projects = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="text-xs text-zinc-500 font-semibold tracking-widest uppercase mb-2">
+                <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 backdrop-blur-sm">
+                  <div className="text-xs text-zinc-600 font-semibold tracking-widest uppercase mb-2" style={{ textShadow: '0 1px 3px rgba(255,255,255,0.8)' }}>
                     {project.category}
                   </div>
-                  <h3 className="text-2xl font-light tracking-tight text-zinc-950">{project.title}</h3>
+                  <h3 className="text-2xl font-light tracking-tight text-zinc-950" style={{ textShadow: '0 2px 4px rgba(255,255,255,0.9)' }}>{project.title}</h3>
                 </div>
               </div>
             </div>
