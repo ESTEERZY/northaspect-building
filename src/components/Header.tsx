@@ -17,7 +17,7 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-xl font-bold tracking-widest text-zinc-50 uppercase">
-            Antigravity
+            Foundation Showroom
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
