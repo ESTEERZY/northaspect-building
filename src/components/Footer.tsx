@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-6">
             <h3 className="text-xl font-bold tracking-widest uppercase text-zinc-50">Antigravity</h3>
-            <p className="text-zinc-300 font-light leading-relaxed text-sm">
+            <p className="text-zinc-100 font-medium leading-relaxed text-sm">
               Structuring environments defined by precision, structural integrity, and architectural permanence.
             </p>
             <div className="flex gap-4">
@@ -59,7 +59,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="text-zinc-300 font-light hover:text-zinc-50 transition-colors duration-300 flex items-center gap-3 group text-sm">
+                  <a href="#" className="text-zinc-100 font-light hover:text-zinc-50 transition-colors duration-300 flex items-center gap-3 group text-sm">
                     <ArrowRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {service}
                   </a>
@@ -73,7 +73,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-zinc-300 font-light hover:text-zinc-50 transition-colors duration-300 flex items-center gap-3 group text-sm">
+                  <a href={link.href} className="text-zinc-100 font-light hover:text-zinc-50 transition-colors duration-300 flex items-center gap-3 group text-sm">
                     <ArrowRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
                     {link.name}
                   </a>
@@ -84,7 +84,7 @@ const Footer = () => {
 
           <div>
             <h4 className="text-lg font-bold mb-6">Newsletter</h4>
-            <p className="text-zinc-300 text-sm font-light mb-6">
+            <p className="text-zinc-100 text-sm font-light mb-6">
               Subscribe to technical briefs and updates.
             </p>
             <form className="space-y-5">
@@ -95,7 +95,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="w-full border border-zinc-50 text-zinc-50 px-6 py-3 text-xs tracking-widest uppercase font-semibold hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500"
+                className="w-full bg-white text-zinc-950 px-6 py-3 text-xs tracking-widest uppercase font-bold hover:bg-zinc-200 transition-all duration-500 shadow-lg"
               >
                 Sign Up
               </button>
@@ -104,15 +104,15 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-zinc-900 pt-8 mt-12">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light text-zinc-400 tracking-wide uppercase">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-zinc-200 tracking-wide uppercase">
             <div>
               © {new Date().getFullYear()} Antigravity Systems. All rights reserved.
             </div>
             <div className="flex gap-8">
-              <a href="#" className="hover:text-zinc-50 transition-colors duration-300">
+              <a href="#" className="hover:text-white transition-colors duration-300">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-zinc-50 transition-colors duration-300">
+              <a href="#" className="hover:text-white transition-colors duration-300">
                 Terms of Service
               </a>
             </div>

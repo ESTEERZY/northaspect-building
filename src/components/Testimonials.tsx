@@ -55,14 +55,14 @@ const Testimonials = () => {
               <h3 className="text-xl font-medium tracking-tight text-zinc-900 mb-4">
                 {testimonial.name}
               </h3>
-              <p className="text-zinc-700 font-light leading-relaxed text-sm mb-8">"{testimonial.text}"</p>
+              <p className="text-zinc-900 font-medium leading-relaxed text-sm mb-8">"{testimonial.text}"</p>
               <div className="flex items-center gap-4 pt-6 border-t border-zinc-200">
                 <div className="w-10 h-10 bg-zinc-200 rounded-none flex items-center justify-center font-bold text-zinc-900 text-sm border border-zinc-300">
                   {testimonial.author.charAt(0)}
                 </div>
                 <div>
                   <div className="font-medium tracking-wide text-zinc-900 text-sm uppercase">{testimonial.author}</div>
-                  <div className="text-xs text-zinc-600 uppercase tracking-widest mt-0.5">Verified Client</div>
+                  <div className="text-xs text-zinc-800 font-semibold uppercase tracking-widest mt-0.5">Verified Client</div>
                 </div>
               </div>
             </div>

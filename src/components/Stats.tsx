@@ -40,7 +40,7 @@ const Stats = () => {
             >
               <stat.icon className={`w-8 h-8 mx-auto ${stat.textColor === 'text-zinc-50' ? 'text-zinc-300' : 'text-zinc-800'}`} strokeWidth={1.5} />
               <div className="text-4xl font-light tracking-tight">{stat.value}</div>
-              <div className={`text-xs font-semibold tracking-widest uppercase ${stat.textColor === 'text-zinc-50' ? 'text-zinc-300' : 'text-zinc-700'}`}>
+              <div className={`text-xs font-semibold tracking-widest uppercase ${stat.textColor === 'text-zinc-50' ? 'text-zinc-300' : 'text-zinc-900'}`}>
                 {stat.label}
               </div>
             </div>
