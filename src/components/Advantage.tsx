@@ -19,7 +19,7 @@ const Advantage = () => {
               Architectural <span className="font-semibold">Precision</span> Advantage
             </h2>
 
-            <p className="text-base text-zinc-600 leading-relaxed font-light font-sans max-w-lg">
+            <p className="text-base text-zinc-700 leading-relaxed font-light font-sans max-w-lg">
               Every project manifests our dedication to exacting standards. We employ advanced engineering principles to deliver spaces with microscopic tolerances, ensuring long-term structural integrity and aesthetic perfection.
             </p>
 
@@ -28,7 +28,7 @@ const Advantage = () => {
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="font-medium text-zinc-800 text-sm tracking-wide uppercase">{item.name}</span>
-                    <span className="font-light text-zinc-600 text-sm">{item.percentage}%</span>
+                    <span className="font-light text-zinc-700 text-sm">{item.percentage}%</span>
                   </div>
                   <div className="h-1 bg-zinc-100 overflow-hidden">
                     <div
@@ -40,7 +40,7 @@ const Advantage = () => {
               ))}
             </div>
 
-            <p className="text-xs text-zinc-500 font-light tracking-widest uppercase pt-4">
+            <p className="text-xs text-zinc-600 font-light tracking-widest uppercase pt-4">
               Data: Antigravity Quality Metrics 2026
             </p>
           </div>

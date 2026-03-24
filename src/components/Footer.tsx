@@ -91,7 +91,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email address"
-                className="w-full px-0 py-2 bg-transparent rounded-none border-b border-zinc-700 focus:outline-none focus:border-zinc-50 transition-colors text-zinc-50 placeholder-zinc-500 text-sm"
+                className="w-full px-0 py-2 bg-transparent rounded-none border-b border-zinc-700 focus:outline-none focus:border-zinc-50 transition-colors text-zinc-50 placeholder-zinc-400 text-sm"
               />
               <button
                 type="submit"

@@ -34,7 +34,7 @@ const Contact = () => {
               Commence Architectural <span className="font-semibold">Consultation</span>
             </h2>
 
-            <p className="text-base font-light text-zinc-600 leading-relaxed max-w-lg">
+            <p className="text-base font-light text-zinc-700 leading-relaxed max-w-lg">
               Ready to construct environments defined by precision and permanence? Engage our team to discuss your project requirements, technical specifications, and architectural ambitions.
             </p>
 
