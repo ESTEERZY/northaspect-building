@@ -41,22 +41,22 @@ const Advantage = () => {
             </div>
 
             <p className="text-xs text-zinc-400 font-light tracking-widest uppercase pt-4">
-              Data: Foundation Showcase Quality Metrics 2026
+              Data: Antigravity Quality Metrics 2026
             </p>
           </div>
 
           <div className="relative">
             <div className="aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
               <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+                src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=800"
                 alt="Construction precision"
                 className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000"
               />
             </div>
 
-            <div className="absolute -bottom-6 -left-6 bg-white text-zinc-950 p-8 border border-zinc-200 backdrop-blur-sm bg-white/95">
-              <div className="text-4xl font-light tracking-tight" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>Zero</div>
-              <div className="text-xs mt-2 uppercase tracking-widest text-zinc-500">Tolerance Policy</div>
+            <div className="absolute -bottom-6 -left-6 bg-zinc-950 text-zinc-50 p-8 border border-zinc-800">
+              <div className="text-4xl font-light tracking-tight">Zero</div>
+              <div className="text-xs mt-2 uppercase tracking-widest text-zinc-400">Tolerance Policy</div>
             </div>
           </div>
         </div>

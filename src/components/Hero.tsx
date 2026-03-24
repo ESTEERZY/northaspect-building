@@ -2,11 +2,11 @@ import { ArrowRight } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-zinc-50 pt-16">
+    <section id="home" className="relative min-h-screen flex items-center bg-zinc-950 pt-16">
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80)',
+          backgroundImage: 'url(https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -14,9 +14,9 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center py-12">
-          <div className="text-zinc-950 space-y-8 animate-fade-in backdrop-blur-sm bg-white/80 p-8 border border-white/50" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
-            <div className="inline-flex items-center gap-3 bg-white border border-zinc-200 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-zinc-600">
-              <span className="w-1.5 h-1.5 bg-zinc-950 animate-pulse"></span>
+          <div className="text-zinc-50 space-y-8 animate-fade-in">
+            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-zinc-300">
+              <span className="w-1.5 h-1.5 bg-zinc-50 animate-pulse"></span>
               PRECISION CONSTRUCTION
             </div>
 
@@ -25,22 +25,22 @@ const Hero = () => {
               <span className="font-semibold">Excellence.</span>
             </h1>
 
-            <p className="text-lg text-zinc-600 leading-relaxed max-w-xl font-light">
+            <p className="text-lg text-zinc-400 leading-relaxed max-w-xl font-light">
               Elevating spatial design through uncompromising precision. We construct environments that define the modern era, merging structural integrity with stark, minimalist aesthetics for unparalleled architectural impact.
             </p>
 
             <div className="pt-2">
-              <button className="group border border-zinc-950 text-zinc-950 px-8 py-4 text-sm tracking-widest uppercase hover:bg-zinc-950 hover:text-zinc-50 transition-all duration-500 inline-flex items-center gap-3">
+              <button className="group border border-zinc-50 text-zinc-50 px-8 py-4 text-sm tracking-widest uppercase hover:bg-zinc-50 hover:text-zinc-950 transition-all duration-500 inline-flex items-center gap-3">
                 Explore Projects
                 <ArrowRight className="group-hover:translate-x-2 transition-transform" size={16} />
               </button>
             </div>
 
             <div className="pt-10">
-              <div className="inline-flex items-center gap-6 border-l-2 border-zinc-200 pl-6">
-                <span className="text-2xl font-light text-zinc-950 tracking-widest">2026</span>
-                <div className="text-zinc-600">
-                  <div className="text-xs font-semibold tracking-widest uppercase text-zinc-500">Award-Winning</div>
+              <div className="inline-flex items-center gap-6 border-l-2 border-zinc-800 pl-6">
+                <span className="text-2xl font-light text-zinc-50 tracking-widest">2026</span>
+                <div className="text-zinc-400">
+                  <div className="text-xs font-semibold tracking-widest uppercase text-zinc-300">Award-Winning</div>
                   <div className="text-xs mt-1">Structural Excellence</div>
                 </div>
               </div>
@@ -50,7 +50,7 @@ const Hero = () => {
           <div className="relative hidden lg:block">
             <div className="aspect-[3/4] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
               <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80"
+                src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1200"
                 alt="Modern structural construction"
                 className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000"
               />
