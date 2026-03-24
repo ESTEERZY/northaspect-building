@@ -25,7 +25,7 @@ const Hero = () => {
               <span className="font-semibold">Excellence.</span>
             </h1>
 
-            <p className="text-lg text-zinc-400 leading-relaxed max-w-xl font-light">
+            <p className="text-lg text-zinc-300 leading-relaxed max-w-xl font-light">
               Elevating spatial design through uncompromising precision. We construct environments that define the modern era, merging structural integrity with stark, minimalist aesthetics for unparalleled architectural impact.
             </p>
 
@@ -39,8 +39,8 @@ const Hero = () => {
             <div className="pt-10">
               <div className="inline-flex items-center gap-6 border-l-2 border-zinc-800 pl-6">
                 <span className="text-2xl font-light text-zinc-50 tracking-widest">2026</span>
-                <div className="text-zinc-400">
-                  <div className="text-xs font-semibold tracking-widest uppercase text-zinc-300">Award-Winning</div>
+                <div className="text-zinc-300">
+                  <div className="text-xs font-semibold tracking-widest uppercase text-zinc-200">Award-Winning</div>
                   <div className="text-xs mt-1">Structural Excellence</div>
                 </div>
               </div>

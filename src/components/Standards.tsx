@@ -23,7 +23,7 @@ const Standards = () => {
     <section id="services" className="py-24 bg-zinc-950 text-zinc-50">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="space-y-6 mb-16">
-          <div className="inline-flex items-center gap-3 border border-zinc-800 bg-black/20 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-zinc-400 uppercase">
+          <div className="inline-flex items-center gap-3 border border-zinc-800 bg-black/20 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-zinc-300 uppercase">
             <span className="w-1.5 h-1.5 bg-zinc-50"></span>
             ENGINEERING STANDARDS
           </div>
@@ -50,7 +50,7 @@ const Standards = () => {
                 <standard.icon className="w-5 h-5 text-zinc-300" strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-medium tracking-wide mb-4">{standard.title}</h3>
-              <p className="text-zinc-400 font-light leading-relaxed text-sm">{standard.description}</p>
+              <p className="text-zinc-300 font-light leading-relaxed text-sm">{standard.description}</p>
             </div>
           ))}
         </div>

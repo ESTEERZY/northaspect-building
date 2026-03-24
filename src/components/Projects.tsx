@@ -62,7 +62,7 @@ const Projects = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <div className="text-xs text-zinc-400 font-semibold tracking-widest uppercase mb-2">
+                  <div className="text-xs text-zinc-300 font-semibold tracking-widest uppercase mb-2">
                     {project.category}
                   </div>
                   <h3 className="text-2xl font-light tracking-tight">{project.title}</h3>
