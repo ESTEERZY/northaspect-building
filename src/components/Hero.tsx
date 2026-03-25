@@ -5,13 +5,11 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center bg-black pt-20">
       {/* Hero Background with Dark Gradient Overlay */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
+        <img
+          src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Construction background"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/70" />
       </div>
