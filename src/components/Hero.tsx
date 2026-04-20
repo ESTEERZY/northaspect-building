@@ -6,10 +6,12 @@ const Hero = () => {
       {/* Hero Background - Luxury Pavilion - High-Key, Sun-Drenched */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/1738085/pexels-photo-1738085.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
-          alt="Luxury architecture pavilion"
-          className="absolute inset-0 w-full h-full object-cover brightness-125"
+          <img 
+  src="/assets/coastal_luxury_villa.png"
+          alt="Foundation Elite Luxury Villa"
+          className="absolute inset-0 w-full h-full object-cover brightness-110"
           loading="eager"
+        />
         />
         {/* Subtle light veil for text contrast - minimal and airy */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/5 to-transparent" />
@@ -24,13 +26,13 @@ const Hero = () => {
           </div>
 
           {/* Headline - Ultra-Bold, Heavy Weight, Subtle Shadow for Readability */}
-          <h1 className="text-6xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 text-white drop-shadow-2xl" style={{textShadow: '3px 3px 8px rgba(0,0,0,0.3)'}}>
-            Build Your Vision.<br/>
+          <h1 className="text-6xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 text-white drop-shadow-2xl" style={{ textShadow: '3px 3px 8px rgba(0,0,0,0.3)' }}>
+            Build Your Vision.<br />
             <span className="text-orange-600">Elevate Your Legacy.</span>
           </h1>
 
           {/* Subheadline - Light and Airy, Readable */}
-          <p className="text-xl lg:text-2xl text-white font-semibold leading-relaxed max-w-2xl mb-12 drop-shadow-lg" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.25)'}}>
+          <p className="text-xl lg:text-2xl text-slate-900 font-semibold leading-relaxed max-w-2xl mb-12 drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.25)' }}>
             Premium residential and commercial architecture. We craft spaces that inspire—delivered on time, on budget, with architectural excellence.
           </p>
 
