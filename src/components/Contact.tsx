@@ -32,7 +32,7 @@ const Contact = () => {
               <span className="text-xs font-black tracking-[0.2em] text-sand uppercase">Get In Touch</span>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black tracking-tight text-charcoal leading-tight">
+            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight">
               Let's Build <span className="text-sand">Together</span>
             </h2>
 
@@ -48,7 +48,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm font-black uppercase tracking-[0.1em] text-slate-600 mb-1">Phone</div>
-                  <a href="tel:+15551234567" className="text-xl font-black text-charcoal hover:text-sand transition-colors">
+                  <a href="tel:+15551234567" className="text-xl font-black tracking-tighter text-charcoal hover:text-sand transition-colors duration-500">
                     (555) 123-4567
                   </a>
                 </div>
@@ -60,7 +60,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <div className="text-sm font-black uppercase tracking-[0.1em] text-slate-600 mb-1">Email</div>
-                  <a href="mailto:info@foundationelite.com" className="text-xl font-black text-charcoal hover:text-sand transition-colors">
+                  <a href="mailto:info@foundationelite.com" className="text-xl font-black tracking-tighter text-charcoal hover:text-sand transition-colors duration-500">
                     info@foundationelite.com
                   </a>
                 </div>
@@ -175,10 +175,10 @@ const Contact = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="group w-full bg-sand text-white px-10 py-5 text-base font-black tracking-tight uppercase hover:bg-charcoal transition-all duration-300 inline-flex items-center justify-center gap-3 shadow-lg shadow-sand/20 rounded-[2px]"
+                  className="group w-full bg-sand text-white px-10 py-5 text-base font-black tracking-tighter uppercase hover:bg-charcoal transition-all duration-500 inline-flex items-center justify-center gap-3 shadow-lg shadow-sand/20 rounded-[2px]"
                 >
                   Send Message
-                  <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
+                  <ArrowRight className="group-hover:translate-x-2 transition-transform duration-500" size={20} />
                 </button>
               </div>
 

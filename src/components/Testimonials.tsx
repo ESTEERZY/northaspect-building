@@ -38,7 +38,7 @@ const Testimonials = () => {
             <span className="text-xs font-black tracking-[0.2em] text-sand uppercase">Client Testimonials</span>
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-black tracking-tight text-charcoal leading-tight max-w-3xl mx-auto">
+          <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight max-w-3xl mx-auto">
             Trusted by <span className="text-sand">Hundreds</span> of Satisfied Clients
           </h2>
 
@@ -58,7 +58,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white/20 backdrop-blur-md border border-white/50 p-10 hover:shadow-md transition-all duration-300 relative rounded-[2px]"
+              className="bg-white/20 backdrop-blur-md border border-white/50 p-10 hover:shadow-lg transition-all duration-500 relative rounded-[2px]"
             >
               {/* Quote Icon */}
               <div className="absolute top-8 right-8 opacity-10">
@@ -83,7 +83,7 @@ const Testimonials = () => {
                   {testimonial.author.charAt(0)}
                 </div>
                 <div>
-                  <div className="font-black tracking-tight text-charcoal text-lg">{testimonial.author}</div>
+                  <div className="font-black tracking-tighter text-charcoal text-lg">{testimonial.author}</div>
                   <div className="text-sm text-sand font-black uppercase tracking-[0.1em]">{testimonial.role}</div>
                 </div>
               </div>
@@ -96,7 +96,7 @@ const Testimonials = () => {
           <p className="text-xl text-slate-600 font-medium mb-6">Join hundreds of satisfied clients who trusted us with their projects.</p>
           <a
             href="#contact"
-            className="group bg-sand text-white px-12 py-5 text-base font-black tracking-tight uppercase hover:bg-charcoal transition-all duration-300 inline-flex items-center gap-3 shadow-lg shadow-sand/20 rounded-[2px]"
+            className="group bg-sand text-white px-12 py-5 text-base font-black tracking-tighter uppercase hover:bg-charcoal transition-all duration-500 inline-flex items-center gap-3 shadow-lg shadow-sand/20 rounded-[2px]"
           >
             Get Started Today
           </a>

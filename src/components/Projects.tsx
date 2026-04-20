@@ -38,7 +38,7 @@ const Projects = () => {
               <span className="w-2 h-2 bg-sand"></span>
               <span className="text-xs font-black tracking-[0.2em] text-sand uppercase">Featured Projects</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black tracking-tight text-charcoal leading-tight">
+            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight">
               Our Finest <span className="text-sand">Work</span>
             </h2>
             <p className="text-xl text-slate-600 font-medium">
@@ -48,7 +48,7 @@ const Projects = () => {
 
           <a
             href="#contact"
-            className="group border-2 border-charcoal text-charcoal px-10 py-5 text-base font-black tracking-tight uppercase hover:bg-charcoal hover:text-white transition-all duration-300 inline-flex items-center gap-3 rounded-[2px]"
+            className="group border-2 border-charcoal text-charcoal px-10 py-5 text-base font-black tracking-tighter uppercase hover:bg-charcoal hover:text-white transition-all duration-500 inline-flex items-center gap-3 rounded-[2px]"
           >
             View All
             <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
@@ -79,7 +79,7 @@ const Projects = () => {
                   <div className="inline-block bg-sand text-white px-4 py-2 text-xs font-black tracking-widest uppercase mb-4 rounded-[2px]">
                     {project.category}
                   </div>
-                  <h3 className="text-3xl font-black tracking-tight text-charcoal mb-3">{project.title}</h3>
+                  <h3 className="text-3xl font-black tracking-tighter text-charcoal mb-3">{project.title}</h3>
                   <div className="flex items-center justify-between">
                     <span className="text-xl font-black text-sand">{project.value}</span>
                     <ArrowRight className="text-charcoal group-hover:translate-x-2 transition-transform" size={24} />
@@ -98,7 +98,7 @@ const Projects = () => {
           <p className="text-xl text-slate-600 font-medium mb-6">Ready to start your dream project?</p>
           <a
             href="#contact"
-            className="group bg-sand text-white px-12 py-6 text-lg font-black tracking-tight uppercase hover:bg-charcoal transition-all duration-300 inline-flex items-center gap-3 shadow-2xl shadow-sand/20 rounded-[2px]"
+            className="group bg-sand text-white px-12 py-6 text-lg font-black tracking-tighter uppercase hover:bg-charcoal transition-all duration-500 inline-flex items-center gap-3 shadow-2xl shadow-sand/20 rounded-[2px]"
           >
             Request a Quote
             <ArrowRight className="group-hover:translate-x-2 transition-transform" size={22} />

@@ -13,11 +13,11 @@ const Header = () => {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/20 backdrop-blur-md border-b border-white/30 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/60 shadow-sm">
       <nav className="container mx-auto px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-black tracking-tight text-charcoal uppercase">
+          <div className="text-2xl font-black tracking-tighter text-charcoal uppercase">
             Foundation <span className="text-sand">Elite</span>
           </div>
 
@@ -27,17 +27,17 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-charcoal hover:text-sand transition-colors duration-300 text-base font-black tracking-tight uppercase relative group"
+                className="text-charcoal hover:text-sand transition-colors duration-500 text-base font-black tracking-tight uppercase relative group"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sand group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sand group-hover:w-full transition-all duration-500"></span>
               </a>
             ))}
 
             {/* CTA Button */}
             <a
               href="#contact"
-              className="bg-sand text-white px-8 py-3 text-base font-black tracking-tight uppercase hover:bg-charcoal transition-all duration-300 inline-flex items-center gap-2 rounded-[2px] shadow-lg shadow-sand/20"
+              className="bg-sand text-white px-8 py-3 text-base font-black tracking-tight uppercase hover:bg-charcoal transition-all duration-500 inline-flex items-center gap-2 rounded-[2px] shadow-lg shadow-sand/20"
             >
               <Phone size={18} />
               Get Quote
