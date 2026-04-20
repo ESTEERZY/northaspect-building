@@ -29,26 +29,26 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-24 bg-zinc-900">
+    <section id="projects" className="py-24 bg-offwhite">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="space-y-6 max-w-2xl">
-            <div className="inline-flex items-center gap-3 bg-accent-gold/10 border border-accent-gold px-5 py-3">
-              <span className="w-2 h-2 bg-accent-gold"></span>
-              <span className="text-xs font-bold tracking-[0.2em] accent-gold uppercase">Featured Projects</span>
+            <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md border border-sand/30 px-5 py-3 rounded-[2px]">
+              <span className="w-2 h-2 bg-sand"></span>
+              <span className="text-xs font-black tracking-[0.2em] text-sand uppercase">Featured Projects</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-              Our Finest <span className="accent-gold">Work</span>
+            <h2 className="text-5xl lg:text-6xl font-black tracking-tight text-charcoal leading-tight">
+              Our Finest <span className="text-sand">Work</span>
             </h2>
-            <p className="text-xl text-gray-300 font-medium">
+            <p className="text-xl text-slate-600 font-medium">
               From luxury residences to commercial developments, explore projects that showcase our expertise and commitment to excellence.
             </p>
           </div>
 
           <a
             href="#contact"
-            className="group border-2 border-accent-gold text-accent-gold px-10 py-5 text-base font-bold tracking-wide uppercase hover:bg-accent-gold hover:text-black transition-all duration-300 inline-flex items-center gap-3"
+            className="group border-2 border-charcoal text-charcoal px-10 py-5 text-base font-black tracking-tight uppercase hover:bg-charcoal hover:text-white transition-all duration-300 inline-flex items-center gap-3 rounded-[2px]"
           >
             View All
             <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
@@ -60,7 +60,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden aspect-[4/3] cursor-pointer"
+              className="group relative overflow-hidden aspect-[4/3] cursor-pointer rounded-[2px] bg-white/20 backdrop-blur-md border border-white/50 shadow-sm"
             >
               {/* Project Image */}
               <img
@@ -70,35 +70,35 @@ const Projects = () => {
                 loading="lazy"
               />
 
-              {/* Dark Gradient Overlay - Always Visible Behind Text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+              {/* Light Gradient Overlay for subtle text contrast instead of dark */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent"></div>
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <div className="transform transition-all duration-500">
-                  <div className="inline-block bg-accent-gold text-black px-4 py-2 text-xs font-bold tracking-widest uppercase mb-4">
+                  <div className="inline-block bg-sand text-white px-4 py-2 text-xs font-black tracking-widest uppercase mb-4 rounded-[2px]">
                     {project.category}
                   </div>
-                  <h3 className="text-3xl font-extrabold text-white mb-3">{project.title}</h3>
+                  <h3 className="text-3xl font-black tracking-tight text-charcoal mb-3">{project.title}</h3>
                   <div className="flex items-center justify-between">
-                    <span className="text-xl font-bold accent-gold">{project.value}</span>
-                    <ArrowRight className="text-white group-hover:translate-x-2 transition-transform" size={24} />
+                    <span className="text-xl font-black text-sand">{project.value}</span>
+                    <ArrowRight className="text-charcoal group-hover:translate-x-2 transition-transform" size={24} />
                   </div>
                 </div>
               </div>
 
               {/* Hover Border */}
-              <div className="absolute inset-0 border-4 border-accent-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 border-[3px] border-sand opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[2px]"></div>
             </div>
           ))}
         </div>
 
         {/* CTA Below Projects */}
         <div className="mt-16 text-center">
-          <p className="text-xl text-white font-medium mb-6">Ready to start your dream project?</p>
+          <p className="text-xl text-slate-600 font-medium mb-6">Ready to start your dream project?</p>
           <a
             href="#contact"
-            className="group bg-accent-gold text-black px-12 py-6 text-lg font-bold tracking-wide uppercase hover:bg-white transition-all duration-300 inline-flex items-center gap-3 shadow-2xl shadow-accent-gold/20"
+            className="group bg-sand text-white px-12 py-6 text-lg font-black tracking-tight uppercase hover:bg-charcoal transition-all duration-300 inline-flex items-center gap-3 shadow-2xl shadow-sand/20 rounded-[2px]"
           >
             Request a Quote
             <ArrowRight className="group-hover:translate-x-2 transition-transform" size={22} />

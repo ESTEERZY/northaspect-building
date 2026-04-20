@@ -25,7 +25,7 @@ const Stats = () => {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-offwhite">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -33,11 +33,11 @@ const Stats = () => {
               key={index}
               className="text-center space-y-4 group"
             >
-              <div className="w-16 h-16 mx-auto bg-black border-2 border-accent-gold flex items-center justify-center group-hover:bg-accent-gold transition-all duration-300">
-                <stat.icon className="w-8 h-8 text-accent-gold group-hover:text-black transition-colors" strokeWidth={2} />
+              <div className="w-16 h-16 mx-auto bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center rounded-[2px] group-hover:bg-sand group-hover:border-sand transition-all duration-300 shadow-sm">
+                <stat.icon className="w-8 h-8 text-sand group-hover:text-white transition-colors" strokeWidth={2} />
               </div>
-              <div className="text-5xl lg:text-6xl font-extrabold text-black">{stat.value}</div>
-              <div className="text-sm font-bold tracking-widest uppercase text-gray-700">
+              <div className="text-5xl lg:text-6xl font-black tracking-tight text-charcoal">{stat.value}</div>
+              <div className="text-sm font-black tracking-[0.1em] uppercase text-slate-600">
                 {stat.label}
               </div>
             </div>
