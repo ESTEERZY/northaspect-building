@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Utilizing Tailwind's built in zinc colors for the charcoal palette
+        charcoal: '#1A1A1A',
+        sand: '#b49e6b',
+        offwhite: '#F8F9FA'
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
