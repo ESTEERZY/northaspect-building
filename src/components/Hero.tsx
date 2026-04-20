@@ -2,69 +2,70 @@ import { ArrowRight } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-black pt-20">
-      {/* Hero Background with Dark Gradient Overlay */}
+    <section id="home" className="relative min-h-screen flex items-center bg-white pt-20">
+      {/* Hero Background - Luxury Pavilion - High-Key, Sun-Drenched */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Construction background"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="https://images.pexels.com/photos/1738085/pexels-photo-1738085.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
+          alt="Luxury architecture pavilion"
+          className="absolute inset-0 w-full h-full object-cover brightness-125"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/70" />
+        {/* Subtle light veil for text contrast - minimal and airy */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-white/5 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl py-20 lg:py-32">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-3 bg-accent-gold/10 border border-accent-gold px-5 py-3 mb-8">
-            <span className="w-2 h-2 bg-accent-gold animate-pulse"></span>
-            <span className="text-xs font-bold tracking-[0.2em] accent-gold uppercase">Premium Construction</span>
+          {/* Badge - High Contrast on Light */}
+          <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-orange-600 px-5 py-3 mb-8 shadow-lg">
+            <span className="w-2 h-2 bg-orange-600 animate-pulse"></span>
+            <span className="text-xs font-bold tracking-[0.2em] text-orange-600 uppercase">Premium Architecture</span>
           </div>
 
-          {/* Headline - Large, Bold, High Contrast */}
-          <h1 className="text-6xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] mb-8 text-white">
+          {/* Headline - Ultra-Bold, Heavy Weight, Subtle Shadow for Readability */}
+          <h1 className="text-6xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-8 text-white drop-shadow-2xl" style={{textShadow: '3px 3px 8px rgba(0,0,0,0.3)'}}>
             Build Your Vision.<br/>
-            <span className="accent-gold">Elevate Your Legacy.</span>
+            <span className="text-orange-600">Elevate Your Legacy.</span>
           </h1>
 
-          {/* Subheadline - Constrained Width for Readability */}
-          <p className="text-xl lg:text-2xl text-white font-medium leading-relaxed max-w-2xl mb-12">
-            Premier residential and commercial construction services. We deliver projects on time, on budget, with unmatched quality and precision.
+          {/* Subheadline - Light and Airy, Readable */}
+          <p className="text-xl lg:text-2xl text-white font-semibold leading-relaxed max-w-2xl mb-12 drop-shadow-lg" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.25)'}}>
+            Premium residential and commercial architecture. We craft spaces that inspire—delivered on time, on budget, with architectural excellence.
           </p>
 
-          {/* Strong CTA - Solid Button */}
+          {/* Strong CTA - Industrial Orange & Deep Charcoal */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#contact"
-              className="group bg-accent-gold text-black px-10 py-5 text-base font-bold tracking-wide uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-3 shadow-2xl shadow-accent-gold/20"
+              className="group bg-orange-600 text-white px-10 py-5 text-base font-black tracking-wide uppercase hover:bg-orange-700 transition-all duration-300 inline-flex items-center justify-center gap-3 shadow-2xl"
             >
               Request a Quote
               <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
             </a>
             <a
               href="#services"
-              className="group border-2 border-white text-white px-10 py-5 text-base font-bold tracking-wide uppercase hover:bg-white hover:text-black transition-all duration-300 inline-flex items-center justify-center gap-3"
+              className="group bg-zinc-800 text-white px-10 py-5 text-base font-black tracking-wide uppercase hover:bg-black transition-all duration-300 inline-flex items-center justify-center gap-3 shadow-xl"
             >
               View Services
               <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
             </a>
           </div>
 
-          {/* Trust Elements */}
-          <div className="mt-16 pt-8 border-t border-accent-gold/30">
+          {/* Trust Elements - High-Key, Airy */}
+          <div className="mt-16 pt-8 border-t-2 border-orange-600/50">
             <div className="grid grid-cols-3 gap-8 max-w-2xl">
-              <div>
-                <div className="text-4xl font-bold accent-gold mb-2">1.3K+</div>
-                <div className="text-sm text-gray-300 font-medium uppercase tracking-wider">Projects Completed</div>
+              <div className="bg-white/80 backdrop-blur-sm p-6 shadow-lg">
+                <div className="text-5xl font-black text-orange-600 mb-2">1.3K+</div>
+                <div className="text-sm text-zinc-700 font-bold uppercase tracking-wider">Projects Completed</div>
               </div>
-              <div>
-                <div className="text-4xl font-bold accent-gold mb-2">10+</div>
-                <div className="text-sm text-gray-300 font-medium uppercase tracking-wider">Years Excellence</div>
+              <div className="bg-white/80 backdrop-blur-sm p-6 shadow-lg">
+                <div className="text-5xl font-black text-orange-600 mb-2">10+</div>
+                <div className="text-sm text-zinc-700 font-bold uppercase tracking-wider">Years Excellence</div>
               </div>
-              <div>
-                <div className="text-4xl font-bold accent-gold mb-2">4.8/5</div>
-                <div className="text-sm text-gray-300 font-medium uppercase tracking-wider">Client Rating</div>
+              <div className="bg-white/80 backdrop-blur-sm p-6 shadow-lg">
+                <div className="text-5xl font-black text-orange-600 mb-2">4.8/5</div>
+                <div className="text-sm text-zinc-700 font-bold uppercase tracking-wider">Client Rating</div>
               </div>
             </div>
           </div>
