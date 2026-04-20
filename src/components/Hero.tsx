@@ -1,5 +1,3 @@
-import { ArrowRight } from 'lucide-react'
-
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center">
@@ -12,7 +10,7 @@ const Hero = () => {
           loading="eager"
         />
         {/* Subtle light veil for text contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
