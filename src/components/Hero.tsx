@@ -10,7 +10,7 @@ const Hero = () => {
           className="absolute inset-0 w-full h-full object-cover brightness-110"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent via-50% to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -24,7 +24,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-charcoal mb-6 leading-tight">
             Build Your <span className="text-charcoal/80">Vision.</span>
           </h1>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-sand mb-8">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-sand mb-8 [text-shadow:0_0_15px_rgba(0,0,0,0.25)]">
             Elevate Your Legacy.
           </h2>
 
