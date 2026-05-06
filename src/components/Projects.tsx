@@ -3,54 +3,55 @@ import { ArrowRight } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Modern Villa Complex',
-      category: 'Residential',
-      value: '$2.4M',
+      image: '/assets/revenue_dashboard.png',
+      title: 'Enterprise SaaS Pipeline',
+      category: 'B2B Software',
+      value: '+145% Leads',
     },
     {
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Luxury Estate',
-      category: 'Premium',
-      value: '$3.8M',
+      image: '/assets/calendar_dashboard.png',
+      title: 'Consulting Firm Booking',
+      category: 'Service Business',
+      value: '+85% Meetings',
     },
     {
-      image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Urban Development',
-      category: 'Commercial',
-      value: '$5.2M',
+      image: '/assets/lead_inbox.png',
+      title: 'Real Estate Lead Capture',
+      category: 'High-Ticket',
+      value: '-60% Cost/Acq',
     },
     {
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Architectural Masterpiece',
-      category: 'Custom',
-      value: '$4.1M',
+      image: '/assets/automation_workflow.png',
+      title: 'E-commerce Nurture',
+      category: 'DTC Brand',
+      value: '+210% LTV',
     },
   ]
 
   return (
-    <section id="projects" className="py-24 bg-offwhite">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="results" className="py-24 bg-darkgray relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
-          <div className="space-y-6 max-w-2xl">
-            <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md border border-sand/30 px-5 py-3 rounded-[2px]">
-              <span className="w-2 h-2 bg-sand"></span>
-              <span className="text-xs font-black tracking-[0.2em] text-sand uppercase">Featured Projects</span>
+          <div className="space-y-6 max-w-2xl animate-fade-in">
+            <div className="inline-flex items-center gap-3 bg-charcoal border border-white/10 px-5 py-3 rounded-[2px] shadow-lg">
+              <span className="w-2 h-2 bg-gold"></span>
+              <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase">System Results</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight">
-              Our Finest <span className="text-sand">Work</span>
+            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight">
+              Verified <span className="text-gold">Outcomes</span>
             </h2>
-            <p className="text-xl text-slate-600 font-medium">
-              From luxury residences to commercial developments, explore projects that showcase our expertise and commitment to excellence.
+            <p className="text-xl text-white/60 font-medium">
+              We don't build toys. We build revenue engines. See the numbers our systems are generating for partners across industries.
             </p>
           </div>
 
           <a
-            href="#contact"
-            className="group border-2 border-charcoal text-charcoal px-10 py-5 text-base font-black tracking-tighter uppercase hover:bg-charcoal hover:text-white transition-all duration-500 inline-flex items-center gap-3 rounded-[2px]"
+            href="#audit"
+            className="group border border-white/20 text-white px-10 py-5 text-sm font-bold tracking-widest uppercase hover:bg-gold hover:text-charcoal hover:border-gold transition-all duration-500 inline-flex items-center gap-3 rounded-[2px]"
           >
-            View All
+            Get My Audit
             <ArrowRight className="group-hover:translate-x-2 transition-transform" size={20} />
           </a>
         </div>
@@ -60,47 +61,44 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden aspect-[4/3] cursor-pointer rounded-[2px] bg-white/20 backdrop-blur-md border border-white/50 shadow-sm"
+              className="group relative overflow-hidden aspect-[4/3] cursor-pointer rounded-xl bg-charcoal border border-white/10 shadow-lg hover:border-gold/30 transition-colors duration-500"
             >
               {/* Project Image */}
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 loading="lazy"
               />
 
-              {/* Light Gradient Overlay for subtle text contrast instead of dark */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/40 to-transparent"></div>
+              {/* Dark Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <div className="transform transition-all duration-500">
-                  <div className="inline-block bg-sand text-white px-4 py-2 text-xs font-black tracking-widest uppercase mb-4 rounded-[2px]">
+                <div className="transform transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                  <div className="inline-block bg-gold/10 text-gold border border-gold/20 px-4 py-2 text-xs font-bold tracking-widest uppercase mb-4 rounded-[2px] backdrop-blur-md">
                     {project.category}
                   </div>
-                  <h3 className="text-3xl font-black tracking-tighter text-charcoal mb-3">{project.title}</h3>
+                  <h3 className="text-3xl font-bold tracking-tight text-white mb-3">{project.title}</h3>
                   <div className="flex items-center justify-between">
-                    <span className="text-xl font-black text-sand">{project.value}</span>
-                    <ArrowRight className="text-charcoal group-hover:translate-x-2 transition-transform" size={24} />
+                    <span className="text-xl font-black text-gold">{project.value}</span>
+                    <ArrowRight className="text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" size={24} />
                   </div>
                 </div>
               </div>
-
-              {/* Hover Border */}
-              <div className="absolute inset-0 border-[3px] border-sand opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[2px]"></div>
             </div>
           ))}
         </div>
 
         {/* CTA Below Projects */}
-        <div className="mt-16 text-center">
-          <p className="text-xl text-slate-600 font-medium mb-6">Ready to start your dream project?</p>
+        <div className="mt-20 text-center animate-slide-up">
+          <p className="text-xl text-white/60 font-medium mb-8">Ready to scale your revenue operations?</p>
           <a
-            href="#contact"
-            className="group bg-sand text-white px-12 py-6 text-lg font-black tracking-tighter uppercase hover:bg-charcoal transition-all duration-500 inline-flex items-center gap-3 shadow-2xl shadow-sand/20 rounded-[2px]"
+            href="#audit"
+            className="group bg-gold text-charcoal px-12 py-6 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] rounded-[2px]"
           >
-            Request a Quote
+            Audit My Process
             <ArrowRight className="group-hover:translate-x-2 transition-transform" size={22} />
           </a>
         </div>
