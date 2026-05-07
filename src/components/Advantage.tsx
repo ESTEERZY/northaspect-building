@@ -30,7 +30,7 @@ const Advantage = () => {
   };
 
   return (
-    <section id="features" className="py-24 bg-champagne relative">
+    <section id="features" className="py-24 bg-gold/5 relative">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">

@@ -23,8 +23,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-champagne border-t border-gold/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-champagne to-champagne"></div>
+    <section id="contact" className="py-24 bg-white border-t border-gold/20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-white to-white"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
@@ -93,7 +93,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                    className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
                     placeholder="Jane Smith"
                   />
                 </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                    className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
                     placeholder="jane@example.com"
                   />
                 </div>
@@ -125,7 +125,7 @@ const Contact = () => {
                   value={formData.budget}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                  className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
                 >
                   <option value="" disabled>Select a range</option>
                   <option value="500k_1m">$500k – $1M</option>
@@ -146,7 +146,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all resize-none rounded-[2px]"
+                  className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all resize-none rounded-[2px]"
                   placeholder="Describe your dream home, location, style preferences..."
                 />
               </div>

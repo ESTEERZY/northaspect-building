@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react'
+import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin, Triangle } from 'lucide-react'
 
 const Footer = () => {
   const services = [
@@ -17,16 +17,13 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-offwhite text-charcoal border-t border-slate-200">
+    <footer className="bg-white text-charcoal border-t border-slate-200">
       <div className="container mx-auto px-6 lg:px-12 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-2.5">
-              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-                <polygon points="50,10 90,82 10,82" stroke="#C5A059" strokeWidth="9" strokeLinejoin="round" fill="none"/>
-                <line x1="28" y1="60" x2="72" y2="60" stroke="#C5A059" strokeWidth="6" opacity="0.5"/>
-              </svg>
+            <h3 className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-3">
+              <Triangle className="text-gold fill-gold" size={20} />
               Apex <span className="text-gold">Systems</span>
             </h3>
             <p className="text-slate-600 font-medium leading-relaxed">
