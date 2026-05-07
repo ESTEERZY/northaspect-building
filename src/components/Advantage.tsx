@@ -20,7 +20,7 @@ const Advantage = () => {
   return (
     <section id="features" className="py-24 bg-charcoal relative">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
-      
+
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 space-y-6 animate-fade-in">
