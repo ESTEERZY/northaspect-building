@@ -23,8 +23,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white border-t border-gold/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-white to-white"></div>
+    <section id="contact" className="py-24 bg-charcoal border-t border-white/10 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-white/5 via-charcoal to-charcoal"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
@@ -36,16 +36,16 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="lg:col-span-2 space-y-8"
           >
-            <div className="inline-flex items-center gap-3 bg-charcoal/10 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
+            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
               <span className="w-2 h-2 bg-gold animate-pulse"></span>
-              <span className="text-xs font-black tracking-[0.2em] text-charcoal/70 uppercase">Seamless Inquiry</span>
+              <span className="text-xs font-black tracking-[0.2em] text-white/70 uppercase">Seamless Inquiry</span>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight">
+            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight">
               Begin Your <span className="text-gold">Journey.</span>
             </h2>
 
-            <p className="text-xl text-charcoal/60 font-medium leading-relaxed">
+            <p className="text-xl text-white/60 font-medium leading-relaxed">
               Tell us about your dream project. Our architectural consultants will be in touch within one business day to start your bespoke building experience.
             </p>
 
@@ -61,8 +61,8 @@ const Contact = () => {
                     {item.num}
                   </div>
                   <div>
-                    <p className="text-base font-bold text-charcoal">{item.label}</p>
-                    <p className="text-sm text-charcoal/60">{item.desc}</p>
+                    <p className="text-base font-bold text-white">{item.label}</p>
+                    <p className="text-sm text-white/60">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -75,15 +75,15 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-3 bg-white p-10 lg:p-12 border border-gold/20 shadow-[0_8px_40px_rgba(197,160,89,0.1)] rounded-[2px]"
+            className="lg:col-span-3 bg-white/5 p-10 lg:p-12 border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3)] rounded-[2px]"
           >
-            <h3 className="text-3xl font-bold text-charcoal mb-2">Request a Consultation</h3>
-            <p className="text-lg text-charcoal/60 mb-8 font-medium">Share your vision and we'll be in touch within one business day.</p>
+            <h3 className="text-3xl font-bold text-white mb-2">Request a Consultation</h3>
+            <p className="text-lg text-white/60 mb-8 font-medium">Share your vision and we'll be in touch within one business day.</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
+                  <label htmlFor="name" className="block text-sm font-bold text-white/70 uppercase tracking-widest mb-3">
                     Full Name *
                   </label>
                   <input
@@ -93,13 +93,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                    className="w-full px-5 py-4 bg-white/5 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
                     placeholder="Jane Smith"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
+                  <label htmlFor="email" className="block text-sm font-bold text-white/70 uppercase tracking-widest mb-3">
                     Email *
                   </label>
                   <input
@@ -109,14 +109,14 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                    className="w-full px-5 py-4 bg-white/5 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
                     placeholder="jane@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="budget" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
+                <label htmlFor="budget" className="block text-sm font-bold text-white/70 uppercase tracking-widest mb-3">
                   Estimated Budget *
                 </label>
                 <select
@@ -125,7 +125,7 @@ const Contact = () => {
                   value={formData.budget}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                  className="w-full px-5 py-4 bg-white/5 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
                 >
                   <option value="" disabled>Select a range</option>
                   <option value="500k_1m">$500k – $1M</option>
@@ -136,7 +136,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
+                <label htmlFor="message" className="block text-sm font-bold text-white/70 uppercase tracking-widest mb-3">
                   Tell Us Your Vision *
                 </label>
                 <textarea
@@ -146,7 +146,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-5 py-4 bg-gold/5 text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all resize-none rounded-[2px]"
+                  className="w-full px-5 py-4 bg-white/5 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all resize-none rounded-[2px]"
                   placeholder="Describe your dream home, location, style preferences..."
                 />
               </div>

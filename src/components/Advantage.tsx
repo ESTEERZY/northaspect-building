@@ -30,7 +30,7 @@ const Advantage = () => {
   };
 
   return (
-    <section id="features" className="py-24 bg-gold/5 relative">
+    <section id="features" className="py-24 bg-charcoal relative">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -42,16 +42,16 @@ const Advantage = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16 space-y-6"
         >
-          <div className="inline-flex items-center gap-3 bg-charcoal/10 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
+          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
             <span className="w-2 h-2 bg-gold"></span>
-            <span className="text-xs font-black tracking-[0.2em] text-charcoal/70 uppercase">Premium Craftsmanship</span>
+            <span className="text-xs font-black tracking-[0.2em] text-white/70 uppercase">Premium Craftsmanship</span>
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight max-w-3xl mx-auto">
+          <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight max-w-3xl mx-auto">
             The Apex <span className="text-gold">Advantage</span>
           </h2>
 
-          <p className="text-xl text-charcoal/60 font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-white/60 font-medium leading-relaxed max-w-2xl mx-auto">
             We don't just build houses. We craft high-end, custom living spaces designed to elevate your lifestyle.
           </p>
         </motion.div>
@@ -68,13 +68,13 @@ const Advantage = () => {
             <motion.div
               key={item.title}
               variants={cardVariants}
-              className="group flex flex-col items-center text-center p-8 bg-white border border-gold/20 rounded-[2px] hover:-translate-y-2 hover:border-gold hover:shadow-[0_8px_40px_rgba(197,160,89,0.15)] transition-all duration-500"
+              className="group flex flex-col items-center text-center p-8 bg-white/5 border border-white/10 rounded-[2px] hover:-translate-y-2 hover:border-gold hover:shadow-[0_8px_40px_rgba(197,160,89,0.15)] transition-all duration-500"
             >
               <div className="w-full aspect-video mb-8 overflow-hidden rounded-[2px] border border-charcoal/10 group-hover:border-gold/50 transition-colors duration-500">
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-charcoal mb-4 group-hover:text-gold transition-colors duration-500">{item.title}</h3>
-              <p className="text-base text-charcoal/60 leading-relaxed">{item.description}</p>
+              <h3 className="text-2xl font-bold tracking-tight text-white mb-4 group-hover:text-gold transition-colors duration-500">{item.title}</h3>
+              <p className="text-base text-white/60 leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </motion.div>

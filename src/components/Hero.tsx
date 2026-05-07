@@ -17,10 +17,10 @@ const Hero = () => {
           style={{ objectPosition: 'center center' }}
           loading="eager"
         />
-        {/* Dark overlay — 45% opacity for legibility */}
-        <div className="absolute inset-0 bg-black/45"></div>
+        {/* Dark overlay — 60% opacity for legibility */}
+        <div className="absolute inset-0 bg-black/60"></div>
         {/* Subtle gradient to ground the text */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30"></div>
       </div>
 
       {/* Centered content */}
