@@ -2,21 +2,21 @@ const SystemBreakdown = () => {
   const steps = [
     {
       id: "01",
-      title: "Capture Leads Instantly",
-      description: "We deploy high-converting funnels and chatbot entry points that turn traffic into qualified prospects 24/7.",
-      image: "/assets/lead_inbox.png"
+      title: "Luxury Project Gallery",
+      description: "Explore our portfolio of award-winning custom homes. Draw inspiration from our masterworks to begin shaping your vision.",
+      image: "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       id: "02",
-      title: "Qualify with AI",
-      description: "Our autonomous agents engage prospects in real-time, asking qualifying questions and dropping bad leads before they reach your team.",
-      image: "/assets/chatbot_conversation.png"
+      title: "Seamless Client Onboarding",
+      description: "Experience white-glove service from day one. We pair you with an elite architectural consultant to map every detail.",
+      image: "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       id: "03",
-      title: "Convert Automatically",
-      description: "Qualified leads are instantly booked into your calendar or nurtured through intelligent follow-up workflows until they buy.",
-      image: "/assets/automation_workflow.png"
+      title: "Real-Time Construction Updates",
+      description: "Total transparency through the build phase. Watch your dream home come to life with weekly site reports and milestones.",
+      image: "https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ];
 
@@ -25,21 +25,21 @@ const SystemBreakdown = () => {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-sm font-black tracking-[0.2em] text-gold uppercase mb-4 animate-fade-in">Inside The System</h2>
+        <div className="max-w-3xl mb-16 animate-fade-in">
+          <h2 className="text-sm font-black tracking-[0.2em] text-gold uppercase mb-4">The Buyer's Journey</h2>
           <h3 className="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6 leading-tight animate-slide-up">
-            How we turn clicks into booked appointments.
+            From Vision to Masterpiece.
           </h3>
           <p className="text-lg text-white/70 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Stop relying on manual outreach. We build systems that run entirely on their own.
+            A streamlined, transparent, and entirely bespoke process designed to make building your luxury home an effortless experience.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {steps.map((step, _index) => (
+          {steps.map((step) => (
             <div
               key={step.id}
-              className="bg-charcoal border border-white/5 rounded-xl p-8 hover:border-gold/30 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden"
+              className="bg-charcoal border border-white/5 rounded-xl p-8 hover:border-gold/30 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden animate-slide-up"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -z-10 group-hover:bg-gold/10 transition-colors duration-500"></div>
 
