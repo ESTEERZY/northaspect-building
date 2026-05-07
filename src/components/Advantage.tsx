@@ -44,11 +44,11 @@ const Advantage = () => {
         >
           <div className="inline-flex items-center gap-3 bg-charcoal/10 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
             <span className="w-2 h-2 bg-gold"></span>
-            <span className="text-xs font-black tracking-[0.2em] text-charcoal/70 uppercase">Our Craft</span>
+            <span className="text-xs font-black tracking-[0.2em] text-charcoal/70 uppercase">Premium Craftsmanship</span>
           </div>
 
           <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight max-w-3xl mx-auto">
-            The Foundation <span className="text-gold">Advantage</span>
+            The Apex <span className="text-gold">Advantage</span>
           </h2>
 
           <p className="text-xl text-charcoal/60 font-medium leading-relaxed max-w-2xl mx-auto">

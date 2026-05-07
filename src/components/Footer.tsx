@@ -23,7 +23,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <h3 className="text-2xl font-black tracking-tighter uppercase text-charcoal">
-              Foundation <span className="text-sand">Elite</span>
+              Apex <span className="text-gold">Systems</span>
             </h3>
             <p className="text-slate-600 font-medium leading-relaxed">
               Building excellence since 2014. Your trusted partner for premium residential and commercial construction.
@@ -31,25 +31,25 @@ const Footer = () => {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-sand hover:border-sand hover:text-white transition-all duration-500 rounded-[2px]"
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
               >
                 <Facebook size={20} strokeWidth={2} />
               </a>
               <a
                 href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-sand hover:border-sand hover:text-white transition-all duration-500 rounded-[2px]"
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
               >
                 <Twitter size={20} strokeWidth={2} />
               </a>
               <a
                 href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-sand hover:border-sand hover:text-white transition-all duration-500 rounded-[2px]"
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
               >
                 <Instagram size={20} strokeWidth={2} />
               </a>
               <a
                 href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-sand hover:border-sand hover:text-white transition-all duration-500 rounded-[2px]"
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
               >
                 <Linkedin size={20} strokeWidth={2} />
               </a>
@@ -62,7 +62,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href={service.href} className="text-slate-600 font-medium hover:text-sand transition-colors duration-500">
+                  <a href={service.href} className="text-slate-600 font-medium hover:text-gold transition-colors duration-500">
                     {service.name}
                   </a>
                 </li>
@@ -76,7 +76,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-slate-600 font-medium hover:text-sand transition-colors duration-500">
+                  <a href={link.href} className="text-slate-600 font-medium hover:text-gold transition-colors duration-500">
                     {link.name}
                   </a>
                 </li>
@@ -89,7 +89,7 @@ const Footer = () => {
             <h4 className="text-lg font-black mb-6 uppercase tracking-[0.1em] text-charcoal">Contact</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-sand flex-shrink-0 mt-1" strokeWidth={2} />
+                <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
                 <div>
                   <a href="tel:+15551234567" className="text-slate-600 font-medium hover:text-sand transition-colors duration-500">
                     (555) 123-4567
@@ -97,15 +97,15 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-sand flex-shrink-0 mt-1" strokeWidth={2} />
+                <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
                 <div>
-                  <a href="mailto:info@foundationelite.com" className="text-slate-600 font-medium hover:text-sand transition-colors duration-500 break-all">
-                    info@foundationelite.com
+                  <a href="mailto:info@apexsystems.com" className="text-slate-600 font-medium hover:text-gold transition-colors duration-500 break-all">
+                    info@apexsystems.com
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-sand flex-shrink-0 mt-1" strokeWidth={2} />
+                <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
                 <div>
                   <p className="text-slate-600 font-medium">
                     123 Construction Ave<br/>
@@ -121,16 +121,16 @@ const Footer = () => {
         <div className="border-t border-slate-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-slate-500">
             <div>
-              © {new Date().getFullYear()} Foundation Elite. All rights reserved.
+              © {new Date().getFullYear()} Apex Systems. All rights reserved.
             </div>
             <div className="flex gap-8">
-              <a href="#" className="hover:text-sand transition-colors duration-500">
+              <a href="#" className="hover:text-gold transition-colors duration-500">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-sand transition-colors duration-500">
+              <a href="#" className="hover:text-gold transition-colors duration-500">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-sand transition-colors duration-500">
+              <a href="#" className="hover:text-gold transition-colors duration-500">
                 Sitemap
               </a>
             </div>
