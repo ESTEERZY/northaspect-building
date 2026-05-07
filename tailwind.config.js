@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        charcoal: '#0a0a0a',
+        charcoal: '#1A1A1A',
         darkgray: '#171717',
-        gold: '#D4AF37',
+        gold: '#C5A059',
+        champagne: '#FBF9F6',
         offwhite: '#F8F9FA'
       },
       fontFamily: {

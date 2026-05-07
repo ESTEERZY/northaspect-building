@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const Advantage = () => {
   const advantages = [
     {
@@ -15,44 +17,70 @@ const Advantage = () => {
       title: 'Luxury Kitchens',
       description: 'State-of-the-art culinary spaces featuring stone benchtops and high-end integrated appliances.',
     },
-  ]
+  ];
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.15 } }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } }
+  };
 
   return (
-    <section id="features" className="py-24 bg-charcoal relative">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+    <section id="features" className="py-24 bg-champagne relative">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 space-y-6 animate-fade-in">
-          <div className="inline-flex items-center gap-3 bg-darkgray/80 backdrop-blur-md border border-gold/30 px-5 py-3 rounded-[2px] shadow-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16 space-y-6"
+        >
+          <div className="inline-flex items-center gap-3 bg-charcoal/10 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
             <span className="w-2 h-2 bg-gold"></span>
-            <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase">Premium Finishes</span>
+            <span className="text-xs font-black tracking-[0.2em] text-charcoal/70 uppercase">Our Craft</span>
           </div>
 
-          <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight max-w-3xl mx-auto animate-slide-up">
+          <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight max-w-3xl mx-auto">
             The Foundation <span className="text-gold">Advantage</span>
           </h2>
 
-          <p className="text-xl text-white/60 font-medium leading-relaxed max-w-2xl mx-auto animate-slide-up">
+          <p className="text-xl text-charcoal/60 font-medium leading-relaxed max-w-2xl mx-auto">
             We don't just build houses. We craft high-end, custom living spaces designed to elevate your lifestyle.
           </p>
-        </div>
+        </motion.div>
 
         {/* 3-Column Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {advantages.map((item) => (
-            <div key={item.title} className="group flex flex-col items-center text-center p-10 bg-darkgray/50 backdrop-blur-md border border-gold/20 rounded-xl hover:-translate-y-2 hover:border-gold hover:shadow-[0_0_30px_rgba(212,175,55,0.15)] transition-all duration-500 animate-slide-up">
-              <div className="w-full aspect-video mb-8 overflow-hidden rounded-[2px] border border-white/10 group-hover:border-gold/50 transition-colors duration-500">
+            <motion.div
+              key={item.title}
+              variants={cardVariants}
+              className="group flex flex-col items-center text-center p-8 bg-white border border-gold/20 rounded-[2px] hover:-translate-y-2 hover:border-gold hover:shadow-[0_8px_40px_rgba(197,160,89,0.15)] transition-all duration-500"
+            >
+              <div className="w-full aspect-video mb-8 overflow-hidden rounded-[2px] border border-charcoal/10 group-hover:border-gold/50 transition-colors duration-500">
                 <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-white mb-4 group-hover:text-gold transition-colors duration-500">{item.title}</h3>
-              <p className="text-base text-white/60 leading-relaxed">{item.description}</p>
-            </div>
+              <h3 className="text-2xl font-bold tracking-tight text-charcoal mb-4 group-hover:text-gold transition-colors duration-500">{item.title}</h3>
+              <p className="text-base text-charcoal/60 leading-relaxed">{item.description}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Advantage
+export default Advantage;

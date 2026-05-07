@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const SystemBreakdown = () => {
   const steps = [
     {
@@ -21,25 +23,38 @@ const SystemBreakdown = () => {
   ];
 
   return (
-    <section id="system" className="py-24 bg-darkgray relative overflow-hidden">
+    <section id="system" className="py-24 bg-charcoal relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="max-w-3xl mb-16 animate-fade-in">
-          <h2 className="text-sm font-black tracking-[0.2em] text-gold uppercase mb-4">The Buyer's Journey</h2>
-          <h3 className="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6 leading-tight animate-slide-up">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mb-16"
+        >
+          <h2 className="text-sm font-black tracking-[0.2em] text-gold uppercase mb-4">The Architectural Journey</h2>
+          <h3 className="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6 leading-tight">
             From Vision to Masterpiece.
           </h3>
-          <p className="text-lg text-white/70 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+          <p className="text-lg text-white/70">
             A streamlined, transparent, and entirely bespoke process designed to make building your luxury home an effortless experience.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ staggerChildren: 0.15 }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        >
           {steps.map((step) => (
-            <div
+            <motion.div
               key={step.id}
-              className="bg-charcoal border border-white/5 rounded-xl p-8 hover:border-gold/30 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden animate-slide-up"
+              variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } } }}
+              className="bg-darkgray border border-white/5 rounded-[2px] p-8 hover:border-gold/30 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -z-10 group-hover:bg-gold/10 transition-colors duration-500"></div>
 
@@ -54,7 +69,7 @@ const SystemBreakdown = () => {
                 {step.description}
               </p>
 
-              <div className="relative rounded-lg overflow-hidden border border-white/10 shadow-lg aspect-[4/3]">
+              <div className="relative rounded-[2px] overflow-hidden border border-white/10 shadow-lg aspect-[4/3]">
                 <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img
                   src={step.image}
@@ -62,9 +77,9 @@ const SystemBreakdown = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>

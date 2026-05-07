@@ -1,92 +1,89 @@
-import { useState } from 'react'
-import { ArrowRight, Mail, LayoutDashboard, Bot } from 'lucide-react'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    revenue: '',
-    process: '',
-  })
+    budget: '',
+    message: '',
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-  }
+    e.preventDefault();
+    console.log('Form submitted:', formData);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
-    <section id="audit" className="py-24 bg-charcoal border-t border-white/10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-charcoal to-charcoal"></div>
+    <section id="contact" className="py-24 bg-champagne border-t border-gold/20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-champagne to-champagne"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Left: Contact Info */}
-          <div className="lg:col-span-2 space-y-8 animate-fade-in">
-            <div className="inline-flex items-center gap-3 bg-darkgray/80 backdrop-blur-md border border-white/10 px-5 py-3 rounded-[2px] shadow-lg">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-2 space-y-8"
+          >
+            <div className="inline-flex items-center gap-3 bg-charcoal/10 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
               <span className="w-2 h-2 bg-gold animate-pulse"></span>
-              <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase">System Audit</span>
+              <span className="text-xs font-black tracking-[0.2em] text-charcoal/70 uppercase">Seamless Inquiry</span>
             </div>
 
-            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight">
-              Scale Your <span className="text-gold">Revenue.</span>
+            <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-charcoal leading-tight">
+              Begin Your <span className="text-gold">Journey.</span>
             </h2>
 
-            <p className="text-xl text-white/60 font-medium leading-relaxed">
-              Request a free technical audit of your current lead capture and qualification process. We'll show you exactly where AI can plug the leaks.
+            <p className="text-xl text-charcoal/60 font-medium leading-relaxed">
+              Tell us about your dream project. Our architectural consultants will be in touch within one business day to start your bespoke building experience.
             </p>
 
-            {/* Contact Details */}
+            {/* Process Steps */}
             <div className="space-y-6 pt-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-darkgray border border-white/10 flex items-center justify-center rounded-[2px]">
-                  <LayoutDashboard className="w-6 h-6 text-gold" strokeWidth={1.5} />
+              {[
+                { num: '01', label: 'Initial Consultation', desc: 'We discuss your vision, budget, and lifestyle needs.' },
+                { num: '02', label: 'Bespoke Design', desc: 'Our architects craft a design tailored to you.' },
+                { num: '03', label: 'Expert Construction', desc: 'Precision build with real-time milestone updates.' },
+              ].map((item) => (
+                <div key={item.num} className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-charcoal text-gold flex items-center justify-center rounded-[2px] text-sm font-black">
+                    {item.num}
+                  </div>
+                  <div>
+                    <p className="text-base font-bold text-charcoal">{item.label}</p>
+                    <p className="text-sm text-charcoal/60">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-sm font-bold uppercase tracking-widest text-white/50 mb-1">Step 1</div>
-                  <p className="text-lg font-bold text-white">We map your current funnel</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-darkgray border border-white/10 flex items-center justify-center rounded-[2px]">
-                  <Bot className="w-6 h-6 text-gold" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <div className="text-sm font-bold uppercase tracking-widest text-white/50 mb-1">Step 2</div>
-                  <p className="text-lg font-bold text-white">Identify AI automation points</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-darkgray border border-white/10 flex items-center justify-center rounded-[2px]">
-                  <Mail className="w-6 h-6 text-gold" strokeWidth={1.5} />
-                </div>
-                <div>
-                  <div className="text-sm font-bold uppercase tracking-widest text-white/50 mb-1">Direct Contact</div>
-                  <a href="mailto:partners@apexsystems.ai" className="text-lg font-bold text-white hover:text-gold transition-colors duration-500">
-                    partners@apexsystems.ai
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right: Contact Form - Glassmorphism */}
-          <div className="lg:col-span-3 bg-darkgray/80 backdrop-blur-md p-10 lg:p-12 border border-white/10 shadow-2xl rounded-xl animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-3xl font-bold text-white mb-2">Request Process Audit</h3>
-            <p className="text-lg text-white/60 mb-8 font-medium">Submit your details and our systems architect will reach out within 2 hours.</p>
+          {/* Right: Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-3 bg-white p-10 lg:p-12 border border-gold/20 shadow-[0_8px_40px_rgba(197,160,89,0.1)] rounded-[2px]"
+          >
+            <h3 className="text-3xl font-bold text-charcoal mb-2">Request a Consultation</h3>
+            <p className="text-lg text-charcoal/60 mb-8 font-medium">Share your vision and we'll be in touch within one business day.</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-bold text-white/80 uppercase tracking-widest mb-3">
+                  <label htmlFor="name" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
                     Full Name *
                   </label>
                   <input
@@ -96,14 +93,14 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-charcoal/50 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
-                    placeholder="John Doe"
+                    className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                    placeholder="Jane Smith"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-bold text-white/80 uppercase tracking-widest mb-3">
-                    Work Email *
+                  <label htmlFor="email" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
+                    Email *
                   </label>
                   <input
                     type="email"
@@ -112,67 +109,67 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 bg-charcoal/50 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
-                    placeholder="john@company.com"
+                    className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                    placeholder="jane@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="revenue" className="block text-sm font-bold text-white/80 uppercase tracking-widest mb-3">
-                  Current Monthly Revenue *
+                <label htmlFor="budget" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
+                  Estimated Budget *
                 </label>
                 <select
-                  id="revenue"
-                  name="revenue"
-                  value={formData.revenue}
+                  id="budget"
+                  name="budget"
+                  value={formData.budget}
                   onChange={handleChange}
                   required
-                  className="w-full px-5 py-4 bg-charcoal/50 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                  className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
                 >
                   <option value="" disabled>Select a range</option>
-                  <option value="under_50k">Under $50k / mo</option>
-                  <option value="50k_250k">$50k - $250k / mo</option>
-                  <option value="250k_1m">$250k - $1M / mo</option>
-                  <option value="over_1m">$1M+ / mo</option>
+                  <option value="500k_1m">$500k – $1M</option>
+                  <option value="1m_2m">$1M – $2M</option>
+                  <option value="2m_5m">$2M – $5M</option>
+                  <option value="over_5m">$5M+</option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="process" className="block text-sm font-bold text-white/80 uppercase tracking-widest mb-3">
-                  Current Lead Process *
+                <label htmlFor="message" className="block text-sm font-bold text-charcoal/70 uppercase tracking-widest mb-3">
+                  Tell Us Your Vision *
                 </label>
                 <textarea
-                  id="process"
-                  name="process"
-                  value={formData.process}
+                  id="message"
+                  name="message"
+                  value={formData.message}
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-5 py-4 bg-charcoal/50 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all resize-none rounded-[2px]"
-                  placeholder="How do you currently capture and qualify leads?"
+                  className="w-full px-5 py-4 bg-champagne text-charcoal text-base border border-charcoal/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all resize-none rounded-[2px]"
+                  placeholder="Describe your dream home, location, style preferences..."
                 />
               </div>
 
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="group w-full bg-gold text-charcoal px-10 py-5 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] rounded-[2px]"
+                  className="group w-full bg-gold text-charcoal px-10 py-5 text-base font-bold tracking-widest uppercase hover:bg-charcoal hover:text-white transition-all duration-500 inline-flex items-center justify-center gap-3 shadow-[0_4px_20px_rgba(197,160,89,0.3)] hover:shadow-[0_8px_40px_rgba(197,160,89,0.5)] rounded-[2px]"
                 >
-                  Submit For Audit
+                  Start My Project
                   <ArrowRight className="group-hover:translate-x-2 transition-transform duration-500" size={20} />
                 </button>
               </div>
 
-              <p className="text-sm text-white/40 text-center font-medium">
-                Your data is securely encrypted. We do not share information with third parties.
+              <p className="text-sm text-charcoal/40 text-center font-medium">
+                Your details are confidential. We respect your privacy completely.
               </p>
             </form>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
