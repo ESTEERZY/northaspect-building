@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navLinks = [
-    { name: 'System', href: '#system' },
+    { name: 'Services', href: '#services' },
     { name: 'Features', href: '#features' },
-    { name: 'Results', href: '#results' },
-    { name: 'About', href: '#about' },
+    { name: 'Portfolio', href: '#results' },
+    { name: 'Process', href: '#system' },
   ]
 
   return (
@@ -16,9 +16,13 @@ const Header = () => {
       <nav className="container mx-auto px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-black tracking-tighter text-white uppercase flex items-center gap-2">
-            <Zap className="text-gold" size={24} />
-            Apex <span className="text-white/60">Systems</span>
+          <div className="text-2xl font-black tracking-tighter text-white uppercase flex items-center gap-2.5">
+            {/* Apex triangle icon — matches favicon */}
+            <svg width="22" height="22" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+              <polygon points="50,10 90,82 10,82" stroke="#C5A059" strokeWidth="9" strokeLinejoin="round" fill="none"/>
+              <line x1="28" y1="60" x2="72" y2="60" stroke="#C5A059" strokeWidth="6" opacity="0.5"/>
+            </svg>
+            Apex <span className="text-gold">Systems</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -36,10 +40,10 @@ const Header = () => {
 
             {/* CTA Button */}
             <a
-              href="#audit"
+              href="#contact"
               className="bg-white/5 text-white border border-white/10 px-8 py-3 text-sm font-bold tracking-widest uppercase hover:bg-gold hover:text-charcoal hover:border-gold transition-all duration-500 inline-flex items-center gap-2 rounded-[2px]"
             >
-              Audit My Process
+              Start a Project
             </a>
           </div>
 
@@ -67,11 +71,11 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="#audit"
+                href="#contact"
                 className="bg-gold text-charcoal px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px]"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Audit My Process
+                Start a Project
               </a>
             </div>
           </div>
