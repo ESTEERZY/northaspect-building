@@ -15,7 +15,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        heading: ['Syncopate', 'sans-serif'],
+        heading: ['"Playfair Display"', 'serif'],
       },
       animation: {
         'fade-in': 'fade-in 0.8s ease-in-out',
