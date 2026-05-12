@@ -58,20 +58,18 @@ const BlueprintScroll = () => {
           </motion.div>
         </div>
 
-        {/* LAYER 1: The Blueprint Image (Deep Slate / Gold styling) */}
+        {/* LAYER 1: The Blueprint Image (Clean Residential Floor Plan) */}
         <motion.div 
-          className="absolute inset-0 z-10 bg-charcoal"
+          className="absolute inset-0 z-10 bg-white"
           style={{ opacity: blueprintOpacity }}
         >
           <img 
-            src="https://images.pexels.com/photos/157811/pexels-photo-157811.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop" 
             alt="Technical Architectural Blueprint" 
-            className="w-full h-full object-cover opacity-90"
-            // CSS filter to invert black lines to white/gold on a dark slate background
-            style={{ filter: 'grayscale(100%) invert(100%) sepia(80%) hue-rotate(340deg) saturate(300%) brightness(0.8) contrast(1.5)' }}
+            className="w-full h-full object-cover"
+            // Light grayscale and contrast to ensure black lines on clean background
+            style={{ filter: 'grayscale(100%) contrast(1.2)' }}
           />
-          {/* Subtle grid overlay for architectural feel */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
         </motion.div>
 
         {/* LAYER 2: The Scaffold / Structural Frame Image */}
@@ -80,7 +78,7 @@ const BlueprintScroll = () => {
           style={{ opacity: scaffoldOpacity }}
         >
           <img 
-            src="https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+            src="https://images.unsplash.com/photo-1541888086225-ee8259d81d2a?q=80&w=2874&auto=format&fit=crop" 
             alt="Structural Scaffold Frame" 
             className="w-full h-full object-cover"
           />
@@ -93,7 +91,7 @@ const BlueprintScroll = () => {
           style={{ opacity: renderOpacity }}
         >
           <img 
-            src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2950&auto=format&fit=crop" 
             alt="Rendered Architecture" 
             className="w-full h-full object-cover"
           />

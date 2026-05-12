@@ -67,7 +67,7 @@ const Header = () => {
               ))}
               <a
                 href="#contact"
-                className="bg-gold text-charcoal px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px]"
+                className="bg-gold text-charcoal px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px] whitespace-nowrap"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Start a Project
