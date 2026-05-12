@@ -10,25 +10,41 @@ const BlueprintScroll = () => {
     offset: ["start start", "end end"]
   });
 
-  // As user scrolls down, opacity of the rendered image increases from 0 to 1 between 20% and 80% scroll
-  const renderOpacity = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
+  // 3-Stage Transition Logic:
+  // 0.0 -> 0.33: Blueprint crossfades into Scaffold
+  // 0.33 -> 0.66: Scaffold holds focus
+  // 0.66 -> 1.0: Scaffold crossfades into Final Render
+
+  const blueprintOpacity = useTransform(scrollYProgress, [0, 0.33], [1, 0]);
+  const scaffoldOpacity = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], [0, 1, 1, 0]);
+  const renderOpacity = useTransform(scrollYProgress, [0.66, 1], [0, 1]);
   
   // Fading text out and in
-  const blueprintTextOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const buildTextOpacity = useTransform(scrollYProgress, [0.8, 1], [0, 1]);
+  const blueprintTextOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const scaffoldTextOpacity = useTransform(scrollYProgress, [0.33, 0.5, 0.66], [0, 1, 0]);
+  const buildTextOpacity = useTransform(scrollYProgress, [0.85, 1], [0, 1]);
 
   return (
     <section ref={containerRef} className="relative h-[300vh] bg-charcoal border-y border-white/10">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal">
         
         {/* Typography Overlays */}
-        <div className="absolute inset-0 z-30 flex flex-col items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 z-40 flex flex-col items-center justify-center pointer-events-none">
           <motion.div 
             style={{ opacity: blueprintTextOpacity }}
             className="absolute"
           >
-            <h2 className="text-4xl md:text-7xl font-black text-white/90 uppercase tracking-[0.2em] bg-charcoal/40 px-10 py-5 backdrop-blur-md border border-white/20 rounded-[2px] shadow-2xl">
-              Blueprint
+            <h2 className="text-4xl md:text-7xl font-bold text-white/90 uppercase tracking-[0.2em] bg-charcoal/40 px-10 py-5 backdrop-blur-md border border-white/20 rounded-[2px] shadow-2xl">
+              Foundation
+            </h2>
+          </motion.div>
+
+          <motion.div 
+            style={{ opacity: scaffoldTextOpacity }}
+            className="absolute"
+          >
+            <h2 className="text-4xl md:text-7xl font-bold text-white/90 uppercase tracking-[0.2em] bg-charcoal/40 px-10 py-5 backdrop-blur-md border border-white/20 rounded-[2px] shadow-2xl">
+              Structure
             </h2>
           </motion.div>
           
@@ -36,27 +52,44 @@ const BlueprintScroll = () => {
             style={{ opacity: buildTextOpacity }}
             className="absolute"
           >
-            <h2 className="text-4xl md:text-7xl font-black text-gold uppercase tracking-[0.2em] bg-charcoal/60 px-10 py-5 backdrop-blur-md border border-gold/40 rounded-[2px] shadow-[0_0_50px_rgba(197,160,89,0.3)]">
-              Constructed
+            <h2 className="text-4xl md:text-7xl font-bold text-gold uppercase tracking-[0.2em] bg-charcoal/60 px-10 py-5 backdrop-blur-md border border-gold/40 rounded-[2px] shadow-[0_0_50px_rgba(197,160,89,0.3)]">
+              Realized
             </h2>
           </motion.div>
         </div>
 
-        {/* The Blueprint Image (Base technical drafting layer) */}
-        <div className="absolute inset-0 z-10 bg-charcoal">
+        {/* LAYER 1: The Blueprint Image (Deep Slate / Gold styling) */}
+        <motion.div 
+          className="absolute inset-0 z-10 bg-charcoal"
+          style={{ opacity: blueprintOpacity }}
+        >
           <img 
             src="https://images.pexels.com/photos/157811/pexels-photo-157811.jpeg?auto=compress&cs=tinysrgb&w=1920" 
             alt="Technical Architectural Blueprint" 
             className="w-full h-full object-cover opacity-90"
-            style={{ filter: 'contrast(1.2)' }}
+            // CSS filter to invert black lines to white/gold on a dark slate background
+            style={{ filter: 'grayscale(100%) invert(100%) sepia(80%) hue-rotate(340deg) saturate(300%) brightness(0.8) contrast(1.5)' }}
           />
-          {/* Grid overlay for architectural feel */}
+          {/* Subtle grid overlay for architectural feel */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-        </div>
+        </motion.div>
 
-        {/* The Rendered Image (Overlay that fades in) */}
+        {/* LAYER 2: The Scaffold / Structural Frame Image */}
         <motion.div 
-          className="absolute inset-0 z-20"
+          className="absolute inset-0 z-20 bg-charcoal"
+          style={{ opacity: scaffoldOpacity }}
+        >
+          <img 
+            src="https://images.pexels.com/photos/2244746/pexels-photo-2244746.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+            alt="Structural Scaffold Frame" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-charcoal/40 mix-blend-multiply"></div>
+        </motion.div>
+
+        {/* LAYER 3: The Rendered Image (Final Polish) */}
+        <motion.div 
+          className="absolute inset-0 z-30"
           style={{ opacity: renderOpacity }}
         >
           <img 
@@ -69,8 +102,8 @@ const BlueprintScroll = () => {
         </motion.div>
 
         {/* Scroll Progress Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center">
-          <div className="text-[10px] font-bold tracking-[0.3em] text-white/50 uppercase mb-4">Scroll to Build</div>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
+          <div className="text-[10px] font-bold tracking-[0.3em] text-white/50 uppercase mb-4 font-sans">Scroll to Build</div>
           <div className="w-[2px] h-24 bg-white/10 rounded-full overflow-hidden">
             <motion.div 
               className="w-full bg-gold origin-top"

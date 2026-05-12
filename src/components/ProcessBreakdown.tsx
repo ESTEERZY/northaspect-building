@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const SystemBreakdown = () => {
+const ProcessBreakdown = () => {
   const steps = [
     {
       id: "01",
@@ -23,7 +23,7 @@ const SystemBreakdown = () => {
   ];
 
   return (
-    <section id="system" className="py-24 bg-charcoal relative overflow-hidden">
+    <section id="process" className="py-24 bg-charcoal relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -87,4 +87,4 @@ const SystemBreakdown = () => {
   );
 };
 
-export default SystemBreakdown;
+export default ProcessBreakdown;

@@ -51,7 +51,7 @@ const Hero = () => {
               View Portfolio
             </a>
             <a
-              href="#system"
+              href="#process"
               className="group bg-transparent text-white border border-white/50 px-10 py-5 text-sm lg:text-base font-bold tracking-widest uppercase hover:bg-white/15 hover:border-gold transition-all duration-500 inline-flex items-center justify-center gap-3 rounded-[2px]"
             >
               The Architectural Journey
