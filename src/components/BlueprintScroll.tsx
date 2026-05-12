@@ -7,7 +7,7 @@ const BlueprintScroll = () => {
   // Track the scroll progress through the container (300vh height gives ample scrolling distance)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start center", "end end"]
   });
 
   // 3-Stage Snappy Transition Logic
@@ -22,7 +22,7 @@ const BlueprintScroll = () => {
   const buildTextOpacity = useTransform(scrollYProgress, [0.55, 0.65], [0, 1]);
 
   return (
-    <section ref={containerRef} className="relative h-[200vh] bg-charcoal border-y border-white/10">
+    <section ref={containerRef} className="relative h-[150vh] bg-charcoal border-y border-white/10">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal">
         
         {/* Typography Overlays */}

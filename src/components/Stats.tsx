@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 
 const CountUpStat = ({ stat }: { stat: { value: string; label: string } }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
+  const isInView = useInView(ref, { once: true });
   
   const numMatch = stat.value.match(/[\d.]+/);
   const number = numMatch ? parseFloat(numMatch[0]) : 0;
