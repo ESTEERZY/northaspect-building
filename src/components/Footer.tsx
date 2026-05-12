@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin, Triangle } from 'lucide-react'
+import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react'
 
 const Footer = () => {
   const services = [
@@ -23,7 +23,6 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <h3 className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-3">
-              <Triangle className="text-gold fill-gold" size={20} />
               Apex <span className="text-gold">Architecture</span>
             </h3>
             <p className="text-slate-600 font-medium leading-relaxed">

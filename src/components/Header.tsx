@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, X, Triangle } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,7 +17,6 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="text-2xl font-black tracking-tighter text-white uppercase flex items-center gap-3">
-            <Triangle className="text-gold fill-gold" size={22} />
             Apex <span className="text-gold">Architecture</span>
           </div>
 

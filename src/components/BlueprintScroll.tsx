@@ -42,13 +42,13 @@ const BlueprintScroll = () => {
           </motion.div>
         </div>
 
-        {/* The Blueprint Image (Base layer with CSS filters simulating a cyanotype blueprint) */}
+        {/* The Blueprint Image (Base technical drafting layer) */}
         <div className="absolute inset-0 z-10 bg-charcoal">
           <img 
-            src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" 
-            alt="Blueprint" 
-            className="w-full h-full object-cover opacity-80"
-            style={{ filter: 'grayscale(100%) invert(100%) sepia(100%) hue-rotate(180deg) saturate(400%) contrast(200%)' }}
+            src="https://images.pexels.com/photos/157811/pexels-photo-157811.jpeg?auto=compress&cs=tinysrgb&w=1920" 
+            alt="Technical Architectural Blueprint" 
+            className="w-full h-full object-cover opacity-90"
+            style={{ filter: 'contrast(1.2)' }}
           />
           {/* Grid overlay for architectural feel */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
