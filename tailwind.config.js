@@ -15,7 +15,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        heading: ['Space Grotesk', 'sans-serif'],
+        heading: ['Syncopate', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fade-in 0.8s ease-in-out',

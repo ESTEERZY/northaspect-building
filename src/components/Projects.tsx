@@ -7,28 +7,28 @@ const Projects = () => {
       title: 'Modern Villa Complex',
       location: 'Beverly Hills, CA',
       scale: '1,450 sqm',
-      phase: 'Completed',
+      materials: 'Concrete & Glass',
     },
     {
       image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Luxury Estate',
       location: 'Aspen, CO',
       scale: '2,100 sqm',
-      phase: 'Construction',
+      materials: 'Timber & Stone',
     },
     {
       image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Urban Development',
       location: 'New York, NY',
       scale: '3,800 sqm',
-      phase: 'Design',
+      materials: 'Steel & Glass',
     },
     {
       image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Architectural Masterpiece',
       location: 'Malibu, CA',
       scale: '950 sqm',
-      phase: 'Completed',
+      materials: 'Exposed Concrete',
     },
   ]
 
@@ -95,9 +95,9 @@ const Projects = () => {
                     <div className="text-base font-medium text-white/90">{project.scale}</div>
                   </div>
                   <div className="col-span-2 pt-2">
-                    <div className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-3">Phase</div>
+                    <div className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-3">Materials</div>
                     <div className="inline-flex px-4 py-2 bg-white/5 border border-white/10 text-xs font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
-                      {project.phase}
+                      {project.materials}
                     </div>
                   </div>
                 </div>

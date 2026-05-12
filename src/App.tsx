@@ -1,5 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import BlueprintScroll from './components/BlueprintScroll'
 import SystemBreakdown from './components/SystemBreakdown'
 import Stats from './components/Stats'
 import Advantage from './components/Advantage'
@@ -13,6 +14,7 @@ function App() {
     <div className="min-h-screen bg-charcoal text-white font-sans selection:bg-gold selection:text-charcoal">
       <Header />
       <Hero />
+      <BlueprintScroll />
       <SystemBreakdown />
       <Stats />
       <Advantage />
