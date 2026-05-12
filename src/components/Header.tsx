@@ -18,7 +18,7 @@ const Header = () => {
           {/* Logo */}
           <div className="text-2xl font-black tracking-tighter text-white uppercase flex items-center gap-3">
             <Triangle className="text-gold fill-gold" size={22} />
-            Apex <span className="text-gold">Systems</span>
+            Apex <span className="text-gold">Architecture</span>
           </div>
 
           {/* Desktop Navigation */}

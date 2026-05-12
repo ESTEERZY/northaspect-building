@@ -5,26 +5,30 @@ const Projects = () => {
     {
       image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Modern Villa Complex',
-      category: 'Residential',
-      value: '$2.4M',
+      location: 'Beverly Hills, CA',
+      scale: '1,450 sqm',
+      phase: 'Completed',
     },
     {
       image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Luxury Estate',
-      category: 'Premium',
-      value: '$3.8M',
+      location: 'Aspen, CO',
+      scale: '2,100 sqm',
+      phase: 'Construction',
     },
     {
       image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Urban Development',
-      category: 'Commercial',
-      value: '$5.2M',
+      location: 'New York, NY',
+      scale: '3,800 sqm',
+      phase: 'Design',
     },
     {
       image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Architectural Masterpiece',
-      category: 'Custom',
-      value: '$4.1M',
+      location: 'Malibu, CA',
+      scale: '950 sqm',
+      phase: 'Completed',
     },
   ]
 
@@ -37,7 +41,7 @@ const Projects = () => {
           <div className="space-y-6 max-w-2xl animate-fade-in">
             <div className="inline-flex items-center gap-3 bg-charcoal border border-white/10 px-5 py-3 rounded-[2px] shadow-lg">
               <span className="w-2 h-2 bg-gold"></span>
-              <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase">Featured Projects</span>
+              <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase">Spec Sheets</span>
             </div>
             <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight animate-slide-up">
               Our Finest <span className="text-gold">Work</span>
@@ -58,34 +62,43 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-12">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden aspect-[4/3] cursor-pointer rounded-xl bg-charcoal border border-white/10 shadow-lg hover:border-gold/30 transition-colors duration-500 animate-slide-up"
+              className="group animate-slide-up flex flex-col bg-charcoal border border-white/10 rounded-[2px] shadow-lg overflow-hidden hover:border-gold/30 transition-all duration-500"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project Image */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                loading="lazy"
-              />
+              <div className="relative aspect-[4/3] overflow-hidden border-b border-white/10">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 grayscale group-hover:grayscale-0"
+                  loading="lazy"
+                />
+              </div>
 
-              {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
+              {/* Spec Sheet Content */}
+              <div className="p-8 lg:p-10 flex flex-col flex-1">
+                <h3 className="text-3xl font-bold tracking-tight text-white mb-8 group-hover:text-gold transition-colors duration-300">
+                  {project.title}
+                </h3>
 
-              {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <div className="transform transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                  <div className="inline-block bg-gold/10 text-gold border border-gold/20 px-4 py-2 text-xs font-bold tracking-widest uppercase mb-4 rounded-[2px] backdrop-blur-md">
-                    {project.category}
+                <div className="grid grid-cols-2 gap-x-6 gap-y-8 mt-auto border-t border-white/10 pt-8">
+                  <div>
+                    <div className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-2">Location</div>
+                    <div className="text-base font-medium text-white/90">{project.location}</div>
                   </div>
-                  <h3 className="text-3xl font-bold tracking-tight text-white mb-3 group-hover:text-gold transition-colors duration-300">{project.title}</h3>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xl font-black text-gold">{project.value}</span>
-                    <ArrowRight className="text-white opacity-0 group-hover:opacity-100 group-hover:translate-x-2 group-hover:text-gold transition-all duration-300" size={24} />
+                  <div>
+                    <div className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-2">Scale (sqm)</div>
+                    <div className="text-base font-medium text-white/90">{project.scale}</div>
+                  </div>
+                  <div className="col-span-2 pt-2">
+                    <div className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-3">Phase</div>
+                    <div className="inline-flex px-4 py-2 bg-white/5 border border-white/10 text-xs font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
+                      {project.phase}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -94,7 +107,7 @@ const Projects = () => {
         </div>
 
         {/* CTA Below Projects */}
-        <div className="mt-20 text-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <div className="mt-24 text-center animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <p className="text-xl text-white/60 font-medium mb-8">Ready to start your dream project?</p>
           <a
             href="#contact"

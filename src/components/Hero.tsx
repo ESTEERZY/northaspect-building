@@ -32,10 +32,7 @@ const Hero = () => {
           className="max-w-4xl"
         >
           {/* Badge */}
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-[2px] mb-10 border border-gold/40 shadow-[0_0_20px_rgba(197,160,89,0.15)]">
-            <span className="w-2 h-2 bg-gold animate-pulse rounded-[2px]"></span>
-            <span className="text-xs font-black tracking-[0.25em] text-gold uppercase">Luxury Home Builder</span>
-          </motion.div>
+
 
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-[1.02]">
             The Future of<br />

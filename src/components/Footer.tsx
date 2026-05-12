@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-3">
               <Triangle className="text-gold fill-gold" size={20} />
-              Apex <span className="text-gold">Systems</span>
+              Apex <span className="text-gold">Architecture</span>
             </h3>
             <p className="text-slate-600 font-medium leading-relaxed">
               Building excellence since 2014. Your trusted partner for premium residential and commercial construction.
@@ -100,8 +100,8 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
                 <div>
-                  <a href="mailto:info@apexsystems.com" className="text-slate-600 font-medium hover:text-gold transition-colors duration-500 break-all">
-                    info@apexsystems.com
+                  <a href="mailto:info@apexarchitecture.com" className="text-slate-600 font-medium hover:text-gold transition-colors duration-500 break-all">
+                    info@apexarchitecture.com
                   </a>
                 </div>
               </div>
@@ -122,7 +122,7 @@ const Footer = () => {
         <div className="border-t border-slate-200 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-slate-500">
             <div>
-              © {new Date().getFullYear()} Apex Systems. All rights reserved.
+              © {new Date().getFullYear()} Apex Architecture. All rights reserved.
             </div>
             <div className="flex gap-8">
               <a href="#" className="hover:text-gold transition-colors duration-500">

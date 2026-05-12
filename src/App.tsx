@@ -7,7 +7,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-// Apex Systems - Luxury Residential Builder Landing Page
+// Apex Architecture - Luxury Residential Builder Landing Page
 function App() {
   return (
     <div className="min-h-screen bg-charcoal text-white font-sans selection:bg-gold selection:text-charcoal">

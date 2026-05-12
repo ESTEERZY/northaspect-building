@@ -3,7 +3,7 @@ import { Star, Quote } from 'lucide-react'
 const Testimonials = () => {
   const testimonials = [
     {
-      text: 'Apex Systems transformed our vision into reality. The attention to detail, quality craftsmanship, and professionalism exceeded all expectations. Our dream home is now a stunning reality.',
+      text: 'Apex Architecture transformed our vision into reality. The attention to detail, quality craftsmanship, and professionalism exceeded all expectations. Our dream home is now a stunning reality.',
       author: 'Sarah Johnson',
       role: 'Homeowner',
       rating: 5,
@@ -15,7 +15,7 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      text: 'Professional, transparent, and dedicated to quality. From consultation to completion, Apex Systems made our building experience stress-free and exceeded our expectations at every turn.',
+      text: 'Professional, transparent, and dedicated to quality. From consultation to completion, Apex Architecture made our building experience stress-free and exceeded our expectations at every turn.',
       author: 'Abraham Schlegel',
       role: 'Property Developer',
       rating: 5,
