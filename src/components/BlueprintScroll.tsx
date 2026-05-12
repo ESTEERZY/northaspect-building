@@ -10,22 +10,19 @@ const BlueprintScroll = () => {
     offset: ["start start", "end end"]
   });
 
-  // 3-Stage Transition Logic:
-  // 0.0 -> 0.33: Blueprint crossfades into Scaffold
-  // 0.33 -> 0.66: Scaffold holds focus
-  // 0.66 -> 1.0: Scaffold crossfades into Final Render
-
-  const blueprintOpacity = useTransform(scrollYProgress, [0, 0.33], [1, 0]);
-  const scaffoldOpacity = useTransform(scrollYProgress, [0, 0.33, 0.66, 1], [0, 1, 1, 0]);
-  const renderOpacity = useTransform(scrollYProgress, [0.66, 1], [0, 1]);
+  // 3-Stage Snappy Transition Logic
+  // Completes the transition faster and holds the final render longer
+  const blueprintOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const scaffoldOpacity = useTransform(scrollYProgress, [0, 0.15, 0.4, 0.55], [0, 1, 1, 0]);
+  const renderOpacity = useTransform(scrollYProgress, [0.4, 0.55], [0, 1]);
   
-  // Fading text out and in
-  const blueprintTextOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
-  const scaffoldTextOpacity = useTransform(scrollYProgress, [0.33, 0.5, 0.66], [0, 1, 0]);
-  const buildTextOpacity = useTransform(scrollYProgress, [0.85, 1], [0, 1]);
+  // Fading text out and in rapidly
+  const blueprintTextOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  const scaffoldTextOpacity = useTransform(scrollYProgress, [0.15, 0.25, 0.35, 0.45], [0, 1, 1, 0]);
+  const buildTextOpacity = useTransform(scrollYProgress, [0.55, 0.65], [0, 1]);
 
   return (
-    <section ref={containerRef} className="relative h-[300vh] bg-charcoal border-y border-white/10">
+    <section ref={containerRef} className="relative h-[200vh] bg-charcoal border-y border-white/10">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal">
         
         {/* Typography Overlays */}
@@ -64,7 +61,7 @@ const BlueprintScroll = () => {
           style={{ opacity: blueprintOpacity }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2831&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" 
             alt="Technical Architectural Blueprint" 
             className="w-full h-full object-cover"
             // Light grayscale and contrast to ensure black lines on clean background
@@ -78,7 +75,7 @@ const BlueprintScroll = () => {
           style={{ opacity: scaffoldOpacity }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1541888086225-ee8259d81d2a?q=80&w=2874&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1541888086225-ee8259d81d2a?q=80&w=1200&auto=format&fit=crop" 
             alt="Structural Scaffold Frame" 
             className="w-full h-full object-cover"
           />
@@ -91,7 +88,7 @@ const BlueprintScroll = () => {
           style={{ opacity: renderOpacity }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2950&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" 
             alt="Rendered Architecture" 
             className="w-full h-full object-cover"
           />
