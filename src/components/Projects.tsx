@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, MapPin, Ruler, Layers } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
@@ -99,15 +99,21 @@ const Projects = () => {
 
                 <div className="grid grid-cols-2 gap-x-8 gap-y-8 border-t border-white/10 pt-8 font-sans">
                   <div>
-                    <div className="text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">Location</div>
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
+                      <MapPin size={12} className="text-gold" /> Location
+                    </div>
                     <div className="text-sm font-medium text-white/90">{project.location}</div>
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">Scale</div>
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
+                      <Ruler size={12} className="text-gold" /> Scale
+                    </div>
                     <div className="text-sm font-medium text-white/90">{project.scale}</div>
                   </div>
                   <div className="col-span-2">
-                    <div className="text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">Materials</div>
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">
+                      <Layers size={12} className="text-gold" /> Materials
+                    </div>
                     <div className="inline-flex px-4 py-2 bg-white/5 border border-white/10 text-xs font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
                       {project.materials}
                     </div>

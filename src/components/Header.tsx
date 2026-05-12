@@ -16,7 +16,7 @@ const Header = () => {
       <nav className="container mx-auto px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-black tracking-tighter text-white uppercase flex items-center gap-3">
+          <div className="text-2xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-3">
             Apex <span className="text-gold">Architecture</span>
           </div>
 
@@ -67,7 +67,7 @@ const Header = () => {
               ))}
               <a
                 href="#contact"
-                className="bg-gold text-charcoal px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px] whitespace-nowrap"
+                className="bg-transparent text-gold border border-gold/50 shadow-[0_0_15px_rgba(197,160,89,0.3)] px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-gold hover:text-charcoal transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px] whitespace-nowrap"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Start a Project
