@@ -21,7 +21,7 @@ const Projects = () => {
       intent: 'Contemporary alpine retreat. Panoramic views. Sustainable, locally sourced materials.',
     },
     {
-      image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/images/urban-development.png',
       title: 'Urban Development',
       location: 'New York, NY',
       scale: '3,800 sqm',
