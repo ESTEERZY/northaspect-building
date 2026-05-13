@@ -3,7 +3,7 @@ import { ArrowRight, MapPin, Ruler, Layers } from 'lucide-react'
 const Projects = () => {
   const projects = [
     {
-      image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/images/villa-complex.png',
       title: 'Modern Villa Complex',
       location: 'Beverly Hills, CA',
       scale: '1,450 sqm',
