@@ -7,32 +7,36 @@ const Projects = () => {
       title: 'Modern Villa Complex',
       location: 'Beverly Hills, CA',
       scale: '1,450 sqm',
+      status: 'Completed',
       materials: 'Concrete & Glass',
-      intent: 'To merge brutalist concrete forms with the surrounding natural topography, creating a seamless indoor-outdoor living experience that honors the dramatic coastal landscape.',
+      intent: 'Merging brutalist forms with natural topography. Seamless indoor-outdoor living.',
     },
     {
       image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Luxury Estate',
       location: 'Aspen, CO',
       scale: '2,100 sqm',
+      status: 'Completed',
       materials: 'Timber & Stone',
-      intent: 'A contemporary alpine retreat designed to capture panoramic mountain views while utilizing sustainable, locally sourced materials to ensure environmental harmony.',
+      intent: 'Contemporary alpine retreat. Panoramic views. Sustainable, locally sourced materials.',
     },
     {
       image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Urban Development',
       location: 'New York, NY',
       scale: '3,800 sqm',
+      status: 'In Progress',
       materials: 'Steel & Glass',
-      intent: 'Redefining vertical living in the urban core. This project maximizes natural light penetration and offers expansive communal terraces within a highly efficient structural envelope.',
+      intent: 'Redefining vertical living. Maximized natural light penetration. Efficient structural envelope.',
     },
     {
       image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Architectural Masterpiece',
       location: 'Malibu, CA',
       scale: '950 sqm',
+      status: 'Completed',
       materials: 'Exposed Concrete',
-      intent: 'An exercise in minimalist precision. The structure acts as a quiet, monumental frame for the vast Pacific Ocean, employing clean geometry and elemental materiality.',
+      intent: 'Minimalist precision. Monumental frame for the Pacific. Clean geometry.',
     },
   ]
 
@@ -45,13 +49,13 @@ const Projects = () => {
           <div className="space-y-6 max-w-3xl animate-fade-in">
             <div className="inline-flex items-center gap-3 bg-charcoal border border-white/10 px-5 py-3 rounded-[2px] shadow-lg">
               <span className="w-2 h-2 bg-gold"></span>
-              <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase font-sans">Case Studies</span>
+              <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase font-sans">Selected Models</span>
             </div>
             <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight animate-slide-up">
-              Curated <span className="text-gold italic font-light">Gallery</span>
+              Technical <span className="text-gold italic font-light">Case Studies</span>
             </h2>
             <p className="text-xl text-white/60 font-sans font-medium animate-slide-up max-w-2xl" style={{ animationDelay: '0.1s' }}>
-              Explore our defining masterworks. Each project is a meticulous exploration of form, light, and context.
+              Defining masterworks. Meticulous exploration of form, light, and context.
             </p>
           </div>
 
@@ -106,9 +110,9 @@ const Projects = () => {
                   </div>
                   <div>
                     <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
-                      <Ruler size={12} className="text-gold" /> Scale
+                      <Ruler size={12} className="text-gold" /> Scale & Status
                     </div>
-                    <div className="text-sm font-medium text-white/90">{project.scale}</div>
+                    <div className="text-sm font-medium text-white/90">{project.scale} / {project.status}</div>
                   </div>
                   <div className="col-span-2">
                     <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">

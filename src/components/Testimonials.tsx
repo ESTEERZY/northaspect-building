@@ -3,25 +3,25 @@ import { Star, Quote } from 'lucide-react'
 const Testimonials = () => {
   const testimonials = [
     {
-      text: 'Apex Architecture transformed our vision into reality. The attention to detail, quality craftsmanship, and professionalism exceeded all expectations. Our dream home is now a stunning reality.',
+      text: 'Transformed our vision into reality. Attention to detail. Exceeded all expectations.',
       author: 'Sarah Johnson',
       role: 'Homeowner',
       rating: 5,
     },
     {
-      text: 'Outstanding work from start to finish. The team kept us informed at every stage, delivered on time, and the final result is simply breathtaking. Highly recommend for any construction project.',
+      text: 'Outstanding work. Delivered on time. The final result is simply breathtaking.',
       author: 'Robert Smith',
       role: 'Business Owner',
       rating: 5,
     },
     {
-      text: 'Professional, transparent, and dedicated to quality. From consultation to completion, Apex Architecture made our building experience stress-free and exceeded our expectations at every turn.',
+      text: 'Professional and dedicated to quality. Made our building experience stress-free.',
       author: 'Abraham Schlegel',
       role: 'Property Developer',
       rating: 5,
     },
     {
-      text: 'Completed on time, within budget, and with exceptional quality. Their project management and skilled team made the entire process seamless. The best construction company we have worked with.',
+      text: 'Completed on time and within budget. Exceptional quality and project management.',
       author: 'Michael Brown',
       role: 'Commercial Client',
       rating: 5,
@@ -93,7 +93,7 @@ const Testimonials = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <p className="text-xl text-white/60 font-medium mb-6">Join hundreds of satisfied clients who trusted us with their projects.</p>
+          <p className="text-xl text-white/60 font-medium mb-6 tracking-tight">Join hundreds of satisfied clients.</p>
           <a
             href="#contact"
             className="group bg-gold text-white px-12 py-5 text-base font-black tracking-tighter uppercase hover:bg-charcoal transition-all duration-500 inline-flex items-center gap-3 shadow-[0_4px_20px_rgba(197,160,89,0.3)] rounded-[2px]"

@@ -35,12 +35,12 @@ const Hero = () => {
 
 
           <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-[1.02]">
-            The Future of<br />
-            <span className="text-gold">Residential Building.</span>
+            Structural Integrity.<br />
+            <span className="text-gold">Residential Form.</span>
           </motion.h1>
 
           <motion.p variants={fadeInUp} className="text-xl lg:text-2xl font-medium text-white/85 mb-12 max-w-2xl mx-auto leading-relaxed">
-            We design and construct masterworks that redefine modern living. Experience unparalleled craftsmanship and a seamless architectural journey from concept to completion.
+            Masterworks of modern living. Unparalleled craftsmanship. A seamless architectural journey.
           </motion.p>
 
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">

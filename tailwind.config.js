@@ -15,7 +15,7 @@ export default {
         offwhite: '#F8F9FA'
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         heading: ['"Playfair Display"', 'serif'],
       },
       animation: {

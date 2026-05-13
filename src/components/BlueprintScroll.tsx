@@ -5,61 +5,41 @@ const BlueprintScroll = () => {
   const containerRef = useRef(null);
   
   // Track scroll progress as the section moves through the viewport
+  // We use "start center" to "end center" to focus the animation in the middle of the screen
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start center", "end center"]
   });
 
-  // Parallax Y movement for the "heavy sliding door" effect
-  const parallaxY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-
-  // Crossfade Opacities
-  // Blueprint drops to 15% rather than 0% to create the authentic 'ghost' overlay
-  const blueprintOpacity = useTransform(scrollYProgress, [0.2, 0.5], [1, 0.15]);
-  const scaffoldOpacity = useTransform(scrollYProgress, [0.2, 0.4, 0.6, 0.8], [0, 1, 1, 0]);
-  const renderOpacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
+  // Calculate the percentage for the mask and the line
+  // Ranges from 100 to 0 to inset from the bottom
+  const insetBottom = useTransform(scrollYProgress, [0, 1], [100, 0]);
+  const clipPath = useTransform(insetBottom, (val) => `inset(0% 0% ${val}% 0%)`);
   
-  // Fading text overlays
-  const blueprintTextOpacity = useTransform(scrollYProgress, [0.1, 0.3], [1, 0]);
-  const scaffoldTextOpacity = useTransform(scrollYProgress, [0.3, 0.4, 0.6, 0.7], [0, 1, 1, 0]);
-  const buildTextOpacity = useTransform(scrollYProgress, [0.7, 0.9], [0, 1]);
+  // For the scanner line, we position it at the exact edge of the mask
+  // It moves from 0% to 100% from the top
+  const lineTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={containerRef} className="relative h-[80vh] md:h-[100vh] overflow-hidden bg-charcoal border-y border-white/10">
-      
-      {/* Typography Overlays - Pinned to Center of Container */}
-      <div className="absolute inset-0 z-40 flex flex-col items-center justify-center pointer-events-none">
-        <motion.div style={{ opacity: blueprintTextOpacity }} className="absolute">
-          <h2 className="text-4xl md:text-7xl font-bold text-white/90 uppercase tracking-[0.2em] bg-charcoal/40 px-10 py-5 backdrop-blur-md border border-white/20 rounded-[2px] shadow-2xl">
-            Foundation
-          </h2>
-        </motion.div>
-
-        <motion.div style={{ opacity: scaffoldTextOpacity }} className="absolute">
-          <h2 className="text-4xl md:text-7xl font-bold text-white/90 uppercase tracking-[0.2em] bg-charcoal/40 px-10 py-5 backdrop-blur-md border border-white/20 rounded-[2px] shadow-2xl">
-            Structure
-          </h2>
-        </motion.div>
+    <section ref={containerRef} className="relative h-[150vh] bg-charcoal border-y border-white/10">
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
         
-        <motion.div style={{ opacity: buildTextOpacity }} className="absolute">
-          <h2 className="text-4xl md:text-7xl font-bold text-gold uppercase tracking-[0.2em] bg-charcoal/60 px-10 py-5 backdrop-blur-md border border-gold/40 rounded-[2px] shadow-[0_0_50px_rgba(197,160,89,0.3)]">
-            Realized
-          </h2>
-        </motion.div>
-      </div>
+        {/* Layer 1: The Blueprint (Bottom Layer) */}
+        <div className="absolute inset-0 z-10 w-full h-full">
+          <img 
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" 
+            alt="Technical Architectural Blueprint" 
+            className="w-full h-full object-cover"
+            style={{ filter: 'grayscale(100%) contrast(1.5) brightness(0.8)' }}
+          />
+          {/* Subtle overlay to make it look like line-work on charcoal */}
+          <div className="absolute inset-0 bg-charcoal/50 mix-blend-multiply"></div>
+        </div>
 
-      {/* 
-        PARALLAX WRAPPER: 
-        Height is 120% of container so it has room to translate up/down without showing background.
-      */}
-      <motion.div 
-        className="absolute inset-0 w-full h-[120%] -top-[10%]"
-        style={{ y: parallaxY }}
-      >
-        {/* LAYER 3: The Rendered Image (Base Layer for Parallax) */}
+        {/* Layer 2: The High-Res Finished Photo (Masked) */}
         <motion.div 
-          className="absolute inset-0 z-10"
-          style={{ opacity: renderOpacity }}
+          className="absolute inset-0 z-20 w-full h-full"
+          style={{ clipPath }}
         >
           <img 
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" 
@@ -68,35 +48,21 @@ const BlueprintScroll = () => {
           />
         </motion.div>
 
-        {/* LAYER 2: The Scaffold / Structural Frame Image */}
+        {/* The Scanner Line */}
         <motion.div 
-          className="absolute inset-0 z-20 bg-charcoal"
-          style={{ opacity: scaffoldOpacity }}
-        >
-          <img 
-            src="https://images.unsplash.com/photo-1541888086225-ee8259d81d2a?q=80&w=1200&auto=format&fit=crop" 
-            alt="Structural Scaffold Frame" 
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
+          className="absolute left-0 w-full h-[1px] bg-gold z-30 shadow-[0_0_15px_rgba(197,160,89,1)]"
+          style={{ top: lineTop }}
+        ></motion.div>
 
-        {/* LAYER 1: The Blueprint Image (Top layer, drops to 15% opacity to ghost over the final image) */}
-        <motion.div 
-          className="absolute inset-0 z-30 bg-white"
-          style={{ opacity: blueprintOpacity }}
-        >
-          <img 
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" 
-            alt="Technical Architectural Blueprint" 
-            className="w-full h-full object-cover"
-            style={{ filter: 'grayscale(100%) contrast(1.2)' }}
-          />
-        </motion.div>
+        {/* Overlay Typography */}
+        <div className="absolute inset-0 z-40 flex items-center justify-center pointer-events-none">
+          <h2 className="text-4xl md:text-7xl font-black text-white/90 uppercase tracking-[0.2em] mix-blend-difference drop-shadow-2xl text-center leading-[1.2]">
+            Concept <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-white">To Reality</span>
+          </h2>
+        </div>
 
-        {/* Overlay Gradients */}
-        <div className="absolute inset-0 z-50 bg-gradient-to-t from-charcoal via-transparent to-charcoal/30"></div>
-      </motion.div>
-
+      </div>
     </section>
   );
 };

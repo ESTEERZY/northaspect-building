@@ -5,22 +5,22 @@ const Standards = () => {
     {
       image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'Residential Construction',
-      description: 'Custom homes, renovations, and additions built to your exact specifications with premium materials and craftsmanship.',
+      description: 'Custom homes. Premium materials. Exact specifications.',
     },
     {
       image: 'https://images.pexels.com/photos/273209/pexels-photo-273209.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'Commercial Projects',
-      description: 'Office buildings, retail spaces, and multi-unit developments delivered on time and within budget.',
+      description: 'Office buildings. Retail spaces. Delivered on time.',
     },
     {
       image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'Renovation & Remodeling',
-      description: 'Transform existing spaces with expert renovations that enhance functionality and aesthetic appeal.',
+      description: 'Transform existing spaces. Enhanced functionality. Aesthetic appeal.',
     },
     {
       image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600',
       title: 'Project Management',
-      description: 'End-to-end project coordination ensuring quality, efficiency, and seamless execution from start to finish.',
+      description: 'End-to-end coordination. Quality execution. Seamless delivery.',
     },
   ];
 
@@ -45,8 +45,8 @@ const Standards = () => {
             Comprehensive Construction <span className="text-gold">Solutions</span>
           </h2>
 
-          <p className="text-xl text-white/60 font-medium max-w-2xl mx-auto leading-relaxed">
-            From concept to completion, we deliver exceptional results across all construction disciplines.
+          <p className="text-xl text-white/60 font-medium max-w-2xl mx-auto leading-relaxed tracking-tight">
+            From concept to completion. Exceptional results. All disciplines.
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ const Standards = () => {
           className="mt-16 text-center bg-white/5 border border-gold/20 p-12 shadow-sm rounded-[2px]"
         >
           <h3 className="text-3xl font-black tracking-tighter text-white mb-4">Need a Custom Solution?</h3>
-          <p className="text-lg text-white/60 mb-8 font-medium">Let's discuss your unique project requirements and create a tailored approach.</p>
+          <p className="text-lg text-white/60 mb-8 font-medium tracking-tight">Discuss your unique project. Create a tailored approach.</p>
           <a
             href="#contact"
             className="group bg-gold text-charcoal px-12 py-5 text-base font-black tracking-tighter uppercase hover:bg-charcoal hover:text-white transition-all duration-500 inline-flex items-center gap-3 shadow-[0_4px_20px_rgba(197,160,89,0.3)] rounded-[2px]"

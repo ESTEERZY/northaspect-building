@@ -45,16 +45,16 @@ const Contact = () => {
               Begin Your <span className="text-gold">Journey.</span>
             </h2>
 
-            <p className="text-xl text-white/60 font-medium leading-relaxed">
-              Tell us about your dream project. Our architectural consultants will be in touch within one business day to start your bespoke building experience.
+            <p className="text-xl text-white/60 font-medium leading-relaxed tracking-tight">
+              Tell us about your project. Our consultants will respond within one business day.
             </p>
 
             {/* Process Steps */}
             <div className="space-y-6 pt-6">
               {[
-                { num: '01', label: 'Initial Consultation', desc: 'We discuss your vision, budget, and lifestyle needs.' },
-                { num: '02', label: 'Bespoke Design', desc: 'Our architects craft a design tailored to you.' },
-                { num: '03', label: 'Expert Construction', desc: 'Precision build with real-time milestone updates.' },
+                { num: '01', label: 'Consultation', desc: 'Discuss vision and budget.' },
+                { num: '02', label: 'Design', desc: 'Tailored architectural drafting.' },
+                { num: '03', label: 'Construction', desc: 'Precision build. Real-time updates.' },
               ].map((item) => (
                 <div key={item.num} className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-charcoal text-gold flex items-center justify-center rounded-[2px] text-sm font-black">
@@ -78,7 +78,7 @@ const Contact = () => {
             className="lg:col-span-3 bg-white/5 p-10 lg:p-12 border border-white/10 shadow-[0_8px_40px_rgba(0,0,0,0.3)] rounded-[2px]"
           >
             <h3 className="text-3xl font-bold text-white mb-2">Request a Consultation</h3>
-            <p className="text-lg text-white/60 mb-8 font-medium">Share your vision and we'll be in touch within one business day.</p>
+            <p className="text-lg text-white/60 mb-8 font-medium tracking-tight">Share your vision. We will be in touch.</p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">

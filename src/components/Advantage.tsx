@@ -5,17 +5,17 @@ const Advantage = () => {
     {
       image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Modern Architecture',
-      description: 'Award-winning architectural designs that maximize natural light and open living spaces.',
+      description: 'Award-winning designs. Maximized natural light. Open living spaces.',
     },
     {
       image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Clean Timber Finishes',
-      description: 'Premium, sustainably sourced timber finishes that add warmth and character to every room.',
+      description: 'Premium timber finishes. Sustainably sourced. Added warmth and character.',
     },
     {
       image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Luxury Kitchens',
-      description: 'State-of-the-art culinary spaces featuring stone benchtops and high-end integrated appliances.',
+      description: 'State-of-the-art culinary spaces. Stone benchtops. Integrated appliances.',
     },
   ];
 
@@ -51,8 +51,8 @@ const Advantage = () => {
             The Apex <span className="text-gold">Advantage</span>
           </h2>
 
-          <p className="text-xl text-white/60 font-medium leading-relaxed max-w-2xl mx-auto">
-            We don't just build houses. We craft high-end, custom living spaces designed to elevate your lifestyle.
+          <p className="text-xl text-white/60 font-medium leading-relaxed max-w-2xl mx-auto tracking-tight">
+            We craft high-end, custom living spaces. Designed to elevate your lifestyle.
           </p>
         </motion.div>
 
