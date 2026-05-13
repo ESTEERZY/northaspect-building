@@ -13,7 +13,7 @@ const Advantage = () => {
       description: 'Premium timber finishes. Sustainably sourced. Added warmth and character.',
     },
     {
-      image: 'https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/images/luxury-kitchen.png',
       title: 'Luxury Kitchens',
       description: 'State-of-the-art culinary spaces. Stone benchtops. Integrated appliances.',
     },
