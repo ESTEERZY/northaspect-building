@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const Advantage = () => {
   const advantages = [
     {
-      image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/images/modern-residential.png',
       title: 'Modern Architecture',
       description: 'Award-winning designs. Maximized natural light. Open living spaces.',
     },
