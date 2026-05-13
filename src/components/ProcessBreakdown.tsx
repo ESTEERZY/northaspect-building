@@ -54,7 +54,7 @@ const ProcessBreakdown = () => {
             <motion.div
               key={step.id}
               variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } } }}
-              className="bg-darkgray border border-white/5 rounded-[2px] p-8 hover:border-gold/30 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden"
+              className="bg-darkgray border border-white/5 rounded-[2px] p-8 hover:border-gold/30 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden flex flex-col h-full"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -z-10 group-hover:bg-gold/10 transition-colors duration-500"></div>
 
@@ -62,14 +62,14 @@ const ProcessBreakdown = () => {
                 {step.id}
               </div>
 
-              <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors duration-300">
+              <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-gold transition-colors duration-300 min-h-[64px] flex items-center">
                 {step.title}
               </h4>
-              <p className="text-white/60 mb-8 min-h-[80px]">
+              <p className="text-white/60 mb-8 min-h-[72px]">
                 {step.description}
               </p>
 
-              <div className="relative rounded-[2px] overflow-hidden border border-white/10 shadow-lg aspect-[4/3]">
+              <div className="mt-auto relative rounded-[2px] overflow-hidden border border-white/10 shadow-lg aspect-[4/3] w-full">
                 <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img
                   src={step.image}
