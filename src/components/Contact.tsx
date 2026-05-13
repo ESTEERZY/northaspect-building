@@ -36,10 +36,6 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="lg:col-span-2 space-y-8"
           >
-            <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-gold/40 px-5 py-3 rounded-[2px] shadow-lg">
-              <span className="w-2 h-2 bg-gold animate-pulse"></span>
-              <span className="text-xs font-black tracking-[0.2em] text-white/70 uppercase">Seamless Inquiry</span>
-            </div>
 
             <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight">
               Begin Your <span className="text-gold">Journey.</span>

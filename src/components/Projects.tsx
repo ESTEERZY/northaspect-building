@@ -47,10 +47,6 @@ const Projects = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
           <div className="space-y-6 max-w-3xl animate-fade-in">
-            <div className="inline-flex items-center gap-3 bg-charcoal border border-white/10 px-5 py-3 rounded-[2px] shadow-lg">
-              <span className="w-2 h-2 bg-gold"></span>
-              <span className="text-xs font-black tracking-[0.2em] text-white/80 uppercase font-sans">Selected Models</span>
-            </div>
             <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white leading-tight animate-slide-up">
               Technical <span className="text-gold italic font-light">Case Studies</span>
             </h2>

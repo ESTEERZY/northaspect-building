@@ -33,10 +33,6 @@ const Testimonials = () => {
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-6">
-          <div className="inline-flex items-center gap-3 bg-white/5 backdrop-blur-md border border-gold/30 px-5 py-3 rounded-[2px]">
-            <span className="w-2 h-2 bg-gold"></span>
-            <span className="text-xs font-black tracking-[0.2em] text-gold uppercase">Client Testimonials</span>
-          </div>
 
           <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight max-w-3xl mx-auto">
             Trusted by <span className="text-gold">Hundreds</span> of Satisfied Clients

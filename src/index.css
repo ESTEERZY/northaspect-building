@@ -14,7 +14,8 @@
   }
 
   body {
-    @apply bg-charcoal text-white font-sans tracking-tight antialiased;
+    @apply bg-charcoal text-white font-sans antialiased;
+    letter-spacing: -0.02em;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
