@@ -28,7 +28,7 @@ const ProcessBreakdown = () => {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
@@ -53,7 +53,7 @@ const ProcessBreakdown = () => {
           {steps.map((step) => (
             <motion.div
               key={step.id}
-              variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } } }}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } } }}
               className="bg-darkgray border border-white/5 rounded-[2px] p-8 hover:border-gold/30 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden flex flex-col h-full"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -z-10 group-hover:bg-gold/10 transition-colors duration-500"></div>

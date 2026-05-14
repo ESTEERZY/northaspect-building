@@ -56,7 +56,7 @@ const Projects = () => {
           </div>
 
           <a
-            href="#contact"
+            href="#results"
             className="group border border-white/20 text-white px-10 py-5 text-sm font-bold tracking-widest uppercase hover:bg-gold hover:text-charcoal hover:border-gold transition-all duration-500 inline-flex items-center gap-3 rounded-[2px] animate-slide-up font-sans"
             style={{ animationDelay: '0.2s' }}
           >

@@ -7,7 +7,7 @@ const About = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Image Side */}
           <motion.div 
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -27,7 +27,7 @@ const About = () => {
 
           {/* Text Side */}
           <motion.div 
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}

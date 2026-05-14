@@ -25,7 +25,7 @@ const Advantage = () => {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } }
   };
 
@@ -36,7 +36,7 @@ const Advantage = () => {
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
