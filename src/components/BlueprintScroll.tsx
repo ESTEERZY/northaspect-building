@@ -11,14 +11,9 @@ const BlueprintScroll = () => {
     offset: ["start center", "end center"]
   });
 
-  // Calculate the percentage for the mask and the line
-  // Ranges from 100 to 0 to inset from the bottom
-  const insetBottom = useTransform(scrollYProgress, [0, 1], [100, 0]);
-  const clipPath = useTransform(insetBottom, (val) => `inset(0% 0% ${val}% 0%)`);
-  
-  // For the scanner line, we position it at the exact edge of the mask
-  // It moves from 0% to 100% from the top
-  const lineTop = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  // Calculate opacity for the transition
+  // We fade the finished photo in as we scroll through the center of the section
+  const opacity = useTransform(scrollYProgress, [0.1, 0.6], [0, 1]);
 
   return (
     <section ref={containerRef} className="relative h-[150vh] bg-charcoal border-y border-white/10">
@@ -36,10 +31,10 @@ const BlueprintScroll = () => {
           <div className="absolute inset-0 bg-charcoal/50 mix-blend-multiply"></div>
         </div>
 
-        {/* Layer 2: The High-Res Finished Photo (Masked) */}
+        {/* Layer 2: The High-Res Finished Photo (Fading In) */}
         <motion.div 
           className="absolute inset-0 z-20 w-full h-full"
-          style={{ clipPath }}
+          style={{ opacity }}
         >
           <img 
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" 
@@ -47,12 +42,6 @@ const BlueprintScroll = () => {
             className="w-full h-full object-cover"
           />
         </motion.div>
-
-        {/* The Scanner Line */}
-        <motion.div 
-          className="absolute left-0 w-full h-[1px] bg-gold z-30 shadow-[0_0_15px_rgba(197,160,89,1)]"
-          style={{ top: lineTop }}
-        ></motion.div>
 
         {/* Overlay Typography */}
         <div className="absolute inset-0 z-40 flex items-center justify-center pointer-events-none">
@@ -64,6 +53,7 @@ const BlueprintScroll = () => {
 
       </div>
     </section>
+
   );
 };
 
