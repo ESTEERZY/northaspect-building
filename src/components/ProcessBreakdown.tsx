@@ -58,7 +58,7 @@ const ProcessBreakdown = () => {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-bl-full -z-10 group-hover:bg-gold/10 transition-colors duration-500"></div>
 
-              <div className="text-6xl font-black text-white/5 mb-6 group-hover:text-gold/20 transition-colors duration-300">
+              <div className="text-6xl font-black text-white/20 mb-6 group-hover:text-gold/50 transition-colors duration-300">
                 {step.id}
               </div>
 
