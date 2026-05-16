@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const BlueprintToggle = () => {
   const [view, setView] = useState<'blueprint' | 'reality'>('blueprint');
 
   return (
-    <section id="concept" className="py-24 bg-charcoal relative overflow-hidden">
+    <section id="concept" className="py-24 bg-[#121212] relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header Row */}
@@ -41,7 +41,7 @@ const BlueprintToggle = () => {
         </div>
 
         {/* Display Canvas Wrapper */}
-        <div className="relative w-full aspect-[16/9] overflow-hidden border border-white/10 rounded-[2px] shadow-2xl group">
+        <div className="relative w-full aspect-[16/9] overflow-hidden border border-white/10 rounded-[2px] shadow-2xl bg-charcoal">
           
           {/* Layer 1: The Base (Reality Photo) */}
           <div className="absolute inset-0 w-full h-full">
@@ -52,12 +52,26 @@ const BlueprintToggle = () => {
             />
           </div>
 
-          {/* Layer 2: The Blueprint Mask */}
+          {/* Layer 1.5: The CAD Blueprint Drawing (Option A) */}
           <motion.div 
             initial={false}
             animate={{ opacity: view === 'blueprint' ? 1 : 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute inset-0 z-10 bg-[#001D3D]/90 mix-blend-multiply pointer-events-none"
+            className="absolute inset-0 z-10 w-full h-full"
+          >
+            <img 
+              src="/images/blueprint-drawing.png" 
+              alt="Architectural Schematic" 
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+
+          {/* Layer 2: The Blueprint Tint & Grid Overlay */}
+          <motion.div 
+            initial={false}
+            animate={{ opacity: view === 'blueprint' ? 1 : 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute inset-0 z-20 bg-[#001D3D]/80 mix-blend-multiply pointer-events-none"
             style={{ 
               backgroundImage: `
                 linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
@@ -67,32 +81,49 @@ const BlueprintToggle = () => {
             }}
           />
 
-          {/* Layer 3: Technical Annotations (CAD Style) */}
+          {/* Layer 3: Technical Annotations & Room Labels */}
           <motion.div 
             initial={false}
             animate={{ opacity: view === 'blueprint' ? 1 : 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="absolute inset-0 z-20 pointer-events-none font-mono text-[10px] tracking-tighter text-white/60 p-8"
+            className="absolute inset-0 z-30 pointer-events-none font-mono text-[10px] tracking-tighter text-white/60 p-8"
           >
-            {/* Top Left Spec */}
+            {/* Room Labels */}
+            <div className="absolute top-[30%] left-[20%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ GARAGE ]</div>
+            <div className="absolute top-[40%] left-[50%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ ENTRY ]</div>
+            <div className="absolute top-[20%] right-[30%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ BED 1 ]</div>
+            <div className="absolute bottom-[30%] right-[20%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ ALFRESCO ]</div>
+
+            {/* Technical Specs - Top Left */}
             <div className="absolute top-8 left-8 space-y-1">
               <div className="text-gold font-black border-l-2 border-gold pl-2">STR_REINFORCED_CONC_FOOTING</div>
               <div>COORD: 34.0522° N, 118.2437° W</div>
               <div>ELEV: +145.20m ASL</div>
             </div>
 
-            {/* Bottom Right Dimensions */}
+            {/* Dimensions - Bottom Right */}
             <div className="absolute bottom-8 right-8 text-right space-y-1">
               <div className="text-gold font-black border-r-2 border-gold pr-2">SPEC_X_1450_SQM</div>
               <div>WALL_THICKNESS: 350MM (R-VALUE: 24.5)</div>
               <div>GLASS_TEMP_DBL_GLAZED_LOW_E</div>
             </div>
 
+            {/* Crosshairs & Dimension Lines */}
+            <div className="absolute top-1/2 left-8 w-16 h-[1px] bg-white/30">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-3 bg-white/50"></div>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-3 bg-white/50"></div>
+            </div>
+            
+            <div className="absolute bottom-24 right-1/2 w-[1px] h-24 bg-white/30">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-[1px] bg-white/50"></div>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-[1px] bg-white/50"></div>
+            </div>
+
             {/* Corner Markers */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-gold/40"></div>
-            <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-gold/40"></div>
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-gold/40"></div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-gold/40"></div>
+            <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-gold/40"></div>
+            <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-gold/40"></div>
+            <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-gold/40"></div>
+            <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-gold/40"></div>
 
             {/* Center Measurement Line */}
             <div className="absolute top-1/2 left-1/4 right-1/4 h-[1px] bg-white/20 flex items-center justify-center">
@@ -100,16 +131,23 @@ const BlueprintToggle = () => {
             </div>
           </motion.div>
 
-          {/* Subtle Scanner Glow (Optional but adds premium feel) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/5 to-transparent h-1/4 animate-pulse pointer-events-none opacity-20"></div>
+          {/* Scanner Glow */}
+          <motion.div 
+            animate={{ top: ["0%", "100%", "0%"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            className="absolute left-0 w-full h-[2px] bg-gold/30 z-40 pointer-events-none opacity-50 blur-[2px]"
+          />
         </div>
 
         {/* Status Text Indicator */}
-        <div className="mt-6 flex items-center gap-3">
-          <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></div>
-          <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/50 uppercase">
-            // CURRENT VIEW: {view === 'blueprint' ? 'ARCHITECTURAL SCHEMATIC' : 'DELIVERED STRUCTURE'}
-          </span>
+        <div className="mt-6 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></div>
+            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/50 uppercase">
+              // CURRENT VIEW: {view === 'blueprint' ? 'ARCHITECTURAL SCHEMATIC' : 'DELIVERED STRUCTURE'}
+            </span>
+          </div>
+          <span className="text-[8px] font-mono text-white/20 tracking-widest uppercase">Apex Architecture // Structural Protocol v4.0</span>
         </div>
 
       </div>
