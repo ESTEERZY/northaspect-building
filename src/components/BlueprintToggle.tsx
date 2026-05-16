@@ -89,10 +89,9 @@ const BlueprintToggle = () => {
             className="absolute inset-0 z-30 pointer-events-none font-mono text-[10px] tracking-tighter text-white/60 p-8"
           >
             {/* Room Labels */}
-            <div className="absolute top-[30%] left-[20%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ GARAGE ]</div>
-            <div className="absolute top-[40%] left-[50%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ ENTRY ]</div>
-            <div className="absolute top-[20%] right-[30%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ BED 1 ]</div>
-            <div className="absolute bottom-[30%] right-[20%] px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest">[ ALFRESCO ]</div>
+            <div className="absolute top-[65%] left-[15%] -translate-x-1/2 -translate-y-1/2 px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest pointer-events-none">[ GARAGE ]</div>
+            <div className="absolute top-[50%] left-[45%] -translate-x-1/2 -translate-y-1/2 px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest pointer-events-none">[ ENTRY ]</div>
+            <div className="absolute top-[20%] right-[15%] translate-x-1/2 -translate-y-1/2 px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest pointer-events-none">[ ALFRESCO ]</div>
 
             {/* Technical Specs - Top Left */}
             <div className="absolute top-8 left-8 space-y-1">
