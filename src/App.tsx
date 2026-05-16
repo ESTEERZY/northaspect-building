@@ -1,6 +1,6 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
-import BlueprintScroll from './components/BlueprintScroll'
+import BlueprintToggle from './components/BlueprintToggle'
 import ProcessBreakdown from './components/ProcessBreakdown'
 import Stats from './components/Stats'
 import About from './components/About'
@@ -15,7 +15,7 @@ function App() {
     <div className="min-h-screen bg-charcoal text-white font-sans selection:bg-gold selection:text-charcoal">
       <Header />
       <Hero />
-      <BlueprintScroll />
+      <BlueprintToggle />
       <ProcessBreakdown />
       <Stats />
       <About />
