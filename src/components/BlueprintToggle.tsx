@@ -88,15 +88,26 @@ const BlueprintToggle = () => {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute inset-0 z-30 pointer-events-none font-mono text-[10px] tracking-tighter text-white/60 p-8"
           >
-            {/* Room Labels - Vertical Stack on Mobile, Spatial on Desktop */}
-            <div className="absolute top-[80%] left-[50%] md:top-[65%] md:left-[15%] -translate-x-1/2 -translate-y-1/2 px-3 md:px-4 py-1.5 border border-gold/30 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-[0.2em] pointer-events-none transition-all duration-500 shadow-xl">
-              [ <span className="md:hidden">G</span><span className="hidden md:inline">SECURE DOUBLE GARAGE</span> ]
+            {/* Room Labels - Numeric Circles on Mobile, Full Labels on Desktop */}
+            <div className="absolute top-[75%] left-[50%] md:top-[65%] md:left-[15%] -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
+              <div className="flex items-center justify-center w-6 h-6 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold/50 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-widest shadow-[0_0_15px_rgba(197,160,89,0.2)] md:px-4 md:py-1.5">
+                <span className="md:hidden">01</span>
+                <span className="hidden md:inline">[ SECURE DOUBLE GARAGE ]</span>
+              </div>
             </div>
-            <div className="absolute top-[50%] left-[50%] md:top-[50%] md:left-[45%] -translate-x-1/2 -translate-y-1/2 px-3 md:px-4 py-1.5 border border-gold/30 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-[0.2em] pointer-events-none transition-all duration-500 shadow-xl">
-              [ <span className="md:hidden">E</span><span className="hidden md:inline">MAIN ENTRY PORTICO</span> ]
+
+            <div className="absolute top-[50%] left-[50%] md:top-[50%] md:left-[45%] -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
+              <div className="flex items-center justify-center w-6 h-6 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold/50 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-widest shadow-[0_0_15px_rgba(197,160,89,0.2)] md:px-4 md:py-1.5">
+                <span className="md:hidden">02</span>
+                <span className="hidden md:inline">[ MAIN ENTRY PORTICO ]</span>
+              </div>
             </div>
-            <div className="absolute top-[20%] left-[50%] md:top-[20%] md:right-[15%] md:left-auto -translate-x-1/2 -translate-y-1/2 px-3 md:px-4 py-1.5 border border-gold/30 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-[0.2em] pointer-events-none transition-all duration-500 shadow-xl">
-              [ <span className="md:hidden">A</span><span className="hidden md:inline">ALFRESCO ENTERTAINING</span> ]
+
+            <div className="absolute top-[25%] left-[50%] md:top-[20%] md:right-[15%] md:left-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
+              <div className="flex items-center justify-center w-6 h-6 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold/50 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-widest shadow-[0_0_15px_rgba(197,160,89,0.2)] md:px-4 md:py-1.5">
+                <span className="md:hidden">03</span>
+                <span className="hidden md:inline">[ ALFRESCO ENTERTAINING ]</span>
+              </div>
             </div>
 
             {/* Technical Metadata - Strictly in Corners */}
@@ -142,11 +153,29 @@ const BlueprintToggle = () => {
           />
         </div>
 
+        {/* Blueprint Legend - Mobile Only */}
+        <div className="md:hidden mt-6 bg-charcoal border border-white/5 p-4 rounded-[2px]">
+          <div className="grid grid-cols-1 gap-3">
+            <div className="flex items-center gap-3">
+              <span className="w-5 h-5 flex items-center justify-center border border-gold/50 text-[8px] font-black text-gold rounded-full">01</span>
+              <span className="text-[10px] font-mono tracking-widest text-white/60 uppercase">SECURE DOUBLE GARAGE</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="w-5 h-5 flex items-center justify-center border border-gold/50 text-[8px] font-black text-gold rounded-full">02</span>
+              <span className="text-[10px] font-mono tracking-widest text-white/60 uppercase">MAIN ENTRY PORTICO</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="w-5 h-5 flex items-center justify-center border border-gold/50 text-[8px] font-black text-gold rounded-full">03</span>
+              <span className="text-[10px] font-mono tracking-widest text-white/60 uppercase">ALFRESCO ENTERTAINING</span>
+            </div>
+          </div>
+        </div>
+
         {/* Status Text Indicator */}
-        <div className="mt-6 flex items-center justify-between">
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-1.5 h-1.5 bg-gold rounded-full animate-pulse"></div>
-            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/50 uppercase">
+            <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-white/50 uppercase text-center md:text-left">
               // CURRENT VIEW: {view === 'blueprint' ? 'ARCHITECTURAL SCHEMATIC' : 'DELIVERED STRUCTURE'}
             </span>
           </div>
