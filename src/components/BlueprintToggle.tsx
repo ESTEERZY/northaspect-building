@@ -89,43 +89,49 @@ const BlueprintToggle = () => {
             className="absolute inset-0 z-30 pointer-events-none font-mono text-[10px] tracking-tighter text-white/60 p-8"
           >
             {/* Room Labels */}
-            <div className="absolute top-[65%] left-[15%] -translate-x-1/2 -translate-y-1/2 px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest pointer-events-none">[ GARAGE ]</div>
-            <div className="absolute top-[50%] left-[45%] -translate-x-1/2 -translate-y-1/2 px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest pointer-events-none">[ ENTRY ]</div>
-            <div className="absolute top-[20%] right-[15%] translate-x-1/2 -translate-y-1/2 px-3 py-1 border border-white/20 bg-charcoal/40 text-[9px] font-bold text-gold tracking-widest pointer-events-none">[ ALFRESCO ]</div>
+            <div className="absolute top-[80%] left-[50%] md:top-[65%] md:left-[15%] -translate-x-1/2 -translate-y-1/2 px-2 md:px-4 py-1.5 border border-white/20 bg-charcoal/60 backdrop-blur-sm text-[10px] md:text-sm font-black text-gold tracking-[0.2em] pointer-events-none transition-all duration-500">
+              [ <span className="md:hidden">G</span><span className="hidden md:inline">SECURE DOUBLE GARAGE</span> ]
+            </div>
+            <div className="absolute top-[50%] left-[50%] md:top-[50%] md:left-[45%] -translate-x-1/2 -translate-y-1/2 px-2 md:px-4 py-1.5 border border-white/20 bg-charcoal/60 backdrop-blur-sm text-[10px] md:text-sm font-black text-gold tracking-[0.2em] pointer-events-none transition-all duration-500">
+              [ <span className="md:hidden">E</span><span className="hidden md:inline">MAIN ENTRY PORTICO</span> ]
+            </div>
+            <div className="absolute top-[20%] left-[50%] md:top-[20%] md:right-[15%] md:left-auto -translate-x-1/2 -translate-y-1/2 px-2 md:px-4 py-1.5 border border-white/20 bg-charcoal/60 backdrop-blur-sm text-[10px] md:text-sm font-black text-gold tracking-[0.2em] pointer-events-none transition-all duration-500">
+              [ <span className="md:hidden">A</span><span className="hidden md:inline">ALFRESCO ENTERTAINING</span> ]
+            </div>
 
-            {/* Technical Specs - Top Left */}
-            <div className="absolute top-8 left-8 space-y-1">
+            {/* Technical Specs - Top Left (Hidden on Mobile, Fade on Desktop) */}
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-500 absolute top-8 left-8 space-y-1">
               <div className="text-gold font-black border-l-2 border-gold pl-2">STR_REINFORCED_CONC_FOOTING</div>
               <div>COORD: 34.0522° N, 118.2437° W</div>
               <div>ELEV: +145.20m ASL</div>
             </div>
 
-            {/* Dimensions - Bottom Right */}
-            <div className="absolute bottom-8 right-8 text-right space-y-1">
+            {/* Dimensions - Bottom Right (Hidden on Mobile, Fade on Desktop) */}
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-700 absolute bottom-8 right-8 text-right space-y-1">
               <div className="text-gold font-black border-r-2 border-gold pr-2">SPEC_X_1450_SQM</div>
               <div>WALL_THICKNESS: 350MM (R-VALUE: 24.5)</div>
               <div>GLASS_TEMP_DBL_GLAZED_LOW_E</div>
             </div>
 
-            {/* Crosshairs & Dimension Lines */}
-            <div className="absolute top-1/2 left-8 w-16 h-[1px] bg-white/30">
+            {/* Crosshairs & Dimension Lines (Hidden on Mobile, Fade on Desktop) */}
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-300 absolute top-1/2 left-8 w-16 h-[1px] bg-white/30">
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-3 bg-white/50"></div>
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-3 bg-white/50"></div>
             </div>
             
-            <div className="absolute bottom-24 right-1/2 w-[1px] h-24 bg-white/30">
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-300 absolute bottom-24 right-1/2 w-[1px] h-24 bg-white/30">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-[1px] bg-white/50"></div>
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-[1px] bg-white/50"></div>
             </div>
 
-            {/* Corner Markers */}
-            <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-gold/40"></div>
-            <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-gold/40"></div>
-            <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-gold/40"></div>
-            <div className="absolute bottom-4 right-4 w-6 h-6 border-b border-r border-gold/40"></div>
+            {/* Corner Markers (Hidden on Mobile, Fade on Desktop) */}
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-100 absolute top-4 left-4 w-6 h-6 border-t border-l border-gold/40"></div>
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-100 absolute top-4 right-4 w-6 h-6 border-t border-r border-gold/40"></div>
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-100 absolute bottom-4 left-4 w-6 h-6 border-b border-l border-gold/40"></div>
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-100 absolute bottom-4 right-4 w-6 h-6 border-b border-r border-gold/40"></div>
 
-            {/* Center Measurement Line */}
-            <div className="absolute top-1/2 left-1/4 right-1/4 h-[1px] bg-white/20 flex items-center justify-center">
+            {/* Center Measurement Line (Hidden on Mobile, Fade on Desktop) */}
+            <div className="hidden md:block opacity-0 md:opacity-100 transition-opacity duration-1000 delay-500 absolute top-1/2 left-1/4 right-1/4 h-[1px] bg-white/20 flex items-center justify-center">
               <div className="bg-charcoal px-2 border border-white/10 text-[8px] tracking-widest uppercase">DIM_A: 24,500MM [REF: STRUCTURAL_01]</div>
             </div>
           </motion.div>
