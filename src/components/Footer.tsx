@@ -1,17 +1,9 @@
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react'
 
 const Footer = () => {
-  const services = [
-    { name: 'Residential Construction', href: '#services' },
-    { name: 'Commercial Projects', href: '#services' },
-    { name: 'Renovation & Remodeling', href: '#services' },
-    { name: 'Project Management', href: '#services' },
-  ]
-
   const quickLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
-    { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ]
@@ -56,19 +48,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-black mb-6 uppercase tracking-[0.1em] text-charcoal">Services</h4>
-            <ul className="space-y-3">
-              {services.map((service, index) => (
-                <li key={index}>
-                  <a href={service.href} className="text-slate-600 font-medium hover:text-gold transition-colors duration-500">
-                    {service.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+
 
           {/* Quick Links */}
           <div>
