@@ -10,9 +10,12 @@ const BlueprintToggle = () => {
         
         {/* Header Row */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8">
-          <div className="space-y-2">
-            <h2 className="text-sm font-black tracking-[0.3em] text-gold uppercase">04 // Interactive Schematic</h2>
-            <h3 className="text-4xl md:text-5xl font-black tracking-tighter text-white">Concept To <span className="text-gold">Reality.</span></h3>
+          <div className="space-y-4">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-px bg-gold"></div>
+              <h2 className="text-xs md:text-sm font-black tracking-[0.4em] text-gold uppercase">04 // Interactive Schematic</h2>
+            </div>
+            <h3 className="text-5xl md:text-7xl font-black tracking-tighter text-white leading-[0.85]">Concept To <span className="text-gold">Reality.</span></h3>
           </div>
 
           {/* Control Switch */}

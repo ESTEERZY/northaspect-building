@@ -32,13 +32,16 @@ const ProcessBreakdown = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="max-w-3xl mb-16"
+          className="max-w-4xl mb-20"
         >
-          <h2 className="text-sm font-black tracking-[0.2em] text-gold uppercase mb-4">The Architectural Journey</h2>
-          <h3 className="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6 leading-tight">
-            From Vision to Masterpiece.
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-px bg-gold"></div>
+            <h2 className="text-xs md:text-sm font-black tracking-[0.4em] text-gold uppercase">03 // The Architectural Journey</h2>
+          </div>
+          <h3 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-8 leading-[0.9]">
+            From Vision to <span className="text-gold">Masterpiece.</span>
           </h3>
-          <p className="text-lg text-white/70">
+          <p className="text-xl md:text-2xl font-bold text-white/90 leading-relaxed max-w-2xl border-l-4 border-gold/30 pl-8">
             A streamlined, transparent, and entirely bespoke process designed to make building your luxury home an effortless experience.
           </p>
         </motion.div>
