@@ -157,9 +157,12 @@ const Contact = () => {
                 </button>
               </div>
 
-              <p className="text-sm text-charcoal/40 text-center font-medium">
-                Your details are confidential. We respect your privacy completely.
-              </p>
+              <div className="flex justify-center pt-4">
+                <p className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-[2px] text-xs font-semibold text-white tracking-wide">
+                  <span className="text-gold font-black tracking-tighter">//</span>
+                  YOUR DATA IS ENCRYPTED AND CONFIDENTIAL. WE RESPECT YOUR PRIVACY.
+                </p>
+              </div>
             </form>
           </motion.div>
         </div>
