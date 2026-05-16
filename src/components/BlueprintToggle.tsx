@@ -89,22 +89,22 @@ const BlueprintToggle = () => {
             className="absolute inset-0 z-30 pointer-events-none font-mono text-[10px] tracking-tighter text-white/60 p-8"
           >
             {/* Room Labels - Numeric Circles on Mobile, Full Labels on Desktop */}
-            <div className="absolute top-[75%] left-[50%] md:top-[65%] md:left-[15%] -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
-              <div className="flex items-center justify-center w-6 h-6 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold/50 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-widest shadow-[0_0_15px_rgba(197,160,89,0.2)] md:px-4 md:py-1.5">
+            <div className="absolute top-[70%] left-[20%] md:top-[65%] md:left-[15%] -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
+              <div className="flex items-center justify-center w-7 h-7 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold bg-charcoal text-[11px] md:text-sm font-black text-gold tracking-widest shadow-2xl md:px-4 md:py-1.5">
                 <span className="md:hidden">01</span>
                 <span className="hidden md:inline">[ SECURE DOUBLE GARAGE ]</span>
               </div>
             </div>
 
-            <div className="absolute top-[50%] left-[50%] md:top-[50%] md:left-[45%] -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
-              <div className="flex items-center justify-center w-6 h-6 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold/50 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-widest shadow-[0_0_15px_rgba(197,160,89,0.2)] md:px-4 md:py-1.5">
+            <div className="absolute top-[52%] left-[48%] md:top-[50%] md:left-[45%] -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
+              <div className="flex items-center justify-center w-7 h-7 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold bg-charcoal text-[11px] md:text-sm font-black text-gold tracking-widest shadow-2xl md:px-4 md:py-1.5">
                 <span className="md:hidden">02</span>
                 <span className="hidden md:inline">[ MAIN ENTRY PORTICO ]</span>
               </div>
             </div>
 
-            <div className="absolute top-[25%] left-[50%] md:top-[20%] md:right-[15%] md:left-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
-              <div className="flex items-center justify-center w-6 h-6 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold/50 bg-charcoal text-[10px] md:text-sm font-black text-gold tracking-widest shadow-[0_0_15px_rgba(197,160,89,0.2)] md:px-4 md:py-1.5">
+            <div className="absolute top-[25%] left-[75%] md:top-[20%] md:right-[15%] md:left-auto -translate-x-1/2 -translate-y-1/2 pointer-events-none transition-all duration-500 z-50">
+              <div className="flex items-center justify-center w-7 h-7 md:w-auto md:h-auto rounded-full md:rounded-none border border-gold bg-charcoal text-[11px] md:text-sm font-black text-gold tracking-widest shadow-2xl md:px-4 md:py-1.5">
                 <span className="md:hidden">03</span>
                 <span className="hidden md:inline">[ ALFRESCO ENTERTAINING ]</span>
               </div>
