@@ -156,9 +156,18 @@ const BlueprintToggle = () => {
           />
         </div>
 
-        {/* Blueprint Legend - Mobile Only */}
-        <div className="md:hidden mt-6 bg-charcoal border border-white/5 p-4 rounded-[2px]">
-          <div className="grid grid-cols-1 gap-3">
+        {/* Blueprint Legend - Mobile Only (Synced with Toggle) */}
+        <motion.div 
+          initial={false}
+          animate={{ 
+            opacity: view === 'blueprint' ? 1 : 0,
+            height: view === 'blueprint' ? 'auto' : 0,
+            marginTop: view === 'blueprint' ? 24 : 0
+          }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="md:hidden overflow-hidden bg-charcoal border border-white/5 rounded-[2px]"
+        >
+          <div className="p-4 grid grid-cols-1 gap-3">
             <div className="flex items-center gap-3">
               <span className="w-5 h-5 flex items-center justify-center border border-gold/50 text-[8px] font-black text-gold rounded-full">01</span>
               <span className="text-[10px] font-mono tracking-widest text-white/60 uppercase">SECURE DOUBLE GARAGE</span>
@@ -172,7 +181,7 @@ const BlueprintToggle = () => {
               <span className="text-[10px] font-mono tracking-widest text-white/60 uppercase">ALFRESCO ENTERTAINING</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Status Text Indicator */}
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4">
