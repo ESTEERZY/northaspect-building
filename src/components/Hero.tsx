@@ -1,26 +1,22 @@
 const Hero = () => {
   return (
     <section 
-      id="home" 
+      id="hero" 
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
-      {/* Absolute Background Container with deep charcoal base */}
-      <div className="absolute inset-0 w-full h-full bg-charcoal z-0 overflow-hidden">
-        {/* Luxury Modern House Image with Ken Burns animation (No grayscale, bumped to 50% opacity) */}
-        <img
-          src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
-          alt="Luxury Residential Build"
-          className="w-full h-full object-cover opacity-50 animate-ken-burns"
+      {/* Fully ambient, looping background video layer beneath the typography */}
+      <div className="absolute inset-0 w-full h-full bg-[#0c0c0c] z-0 overflow-hidden">
+        <video
+          src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-41584-large.mp4"
+          className="absolute inset-0 w-full h-full object-cover opacity-25"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
 
-        {/* Premium Amber/Gold Color Cast Blend Layer */}
-        <div className="absolute inset-0 z-10 mix-blend-color bg-[#c5a880]/25 pointer-events-none"></div>
-
-        {/* Soft Warm Gradient Mix Layer for deep shadow colors */}
-        <div className="absolute inset-0 z-15 mix-blend-multiply bg-gradient-to-tr from-[#1c1a17]/85 via-[#c5a880]/15 to-transparent pointer-events-none"></div>
-
-        {/* Foreground Contrast Shield / Dark Bottom Fade for Typography Legibility */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/50 via-[rgba(0,0,0,0.3)] to-black/95 pointer-events-none"></div>
+        {/* Dark, rich gradient overlay layer directly on top of the video for typography legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/80 via-transparent to-[#0c0c0c] z-10 pointer-events-none"></div>
       </div>
 
       {/* Centered content wrapper */}

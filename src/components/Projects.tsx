@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom'
 import { ArrowRight, MapPin, Ruler, Layers } from 'lucide-react'
 
 const Projects = () => {
   const projects = [
     {
+      id: 'modern-villa-complex',
       image: '/images/villa-complex.png',
       title: 'Modern Villa Complex',
       location: 'Beverly Hills, CA',
@@ -12,6 +14,7 @@ const Projects = () => {
       intent: 'Merging brutalist forms with natural topography. Seamless indoor-outdoor living.',
     },
     {
+      id: 'luxury-estate',
       image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Luxury Estate',
       location: 'Aspen, CO',
@@ -21,6 +24,7 @@ const Projects = () => {
       intent: 'Contemporary alpine retreat. Panoramic views. Sustainable, locally sourced materials.',
     },
     {
+      id: 'urban-development',
       image: '/images/urban-development.png',
       title: 'Urban Development',
       location: 'New York, NY',
@@ -30,6 +34,7 @@ const Projects = () => {
       intent: 'Redefining vertical living. Maximized natural light penetration. Efficient structural envelope.',
     },
     {
+      id: 'architectural-masterpiece',
       image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
       title: 'Architectural Masterpiece',
       location: 'Malibu, CA',
@@ -54,8 +59,6 @@ const Projects = () => {
               Defining masterworks. Meticulous exploration of form, light, and context.
             </p>
           </div>
-
-
         </div>
 
         {/* Projects List */}
@@ -66,8 +69,11 @@ const Projects = () => {
               className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center animate-slide-up group`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Project Image */}
-              <div className="w-full lg:w-3/5 relative aspect-[16/10] overflow-hidden rounded-[2px] shadow-2xl border border-white/10">
+              {/* Project Image wrapped in Link */}
+              <Link 
+                to={`/case-study/${project.id}`}
+                className="w-full lg:w-3/5 relative aspect-[16/10] overflow-hidden rounded-[2px] shadow-2xl border border-white/10 block cursor-pointer"
+              >
                 <img
                   src={project.image}
                   alt={project.title}
@@ -75,13 +81,15 @@ const Projects = () => {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors duration-500"></div>
-              </div>
+              </Link>
 
               {/* Case Study Content */}
               <div className="w-full lg:w-2/5 flex flex-col justify-center">
-                <h3 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-8 group-hover:text-gold transition-colors duration-500">
-                  {project.title}
-                </h3>
+                <Link to={`/case-study/${project.id}`} className="inline-block group-hover:text-gold transition-colors duration-500">
+                  <h3 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-8 group-hover:text-gold transition-colors duration-500">
+                    {project.title}
+                  </h3>
+                </Link>
                 
                 <div className="mb-10">
                   <h4 className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase font-sans mb-3">Architectural Intent</h4>
@@ -111,6 +119,17 @@ const Projects = () => {
                       {project.materials}
                     </div>
                   </div>
+                </div>
+
+                {/* Explore Case Study CTA Link */}
+                <div className="mt-10 border-t border-white/5 pt-8">
+                  <Link
+                    to={`/case-study/${project.id}`}
+                    className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.25em] text-gold hover:text-white uppercase transition-all duration-300 group/link"
+                  >
+                    <span>View Architectural Case Study</span>
+                    <ArrowRight className="group-hover/link:translate-x-1.5 transition-transform duration-300 text-gold group-hover/link:text-white" size={16} />
+                  </Link>
                 </div>
               </div>
             </div>

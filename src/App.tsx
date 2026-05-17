@@ -1,29 +1,31 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import BlueprintToggle from './components/BlueprintToggle'
-import ProcessBreakdown from './components/ProcessBreakdown'
-import Stats from './components/Stats'
-import About from './components/About'
-import Advantage from './components/Advantage'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import Home from './components/Home'
+import CaseStudyTemplate from './components/CaseStudyTemplate'
 
-// Apex Architecture - Luxury Residential Builder Landing Page
+// A premium helper component to restore scroll state to the top of the page on route transition
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
+
 function App() {
   return (
-    <div className="min-h-screen bg-charcoal text-white font-sans selection:bg-gold selection:text-charcoal">
-      <Header />
-      <Hero />
-      <Projects />
-      <BlueprintToggle />
-      <ProcessBreakdown />
-      <Stats />
-      <About />
-      <Advantage />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen bg-charcoal text-white font-sans selection:bg-gold selection:text-charcoal">
+        <Routes>
+          {/* Main Portfolio Index */}
+          <Route path="/" element={<Home />} />
+          
+          {/* Reusable, Premium Case Study Layout Template Route */}
+          <Route path="/case-study/:id" element={<CaseStudyTemplate />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
