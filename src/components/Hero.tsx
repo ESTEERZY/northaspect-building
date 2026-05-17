@@ -4,17 +4,15 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
-      {/* Absolute Background Image Container */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <img
-          src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
-          alt="Luxury Residential Build"
-          className="w-full h-full object-cover opacity-40 grayscale animate-infinitePan"
-        />
-        
-        {/* The Contrast Shield */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none z-[1]"></div>
-      </div>
+      {/* Absolute Kinetic Gradient Mesh Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-kinetic-mesh animate-ambient-mesh z-0" />
+
+      {/* Sharp Technical Grid Overlay */}
+      <div className="absolute inset-0 w-full h-full bg-tech-grid pointer-events-none z-[1]" />
+
+      {/* The Contrast Shield */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90 pointer-events-none z-[2]"></div>
+
 
       {/* Centered content wrapper */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
