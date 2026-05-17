@@ -148,5 +148,14 @@
   .animate-ken-burns {
     animation: kenBurns 30s linear infinite alternate;
   }
+
+  .animate-kinetic-zoom {
+    animation: kineticZoom 30s linear infinite alternate;
+    will-change: transform;
+  }
+  @keyframes kineticZoom {
+    0% { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.08) translate(-1%, -0.5%); }
+  }
 }
 

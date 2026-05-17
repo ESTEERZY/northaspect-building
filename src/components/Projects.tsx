@@ -46,7 +46,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="results" className="py-32 bg-darkgray relative overflow-hidden">
+    <section id="portfolio" className="py-32 bg-darkgray relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
@@ -71,7 +71,7 @@ const Projects = () => {
             >
               {/* Project Image wrapped in Link */}
               <Link 
-                to={`/case-study/${project.id}`}
+                to={`/${project.id}.html`}
                 className="w-full lg:w-3/5 relative aspect-[16/10] overflow-hidden rounded-[2px] shadow-2xl border border-white/10 block cursor-pointer"
               >
                 <img
@@ -85,7 +85,7 @@ const Projects = () => {
 
               {/* Case Study Content */}
               <div className="w-full lg:w-2/5 flex flex-col justify-center">
-                <Link to={`/case-study/${project.id}`} className="inline-block group-hover:text-gold transition-colors duration-500">
+                <Link to={`/${project.id}.html`} className="inline-block group-hover:text-gold transition-colors duration-500">
                   <h3 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-8 group-hover:text-gold transition-colors duration-500">
                     {project.title}
                   </h3>
@@ -124,7 +124,7 @@ const Projects = () => {
                 {/* Explore Case Study CTA Link */}
                 <div className="mt-10 border-t border-white/5 pt-8">
                   <Link
-                    to={`/case-study/${project.id}`}
+                    to={`/${project.id}.html`}
                     className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.25em] text-gold hover:text-white uppercase transition-all duration-300 group/link"
                   >
                     <span>View Architectural Case Study</span>

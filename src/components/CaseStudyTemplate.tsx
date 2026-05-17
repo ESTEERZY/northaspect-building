@@ -6,7 +6,8 @@ import { projectsData } from '../data/projectsData'
 
 const CaseStudyTemplate = () => {
   const { id } = useParams<{ id: string }>()
-  const project = projectsData.find((p) => p.id === id)
+  const cleanId = id ? id.replace('.html', '') : ''
+  const project = projectsData.find((p) => p.id === cleanId)
 
   // Scroll to top on page load
   useEffect(() => {

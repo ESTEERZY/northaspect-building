@@ -6,7 +6,7 @@ const Header = () => {
 
   const navLinks = [
     { name: 'Features', href: '#features' },
-    { name: 'Portfolio', href: '#results' },
+    { name: 'Portfolio', href: '#portfolio' },
     { name: 'Process', href: '#process' },
   ]
 

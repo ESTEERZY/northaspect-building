@@ -23,6 +23,7 @@ function App() {
           
           {/* Reusable, Premium Case Study Layout Template Route */}
           <Route path="/case-study/:id" element={<CaseStudyTemplate />} />
+          <Route path="/:id.html" element={<CaseStudyTemplate />} />
         </Routes>
       </div>
     </Router>

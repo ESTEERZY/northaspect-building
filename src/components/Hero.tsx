@@ -5,30 +5,28 @@ const Hero = () => {
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
       <style>{`
-        @keyframes kinetic-zoom {
-          0% {
-            transform: scale(1.00) translate(0, 0);
-          }
-          100% {
-            transform: scale(1.08) translate(-0.5%, -0.5%);
-          }
-        }
         .animate-kinetic-zoom {
-          animation: kinetic-zoom 30s linear infinite alternate;
+          animation: kineticZoom 30s linear infinite alternate;
+          will-change: transform;
+        }
+        @keyframes kineticZoom {
+          0% { transform: scale(1) translate(0, 0); }
+          100% { transform: scale(1.08) translate(-1%, -0.5%); }
         }
       `}</style>
 
-      {/* Absolute Background Container with cinematic zoom */}
-      <div className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none">
+      {/* Absolute Background Container */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
         <img
           src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
           alt="Luxury Residential Build"
-          className="w-full h-full object-cover animate-kinetic-zoom"
+          className="w-full h-full object-cover opacity-40 animate-kinetic-zoom"
+          loading="eager"
         />
       </div>
 
       {/* Centered content wrapper */}
-      <div className="relative z-20 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
         <div className="max-w-4xl flex flex-col items-center">
           
           {/* The Main Heading */}
