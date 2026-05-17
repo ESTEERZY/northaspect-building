@@ -40,17 +40,17 @@ export const projectsData: CaseStudyData[] = [
       {
         type: 'Structural Details',
         image: '/images/blueprint-base.png',
-        description: 'Bespoke structural blueprint displaying coordinate mapping, foundation details, and architectural load-bearing grids.'
+        description: 'Bespoke structural blueprint showing foundation plans, rebar load points, and load-bearing concrete cores.'
       },
       {
         type: 'Interior Framing',
-        image: '/images/construction-manager.png',
-        description: 'Technical Timber-frame construction and structural column integration, ensuring extreme rigidity and permanence.'
+        image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Pouring board-formed concrete walls, structural concrete formwork details, and heavy structural reinforcements.'
       },
       {
         type: 'Final Finishes',
-        image: '/images/luxury-kitchen.png',
-        description: 'The finished interior pavilion showing premium muted-gold trim, seamless stone counters, and custom high-contrast cabinetry.'
+        image: 'https://images.pexels.com/photos/1650904/pexels-photo-1650904.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'The completed brutalist interior showing smooth exposed concrete walls, full-bleed glass windows, and clean linear trims.'
       }
     ]
   },
@@ -73,17 +73,17 @@ export const projectsData: CaseStudyData[] = [
       {
         type: 'Structural Details',
         image: '/images/blueprint-drawing.png',
-        description: 'CAD-style elevations and structural drawings showing the alpine frame resistance layers.'
+        description: 'CAD elevation detailing log-joint assembly coordinates and post-and-beam timber layout specifications.'
       },
       {
         type: 'Interior Framing',
-        image: '/images/construction-manager.png',
-        description: 'Framing alignment phase with precise joint construction to manage thermal expansion.'
+        image: '/images/luxury-estate-framing.png',
+        description: 'Premium heavy timber glulam framework under construction, showcasing clean mortise and tenon joinery.'
       },
       {
         type: 'Final Finishes',
-        image: '/images/luxury-kitchen.png',
-        description: 'Gourmet kitchen space featuring built-in state-of-the-art appliances and monolithic stone details.'
+        image: '/images/luxury-estate-finishes.png',
+        description: 'Cozy contemporary chalet interior displaying rich warm wood columns, local structural stone hearth, and wide vistas.'
       }
     ]
   },
@@ -106,17 +106,17 @@ export const projectsData: CaseStudyData[] = [
       {
         type: 'Structural Details',
         image: '/images/blueprint-base.png',
-        description: 'Comprehensive high-detail CAD structural schematics for the urban layout grid.'
+        description: 'Detailed mechanical coordinate blueprint representing structural steel truss and girder connections.'
       },
       {
         type: 'Interior Framing',
-        image: '/images/construction-manager.png',
-        description: 'Real-time construction execution, detailing complex steel joints and structural concrete pours.'
+        image: 'https://images.pexels.com/photos/27406/pexels-photo-27406.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Heavy structural steel framing construction, showing robust steel column and beam grid layout.'
       },
       {
         type: 'Final Finishes',
-        image: '/images/luxury-kitchen.png',
-        description: 'Ultra-modern urban culinary layout showing custom black-slate details and golden architectural task lights.'
+        image: 'https://images.pexels.com/photos/273683/pexels-photo-273683.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Luxury Manhattan industrial-style loft interior showing sleek dark steel window frames and raw materials.'
       }
     ]
   },
@@ -139,17 +139,17 @@ export const projectsData: CaseStudyData[] = [
       {
         type: 'Structural Details',
         image: '/images/blueprint-drawing.png',
-        description: 'CAD detail of the cantilever structure anchoring to the coastal bluff.'
+        description: 'Coastal cantilever structural framing blueprints, highlighting thin column anchor details.'
       },
       {
         type: 'Interior Framing',
-        image: '/images/construction-manager.png',
-        description: 'Carbon-fiber reinforcement installation, verifying millimeter precision prior to concrete pouring.'
+        image: 'https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Millimeter-precise installation of structural carbon-fiber reinforces and white concrete details.'
       },
       {
         type: 'Final Finishes',
-        image: '/images/luxury-kitchen.png',
-        description: 'Premium light-filled interior showing absolute minimalist detailing, white concrete surfaces, and gold finishes.'
+        image: 'https://images.pexels.com/photos/323775/pexels-photo-323775.jpeg?auto=compress&cs=tinysrgb&w=800',
+        description: 'Monolithic seaside pavilion finish showcasing pure white surfaces, open vistas, and ocean-facing pool deck.'
       }
     ]
   }
