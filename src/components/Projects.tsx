@@ -144,6 +144,10 @@ const Projects = () => {
           </p>
           <a
             href="#contact"
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+            }}
             className="group bg-gold text-charcoal px-12 py-6 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] rounded-[2px] font-sans"
           >
             Request a Consultation

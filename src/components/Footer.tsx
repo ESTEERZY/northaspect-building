@@ -56,7 +56,15 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-slate-600 font-medium hover:text-gold transition-colors duration-500">
+                  <a
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      const targetId = link.href.replace('#', '')
+                      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' })
+                    }}
+                    className="text-slate-600 font-medium hover:text-gold transition-colors duration-500"
+                  >
                     {link.name}
                   </a>
                 </li>
