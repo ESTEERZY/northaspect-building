@@ -4,14 +4,22 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
-      {/* Absolute Kinetic Gradient Mesh Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden bg-kinetic-mesh animate-ambient-mesh z-0" />
+      {/* Absolute Background Container with deep charcoal base */}
+      <div className="absolute inset-0 w-full h-full bg-charcoal z-0 overflow-hidden">
+        {/* Luxury Modern House Image with Ken Burns animation */}
+        <img
+          src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
+          alt="Luxury Residential Build"
+          className="w-full h-full object-cover opacity-35 animate-ken-burns"
+        />
+
+        {/* Premium Amber/Gold Color Cast Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(197,168,128,0.10)] via-[rgba(0,0,0,0.45)] to-black/95 pointer-events-none"></div>
+      </div>
 
       {/* Sharp Technical Grid Overlay */}
       <div className="absolute inset-0 w-full h-full bg-tech-grid pointer-events-none z-[1]" />
 
-      {/* The Contrast Shield */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/90 pointer-events-none z-[2]"></div>
 
 
       {/* Centered content wrapper */}
