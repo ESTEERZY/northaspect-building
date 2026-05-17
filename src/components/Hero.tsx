@@ -27,11 +27,6 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
         <div className="max-w-4xl flex flex-col items-center">
           
-          {/* The Top Tagline */}
-          <span className="text-xs md:text-sm font-semibold tracking-[0.25em] text-gold uppercase mb-4 block animate-tagline-breath">
-            Apex Architecture
-          </span>
-
           {/* The Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-[1.02] animate-heading-breath">
             Structural Integrity.<br />
