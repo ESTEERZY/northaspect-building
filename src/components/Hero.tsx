@@ -43,6 +43,22 @@ const Hero = () => {
             Masterworks of modern living. Unparalleled craftsmanship. A seamless architectural journey.
           </p>
 
+          {/* Action Buttons */}
+          <div className="mt-12 flex flex-col sm:flex-row gap-5 justify-center z-10">
+            <a
+              href="#portfolio"
+              className="group bg-gold text-charcoal px-10 py-5 text-sm lg:text-base font-black tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center justify-center gap-3 rounded-[2px] shadow-[0_4px_30px_rgba(197,160,89,0.4)] hover:shadow-[0_4px_50px_rgba(197,160,89,0.7)]"
+            >
+              View Case Studies
+            </a>
+            <a
+              href="#contact"
+              className="group bg-transparent text-white border border-white/50 px-10 py-5 text-sm lg:text-base font-bold tracking-widest uppercase hover:bg-white/15 hover:border-gold transition-all duration-500 inline-flex items-center justify-center gap-3 rounded-[2px]"
+            >
+              Start a Project
+            </a>
+          </div>
+
         </div>
       </div>
 
