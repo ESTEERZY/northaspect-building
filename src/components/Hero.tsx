@@ -39,7 +39,7 @@ const Hero = () => {
           </h1>
 
           {/* The Central Accent Line */}
-          <div className="h-[2px] bg-gold mx-auto my-6 w-20 animate-divider-shimmer" />
+          <div className="h-[2px] bg-gold mx-auto my-6 w-32" />
 
           {/* The Subtext Paragraph */}
           <p className="text-xl lg:text-2xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">

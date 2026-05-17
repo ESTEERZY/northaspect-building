@@ -102,19 +102,6 @@
     }
   }
 
-  @keyframes gold-divider-shimmer {
-    0%, 100% {
-      width: 5rem; /* w-20 */
-      background-color: #8C6212; /* deep golden bronze */
-      filter: brightness(0.95);
-    }
-    50% {
-      width: 7rem; /* w-28 */
-      background-color: #D4AF37; /* vibrant metallic amber */
-      filter: brightness(1.25);
-    }
-  }
-
   @keyframes subtext-breath {
     0%, 100% {
       opacity: 0.9;
@@ -136,10 +123,6 @@
 
   .animate-heading-breath {
     animation: heading-breath 6s ease-in-out infinite;
-  }
-
-  .animate-divider-shimmer {
-    animation: gold-divider-shimmer 4s ease-in-out infinite;
   }
 
   .animate-subtext-breath {
