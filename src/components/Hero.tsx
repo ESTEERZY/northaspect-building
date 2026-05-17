@@ -15,14 +15,18 @@ const Hero = () => {
         }
       `}</style>
 
-      {/* Absolute Background Container */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <img
-          src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
-          alt="Luxury Residential Build"
-          className="w-full h-full object-cover opacity-40 animate-kinetic-zoom"
-          loading="eager"
+      {/* Endless background video loop */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-[#0c0c0c]">
+        <video
+          src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-41584-large.mp4"
+          className="w-full h-full object-cover opacity-40"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
+        {/* Rich gradient overlay for premium legibility and blending */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/85 via-transparent to-[#0c0c0c] z-[1]"></div>
       </div>
 
       {/* Centered content wrapper */}
