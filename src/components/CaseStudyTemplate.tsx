@@ -1,13 +1,12 @@
 import { useParams, Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import { ArrowLeft, ArrowRight, MapPin, X, Maximize2, Check } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect } from 'react'
+import { ArrowLeft, ArrowRight, MapPin, Check } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { projectsData } from '../data/projectsData'
 
 const CaseStudyTemplate = () => {
   const { id } = useParams<{ id: string }>()
   const project = projectsData.find((p) => p.id === id)
-  const [activeImage, setActiveImage] = useState<number | null>(null)
 
   // Scroll to top on page load
   useEffect(() => {
@@ -176,59 +175,6 @@ const CaseStudyTemplate = () => {
         </div>
       </section>
 
-      {/* 4. Interactive Image Gallery - High-Contrast Grid */}
-      <section className="py-32 bg-[#101010] border-t border-b border-white/5 relative z-10">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="mb-16 text-center md:text-left">
-            <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase block mb-3">Construction Showcase</span>
-            <h2 className="text-3xl md:text-5xl font-bold font-heading text-white">
-              Phase Breakthroughs
-            </h2>
-            <p className="text-white/50 mt-4 max-w-xl text-base font-sans font-medium">
-              From dynamic digital coordinate maps to the rough structural timber framing and the refined masterwork finishes.
-            </p>
-          </div>
-
-          {/* Dynamic 3-Column Interactive Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {project.gallery.map((item, index) => (
-              <div 
-                key={index} 
-                className="group relative bg-[#0c0c0c] border border-white/10 rounded-[2px] overflow-hidden shadow-2xl cursor-pointer"
-                onClick={() => setActiveImage(index)}
-              >
-                {/* Image Wrap */}
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.type}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                  
-                  {/* Floating Tech Indicator */}
-                  <div className="absolute top-4 left-4 bg-[#0c0c0c]/80 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-[2px] flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-ping"></span>
-                    <span className="text-[10px] font-bold tracking-widest text-white uppercase">Phase 0{index + 1}</span>
-                  </div>
-
-                  {/* Open Icon */}
-                  <div className="absolute bottom-4 right-4 bg-gold/90 text-charcoal p-2 rounded-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <Maximize2 size={16} />
-                  </div>
-                </div>
-
-                {/* Content Block */}
-                <div className="p-6 border-t border-white/10">
-                  <h4 className="text-xs font-bold tracking-[0.2em] text-gold uppercase mb-2">{item.type}</h4>
-                  <p className="text-sm text-white/70 leading-relaxed font-sans">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 5. Bottom Action Block - Focused Conversion Area */}
       <section className="relative py-32 bg-[#0c0c0c] overflow-hidden z-10">
         {/* Glow backdrop */}
@@ -262,84 +208,6 @@ const CaseStudyTemplate = () => {
           © {new Date().getFullYear()} Apex Architecture. All rights reserved. Meticulous structural integrity.
         </div>
       </footer>
-
-      {/* Dynamic Lightbox Modal */}
-      <AnimatePresence>
-        {activeImage !== null && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-6"
-            onClick={() => setActiveImage(null)}
-          >
-            {/* Close Button */}
-            <button 
-              className="absolute top-6 right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-[2px] transition-colors duration-300 z-50"
-              onClick={() => setActiveImage(null)}
-            >
-              <X size={24} />
-            </button>
-
-            {/* Modal Body Container */}
-            <motion.div 
-              initial={{ scale: 0.95, y: 15 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.95, y: 15 }}
-              className="max-w-5xl w-full flex flex-col md:flex-row bg-[#0c0c0c] border border-white/15 rounded-[2px] overflow-hidden shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Image Block */}
-              <div className="md:w-3/5 relative bg-black aspect-video md:aspect-auto flex items-center justify-center">
-                <img
-                  src={project.gallery[activeImage].image}
-                  alt={project.gallery[activeImage].type}
-                  className="w-full h-full object-cover max-h-[70vh] md:max-h-[80vh]"
-                />
-              </div>
-
-              {/* Specs Content Block */}
-              <div className="md:w-2/5 p-8 md:p-12 flex flex-col justify-between border-t md:border-t-0 md:border-l border-white/10 bg-[#0e0e0e]">
-                <div className="space-y-6">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-bold tracking-[0.25em] bg-gold/10 text-gold px-2.5 py-1 rounded-[2px]">
-                      PHASE 0{activeImage + 1}
-                    </span>
-                    <span className="text-[10px] font-bold tracking-[0.25em] text-white/40 uppercase">
-                      BUILD TRANSITION
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-3xl font-bold font-heading text-white">
-                    {project.gallery[activeImage].type}
-                  </h3>
-
-                  <p className="text-base text-white/70 leading-relaxed font-sans">
-                    {project.gallery[activeImage].description}
-                  </p>
-                </div>
-
-                <div className="pt-8 border-t border-white/5 mt-8 flex justify-between items-center text-xs font-bold uppercase tracking-widest">
-                  <button
-                    className="text-white/60 hover:text-gold transition-colors duration-300 disabled:opacity-30 disabled:hover:text-white/60"
-                    disabled={activeImage === 0}
-                    onClick={() => setActiveImage(activeImage - 1)}
-                  >
-                    ← Previous Phase
-                  </button>
-                  <button
-                    className="text-white/60 hover:text-gold transition-colors duration-300 disabled:opacity-30 disabled:hover:text-white/60"
-                    disabled={activeImage === project.gallery.length - 1}
-                    onClick={() => setActiveImage(activeImage + 1)}
-                  >
-                    Next Phase →
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
     </div>
   )
