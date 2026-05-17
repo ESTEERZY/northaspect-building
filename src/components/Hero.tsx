@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Endless background video loop */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-[#0c0c0c]">
         <video
-          src="https://videos.pexels.com/video-files/3209211/3209211-hd_1920_1080_25fps.mp4"
+          src="https://player.vimeo.com/external/355166344.hd.mp4?s=d574624984ac6dea0f071c5fda80f20c8cb6f291&profile_id=175"
           className="w-full h-full object-cover opacity-40"
           autoPlay
           loop
