@@ -15,12 +15,12 @@ function App() {
     <div className="min-h-screen bg-charcoal text-white font-sans selection:bg-gold selection:text-charcoal">
       <Header />
       <Hero />
+      <Projects />
       <BlueprintToggle />
       <ProcessBreakdown />
       <Stats />
       <About />
       <Advantage />
-      <Projects />
       <Contact />
       <Footer />
     </div>
