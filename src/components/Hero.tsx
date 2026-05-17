@@ -4,21 +4,31 @@ const Hero = () => {
       id="hero" 
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
-      {/* Endless background video loop */}
-      <video
-        src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-41584-large.mp4"
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      <style>{`
+        @keyframes kinetic-zoom {
+          0% {
+            transform: scale(1.00) translate(0, 0);
+          }
+          100% {
+            transform: scale(1.08) translate(-0.5%, -0.5%);
+          }
+        }
+        .animate-kinetic-zoom {
+          animation: kinetic-zoom 30s linear infinite alternate;
+        }
+      `}</style>
 
-      {/* Solid dark gradient overlay div directly on top of the video layer */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0c0c0c]/80 via-transparent to-[#0c0c0c]"></div>
+      {/* Absolute Background Container with cinematic zoom */}
+      <div className="absolute inset-0 w-full h-full object-cover z-0 opacity-40 pointer-events-none">
+        <img
+          src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
+          alt="Luxury Residential Build"
+          className="w-full h-full object-cover animate-kinetic-zoom"
+        />
+      </div>
 
       {/* Centered content wrapper */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
+      <div className="relative z-20 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
         <div className="max-w-4xl flex flex-col items-center">
           
           {/* The Main Heading */}
