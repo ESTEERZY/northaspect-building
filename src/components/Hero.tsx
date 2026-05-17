@@ -4,20 +4,18 @@ const Hero = () => {
       id="hero" 
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
-      {/* Fully ambient, looping background video layer beneath the typography */}
-      <div className="absolute inset-0 w-full h-full bg-[#0c0c0c] z-0 overflow-hidden">
-        <video
-          src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-41584-large.mp4"
-          className="absolute inset-0 w-full h-full object-cover opacity-25"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+      {/* Endless background video loop */}
+      <video
+        src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-41584-large.mp4"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-        {/* Dark, rich gradient overlay layer directly on top of the video for typography legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/80 via-transparent to-[#0c0c0c] z-10 pointer-events-none"></div>
-      </div>
+      {/* Solid dark gradient overlay div directly on top of the video layer */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0c0c0c]/80 via-transparent to-[#0c0c0c]"></div>
 
       {/* Centered content wrapper */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
