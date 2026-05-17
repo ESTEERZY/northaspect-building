@@ -6,15 +6,21 @@ const Hero = () => {
     >
       {/* Absolute Background Container with deep charcoal base */}
       <div className="absolute inset-0 w-full h-full bg-charcoal z-0 overflow-hidden">
-        {/* Luxury Modern House Image with Ken Burns animation */}
+        {/* Luxury Modern House Image with Ken Burns animation (No grayscale, bumped to 50% opacity) */}
         <img
           src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
           alt="Luxury Residential Build"
-          className="w-full h-full object-cover opacity-35 animate-ken-burns"
+          className="w-full h-full object-cover opacity-50 animate-ken-burns"
         />
 
-        {/* Premium Amber/Gold Color Cast Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(197,168,128,0.10)] via-[rgba(0,0,0,0.45)] to-black/95 pointer-events-none"></div>
+        {/* Premium Amber/Gold Color Cast Blend Layer */}
+        <div className="absolute inset-0 z-10 mix-blend-color bg-[#c5a880]/25 pointer-events-none"></div>
+
+        {/* Soft Warm Gradient Mix Layer for deep shadow colors */}
+        <div className="absolute inset-0 z-15 mix-blend-multiply bg-gradient-to-tr from-[#1c1a17]/85 via-[#c5a880]/15 to-transparent pointer-events-none"></div>
+
+        {/* Foreground Contrast Shield / Dark Bottom Fade for Typography Legibility */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/50 via-[rgba(0,0,0,0.3)] to-black/95 pointer-events-none"></div>
       </div>
 
       {/* Centered content wrapper */}
