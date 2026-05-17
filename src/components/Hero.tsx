@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Endless background video loop */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-[#0c0c0c]">
         <video
-          src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-41584-large.mp4"
+          src="https://videos.pexels.com/video-files/3209211/3209211-hd_1920_1080_25fps.mp4"
           className="w-full h-full object-cover opacity-40"
           autoPlay
           loop
