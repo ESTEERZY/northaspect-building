@@ -17,11 +17,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(197,168,128,0.10)] via-[rgba(0,0,0,0.45)] to-black/95 pointer-events-none"></div>
       </div>
 
-      {/* Sharp Technical Grid Overlay */}
-      <div className="absolute inset-0 w-full h-full bg-tech-grid pointer-events-none z-[1]" />
-
-
-
       {/* Centered content wrapper */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
         <div className="max-w-4xl flex flex-col items-center">
