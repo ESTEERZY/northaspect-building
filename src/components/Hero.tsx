@@ -1,12 +1,4 @@
-import { useEffect, useState } from 'react';
-
 const Hero = () => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
     <section 
       id="home" 
@@ -19,7 +11,7 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-30 grayscale"
+          className="w-full h-full object-cover opacity-30 grayscale animate-bg-pan-pulse"
         >
           <source 
             src="https://assets.mixkit.co/videos/preview/mixkit-modern-apartment-building-facade-41716-large.mp4" 
@@ -37,37 +29,21 @@ const Hero = () => {
         <div className="max-w-4xl flex flex-col items-center">
           
           {/* The Top Tagline */}
-          <span 
-            className={`text-xs md:text-sm font-semibold tracking-[0.25em] text-gold uppercase mb-4 block transition-all duration-1000 ease-out ${
-              isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
+          <span className="text-xs md:text-sm font-semibold tracking-[0.25em] text-gold uppercase mb-4 block animate-tagline-breath">
             Apex Architecture
           </span>
 
           {/* The Main Heading */}
-          <h1 
-            className={`text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-[1.02] transition-all duration-1000 ease-out delay-200 ${
-              isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-          >
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-[1.02] animate-heading-breath">
             Structural Integrity.<br />
             <span className="text-gold">Residential Form.</span>
           </h1>
 
           {/* The Central Accent Line */}
-          <div 
-            className={`h-[2px] bg-gold mx-auto my-6 transition-all duration-1000 ease-out delay-500 ${
-              isMounted ? 'w-32' : 'w-0'
-            }`}
-          />
+          <div className="h-[2px] bg-gold mx-auto my-6 w-32 animate-divider-pulse" />
 
           {/* The Subtext Paragraph */}
-          <p 
-            className={`text-xl lg:text-2xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed transition-all duration-1000 ease-out delay-700 ${
-              isMounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-            }`}
-          >
+          <p className="text-xl lg:text-2xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
             Masterworks of modern living. Unparalleled craftsmanship. A seamless architectural journey.
           </p>
 

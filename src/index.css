@@ -62,4 +62,100 @@
   .border-accent-orange {
     border-color: #EA6B1F;
   }
+
+  /* Ambient Cinematic Animations */
+  @keyframes background-pan-pulse {
+    0% {
+      transform: scale(1) translate(0px, 0px);
+    }
+    50% {
+      transform: scale(1.06) translate(-4px, -2px);
+    }
+    100% {
+      transform: scale(1) translate(0px, 0px);
+    }
+  }
+
+  @keyframes tagline-breath {
+    0% {
+      opacity: 0.85;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+    100% {
+      opacity: 0.85;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heading-breath {
+    0% {
+      opacity: 0.9;
+      transform: translateY(0px);
+      filter: brightness(0.95);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-3px);
+      filter: brightness(1.05);
+    }
+    100% {
+      opacity: 0.9;
+      transform: translateY(0px);
+      filter: brightness(0.95);
+    }
+  }
+
+  @keyframes gold-divider-pulse {
+    0% {
+      transform: scaleX(0.85);
+      filter: brightness(0.9);
+    }
+    50% {
+      transform: scaleX(1.15);
+      filter: brightness(1.2);
+    }
+    100% {
+      transform: scaleX(0.85);
+      filter: brightness(0.9);
+    }
+  }
+
+  @keyframes subtext-breath {
+    0% {
+      opacity: 0.75;
+      transform: translateY(0px);
+    }
+    50% {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    100% {
+      opacity: 0.75;
+      transform: translateY(0px);
+    }
+  }
+
+  .animate-bg-pan-pulse {
+    animation: background-pan-pulse 30s ease-in-out infinite;
+  }
+
+  .animate-tagline-breath {
+    animation: tagline-breath 7s ease-in-out infinite;
+  }
+
+  .animate-heading-breath {
+    animation: heading-breath 6s ease-in-out infinite;
+  }
+
+  .animate-divider-pulse {
+    animation: gold-divider-pulse 5s ease-in-out infinite;
+  }
+
+  .animate-subtext-breath {
+    animation: subtext-breath 8s ease-in-out infinite;
+  }
 }
