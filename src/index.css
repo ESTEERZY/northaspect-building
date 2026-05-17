@@ -64,15 +64,15 @@
   }
 
   /* Ambient Cinematic Animations */
-  @keyframes background-pan-pulse {
+  @keyframes infinitePan {
     0% {
-      transform: scale(1) translate(0px, 0px);
+      transform: scale(1.00) translate(0, 0);
     }
     50% {
-      transform: scale(1.06) translate(-4px, -2px);
+      transform: scale(1.07) translate(-1%, -1%);
     }
     100% {
-      transform: scale(1) translate(0px, 0px);
+      transform: scale(1.00) translate(0, 0);
     }
   }
 
@@ -92,55 +92,42 @@
   }
 
   @keyframes heading-breath {
-    0% {
+    0%, 100% {
       opacity: 0.9;
       transform: translateY(0px);
-      filter: brightness(0.95);
     }
     50% {
       opacity: 1;
       transform: translateY(-3px);
-      filter: brightness(1.05);
-    }
-    100% {
-      opacity: 0.9;
-      transform: translateY(0px);
-      filter: brightness(0.95);
     }
   }
 
-  @keyframes gold-divider-pulse {
-    0% {
-      transform: scaleX(0.85);
-      filter: brightness(0.9);
+  @keyframes gold-divider-shimmer {
+    0%, 100% {
+      width: 5rem; /* w-20 */
+      background-color: #8C6212; /* deep golden bronze */
+      filter: brightness(0.95);
     }
     50% {
-      transform: scaleX(1.15);
-      filter: brightness(1.2);
-    }
-    100% {
-      transform: scaleX(0.85);
-      filter: brightness(0.9);
+      width: 7rem; /* w-28 */
+      background-color: #D4AF37; /* vibrant metallic amber */
+      filter: brightness(1.25);
     }
   }
 
   @keyframes subtext-breath {
-    0% {
-      opacity: 0.75;
+    0%, 100% {
+      opacity: 0.9;
       transform: translateY(0px);
     }
     50% {
-      opacity: 0.9;
+      opacity: 1;
       transform: translateY(-2px);
-    }
-    100% {
-      opacity: 0.75;
-      transform: translateY(0px);
     }
   }
 
-  .animate-bg-pan-pulse {
-    animation: background-pan-pulse 30s ease-in-out infinite;
+  .animate-infinitePan {
+    animation: infinitePan 25s linear infinite alternate;
   }
 
   .animate-tagline-breath {
@@ -151,8 +138,8 @@
     animation: heading-breath 6s ease-in-out infinite;
   }
 
-  .animate-divider-pulse {
-    animation: gold-divider-pulse 5s ease-in-out infinite;
+  .animate-divider-shimmer {
+    animation: gold-divider-shimmer 4s ease-in-out infinite;
   }
 
   .animate-subtext-breath {

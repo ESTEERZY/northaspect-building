@@ -4,21 +4,13 @@ const Hero = () => {
       id="home" 
       className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
-      {/* The Ambient Video Wrapper */}
-      <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-30 grayscale animate-bg-pan-pulse"
-        >
-          <source 
-            src="https://assets.mixkit.co/videos/preview/mixkit-modern-apartment-building-facade-41716-large.mp4" 
-            type="video/mp4" 
-          />
-          Your browser does not support the video tag.
-        </video>
+      {/* Absolute Background Image Container */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <img
+          src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&dpr=1"
+          alt="Luxury Residential Build"
+          className="w-full h-full object-cover opacity-40 grayscale animate-infinitePan"
+        />
         
         {/* The Contrast Shield */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90 pointer-events-none z-[1]"></div>
@@ -40,7 +32,7 @@ const Hero = () => {
           </h1>
 
           {/* The Central Accent Line */}
-          <div className="h-[2px] bg-gold mx-auto my-6 w-32 animate-divider-pulse" />
+          <div className="h-[2px] bg-gold mx-auto my-6 w-20 animate-divider-shimmer" />
 
           {/* The Subtext Paragraph */}
           <p className="text-xl lg:text-2xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
