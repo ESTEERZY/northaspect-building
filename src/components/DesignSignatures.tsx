@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
-const Advantage = () => {
-  const advantages = [
+const DesignSignatures = () => {
+  const signatures = [
     {
       image: '/images/modern-residential.png',
       title: 'Modern Architecture',
@@ -42,9 +42,8 @@ const Advantage = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16 space-y-6"
         >
-
           <h2 className="text-5xl lg:text-6xl font-black tracking-tighter text-white leading-tight max-w-3xl mx-auto">
-            The Apex <span className="text-gold">Advantage</span>
+            Design <span className="text-gold">Signatures</span>
           </h2>
 
           <p className="text-xl text-white/60 font-medium leading-relaxed max-w-2xl mx-auto tracking-tight">
@@ -60,7 +59,7 @@ const Advantage = () => {
           viewport={{ once: true, margin: '-80px' }}
           className="grid md:grid-cols-3 gap-8"
         >
-          {advantages.map((item) => (
+          {signatures.map((item) => (
             <motion.div
               key={item.title}
               variants={cardVariants}
@@ -79,4 +78,4 @@ const Advantage = () => {
   );
 };
 
-export default Advantage;
+export default DesignSignatures;

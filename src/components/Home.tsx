@@ -6,7 +6,7 @@ import BlueprintToggle from './BlueprintToggle'
 import ProcessBreakdown from './ProcessBreakdown'
 import Stats from './Stats'
 import About from './About'
-import Advantage from './Advantage'
+import DesignSignatures from './DesignSignatures'
 import Projects from './Projects'
 import Contact from './Contact'
 import Footer from './Footer'
@@ -35,7 +35,7 @@ const Home = () => {
       <BlueprintToggle />
       <Stats />
       <About />
-      <Advantage />
+      <DesignSignatures />
       <Contact />
       <Footer />
     </>

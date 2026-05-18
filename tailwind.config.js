@@ -16,7 +16,7 @@ export default {
       },
       fontFamily: {
         sans: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        heading: ['"Playfair Display"', 'serif'],
+        heading: ['"Cormorant Garamond"', 'serif'],
       },
       animation: {
         'fade-in': 'fade-in 0.8s ease-in-out',
