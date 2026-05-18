@@ -31,8 +31,8 @@ const Home = () => {
       <Header />
       <Hero />
       <Projects />
-      <BlueprintToggle />
       <ProcessBreakdown />
+      <BlueprintToggle />
       <Stats />
       <About />
       <Advantage />
