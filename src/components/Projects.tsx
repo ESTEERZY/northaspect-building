@@ -1,50 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, MapPin, Ruler, Layers } from 'lucide-react'
+import { projectsData } from '../data/projectsData'
 
 const Projects = () => {
-  const projects = [
-    {
-      id: 'modern-villa-complex',
-      image: '/images/villa-complex.png',
-      title: 'Modern Villa Complex',
-      location: 'Beverly Hills, CA',
-      scale: '1,450 sqm',
-      status: 'Completed',
-      materials: 'Concrete & Glass',
-      intent: 'Merging brutalist forms with natural topography. Seamless indoor-outdoor living.',
-    },
-    {
-      id: 'luxury-estate',
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Luxury Estate',
-      location: 'Aspen, CO',
-      scale: '2,100 sqm',
-      status: 'Completed',
-      materials: 'Timber & Stone',
-      intent: 'Contemporary alpine retreat. Panoramic views. Sustainable, locally sourced materials.',
-    },
-    {
-      id: 'urban-development',
-      image: '/images/urban-development.png',
-      title: 'Urban Development',
-      location: 'New York, NY',
-      scale: '3,800 sqm',
-      status: 'In Progress',
-      materials: 'Steel & Glass',
-      intent: 'Redefining vertical living. Maximized natural light penetration. Efficient structural envelope.',
-    },
-    {
-      id: 'architectural-masterpiece',
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Architectural Masterpiece',
-      location: 'Malibu, CA',
-      scale: '950 sqm',
-      status: 'Completed',
-      materials: 'Exposed Concrete',
-      intent: 'Minimalist precision. Monumental frame for the Pacific. Clean geometry.',
-    },
-  ]
-
   return (
     <section id="portfolio" className="py-32 bg-darkgray relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/10 to-transparent"></div>
@@ -63,59 +21,107 @@ const Projects = () => {
 
         {/* Projects List */}
         <div className="space-y-32">
-          {projects.map((project, index) => (
+          {projectsData.map((project, index) => (
             <div
               key={index}
               className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center animate-slide-up group`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Project Image wrapped in Link */}
-              <Link 
-                to={`/${project.id}.html`}
-                className="w-full lg:w-3/5 relative aspect-[16/10] overflow-hidden rounded-[2px] shadow-2xl border border-white/10 block cursor-pointer"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors duration-500"></div>
-              </Link>
+              {/* Multi-Image Grid Showcase */}
+              <div className="w-full lg:w-3/5 grid grid-cols-12 gap-4 aspect-[16/10] group/images relative shrink-0">
+                {/* Large primary cover image */}
+                <Link 
+                  to={`/${project.id}.html`}
+                  className="col-span-8 relative h-full overflow-hidden rounded-[2px] shadow-2xl border border-white/10 block cursor-pointer"
+                >
+                  <img
+                    src={project.heroImage}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover/images:scale-102"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-charcoal/20 group-hover/images:bg-transparent transition-colors duration-500"></div>
+                  <span className="absolute bottom-4 left-4 bg-[#0c0c0c]/85 backdrop-blur-md px-3.5 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase border border-white/10 text-white z-10">
+                    Cover Overview
+                  </span>
+                </Link>
+
+                {/* Vertical stack of supporting gallery images */}
+                <div className="col-span-4 flex flex-col gap-4 h-full">
+                  {/* Framing Image */}
+                  <Link 
+                    to={`/${project.id}.html`}
+                    className="h-[calc(50%-8px)] relative overflow-hidden rounded-[2px] shadow-lg border border-white/10 block cursor-pointer"
+                  >
+                    <img
+                      src={project.gallery[1]?.image || project.heroImage}
+                      alt={`${project.title} Structural Framing`}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-charcoal/30 hover:bg-transparent transition-colors duration-300"></div>
+                    <span className="absolute bottom-3 left-3 bg-[#0c0c0c]/85 backdrop-blur-md px-2.5 py-1 text-[8px] font-bold tracking-[0.18em] uppercase border border-white/10 text-white/80 z-10">
+                      Framing Phase
+                    </span>
+                  </Link>
+
+                  {/* Finishes Image */}
+                  <Link 
+                    to={`/${project.id}.html`}
+                    className="h-[calc(50%-8px)] relative overflow-hidden rounded-[2px] shadow-lg border border-white/10 block cursor-pointer"
+                  >
+                    <img
+                      src={project.gallery[2]?.image || project.heroImage}
+                      alt={`${project.title} Finishes`}
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-charcoal/30 hover:bg-transparent transition-colors duration-300"></div>
+                    <span className="absolute bottom-3 left-3 bg-[#0c0c0c]/85 backdrop-blur-md px-2.5 py-1 text-[8px] font-bold tracking-[0.18em] uppercase border border-white/10 text-white/80 z-10">
+                      Final Finishes
+                    </span>
+                  </Link>
+                </div>
+              </div>
 
               {/* Case Study Content */}
               <div className="w-full lg:w-2/5 flex flex-col justify-center">
                 <Link to={`/${project.id}.html`} className="inline-block group-hover:text-gold transition-colors duration-500">
-                  <h3 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-8 group-hover:text-gold transition-colors duration-500">
+                  <h3 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 group-hover:text-gold transition-colors duration-500">
                     {project.title}
                   </h3>
                 </Link>
                 
-                <div className="mb-10">
-                  <h4 className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase font-sans mb-3">Architectural Intent</h4>
-                  <p className="text-lg text-white/70 font-sans leading-relaxed">
-                    {project.intent}
+                <div className="mb-8 pl-4 border-l-2 border-gold/30">
+                  <h4 className="text-[10px] font-bold tracking-[0.25em] text-white/30 uppercase font-sans mb-2">Design Concept</h4>
+                  <p className="text-base text-white/70 font-sans leading-relaxed font-light">
+                    <span className="font-bold text-white tracking-wide">
+                      {project.intent.split('.')[0]}.
+                    </span>
+                    {project.intent.substring(project.intent.indexOf('.') + 1)}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-x-8 gap-y-8 border-t border-white/10 pt-8 font-sans">
                   <div>
-                    <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-2">
-                      <MapPin size={14} className="text-gold" /> Location
+                    <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
+                      <MapPin size={12} className="text-gold" /> Location
                     </div>
-                    <div className="text-base md:text-lg font-bold text-white">{project.location}</div>
+                    <div className="text-base font-bold text-white">{project.location}</div>
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-2">
-                      <Ruler size={14} className="text-gold" /> Scale & Status
+                    <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
+                      <Ruler size={12} className="text-gold" /> Scale & Status
                     </div>
-                    <div className="text-base md:text-lg font-bold text-white">{project.scale} / {project.status}</div>
+                    <div className="text-base font-bold text-white">
+                      {project.scale} <span className="text-gold font-light">/</span> {project.status}
+                    </div>
                   </div>
                   <div className="col-span-2">
-                    <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-3">
-                      <Layers size={14} className="text-gold" /> Materials
+                    <div className="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">
+                      <Layers size={12} className="text-gold" /> Materials
                     </div>
-                    <div className="inline-flex px-5 py-2.5 bg-white/5 border border-white/10 text-sm font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
+                    <div className="inline-flex px-4 py-2 bg-white/5 border border-white/10 text-xs font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
                       {project.materials}
                     </div>
                   </div>
