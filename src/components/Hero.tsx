@@ -1,13 +1,24 @@
+import { useEffect, useRef } from 'react';
+
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((error) => {
+        console.error("Autoplay failed or asset blocked:", error);
+      });
+    }
+  }, []);
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex items-center justify-center bg-charcoal"
-      style={{ overflow: 'hidden' }}
+      className="relative min-h-screen w-full flex items-center justify-center"
+      style={{ overflow: 'hidden', backgroundColor: 'transparent' }}
     >
-      {/* Background video — optimized to prevent browser blocking */}
-      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, overflow: 'hidden', background: '#0b0b0b' }}>
-        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}>
+      <div id="video-container" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', backgroundColor: '#111111' }}>
+        <video id="bg-video" ref={videoRef} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', position: 'absolute', top: 0, left: 0 }}>
           <source src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-under-construction-42316-large.mp4" type="video/mp4" />
         </video>
 
