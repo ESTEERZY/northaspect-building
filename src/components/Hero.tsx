@@ -16,18 +16,18 @@ const Hero = () => {
       `}</style>
 
       {/* Endless background video loop */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-[#0c0c0c]">
+      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-charcoal">
         <video
-          src="/videos/hero-bg-optimized.mp4"
-          className="w-full h-full object-cover opacity-100"
+          src="/videos/hero.mp4"
+          className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
           autoPlay
           loop
           muted
           playsInline
           preload="auto"
         />
-        {/* Rich gradient overlay for premium legibility and blending */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/85 via-transparent to-[#0c0c0c] z-[1]"></div>
+        {/* Subtle dark overlay for premium legibility */}
+        <div className="absolute inset-0 bg-black/40 z-[1]"></div>
       </div>
 
       {/* Centered content wrapper */}
