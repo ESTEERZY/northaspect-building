@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const DesignSignatures = () => {
   const signatures = [
     {
-      image: '/images/modern-residential.png',
+      image: '/case-studies/industrial-loft/image1.png',
       title: 'Modern Architecture',
       description: 'Award-winning designs. Maximized natural light. Open living spaces.',
     },
