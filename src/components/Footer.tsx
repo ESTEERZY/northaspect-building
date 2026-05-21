@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react'
+import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin, Clock } from 'lucide-react'
 
 const Footer = () => {
   const quickLinks = [
@@ -98,6 +98,16 @@ const Footer = () => {
                   <p className="text-slate-600 font-medium">
                     123 Construction Ave<br/>
                     Building City, ST 12345
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
+                <div>
+                  <p className="text-slate-600 font-medium">
+                    Monday – Friday: 9:00 AM – 5:00 PM<br/>
+                    Saturday: By Appointment Only<br/>
+                    Sunday: Closed
                   </p>
                 </div>
               </div>
