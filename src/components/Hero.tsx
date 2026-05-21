@@ -6,29 +6,9 @@ const Hero = () => {
       style={{ overflow: 'hidden' }}
     >
       {/* Background video — optimized to prevent browser blocking */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1,
-          overflow: 'hidden',
-          background: '#000',
-        }}
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
-        >
-          <source
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-            type="video/mp4"
-          />
+      <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1, overflow: 'hidden', background: '#0b0b0b' }}>
+        <video autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}>
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-under-construction-42316-large.mp4" type="video/mp4" />
         </video>
 
         {/* Gradient overlay for legibility */}
