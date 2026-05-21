@@ -43,6 +43,16 @@ const Projects = () => {
       materials: 'Exposed Concrete',
       intent: 'Minimalist precision. Monumental frame for the Pacific. Clean geometry.',
     },
+    {
+      id: 'industrial-loft',
+      image: '/case-studies/industrial-loft/image1.png',
+      title: 'Industrial Loft',
+      location: 'Brooklyn, NY',
+      scale: '1,200 sqm',
+      status: 'Completed',
+      materials: 'Brick & Steel',
+      intent: 'Preserving historical textures while introducing bold, contemporary forms.',
+    },
   ]
 
   return (
