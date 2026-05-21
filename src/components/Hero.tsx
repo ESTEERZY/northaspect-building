@@ -2,24 +2,45 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
+      className="relative min-h-screen w-full flex items-center justify-center bg-charcoal"
+      style={{ overflow: 'hidden' }}
     >
-      {/* Background video */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-[#0c0c0c]">
+      {/* Background video — optimized to prevent browser blocking */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: -1,
+          overflow: 'hidden',
+          background: '#000',
+        }}
+      >
         <video
-          className="w-full h-full object-cover opacity-40"
           autoPlay
           loop
           muted
           playsInline
+          style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.45 }}
         >
           <source
-            src="https://videos.pexels.com/video-files/8348574/8348574-uhd_2560_1440_25fps.mp4"
+            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
             type="video/mp4"
           />
         </video>
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/80 via-[#0c0c0c]/20 to-[#0c0c0c] z-[1]" />
+
+        {/* Gradient overlay for legibility */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(to bottom, rgba(12,12,12,0.80) 0%, rgba(12,12,12,0.20) 50%, rgba(12,12,12,1) 100%)',
+            zIndex: 1,
+          }}
+        />
       </div>
 
       {/* Centered content */}
@@ -40,8 +61,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-charcoal to-transparent z-[2]" />
+      {/* Bottom fade to next section */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-charcoal to-transparent z-10" />
     </section>
   );
 };
