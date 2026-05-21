@@ -1,4 +1,30 @@
+import { useEffect, useRef } from 'react';
+
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Manually force muted to fix React's muted prop bug on some browsers
+    video.muted = true;
+
+    const tryPlay = () => {
+      video.play().catch(() => {
+        // Autoplay blocked — video stays hidden, dark bg shown
+      });
+    };
+
+    if (video.readyState >= 3) {
+      tryPlay();
+    } else {
+      video.addEventListener('canplay', tryPlay, { once: true });
+    }
+
+    return () => video.removeEventListener('canplay', tryPlay);
+  }, []);
+
   return (
     <section 
       id="hero" 
@@ -13,25 +39,72 @@ const Hero = () => {
           0% { transform: scale(1) translate(0, 0); }
           100% { transform: scale(1.08) translate(-1%, -0.5%); }
         }
+        .hero-yt-wrapper {
+          position: absolute;
+          inset: -10%;
+          width: 120%;
+          height: 120%;
+          pointer-events: none;
+          overflow: hidden;
+        }
+        .hero-yt-wrapper iframe {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border: none;
+        }
       `}</style>
 
-      {/* Endless background video loop */}
+      {/* === YouTube Background Video === */}
+      {/* 
+        VIDEO ID TO SWAP: Replace the ?v= value in the src below with any YouTube
+        construction timelapse ID. Current video: Custom home construction timelapse.
+        Parameters: autoplay=1, mute=1, loop=1, controls=0, start=8 (skips into action)
+      */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-[#0c0c0c]">
+        {/* YouTube IFrame — scales to fill the full hero */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: 'max(177.78vh, 100vw)',
+            height: 'max(56.25vw, 100vh)',
+            opacity: 0.45,
+            pointerEvents: 'none',
+          }}
+        >
+          <iframe
+            src="https://www.youtube.com/embed/T1Wc37P-9sM?autoplay=1&mute=1&loop=1&playlist=T1Wc37P-9sM&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&start=15&enablejsapi=1"
+            allow="autoplay; encrypted-media"
+            allowFullScreen={false}
+            style={{
+              width: '100%',
+              height: '100%',
+              border: 'none',
+              pointerEvents: 'none',
+            }}
+            title="hero-bg"
+          />
+        </div>
+
+        {/* Fallback video (plays if YouTube is blocked or iframe fails) */}
         <video
-          className="w-full h-full object-cover opacity-40"
-          autoPlay
+          ref={videoRef}
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
           loop
           muted
           playsInline
-          crossOrigin="anonymous"
+          autoPlay
+          style={{ pointerEvents: 'none' }}
         >
-          {/* Primary: construction worker on building site — 720p for fast load */}
           <source src="https://videos.pexels.com/video-files/7964907/7964907-hd_1280_720_25fps.mp4" type="video/mp4" />
-          {/* Fallback: construction site aerial footage */}
           <source src="https://videos.pexels.com/video-files/6985306/6985306-hd_1280_720_25fps.mp4" type="video/mp4" />
         </video>
+
         {/* Rich gradient overlay for premium legibility and blending */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/85 via-transparent to-[#0c0c0c] z-[1]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/80 via-[#0c0c0c]/20 to-[#0c0c0c] z-[1]" />
       </div>
 
       {/* Centered content wrapper */}
@@ -55,8 +128,8 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom fade to next section (matches design system) */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-charcoal to-transparent z-[2]"></div>
+      {/* Bottom fade to next section */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-charcoal to-transparent z-[2]" />
     </section>
   );
 };
