@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       id: 'modern-villa-complex',
-      image: '/images/villa-complex.png',
+      image: '/case-studies/modern-villa-complex/image1.webp',
       title: 'Modern Villa Complex',
       location: 'Beverly Hills, CA',
       scale: '1,450 sqm',
@@ -15,7 +15,7 @@ const Projects = () => {
     },
     {
       id: 'luxury-estate',
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/case-studies/luxury-estate/image1.webp',
       title: 'Luxury Estate',
       location: 'Aspen, CO',
       scale: '2,100 sqm',
@@ -25,7 +25,7 @@ const Projects = () => {
     },
     {
       id: 'urban-development',
-      image: '/images/urban-development.png',
+      image: '/case-studies/urban-development/image1.webp',
       title: 'Urban Development',
       location: 'New York, NY',
       scale: '3,800 sqm',
@@ -35,7 +35,7 @@ const Projects = () => {
     },
     {
       id: 'architectural-masterpiece',
-      image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/case-studies/architectural-masterpiece/image1.webp',
       title: 'Architectural Masterpiece',
       location: 'Malibu, CA',
       scale: '950 sqm',

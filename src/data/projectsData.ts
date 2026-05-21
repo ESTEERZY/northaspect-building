@@ -26,7 +26,7 @@ export const projectsData: CaseStudyData[] = [
     title: 'Modern Villa Complex',
     location: 'Beverly Hills, CA',
     scope: '1,450 sqm / Custom Brutalist Villa',
-    heroImage: '/images/villa-complex.png',
+    heroImage: '/case-studies/modern-villa-complex/image1.webp',
     overview: 'Merging brutalist architectural form with the dramatic hillside topography of Beverly Hills. The structure utilizes heavy cast-in-place concrete cantilevers to suspend habitable volumes over the terrain, creating an active dialog between mass and gravity. Floor-to-ceiling glass envelopes frame panoramic views while ensuring a completely seamless transition between the internal structural grid and the external landscaped terraces.',
     metrics: [
       { label: 'Year Completed', value: '2025' },
@@ -39,18 +39,18 @@ export const projectsData: CaseStudyData[] = [
     gallery: [
       {
         type: 'Structural Details',
-        image: '/images/blueprint-base.png',
-        description: 'Bespoke structural blueprint showing foundation plans, rebar load points, and load-bearing concrete cores.'
+        image: '/case-studies/modern-villa-complex/image2.webp',
+        description: 'Cast-in-place concrete cores and post-tensioned slab formwork detailing.'
       },
       {
         type: 'Interior Framing',
-        image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
-        description: 'Pouring board-formed concrete walls, structural concrete formwork details, and heavy structural reinforcements.'
+        image: '/case-studies/modern-villa-complex/image3.webp',
+        description: 'Board-formed concrete structural framing and load-bearing columns.'
       },
       {
         type: 'Final Finishes',
-        image: 'https://images.pexels.com/photos/1650904/pexels-photo-1650904.jpeg?auto=compress&cs=tinysrgb&w=800',
-        description: 'The completed brutalist interior showing smooth exposed concrete walls, full-bleed glass windows, and clean linear trims.'
+        image: '/case-studies/modern-villa-complex/image4.webp',
+        description: 'Exposed brutalist concrete walls and custom minimalist glass transitions.'
       }
     ]
   },
@@ -59,7 +59,7 @@ export const projectsData: CaseStudyData[] = [
     title: 'Luxury Estate',
     location: 'Aspen, CO',
     scope: '2,100 sqm / Alpine Residence',
-    heroImage: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    heroImage: '/case-studies/luxury-estate/image1.webp',
     overview: 'A contemporary interpretation of the classic alpine chalet. Designed to withstand extreme climate loads while presenting a light, hovering aesthetic on the snowy slopes of Aspen. Heavy timber glulam columns integrate perfectly with a structural stone core to anchor the building, while double-glazed glass curtain walls frame dramatic snow-capped peaks. The design prioritizes local stone extraction and sustainable wood sourcing.',
     metrics: [
       { label: 'Year Completed', value: '2024' },
@@ -72,18 +72,18 @@ export const projectsData: CaseStudyData[] = [
     gallery: [
       {
         type: 'Structural Details',
-        image: '/images/blueprint-drawing.png',
-        description: 'CAD elevation detailing log-joint assembly coordinates and post-and-beam timber layout specifications.'
+        image: '/case-studies/luxury-estate/image2.webp',
+        description: 'Site excavation, heavy foundation concrete pour, and primary structural stone core anchoring.'
       },
       {
         type: 'Interior Framing',
-        image: '/images/luxury-estate-framing.png',
-        description: 'Premium heavy timber glulam framework under construction, showcasing clean mortise and tenon joinery.'
+        image: '/case-studies/luxury-estate/image3.webp',
+        description: 'Alpine larch framing and load-bearing timber columns in winter conditions.'
       },
       {
         type: 'Final Finishes',
-        image: '/images/luxury-estate-finishes.png',
-        description: 'Cozy contemporary chalet interior displaying rich warm wood columns, local structural stone hearth, and wide vistas.'
+        image: '/case-studies/luxury-estate/image4.webp',
+        description: 'Finished modern rustic living area featuring natural stone and larch timber finishes.'
       }
     ]
   },
@@ -92,7 +92,7 @@ export const projectsData: CaseStudyData[] = [
     title: 'Urban Development',
     location: 'New York, NY',
     scope: '3,800 sqm / Mixed-Use Residential Hub',
-    heroImage: '/images/urban-development.png',
+    heroImage: '/case-studies/urban-development/image1.webp',
     overview: 'Redefining vertical luxury living within a dense urban envelope. This Manhattan project coordinates high-performance steel framing with structural acoustic dampening. By maximizing natural light penetration through complex structural setbacks and terraces, each residence feels expansive and private. The exterior envelope features an innovative pre-weathered steel and bronze facade that echoes the industrial heritage of its neighborhood.',
     metrics: [
       { label: 'Year Completed', value: 'In Progress' },
@@ -105,18 +105,18 @@ export const projectsData: CaseStudyData[] = [
     gallery: [
       {
         type: 'Structural Details',
-        image: '/images/blueprint-base.png',
-        description: 'Detailed mechanical coordinate blueprint representing structural steel truss and girder connections.'
+        image: '/case-studies/urban-development/image2.webp',
+        description: 'Heavy structural steel framing showing columns, beams, and composite metal decks.'
       },
       {
         type: 'Interior Framing',
-        image: 'https://images.pexels.com/photos/27406/pexels-photo-27406.jpeg?auto=compress&cs=tinysrgb&w=800',
-        description: 'Heavy structural steel framing construction, showing robust steel column and beam grid layout.'
+        image: '/case-studies/urban-development/image3.webp',
+        description: 'Installation of high-performance glass curtain walls and structural sound dampening systems.'
       },
       {
         type: 'Final Finishes',
-        image: 'https://images.pexels.com/photos/273683/pexels-photo-273683.jpeg?auto=compress&cs=tinysrgb&w=800',
-        description: 'Luxury Manhattan industrial-style loft interior showing sleek dark steel window frames and raw materials.'
+        image: '/case-studies/urban-development/image4.webp',
+        description: 'Completed industrial loft residence with exposed structural steel details.'
       }
     ]
   },
@@ -125,7 +125,7 @@ export const projectsData: CaseStudyData[] = [
     title: 'Architectural Masterpiece',
     location: 'Malibu, CA',
     scope: '950 sqm / Oceanfront Luxury Pavilion',
-    heroImage: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    heroImage: '/case-studies/architectural-masterpiece/image1.webp',
     overview: 'A masterclass in structural minimalist precision. Perched on a coastal bluff in Malibu, this pavilion represents a single-level monumental frame that captures the Pacific Ocean. The architecture utilizes ultra-slender carbon-fiber reinforced concrete supports to create a wide-span living area that is completely free of interior columns. Fully pocketing glass panels slide away, merging the living space with the infinity pool deck.',
     metrics: [
       { label: 'Year Completed', value: '2025' },
@@ -138,18 +138,18 @@ export const projectsData: CaseStudyData[] = [
     gallery: [
       {
         type: 'Structural Details',
-        image: '/images/blueprint-drawing.png',
-        description: 'Coastal cantilever structural framing blueprints, highlighting thin column anchor details.'
+        image: '/case-studies/architectural-masterpiece/image2.webp',
+        description: 'Slender structural columns and wide-span carbon-fiber reinforced concrete pavilion skeleton.'
       },
       {
         type: 'Interior Framing',
-        image: 'https://images.pexels.com/photos/2034335/pexels-photo-2034335.jpeg?auto=compress&cs=tinysrgb&w=800',
-        description: 'Millimeter-precise installation of structural carbon-fiber reinforces and white concrete details.'
+        image: '/case-studies/architectural-masterpiece/image3.webp',
+        description: 'Framing of minimalist sliding glass wall tracks and oceanfront infinity pool deck reinforcement.'
       },
       {
         type: 'Final Finishes',
-        image: 'https://images.pexels.com/photos/323775/pexels-photo-323775.jpeg?auto=compress&cs=tinysrgb&w=800',
-        description: 'Monolithic seaside pavilion finish showcasing pure white surfaces, open vistas, and ocean-facing pool deck.'
+        image: '/case-studies/architectural-masterpiece/image4.webp',
+        description: 'Finished seaside pavilion with glass walls fully pocketed, exposing pure white finishes.'
       }
     ]
   }

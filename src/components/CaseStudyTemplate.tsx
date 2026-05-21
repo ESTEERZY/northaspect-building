@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, MapPin, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { projectsData } from '../data/projectsData'
@@ -8,10 +8,12 @@ const CaseStudyTemplate = () => {
   const { id } = useParams<{ id: string }>()
   const cleanId = id ? id.replace('.html', '') : ''
   const project = projectsData.find((p) => p.id === cleanId)
+  const [activeIndex, setActiveIndex] = useState(0)
 
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0)
+    setActiveIndex(0)
   }, [id])
 
   if (!project) {
@@ -173,6 +175,119 @@ const CaseStudyTemplate = () => {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* 4. Technical Construction Gallery */}
+      <section className="py-24 bg-[#0a0a0a] border-t border-white/5 relative z-10">
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase block mb-3">Construction Lifecycle</span>
+              <h2 className="text-3xl md:text-5xl font-bold font-heading text-white">
+                Technical Progress Gallery
+              </h2>
+            </div>
+            
+            {/* Slider Navigation */}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setActiveIndex((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1))}
+                className="w-12 h-12 rounded-full border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-all duration-300 bg-[#111]"
+                aria-label="Previous Slide"
+              >
+                <ArrowLeft size={20} />
+              </button>
+              <span className="text-sm font-sans font-bold tracking-widest text-white/50">
+                {String(activeIndex + 1).padStart(2, '0')} / {String(project.gallery.length).padStart(2, '0')}
+              </span>
+              <button
+                onClick={() => setActiveIndex((prev) => (prev === project.gallery.length - 1 ? 0 : prev + 1))}
+                className="w-12 h-12 rounded-full border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-all duration-300 bg-[#111]"
+                aria-label="Next Slide"
+              >
+                <ArrowRight size={20} />
+              </button>
+            </div>
+          </div>
+
+          {/* Slider Main Box */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#111] border border-white/10 p-6 md:p-10 rounded-[2px] relative overflow-hidden">
+            {/* Main Image Container */}
+            <div className="lg:col-span-8 relative aspect-[16/10] overflow-hidden rounded-[2px] border border-white/5 group">
+              <img
+                src={project.gallery[activeIndex].image}
+                alt={project.gallery[activeIndex].description}
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102"
+              />
+              <div className="absolute inset-0 bg-black/15 pointer-events-none"></div>
+              
+              {/* Stage Tag */}
+              <div className="absolute top-6 left-6 bg-charcoal/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-[2px]">
+                <span className="text-xs font-bold tracking-widest text-gold uppercase">
+                  {project.gallery[activeIndex].type}
+                </span>
+              </div>
+            </div>
+
+            {/* Slider Info Panel */}
+            <div className="lg:col-span-4 flex flex-col justify-center h-full space-y-6">
+              <div>
+                <span className="text-[10px] font-bold tracking-[0.25em] text-white/40 uppercase block mb-2">Stage</span>
+                <h3 className="text-2xl md:text-3xl font-bold font-heading text-white">
+                  {project.gallery[activeIndex].type}
+                </h3>
+              </div>
+              
+              <div className="w-12 h-px bg-white/20"></div>
+
+              <p className="text-base text-white/70 font-sans leading-relaxed font-medium">
+                {project.gallery[activeIndex].description}
+              </p>
+
+              {/* Dots Indicator */}
+              <div className="flex gap-2 pt-6">
+                {project.gallery.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveIndex(idx)}
+                    className={`h-1 transition-all duration-300 rounded-full ${
+                      idx === activeIndex ? 'w-8 bg-gold' : 'w-2 bg-white/20 hover:bg-white/40'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Thumbnail Previews */}
+          <div className="grid grid-cols-3 gap-6 mt-8">
+            {project.gallery.map((item, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                className={`relative aspect-[16/10] overflow-hidden rounded-[2px] border text-left transition-all duration-500 group ${
+                  idx === activeIndex 
+                    ? 'border-gold shadow-[0_0_15px_rgba(212,175,55,0.15)] opacity-100' 
+                    : 'border-white/10 opacity-40 hover:opacity-80'
+                }`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.type}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
+                <div className="absolute bottom-3 left-3 right-3">
+                  <span className="text-[9px] font-bold tracking-widest text-white uppercase block truncate">
+                    {item.type}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
+
         </div>
       </section>
 
