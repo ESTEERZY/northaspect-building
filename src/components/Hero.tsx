@@ -25,10 +25,10 @@ const Hero = () => {
           playsInline
           crossOrigin="anonymous"
         >
-          {/* Pexels: direct MP4 — most browser-reliable, no referrer restrictions */}
-          <source src="https://videos.pexels.com/video-files/3209211/3209211-hd_1920_1080_25fps.mp4" type="video/mp4" />
-          {/* Vimeo CDN fallback */}
-          <source src="https://player.vimeo.com/external/355166344.hd.mp4?s=d574624984ac6dea0f071c5fda80f20c8cb6f291&profile_id=175" type="video/mp4" />
+          {/* Primary: construction worker on building site — 720p for fast load */}
+          <source src="https://videos.pexels.com/video-files/7964907/7964907-hd_1280_720_25fps.mp4" type="video/mp4" />
+          {/* Fallback: construction site aerial footage */}
+          <source src="https://videos.pexels.com/video-files/6985306/6985306-hd_1280_720_25fps.mp4" type="video/mp4" />
         </video>
         {/* Rich gradient overlay for premium legibility and blending */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/85 via-transparent to-[#0c0c0c] z-[1]"></div>
