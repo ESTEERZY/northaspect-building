@@ -119,12 +119,7 @@ const CaseStudyTemplate = () => {
               <div className="w-16 h-px bg-white/20"></div>
 
               <p className="text-xl md:text-2xl font-light text-white/90 leading-relaxed font-sans tracking-wide">
-                <span className="font-bold text-white block mb-4 border-l-4 border-gold pl-4 py-1 text-2xl md:text-3xl leading-snug">
-                  {project.overview.split('.')[0]}.
-                </span>
-                <span className="text-white/60 text-base md:text-lg block mt-2">
-                  {project.overview.substring(project.overview.indexOf('.') + 1).trim()}
-                </span>
+                {project.overview}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
@@ -150,7 +145,7 @@ const CaseStudyTemplate = () => {
             </div>
 
             {/* Right Column: Deep-Dive Project Metadata Metrics */}
-            <div className="lg:col-span-5 bg-white/[0.02] border border-white/10 p-8 md:p-10 rounded-[2px] shadow-xl relative overflow-hidden">
+            <div className="lg:col-span-5 bg-[#111] border border-white/10 p-8 md:p-10 rounded-[2px] shadow-xl relative overflow-hidden">
               {/* Subtle background architectural line */}
               <div className="absolute -right-10 -bottom-10 opacity-[0.03] text-white pointer-events-none font-black text-9xl uppercase font-sans">
                 SPEC
@@ -177,57 +172,6 @@ const CaseStudyTemplate = () => {
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Evolution of Form - Technical Phase Gallery */}
-      <section className="py-32 bg-[#080808] border-t border-b border-white/5 relative z-10">
-        <div className="container mx-auto px-6 lg:px-12">
-          {/* Header */}
-          <div className="mb-20 max-w-3xl">
-            <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase block mb-3">Evolution of Form</span>
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">
-              Technical Construction Phases
-            </h2>
-            <p className="text-lg text-white/55 font-sans leading-relaxed">
-              Meticulous documentation across key building stages. Skim the structural progress from mechanical drafting to the final premium finishes.
-            </p>
-          </div>
-
-          {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {project.gallery.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="group flex flex-col bg-[#0c0c0c] border border-white/10 rounded-[2px] overflow-hidden hover:border-gold/30 transition-all duration-500 shadow-xl"
-              >
-                {/* Image Section */}
-                <div className="relative aspect-[4/3] overflow-hidden w-full bg-charcoal">
-                  <img
-                    src={item.image}
-                    alt={item.description}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-charcoal/20 group-hover:bg-transparent transition-colors duration-500"></div>
-                  {/* Badge */}
-                  <span className="absolute top-4 left-4 bg-[#0c0c0c]/90 backdrop-blur-sm border border-white/10 px-3 py-1 text-[9px] font-bold tracking-widest text-gold uppercase">
-                    0{idx + 1} / {item.type}
-                  </span>
-                </div>
-
-                {/* Info Section */}
-                <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-gold transition-colors duration-300">
-                    {item.type}
-                  </h3>
-                  <p className="text-sm text-white/50 font-sans leading-relaxed flex-grow">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

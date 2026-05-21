@@ -1,5 +1,4 @@
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react'
-import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const quickLinks = [
@@ -113,15 +112,15 @@ const Footer = () => {
               © {new Date().getFullYear()} Apex Architecture. All rights reserved.
             </div>
             <div className="flex gap-8">
-              <Link to="/privacy.html" className="hover:text-gold transition-colors duration-500">
+              <a href="#" className="hover:text-gold transition-colors duration-500">
                 Privacy Policy
-              </Link>
-              <Link to="/terms.html" className="hover:text-gold transition-colors duration-500">
+              </a>
+              <a href="#" className="hover:text-gold transition-colors duration-500">
                 Terms of Service
-              </Link>
-              <Link to="/sitemap.html" className="hover:text-gold transition-colors duration-500">
+              </a>
+              <a href="#" className="hover:text-gold transition-colors duration-500">
                 Sitemap
-              </Link>
+              </a>
             </div>
           </div>
         </div>

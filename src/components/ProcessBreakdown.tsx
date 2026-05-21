@@ -5,19 +5,19 @@ const ProcessBreakdown = () => {
     {
       id: "01",
       title: "Luxury Project Gallery",
-      description: "Explore our portfolio of award-winning custom homes. Get inspired by masterworks to shape your vision.",
+      description: "Explore our portfolio of award-winning custom homes. Draw inspiration from our masterworks to begin shaping your vision.",
       image: "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       id: "02",
-      title: "Seamless Onboarding",
-      description: "Experience white-glove onboarding. Pair with an elite architectural consultant to map out every detail.",
+      title: "Seamless Client Onboarding",
+      description: "Experience white-glove service from day one. We pair you with an elite architectural consultant to map every detail.",
       image: "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       id: "03",
-      title: "Real-Time Updates",
-      description: "Total transparency. Watch your home take form with weekly site reports and milestone tracking.",
+      title: "Real-Time Construction Updates",
+      description: "Total transparency through the build phase. Watch your dream home come to life with weekly site reports and milestones.",
       image: "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ];
@@ -41,8 +41,8 @@ const ProcessBreakdown = () => {
           <h3 className="text-5xl md:text-7xl font-black tracking-tighter text-white mb-8 leading-[0.9]">
             From Vision to <span className="text-gold">Masterpiece.</span>
           </h3>
-          <p className="text-xl md:text-2xl font-light text-white/90 leading-relaxed max-w-2xl border-l-4 border-gold pl-8">
-            An <span className="font-bold text-white">effortless process</span> from design to hand-off. Transparent, precise, and bespoke.
+          <p className="text-xl md:text-2xl font-bold text-white/90 leading-relaxed max-w-2xl border-l-4 border-gold/30 pl-8">
+            A streamlined, transparent, and entirely bespoke process designed to make building your luxury home an effortless experience.
           </p>
         </motion.div>
 
