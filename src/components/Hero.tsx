@@ -1,13 +1,4 @@
-import { useState, useEffect } from 'react';
-
 const Hero = () => {
-  const [videoSrc, setVideoSrc] = useState<string | null>(null);
-
-  useEffect(() => {
-    // Load video after page mounts
-    setVideoSrc("https://player.vimeo.com/external/639283247.hd.mp4?s=3f4972956010f79654638a7eb667a236a4a429c3&profile_id=164");
-  }, []);
-
   return (
     <section 
       id="hero" 
@@ -26,16 +17,14 @@ const Hero = () => {
 
       {/* Endless background video loop */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0 pointer-events-none bg-[#0c0c0c]">
-        {videoSrc && (
-          <video
-            src={videoSrc}
-            className="w-full h-full object-cover opacity-40"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
-        )}
+        <video
+          src="https://player.vimeo.com/external/639283247.hd.mp4?s=3f4972956010f79654638a7eb667a236a4a429c3&profile_id=164"
+          className="w-full h-full object-cover opacity-40"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         {/* Rich gradient overlay for premium legibility and blending */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0c0c0c]/85 via-transparent to-[#0c0c0c] z-[1]"></div>
       </div>
