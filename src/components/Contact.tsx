@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, MapPin, Clock, Mail } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -45,37 +45,8 @@ const Contact = () => {
               Tell us about your project. Our consultants will respond within one business day.
             </p>
 
-            {/* Firm Information */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-8 border-t border-white/10 font-sans">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-gold uppercase">
-                  <MapPin size={14} /> Studio Location
-                </div>
-                <p className="text-sm font-semibold text-white/80 leading-relaxed">
-                  48 Wall Street, Penthouse<br />New York, NY 10005
-                </p>
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-gold uppercase">
-                  <Clock size={14} /> Studio Hours
-                </div>
-                <p className="text-sm font-semibold text-white/80 leading-relaxed">
-                  Mon – Fri: 9:00 AM – 6:00 PM<br />Sat: By Appointment Only
-                </p>
-              </div>
-              <div className="space-y-2 sm:col-span-2">
-                <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-gold uppercase">
-                  <Mail size={14} /> Direct Inquiries
-                </div>
-                <p className="text-sm font-semibold text-white/80">
-                  inquiries@apexarchitecture.com &nbsp;•&nbsp; +1 (212) 555-0190
-                </p>
-              </div>
-            </div>
-
             {/* Process Steps */}
-            <div className="space-y-6 pt-8 border-t border-white/10">
-              <div className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-2">Our Process</div>
+            <div className="space-y-6 pt-6">
               {[
                 { num: '01', label: 'Consultation', desc: 'Discuss vision and budget.' },
                 { num: '02', label: 'Design', desc: 'Tailored architectural drafting.' },

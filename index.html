@@ -1,89 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex Architecture</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body, html { width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; background-color: #0b0b0b; }
-        
-        /* Bulletproof Video Background Wrapper */
-        .video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            overflow: hidden;
-        }
-        .video-background video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6;
-        }
-
-        /* Top Navigation Bar */
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-        }
-        .logo { font-size: 24px; font-weight: bold; color: #FFF; text-transform: uppercase; letter-spacing: 2px; }
-        .logo span { color: #d4af37; }
-        nav a { color: #CCC; text-decoration: none; margin-left: 40px; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
-        .btn-start { border: 1px solid #444; padding: 12px 24px; color: #FFF; text-decoration: none; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; background: rgba(0,0,0,0.4); }
-
-        /* Hero Main Content Area */
-        .hero-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-            text-align: center;
-            padding: 0 20px;
-            z-index: 5;
-            position: relative;
-        }
-        .hero-title { font-size: 72px; font-family: 'Playfair Display', serif, Georgia; color: #FFF; font-weight: 400; line-height: 1.1; margin-bottom: 10px; }
-        .hero-title span { color: #d4af37; display: block; }
-        .divider { width: 120px; height: 1px; background: #d4af37; margin: 30px 0; }
-        .hero-subtitle { font-size: 18px; color: #BBB; max-width: 600px; line-height: 1.6; font-weight: 300; }
-    </style>
-</head>
-<body>
-
-    <div class="video-background">
-        <video autoplay loop muted playsinline>
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-architectural-shot-of-a-modern-house-under-construction-42316-large.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <header>
-        <div class="logo">Apex <span>Architecture</span></div>
-        <nav>
-            <a href="#">Signatures</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Process</a>
-            <a href="#" class="btn-start">Start A Project</a>
-        </nav>
-    </header>
-
-    <div class="hero-container">
-        <h1 class="hero-title">Structural Integrity.<span>Residential Form.</span></h1>
-        <div class="divider"></div>
-        <p class="hero-subtitle">Masterworks of modern living. Unparalleled craftsmanship. A seamless architectural journey.</p>
-    </div>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apex Architecture | The Future of Residential Building</title>
+    <meta name="description" content="Apex Architecture — luxury custom home builders crafting masterworks that redefine modern living. Explore our portfolio and begin your architectural journey today." />
+    <!-- Social Sharing Media Preview Tags -->
+    <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=630&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&h=630&q=80" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

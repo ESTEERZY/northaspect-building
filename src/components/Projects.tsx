@@ -100,22 +100,22 @@ const Projects = () => {
 
                 <div className="grid grid-cols-2 gap-x-8 gap-y-8 border-t border-white/10 pt-8 font-sans">
                   <div>
-                    <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-2">
-                      <MapPin size={14} className="text-gold" /> Location
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
+                      <MapPin size={12} className="text-gold" /> Location
                     </div>
-                    <div className="text-base md:text-lg font-bold text-white">{project.location}</div>
+                    <div className="text-sm font-medium text-white/90">{project.location}</div>
                   </div>
                   <div>
-                    <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-2">
-                      <Ruler size={14} className="text-gold" /> Scale & Status
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
+                      <Ruler size={12} className="text-gold" /> Scale & Status
                     </div>
-                    <div className="text-base md:text-lg font-bold text-white">{project.scale} / {project.status}</div>
+                    <div className="text-sm font-medium text-white/90">{project.scale} / {project.status}</div>
                   </div>
                   <div className="col-span-2">
-                    <div className="flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-3">
-                      <Layers size={14} className="text-gold" /> Materials
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-3">
+                      <Layers size={12} className="text-gold" /> Materials
                     </div>
-                    <div className="inline-flex px-5 py-2.5 bg-white/5 border border-white/10 text-sm font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
+                    <div className="inline-flex px-4 py-2 bg-white/5 border border-white/10 text-xs font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
                       {project.materials}
                     </div>
                   </div>
