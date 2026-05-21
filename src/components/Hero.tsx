@@ -27,7 +27,7 @@ const Hero = () => {
           preload="auto"
         />
         {/* Subtle dark overlay for premium legibility */}
-        <div className="absolute inset-0 bg-black/40 z-[1]"></div>
+        <div className="absolute inset-0 bg-black/50 z-[1]"></div>
       </div>
 
       {/* Centered content wrapper */}
