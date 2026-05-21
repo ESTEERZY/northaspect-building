@@ -221,13 +221,6 @@ const CaseStudyTemplate = () => {
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102"
               />
               <div className="absolute inset-0 bg-black/15 pointer-events-none"></div>
-              
-              {/* Stage Tag */}
-              <div className="absolute top-6 left-6 bg-charcoal/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-[2px]">
-                <span className="text-xs font-bold tracking-widest text-gold uppercase">
-                  {project.gallery[activeIndex].type}
-                </span>
-              </div>
             </div>
 
             {/* Slider Info Panel */}
@@ -279,11 +272,6 @@ const CaseStudyTemplate = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                <div className="absolute bottom-3 left-3 right-3">
-                  <span className="text-[9px] font-bold tracking-widest text-white uppercase block truncate">
-                    {item.type}
-                  </span>
-                </div>
               </button>
             ))}
           </div>
