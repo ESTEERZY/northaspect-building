@@ -1,46 +1,24 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const CountUpStat = ({ stat }: { stat: { value: string; label: string } }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [displayValue, setDisplayValue] = useState(0);
   
   const numMatch = stat.value.match(/[\d.]+/);
   const number = numMatch ? parseFloat(numMatch[0]) : 0;
   const prefix = stat.value.substring(0, stat.value.indexOf(numMatch ? numMatch[0] : ''));
   const suffix = stat.value.substring(stat.value.indexOf(numMatch ? numMatch[0] : '') + (numMatch ? numMatch[0].length : 0));
 
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  
   useEffect(() => {
     if (isInView) {
-      let start = 0;
-      const end = number;
-      if (start === end) {
-        setDisplayValue(end);
-        return;
-      }
-
-      const duration = 2000; // 2 seconds
-      const startTime = performance.now();
-
-      const animate = (currentTime: number) => {
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / duration, 1);
-        
-        // Ease out quadratic animation curve
-        const easeProgress = progress * (2 - progress);
-        
-        const currentValue = Math.round(start + easeProgress * (end - start));
-        setDisplayValue(currentValue);
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-
-      requestAnimationFrame(animate);
+      const controls = animate(count, number, { duration: 2, ease: "easeOut" });
+      return controls.stop;
     }
-  }, [isInView, number]);
+  }, [isInView, count, number]);
 
   return (
     <motion.div
@@ -50,7 +28,7 @@ const CountUpStat = ({ stat }: { stat: { value: string; label: string } }) => {
     >
       <div className="text-5xl lg:text-6xl font-black tracking-tighter text-white group-hover:text-gold transition-colors duration-500 flex justify-center">
         {prefix}
-        <span>{displayValue}</span>
+        <motion.span>{rounded}</motion.span>
         {suffix}
       </div>
       <div className="w-8 h-px bg-gold mx-auto"></div>
