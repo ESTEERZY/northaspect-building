@@ -57,7 +57,7 @@ export const projectsData: CaseStudyData[] = [
       },
       {
         type: 'Final Finishes',
-        image: 'https://images.pexels.com/photos/1650904/pexels-photo-1650904.jpeg?auto=compress&cs=tinysrgb&w=800',
+        image: '/images/modern-residential.png',
         description: 'The completed brutalist interior showing smooth exposed concrete walls, full-bleed glass windows, and clean linear trims.'
       }
     ]
