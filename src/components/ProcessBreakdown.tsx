@@ -6,7 +6,7 @@ const ProcessBreakdown = () => {
       id: "01",
       title: "Luxury Project Gallery",
       description: "Explore our portfolio of award-winning custom homes. Draw inspiration from our masterworks to begin shaping your vision.",
-      image: "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "/case-studies/minimalist-pavilion/image1.png"
     },
     {
       id: "02",
