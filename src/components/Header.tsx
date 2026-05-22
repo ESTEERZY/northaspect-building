@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   const navLinks = [
     { name: 'Signatures', href: '#features' },
@@ -13,9 +16,19 @@ const Header = () => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     const targetId = href.replace('#', '')
-    const element = document.getElementById(targetId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+    if (location.pathname === '/') {
+      const element = document.getElementById(targetId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      navigate('/', { state: { scrollToSection: targetId } })
+    }
+  }
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
 
@@ -24,9 +37,13 @@ const Header = () => {
       <nav className="container mx-auto px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="text-2xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-3">
+          <Link 
+            to="/" 
+            onClick={handleLogoClick}
+            className="text-2xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-3 hover:text-gold/90 transition-colors duration-300"
+          >
             Apex <span className="text-gold">Architecture</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-10">

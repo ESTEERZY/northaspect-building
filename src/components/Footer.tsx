@@ -1,7 +1,10 @@
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin, Clock } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
+
   const quickLinks = [
     { name: 'Home', href: '#hero' },
     { name: 'About Us', href: '#about' },
@@ -15,9 +18,17 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-3">
+            <Link
+              to="/"
+              onClick={() => {
+                if (location.pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }
+              }}
+              className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-3 hover:text-gold/90 transition-colors duration-300"
+            >
               Apex <span className="text-gold">Architecture</span>
-            </h3>
+            </Link>
             <p className="text-slate-600 font-medium leading-relaxed">
               Building excellence since 2014. Your trusted partner for premium residential and commercial construction.
             </p>
@@ -62,7 +73,11 @@ const Footer = () => {
                     onClick={(e) => {
                       e.preventDefault()
                       const targetId = link.href.replace('#', '')
-                      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' })
+                      if (location.pathname === '/') {
+                        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' })
+                      } else {
+                        navigate('/', { state: { scrollToSection: targetId } })
+                      }
                     }}
                     className="text-slate-600 font-medium hover:text-gold transition-colors duration-500"
                   >

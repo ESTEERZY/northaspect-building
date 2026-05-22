@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { ArrowLeft } from 'lucide-react'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -13,6 +14,13 @@ const Sitemap = () => {
       <Header />
       <main className="min-h-screen bg-charcoal text-white pt-32 pb-24 font-sans">
         <div className="container mx-auto px-6 lg:px-12 max-w-4xl">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-white/50 hover:text-gold transition-all duration-300 group mb-8"
+          >
+            <ArrowLeft size={14} className="group-hover:-translate-x-1.5 transition-transform duration-300" />
+            <span>Back to Home</span>
+          </Link>
           <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase block mb-3">Site Architecture</span>
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-8">Sitemap</h1>
           <div className="w-16 h-[2px] bg-gold mb-12"></div>
@@ -60,6 +68,16 @@ const Sitemap = () => {
                 </li>
               </ul>
             </div>
+          </div>
+          
+          <div className="mt-16 pt-12 border-t border-white/10 flex justify-start">
+            <Link
+              to="/"
+              className="group bg-white/5 text-white border border-white/10 hover:border-gold hover:bg-gold hover:text-charcoal px-8 py-4 text-xs font-bold tracking-[0.25em] uppercase transition-all duration-500 inline-flex items-center gap-2 rounded-[2px]"
+            >
+              <ArrowLeft size={16} className="group-hover:-translate-x-1.5 transition-transform duration-300" />
+              <span>Return to Home Page</span>
+            </Link>
           </div>
         </div>
       </main>

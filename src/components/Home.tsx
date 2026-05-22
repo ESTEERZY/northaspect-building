@@ -23,6 +23,13 @@ const Home = () => {
           contactSection.scrollIntoView({ behavior: 'smooth' })
         }, 150)
       }
+    } else if (location.state?.scrollToSection) {
+      const targetSection = document.getElementById(location.state.scrollToSection)
+      if (targetSection) {
+        setTimeout(() => {
+          targetSection.scrollIntoView({ behavior: 'smooth' })
+        }, 150)
+      }
     }
   }, [location])
 
