@@ -97,5 +97,43 @@ export const projectsData: CaseStudyData[] = [
         description: 'Exterior view of the flat-roofed pavilion at twilight, reflecting beautifully in the integrated swimming pool.'
       }
     ]
+  },
+  {
+    id: 'suburban-elegance',
+    title: 'Suburban Elegance',
+    location: 'Sydney, AU',
+    scope: '550 sqm / Residential Estate',
+    heroImage: '/case-studies/suburban-elegance/image3.png',
+    overview: 'A masterfully crafted suburban home designed for modern family living. The residence features expansive open-plan spaces, a seamless transition to the outdoor entertaining deck, and an elegant two-story facade with warm timber accents.',
+    highlights: [
+      'Expansive open-plan living and kitchen area with natural light',
+      'Covered outdoor entertaining deck with built-in BBQ',
+      'Elegant two-story facade with modern rendered finish'
+    ],
+    metrics: [
+      { label: 'Year Completed', value: '2026' },
+      { label: 'Structural System', value: 'Timber Frame & Brick Veneer' },
+      { label: 'Primary Materials', value: 'Rendered Brick, Timber, Glass' },
+      { label: 'Energy Rating', value: '6-Star Energy Rating' },
+      { label: 'Architect in Charge', value: 'Elena Vance' },
+      { label: 'Interior Scale', value: '550 sqm' }
+    ],
+    gallery: [
+      {
+        type: 'Interior Framing',
+        image: '/case-studies/suburban-elegance/image1.png',
+        description: 'Spacious open-plan living area and kitchen bathed in natural light, with a direct view to the pool.'
+      },
+      {
+        type: 'Final Finishes',
+        image: '/case-studies/suburban-elegance/image2.png',
+        description: 'Expansive covered outdoor entertaining deck featuring a built-in BBQ and landscaped garden view.'
+      },
+      {
+        type: 'Structural Details',
+        image: '/case-studies/suburban-elegance/image3.png',
+        description: 'Elegant two-story street-facing facade showcasing modern geometry and warm timber accents.'
+      }
+    ]
   }
 ];

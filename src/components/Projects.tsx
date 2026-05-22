@@ -22,6 +22,16 @@ const Projects = () => {
       status: 'Completed',
       materials: 'Concrete & Glass',
       intent: 'Dissolving the boundaries between structural form and the surrounding landscape.',
+    },
+    {
+      id: 'suburban-elegance',
+      image: '/case-studies/suburban-elegance/image3.png',
+      title: 'Suburban Elegance',
+      location: 'Sydney, AU',
+      scale: '550 sqm',
+      status: 'Completed',
+      materials: 'Rendered Brick & Timber',
+      intent: 'An elegant contemporary family home seamlessly blending indoor comfort with expansive outdoor entertaining.',
     }
   ]
 
