@@ -13,6 +13,16 @@ const Projects = () => {
       materials: 'Brick & Steel',
       intent: 'Preserving historical textures while introducing bold, contemporary forms.',
     },
+    {
+      id: 'minimalist-pavilion',
+      image: '/case-studies/minimalist-pavilion/image1.png',
+      title: 'Minimalist Pavilion',
+      location: 'Portland, OR',
+      scale: '650 sqm',
+      status: 'Completed',
+      materials: 'Concrete & Glass',
+      intent: 'Dissolving the boundaries between structural form and the surrounding landscape.',
+    },
   ]
 
   return (

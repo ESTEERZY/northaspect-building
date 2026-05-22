@@ -50,6 +50,11 @@ const Sitemap = () => {
                     <span className="text-gold">//</span> Industrial Loft Case Study
                   </Link>
                 </li>
+                <li>
+                  <Link to="/minimalist-pavilion.html" className="hover:text-gold transition-colors duration-300 flex items-center gap-2">
+                    <span className="text-gold">//</span> Minimalist Pavilion Case Study
+                  </Link>
+                </li>
               </ul>
             </div>
 
