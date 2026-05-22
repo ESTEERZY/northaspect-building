@@ -16,6 +16,7 @@ export interface CaseStudyData {
   scope: string;
   heroImage: string;
   overview: string;
+  highlights: string[];
   metrics: ProjectMetric[];
   gallery: GalleryItem[];
 }
@@ -27,7 +28,12 @@ export const projectsData: CaseStudyData[] = [
     location: 'Brooklyn, NY',
     scope: '1,200 sqm / Urban Transformation',
     heroImage: '/case-studies/industrial-loft/image1.png',
-    overview: 'A masterful restoration of a historic industrial warehouse into a contemporary loft residence. The design preserves the original brickwork and steel elements while introducing modern, open-plan living spaces. Featuring a striking black metal exterior cladding, custom-designed dark kitchen cabinetry, and an open mezzanine accessed by a monumental steel staircase, the home balances raw industrial character with refined luxury.',
+    overview: 'A restoration of a historic warehouse into a contemporary loft residence. The design balances raw industrial character with refined luxury, featuring original brickwork, steel elements, custom dark cabinetry, and an open mezzanine.',
+    highlights: [
+      'Preserved original historic brickwork and steel truss systems',
+      'Custom-designed dark metal kitchen cabinetry with integrated lighting',
+      'Monumental steel staircase leading to an open-plan mezzanine'
+    ],
     metrics: [
       { label: 'Year Completed', value: '2026' },
       { label: 'Structural System', value: 'Masonry & Steel Frame' },
@@ -60,7 +66,12 @@ export const projectsData: CaseStudyData[] = [
     location: 'Portland, OR',
     scope: '650 sqm / Residential Sanctuary',
     heroImage: '/case-studies/minimalist-pavilion/image1.png',
-    overview: 'A striking modernist pavilion nestled into a lush forest landscape. Designed as a residential sanctuary, the home utilizes expansive floor-to-ceiling glass panel walls to dissolve the boundary between interior and exterior spaces. Constructed with a raw concrete core, a floating white plaster roof line, and a warm limestone floor, the residence features a serene swimming pool reflecting the structural geometry, custom neutral kitchen cabinetry, and an open-plan lounge connecting directly to the garden terrace.',
+    overview: 'A modernist pavilion nestled in a lush forest landscape. Designed as a residential sanctuary, the home utilizes floor-to-ceiling glass panel walls to dissolve the boundary between interior and exterior spaces, centered around a reflective pool.',
+    highlights: [
+      'Floor-to-ceiling glass panel walls providing 360-degree forest views',
+      'Raw concrete structural core offset by a floating plaster roof line',
+      'Reflective swimming pool aligned with the structural geometry'
+    ],
     metrics: [
       { label: 'Year Completed', value: '2026' },
       { label: 'Structural System', value: 'Concrete & Steel Frame' },
@@ -93,7 +104,12 @@ export const projectsData: CaseStudyData[] = [
     location: 'Austin, TX',
     scope: '480 sqm / Contemporary Pavilion',
     heroImage: '/case-studies/modernist-garden-home/image1.png',
-    overview: 'A beautiful open-concept contemporary garden home that seamlessly blends structural indoor spaces with a massive outdoor terrace and manicure lawn. Designed around transparency and natural materials, the home features floor-to-ceiling glass panels, a warm timber-clad outdoor patio ceiling, custom-designed dark wood cabinetry in the dining and kitchen zone, and a deep-water swimming pool running parallel to the main living area. It offers a perfect balance of contemporary luxury, clean-line minimalism, and relaxed garden resort lifestyle.',
+    overview: 'An open-concept contemporary garden home blending structural indoor spaces with a massive outdoor terrace and manicured lawn. Built around transparency, the residence features high-clarity glass, timber ceiling details, and a pool.',
+    highlights: [
+      'Timber-clad outdoor patio ceiling with integrated warm lighting',
+      'Deep-water swimming pool running parallel to the transparent living zones',
+      'Minimalist dining and kitchen space with custom dark wood cabinetry'
+    ],
     metrics: [
       { label: 'Year Completed', value: '2026' },
       { label: 'Structural System', value: 'Wood Frame & Steel Columns' },

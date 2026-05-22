@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { ArrowLeft, ArrowRight, MapPin, Check } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { projectsData } from '../data/projectsData'
@@ -8,12 +8,10 @@ const CaseStudyTemplate = () => {
   const { id } = useParams<{ id: string }>()
   const cleanId = id ? id.replace('.html', '') : ''
   const project = projectsData.find((p) => p.id === cleanId)
-  const [activeIndex, setActiveIndex] = useState(0)
 
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0)
-    setActiveIndex(0)
   }, [id])
 
   if (!project) {
@@ -113,36 +111,32 @@ const CaseStudyTemplate = () => {
             <div className="lg:col-span-7 space-y-8">
               <div>
                 <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase block mb-3">Architectural Intent</span>
-                <h2 className="text-3xl md:text-5xl font-bold font-heading text-white">
-                  Form Follows Poetic Permanence.
+                <h2 className="text-3xl md:text-5xl font-black font-heading text-white leading-tight">
+                  Form Follows<br />Poetic Permanence.
                 </h2>
               </div>
               
               <div className="w-16 h-px bg-white/20"></div>
 
-              <p className="text-xl md:text-2xl font-light text-white/90 leading-relaxed font-sans tracking-wide">
-                {project.overview}
+              <p className="text-xl md:text-2xl font-light text-white/90 leading-relaxed font-sans tracking-wide italic border-l-2 border-gold/40 pl-6">
+                "{project.overview}"
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
-                    <Check size={16} />
+              {/* Scannable Highlights Cards - High visual priority */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+                {project.highlights.map((highlight, idx) => (
+                  <div key={idx} className="bg-[#111] border border-white/10 p-5 rounded-[2px] hover:border-gold/30 transition-all duration-300 relative group">
+                    <div className="absolute top-4 right-4 text-xs font-bold text-white/10 group-hover:text-gold/25 transition-colors duration-300">
+                      0{idx + 1}
+                    </div>
+                    <div className="w-7 h-7 rounded-full bg-gold/10 flex items-center justify-center text-gold mb-3 shrink-0">
+                      <Check size={14} />
+                    </div>
+                    <p className="text-xs font-semibold text-white/80 leading-relaxed font-sans">
+                      {highlight}
+                    </p>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-2">Bespoke Design</h4>
-                    <p className="text-sm text-white/50">Custom developed spatial layouts configured exactly to site topography and views.</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
-                    <Check size={16} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white mb-2">Material Precision</h4>
-                    <p className="text-sm text-white/50">Rigorous structural detailing utilizing raw structural components as finish materials.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -181,98 +175,40 @@ const CaseStudyTemplate = () => {
       {/* 4. Technical Construction Gallery */}
       <section className="py-24 bg-[#0a0a0a] border-t border-white/5 relative z-10">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase block mb-3">Construction Lifecycle</span>
-              <h2 className="text-3xl md:text-5xl font-bold font-heading text-white">
-                Technical Progress Gallery
-              </h2>
-            </div>
-            
-            {/* Slider Navigation */}
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => setActiveIndex((prev) => (prev === 0 ? project.gallery.length - 1 : prev - 1))}
-                className="w-12 h-12 rounded-full border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-all duration-300 bg-[#111]"
-                aria-label="Previous Slide"
-              >
-                <ArrowLeft size={20} />
-              </button>
-              <span className="text-sm font-sans font-bold tracking-widest text-white/50">
-                {String(activeIndex + 1).padStart(2, '0')} / {String(project.gallery.length).padStart(2, '0')}
-              </span>
-              <button
-                onClick={() => setActiveIndex((prev) => (prev === project.gallery.length - 1 ? 0 : prev + 1))}
-                className="w-12 h-12 rounded-full border border-white/10 hover:border-gold hover:text-gold flex items-center justify-center transition-all duration-300 bg-[#111]"
-                aria-label="Next Slide"
-              >
-                <ArrowRight size={20} />
-              </button>
-            </div>
+          <div className="mb-16">
+            <span className="text-xs font-bold tracking-[0.3em] text-gold uppercase block mb-3">Construction Lifecycle</span>
+            <h2 className="text-3xl md:text-5xl font-black font-heading text-white">
+              Technical Progress Gallery
+            </h2>
           </div>
 
-          {/* Slider Main Box */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#111] border border-white/10 p-6 md:p-10 rounded-[2px] relative overflow-hidden">
-            {/* Main Image Container */}
-            <div className="lg:col-span-8 relative aspect-[16/10] overflow-hidden rounded-[2px] border border-white/5 group">
-              <img
-                src={project.gallery[activeIndex].image}
-                alt={project.gallery[activeIndex].description}
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-102"
-              />
-              <div className="absolute inset-0 bg-black/15 pointer-events-none"></div>
-            </div>
-
-            {/* Slider Info Panel */}
-            <div className="lg:col-span-4 flex flex-col justify-center h-full space-y-6">
-              <div>
-                <span className="text-[10px] font-bold tracking-[0.25em] text-white/40 uppercase block mb-2">Stage</span>
-                <h3 className="text-2xl md:text-3xl font-bold font-heading text-white">
-                  {project.gallery[activeIndex].type}
-                </h3>
-              </div>
-              
-              <div className="w-12 h-px bg-white/20"></div>
-
-              <p className="text-base text-white/70 font-sans leading-relaxed font-medium">
-                {project.gallery[activeIndex].description}
-              </p>
-
-              {/* Dots Indicator */}
-              <div className="flex gap-2 pt-6">
-                {project.gallery.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveIndex(idx)}
-                    className={`h-1 transition-all duration-300 rounded-full ${
-                      idx === activeIndex ? 'w-8 bg-gold' : 'w-2 bg-white/20 hover:bg-white/40'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Thumbnail Previews */}
-          <div className="grid grid-cols-3 gap-6 mt-8">
+          {/* 3-Column Lifecycle Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {project.gallery.map((item, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveIndex(idx)}
-                className={`relative aspect-[16/10] overflow-hidden rounded-[2px] border text-left transition-all duration-500 group ${
-                  idx === activeIndex 
-                    ? 'border-gold shadow-[0_0_15px_rgba(212,175,55,0.15)] opacity-100' 
-                    : 'border-white/10 opacity-40 hover:opacity-80'
-                }`}
-              >
-                <img
-                  src={item.image}
-                  alt={item.type}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-              </button>
+              <div key={idx} className="bg-[#111] border border-white/10 rounded-[2px] overflow-hidden flex flex-col h-full hover:border-gold/30 transition-colors duration-500 group">
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-white/5 shrink-0">
+                  <img
+                    src={item.image}
+                    alt={item.description}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-103"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 left-4 bg-gold text-charcoal px-3 py-1.5 text-[9px] font-bold tracking-[0.2em] uppercase rounded-[2px] shadow-lg">
+                    Stage 0{idx + 1}
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow justify-between space-y-4">
+                  <div>
+                    <span className="text-[9px] font-bold tracking-[0.25em] text-white/40 uppercase block mb-1">lifecycle phase</span>
+                    <h3 className="text-xl font-bold font-heading text-gold tracking-wide">
+                      {item.type}
+                    </h3>
+                    <p className="text-sm text-white/70 font-sans leading-relaxed mt-3">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
 

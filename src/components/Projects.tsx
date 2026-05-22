@@ -52,73 +52,117 @@ const Projects = () => {
         </div>
 
         {/* Projects List */}
-        <div className="space-y-32">
+        <div className="space-y-40">
           {projects.map((project, index) => (
             <div
               key={index}
               className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center animate-slide-up group`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {/* Project Image wrapped in Link */}
-              <Link 
-                to={`/${project.id}.html`}
-                className="w-full lg:w-3/5 relative aspect-[16/10] overflow-hidden rounded-[2px] shadow-2xl border border-white/10 block cursor-pointer"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-transparent transition-colors duration-500"></div>
-              </Link>
+              {/* Asymmetric Multi-Image Collage (3 Images) */}
+              <div className="w-full lg:w-3/5 grid grid-cols-12 gap-3 md:gap-4 relative shrink-0">
+                {/* Large Main Image (Exterior) */}
+                <Link
+                  to={`/${project.id}.html`}
+                  className="col-span-8 aspect-[4/3] relative overflow-hidden rounded-[2px] border border-white/10 block cursor-pointer shadow-2xl transition-all duration-500 hover:border-gold/50 hover:scale-[1.01]"
+                >
+                  <img
+                    src={project.image}
+                    alt={`${project.title} Exterior`}
+                    className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-103"
+                    loading={index === 0 ? undefined : "lazy"}
+                    fetchPriority={index === 0 ? "high" : undefined}
+                  />
+                  <div className="absolute bottom-4 left-4 bg-charcoal/90 backdrop-blur-md px-3 py-1.5 border border-white/10 text-[9px] font-bold tracking-[0.2em] text-white uppercase rounded-[2px]">
+                    Exterior & Form
+                  </div>
+                </Link>
+
+                {/* Right Side Stacked Images (Interior + Detail) */}
+                <div className="col-span-4 flex flex-col gap-3 md:gap-4">
+                  <Link
+                    to={`/${project.id}.html`}
+                    className="aspect-[4/3] relative overflow-hidden rounded-[2px] border border-white/10 block cursor-pointer shadow-xl transition-all duration-500 hover:border-gold/50 hover:scale-[1.01]"
+                  >
+                    <img
+                      src={`/case-studies/${project.id}/image2.png`}
+                      alt={`${project.title} Interior`}
+                      className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute bottom-3 left-3 bg-charcoal/80 backdrop-blur-md px-2 py-1 border border-white/10 text-[8px] font-bold tracking-[0.2em] text-white uppercase rounded-[2px] whitespace-nowrap">
+                      Interior Space
+                    </div>
+                  </Link>
+                  <Link
+                    to={`/${project.id}.html`}
+                    className="aspect-[4/3] relative overflow-hidden rounded-[2px] border border-white/10 block cursor-pointer shadow-xl transition-all duration-500 hover:border-gold/50 hover:scale-[1.01]"
+                  >
+                    <img
+                      src={`/case-studies/${project.id}/image3.png`}
+                      alt={`${project.title} Detail`}
+                      className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute bottom-3 left-3 bg-charcoal/80 backdrop-blur-md px-2 py-1 border border-white/10 text-[8px] font-bold tracking-[0.2em] text-white uppercase rounded-[2px] whitespace-nowrap">
+                      Details & Finishes
+                    </div>
+                  </Link>
+                </div>
+              </div>
 
               {/* Case Study Content */}
               <div className="w-full lg:w-2/5 flex flex-col justify-center">
+                {/* Visual Label & Sequence Number */}
+                <div className="flex items-center gap-3 text-gold text-xs font-bold tracking-[0.3em] uppercase mb-4">
+                  <span>0{index + 1} // CASE STUDY</span>
+                </div>
+
                 <Link to={`/${project.id}.html`} className="inline-block group-hover:text-gold transition-colors duration-500">
-                  <h3 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-8 group-hover:text-gold transition-colors duration-500">
+                  <h3 className="text-4xl lg:text-5xl font-black tracking-tight text-white mb-6 group-hover:text-gold transition-colors duration-500 font-heading leading-tight">
                     {project.title}
                   </h3>
                 </Link>
                 
-                <div className="mb-10">
-                  <h4 className="text-xs font-bold tracking-[0.2em] text-white/40 uppercase font-sans mb-3">Architectural Intent</h4>
-                  <p className="text-lg text-white/70 font-sans leading-relaxed">
-                    {project.intent}
+                {/* Intent Statement - Reduced Text with High Visual Priority */}
+                <div className="mb-8 border-l-2 border-gold/40 pl-6">
+                  <p className="text-xl text-white/90 leading-relaxed font-sans font-light italic">
+                    "{project.intent}"
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-x-8 gap-y-8 border-t border-white/10 pt-8 font-sans">
-                  <div>
-                    <div className="flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
-                      <MapPin size={14} className="text-gold" /> Location
+                {/* Structured Metric Cards - Skimmable */}
+                <div className="grid grid-cols-2 gap-4 border-t border-white/10 pt-8 font-sans">
+                  <div className="bg-white/5 border border-white/5 p-4 rounded-[2px] hover:bg-white/10 hover:border-white/10 transition-all duration-300">
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-1.5">
+                      <MapPin size={12} className="text-gold" /> Location
                     </div>
-                    <div className="text-lg font-semibold text-white">{project.location}</div>
+                    <div className="text-base font-bold text-white">{project.location}</div>
                   </div>
-                  <div>
-                    <div className="flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-2">
-                      <Ruler size={14} className="text-gold" /> Scale & Status
+                  <div className="bg-white/5 border border-white/5 p-4 rounded-[2px] hover:bg-white/10 hover:border-white/10 transition-all duration-300">
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase mb-1.5">
+                      <Ruler size={12} className="text-gold" /> Scale / Status
                     </div>
-                    <div className="text-lg font-semibold text-white">{project.scale} / {project.status}</div>
+                    <div className="text-base font-bold text-white">{project.scale} &bull; {project.status}</div>
                   </div>
-                  <div className="col-span-2">
-                    <div className="flex items-center gap-1.5 text-xs font-bold tracking-[0.2em] text-white/40 uppercase mb-3">
-                      <Layers size={14} className="text-gold" /> Materials
+                  <div className="col-span-2 bg-white/5 border border-white/5 p-4 rounded-[2px] hover:bg-white/10 hover:border-white/10 transition-all duration-300 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] text-white/40 uppercase">
+                      <Layers size={12} className="text-gold" /> Materials
                     </div>
-                    <div className="inline-flex px-5 py-2.5 bg-white/5 border border-white/10 text-sm font-bold tracking-[0.15em] text-gold uppercase rounded-[2px]">
+                    <div className="text-xs font-bold tracking-[0.15em] text-gold uppercase bg-white/5 px-3 py-1 border border-white/10 rounded-[2px]">
                       {project.materials}
                     </div>
                   </div>
                 </div>
 
                 {/* Explore Case Study CTA Link */}
-                <div className="mt-10 border-t border-white/5 pt-8">
+                <div className="mt-8 border-t border-white/5 pt-6">
                   <Link
                     to={`/${project.id}.html`}
                     className="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.25em] text-gold hover:text-white uppercase transition-all duration-300 group/link"
                   >
-                    <span>View Architectural Case Study</span>
-                    <ArrowRight className="group-hover/link:translate-x-1.5 transition-transform duration-300 text-gold group-hover/link:text-white" size={16} />
+                    <span>View Technical Details</span>
+                    <ArrowRight className="group-hover/link:translate-x-1.5 transition-transform duration-300 text-gold group-hover/link:text-white" size={14} />
                   </Link>
                 </div>
               </div>
