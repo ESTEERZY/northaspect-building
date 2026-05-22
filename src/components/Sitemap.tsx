@@ -55,6 +55,11 @@ const Sitemap = () => {
                     <span className="text-gold">//</span> Minimalist Pavilion Case Study
                   </Link>
                 </li>
+                <li>
+                  <Link to="/modernist-garden-home.html" className="hover:text-gold transition-colors duration-300 flex items-center gap-2">
+                    <span className="text-gold">//</span> Modernist Garden Home Case Study
+                  </Link>
+                </li>
               </ul>
             </div>
 

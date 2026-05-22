@@ -23,6 +23,16 @@ const Projects = () => {
       materials: 'Concrete & Glass',
       intent: 'Dissolving the boundaries between structural form and the surrounding landscape.',
     },
+    {
+      id: 'modernist-garden-home',
+      image: '/case-studies/modernist-garden-home/image1.png',
+      title: 'Modernist Garden Home',
+      location: 'Austin, TX',
+      scale: '480 sqm',
+      status: 'Completed',
+      materials: 'Timber & Glass',
+      intent: 'Blending outdoor recreational decking with premium, highly transparent interior zones.',
+    },
   ]
 
   return (
