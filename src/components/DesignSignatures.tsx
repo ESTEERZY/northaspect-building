@@ -8,7 +8,7 @@ const DesignSignatures = () => {
       description: 'Award-winning designs. Maximized natural light. Open living spaces.',
     },
     {
-      image: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/case-studies/suburban-elegance/image1.png',
       title: 'Clean Timber Finishes',
       description: 'Premium timber finishes. Sustainably sourced. Added warmth and character.',
     },
