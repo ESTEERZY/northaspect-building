@@ -97,43 +97,5 @@ export const projectsData: CaseStudyData[] = [
         description: 'Exterior view of the flat-roofed pavilion at twilight, reflecting beautifully in the integrated swimming pool.'
       }
     ]
-  },
-  {
-    id: 'modernist-garden-home',
-    title: 'Modernist Garden Home',
-    location: 'Austin, TX',
-    scope: '480 sqm / Contemporary Pavilion',
-    heroImage: '/case-studies/modernist-garden-home/image1.png',
-    overview: 'An open-concept contemporary garden home blending structural indoor spaces with a massive outdoor terrace and manicured lawn. Built around transparency, the residence features high-clarity glass, timber ceiling details, and a pool.',
-    highlights: [
-      'Timber-clad outdoor patio ceiling with integrated warm lighting',
-      'Deep-water swimming pool running parallel to the transparent living zones',
-      'Minimalist dining and kitchen space with custom dark wood cabinetry'
-    ],
-    metrics: [
-      { label: 'Year Completed', value: '2026' },
-      { label: 'Structural System', value: 'Wood Frame & Steel Columns' },
-      { label: 'Primary Materials', value: 'Timber Cladding, Oak Decking, High-Clarity Glass' },
-      { label: 'Energy Rating', value: 'LEED Gold Certified' },
-      { label: 'Architect in Charge', value: 'Liam Carter' },
-      { label: 'Interior Scale', value: '480 sqm' }
-    ],
-    gallery: [
-      {
-        type: 'Interior Framing',
-        image: '/case-studies/modernist-garden-home/image2.png',
-        description: 'Spacious open-plan living room and kitchen showing how the large sliding glass doors connect directly to the swimming pool.'
-      },
-      {
-        type: 'Final Finishes',
-        image: '/case-studies/modernist-garden-home/image3.png',
-        description: 'Custom dark wood kitchen and dining area featuring warm lighting, minimalist white countertops, and bar seating.'
-      },
-      {
-        type: 'Structural Details',
-        image: '/case-studies/modernist-garden-home/image1.png',
-        description: 'Exterior overview of the flat-roofed garden pavilion at dusk, highlighting the illuminated glass spaces.'
-      }
-    ]
   }
 ];
