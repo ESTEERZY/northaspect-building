@@ -25,7 +25,7 @@ const Projects = () => {
     },
     {
       id: 'suburban-elegance',
-      image: '/case-studies/suburban-elegance/image3.png',
+      image: '/case-studies/suburban-elegance/image1.png',
       title: 'Suburban Elegance',
       location: 'Sydney, AU',
       scale: '550 sqm',

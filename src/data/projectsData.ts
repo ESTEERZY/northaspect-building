@@ -103,7 +103,7 @@ export const projectsData: CaseStudyData[] = [
     title: 'Suburban Elegance',
     location: 'Sydney, AU',
     scope: '550 sqm / Residential Estate',
-    heroImage: '/case-studies/suburban-elegance/image3.png',
+    heroImage: '/case-studies/suburban-elegance/image1.png',
     overview: 'A masterfully crafted suburban home designed for modern family living. The residence features expansive open-plan spaces, a seamless transition to the outdoor entertaining deck, and an elegant two-story facade with warm timber accents.',
     highlights: [
       'Expansive open-plan living and kitchen area with natural light',
@@ -121,17 +121,17 @@ export const projectsData: CaseStudyData[] = [
     gallery: [
       {
         type: 'Interior Framing',
-        image: '/case-studies/suburban-elegance/image1.png',
+        image: '/case-studies/suburban-elegance/image2.png',
         description: 'Spacious open-plan living area and kitchen bathed in natural light, with a direct view to the pool.'
       },
       {
         type: 'Final Finishes',
-        image: '/case-studies/suburban-elegance/image2.png',
+        image: '/case-studies/suburban-elegance/image3.png',
         description: 'Expansive covered outdoor entertaining deck featuring a built-in BBQ and landscaped garden view.'
       },
       {
         type: 'Structural Details',
-        image: '/case-studies/suburban-elegance/image3.png',
+        image: '/case-studies/suburban-elegance/image1.png',
         description: 'Elegant two-story street-facing facade showcasing modern geometry and warm timber accents.'
       }
     ]
