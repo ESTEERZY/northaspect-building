@@ -227,7 +227,7 @@ const CaseStudyTemplate = () => {
               Ready to Manifest<br />Your Masterwork?
             </h2>
             <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Connect with Elena Vance and the Apex architectural board to discuss your bespoke structural concept. Let us turn your vision into permanent residential form.
+              Connect with Cole and the Apex architectural board to discuss your bespoke structural concept. Let us turn your vision into permanent residential form.
             </p>
             
             <Link

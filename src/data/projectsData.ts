@@ -39,7 +39,7 @@ export const projectsData: CaseStudyData[] = [
       { label: 'Structural System', value: 'Masonry & Steel Frame' },
       { label: 'Primary Materials', value: 'Exposed Brick, Corrugated Steel, Concrete' },
       { label: 'Energy Rating', value: 'LEED Gold Certified' },
-      { label: 'Architect in Charge', value: 'Elena Vance' },
+      { label: 'Architect in Charge', value: 'Cole' },
       { label: 'Interior Scale', value: '1,200 sqm' }
     ],
     gallery: [
@@ -115,7 +115,7 @@ export const projectsData: CaseStudyData[] = [
       { label: 'Structural System', value: 'Timber Frame & Brick Veneer' },
       { label: 'Primary Materials', value: 'Rendered Brick, Timber, Glass' },
       { label: 'Energy Rating', value: '6-Star Energy Rating' },
-      { label: 'Architect in Charge', value: 'Elena Vance' },
+      { label: 'Architect in Charge', value: 'Cole' },
       { label: 'Interior Scale', value: '550 sqm' }
     ],
     gallery: [

@@ -41,7 +41,7 @@ const About = () => {
             </div>
 
             <p className="text-lg text-white/70 leading-relaxed font-sans">
-              Founded by Elena Vance, Apex Architecture was born from a singular obsession: the intersection of structural permanence and poetic residential form. With over two decades of experience in high-end builds, Elena leads a team dedicated to pushing the boundaries of what home can be.
+              Founded by Cole, Apex Architecture was born from a singular obsession: the intersection of structural permanence and poetic residential form. With over two decades of experience in high-end builds, Cole leads a team dedicated to pushing the boundaries of what home can be.
             </p>
 
             <div className="space-y-6 pt-4 border-t border-white/10">
@@ -62,7 +62,7 @@ const About = () => {
             </div>
 
             <div className="pt-8">
-              <div className="text-white font-black tracking-widest uppercase text-xs mb-1">Elena Vance</div>
+              <div className="text-white font-black tracking-widest uppercase text-xs mb-1">Cole</div>
               <div className="text-gold font-bold text-[10px] tracking-widest uppercase">Principal Director & Founder</div>
             </div>
           </motion.div>
