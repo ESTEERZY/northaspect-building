@@ -25,7 +25,7 @@ export const projectsData: CaseStudyData[] = [
   {
     id: 'industrial-loft',
     title: 'Industrial Loft',
-    location: 'Wynyard, TAS',
+    location: 'Huonville, TAS',
     scope: '1,200 sqm / Urban Transformation',
     heroImage: '/case-studies/industrial-loft/image1.png',
     overview: 'A restoration of a historic warehouse into a contemporary loft residence. The design balances raw industrial character with refined luxury, featuring original brickwork, steel elements, custom dark cabinetry, and an open mezzanine.',
@@ -63,7 +63,7 @@ export const projectsData: CaseStudyData[] = [
   {
     id: 'minimalist-pavilion',
     title: 'Minimalist Pavilion',
-    location: 'Huonville, TAS',
+    location: 'Wynyard, TAS',
     scope: '650 sqm / Residential Sanctuary',
     heroImage: '/case-studies/minimalist-pavilion/image1.png',
     overview: 'A modernist pavilion nestled in a lush forest landscape. Designed as a residential sanctuary, the home utilizes floor-to-ceiling glass panel walls to dissolve the boundary between interior and exterior spaces, centered around a reflective pool.',
