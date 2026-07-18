@@ -112,8 +112,8 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
                 <div>
                   <p className="text-slate-600 font-medium">
-                    123 Construction Ave<br/>
-                    Building City, ST 12345
+                    7 Cradle View Terrace<br/>
+                    Penguin, TAS 7316
                   </p>
                 </div>
               </div>

@@ -25,7 +25,7 @@ export const projectsData: CaseStudyData[] = [
   {
     id: 'industrial-loft',
     title: 'Industrial Loft',
-    location: 'Brooklyn, NY',
+    location: 'Wynyard, TAS',
     scope: '1,200 sqm / Urban Transformation',
     heroImage: '/case-studies/industrial-loft/image1.png',
     overview: 'A restoration of a historic warehouse into a contemporary loft residence. The design balances raw industrial character with refined luxury, featuring original brickwork, steel elements, custom dark cabinetry, and an open mezzanine.',
@@ -63,7 +63,7 @@ export const projectsData: CaseStudyData[] = [
   {
     id: 'minimalist-pavilion',
     title: 'Minimalist Pavilion',
-    location: 'Portland, OR',
+    location: 'Huonville, TAS',
     scope: '650 sqm / Residential Sanctuary',
     heroImage: '/case-studies/minimalist-pavilion/image1.png',
     overview: 'A modernist pavilion nestled in a lush forest landscape. Designed as a residential sanctuary, the home utilizes floor-to-ceiling glass panel walls to dissolve the boundary between interior and exterior spaces, centered around a reflective pool.',
@@ -101,7 +101,7 @@ export const projectsData: CaseStudyData[] = [
   {
     id: 'suburban-elegance',
     title: 'Suburban Elegance',
-    location: 'Sydney, AU',
+    location: 'Kettering, TAS',
     scope: '550 sqm / Residential Estate',
     heroImage: '/case-studies/suburban-elegance/image1.png',
     overview: 'A masterfully crafted suburban home designed for modern family living. The residence features expansive open-plan spaces, a seamless transition to the outdoor entertaining deck, and an elegant two-story facade with warm timber accents.',
