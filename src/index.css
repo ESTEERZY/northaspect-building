@@ -7,6 +7,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 18px;
   }
 
   * {
@@ -24,12 +25,12 @@
     line-height: 1.2;
   }
 
-  h1 { @apply text-6xl lg:text-7xl font-black; }
-  h2 { @apply text-4xl lg:text-5xl font-bold; }
-  h3 { @apply text-2xl lg:text-3xl font-bold; }
+  h1 { @apply text-7xl lg:text-8xl font-black; }
+  h2 { @apply text-5xl lg:text-6xl font-bold; }
+  h3 { @apply text-3xl lg:text-4xl font-bold; }
 
   p {
-    line-height: 1.6;
+    line-height: 1.7;
   }
 }
 
