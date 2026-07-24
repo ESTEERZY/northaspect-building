@@ -18,7 +18,7 @@ const ProcessBreakdown = () => {
       id: "03",
       title: "Real-Time Construction Updates",
       description: "Total transparency through the build phase. Watch your dream home come to life with weekly site reports and milestones.",
-      image: "https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1000&q=80"
     }
   ];
 
