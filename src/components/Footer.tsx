@@ -33,30 +33,30 @@ const Footer = () => {
               Building excellence since 2014. Your trusted partner for premium residential and commercial construction.
             </p>
             <div className="flex gap-3">
-              <a
-                href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
+              <span
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                aria-label="Facebook"
               >
                 <Facebook size={20} strokeWidth={2} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
+              </span>
+              <span
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                aria-label="Twitter"
               >
                 <Twitter size={20} strokeWidth={2} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
+              </span>
+              <span
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                aria-label="Instagram"
               >
                 <Instagram size={20} strokeWidth={2} />
-              </a>
-              <a
-                href="#"
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px]"
+              </span>
+              <span
+                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={20} strokeWidth={2} />
-              </a>
+              </span>
             </div>
           </div>
 
