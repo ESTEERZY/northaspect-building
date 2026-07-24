@@ -44,8 +44,8 @@ const Hero = () => {
           <div className="h-[2px] bg-gold mx-auto my-5 w-24" />
 
           {/* The Subtext Paragraph */}
-          <p className="text-lg lg:text-xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
-            Masterworks of modern living. Unparalleled craftsmanship. A seamless architectural journey.
+          <p className="text-lg lg:text-xl font-medium text-white/85 max-w-3xl mx-auto leading-relaxed animate-subtext-breath">
+            We design and build bespoke luxury homes that combine timeless architecture, exceptional craftsmanship, and a seamless experience from concept to completion.
           </p>
 
           {/* Primary CTA Button */}
