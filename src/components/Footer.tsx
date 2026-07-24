@@ -14,10 +14,10 @@ const Footer = () => {
 
   return (
     <footer className="bg-white text-charcoal border-t border-slate-200">
-      <div className="container mx-auto px-6 lg:px-12 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+      <div className="container mx-auto px-6 lg:px-12 py-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <Link
               to="/"
               onClick={() => {
@@ -29,43 +29,41 @@ const Footer = () => {
             >
               Apex <span className="text-gold">Architecture</span>
             </Link>
-            <p className="text-slate-600 font-medium leading-relaxed">
+            <p className="text-slate-600 font-medium leading-relaxed text-sm">
               Building excellence since 2014. Your trusted partner for premium residential and commercial construction.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-2.5 pt-1">
               <span
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                className="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-300 rounded-[2px] cursor-default text-slate-700"
                 aria-label="Facebook"
               >
-                <Facebook size={20} strokeWidth={2} />
+                <Facebook size={18} strokeWidth={2} />
               </span>
               <span
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                className="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-300 rounded-[2px] cursor-default text-slate-700"
                 aria-label="Twitter"
               >
-                <Twitter size={20} strokeWidth={2} />
+                <Twitter size={18} strokeWidth={2} />
               </span>
               <span
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                className="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-300 rounded-[2px] cursor-default text-slate-700"
                 aria-label="Instagram"
               >
-                <Instagram size={20} strokeWidth={2} />
+                <Instagram size={18} strokeWidth={2} />
               </span>
               <span
-                className="w-12 h-12 bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-500 rounded-[2px] cursor-default"
+                className="w-10 h-10 bg-slate-100 border border-slate-200 flex items-center justify-center hover:bg-gold hover:border-gold hover:text-white transition-all duration-300 rounded-[2px] cursor-default text-slate-700"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} strokeWidth={2} />
+                <Linkedin size={18} strokeWidth={2} />
               </span>
             </div>
           </div>
 
-
-
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-black mb-6 uppercase tracking-[0.1em] text-charcoal">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base font-black mb-4 uppercase tracking-[0.1em] text-charcoal">Quick Links</h4>
+            <ul className="space-y-2 text-sm">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
@@ -79,7 +77,7 @@ const Footer = () => {
                         navigate('/', { state: { scrollToSection: targetId } })
                       }
                     }}
-                    className="text-slate-600 font-medium hover:text-gold transition-colors duration-500"
+                    className="text-slate-600 font-medium hover:text-gold transition-colors duration-300"
                   >
                     {link.name}
                   </a>
@@ -90,8 +88,8 @@ const Footer = () => {
 
           {/* Locations We Service */}
           <div>
-            <h4 className="text-lg font-black mb-6 uppercase tracking-[0.1em] text-charcoal">Locations We Service</h4>
-            <ul className="space-y-3 text-slate-600 font-medium text-sm">
+            <h4 className="text-base font-black mb-4 uppercase tracking-[0.1em] text-charcoal">Locations We Service</h4>
+            <ul className="space-y-2 text-slate-600 font-medium text-sm">
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
                 <span>Hobart &amp; Southern TAS</span>
@@ -117,40 +115,38 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-black mb-6 uppercase tracking-[0.1em] text-charcoal">Contact</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
+            <h4 className="text-base font-black mb-4 uppercase tracking-[0.1em] text-charcoal">Contact</h4>
+            <div className="space-y-3 text-sm">
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <a href="tel:+15551234567" className="text-slate-600 font-medium hover:text-sand transition-colors duration-500">
+                  <a href="tel:+15551234567" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300">
                     (555) 123-4567
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
+              <div className="flex items-start gap-2.5">
+                <Mail className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <a href="mailto:info@apexarchitecture.com" className="text-slate-600 font-medium hover:text-gold transition-colors duration-500 break-all">
+                  <a href="mailto:info@apexarchitecture.com" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300 break-all">
                     info@apexarchitecture.com
                   </a>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <p className="text-slate-600 font-medium">
-                    7 Cradle View Terrace<br/>
-                    Penguin, TAS 7316
+                  <p className="text-slate-600 font-medium leading-snug">
+                    7 Cradle View Terrace, Penguin, TAS 7316
                   </p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-gold flex-shrink-0 mt-1" strokeWidth={2} />
+              <div className="flex items-start gap-2.5">
+                <Clock className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <p className="text-slate-600 font-medium">
-                    Monday – Friday: 9:00 AM – 5:00 PM<br/>
-                    Saturday: By Appointment Only<br/>
-                    Sunday: Closed
+                  <p className="text-slate-600 font-medium leading-snug">
+                    Mon–Fri: 9:00 AM–5:00 PM<br/>
+                    Sat: By Appointment | Sun: Closed
                   </p>
                 </div>
               </div>
@@ -159,19 +155,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-slate-200 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-slate-500">
+        <div className="border-t border-slate-200 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-medium text-slate-500">
             <div>
               © {new Date().getFullYear()} Apex Architecture. All rights reserved.
             </div>
-            <div className="flex gap-8">
-              <Link to="/privacy" className="hover:text-gold transition-colors duration-500">
+            <div className="flex gap-6">
+              <Link to="/privacy" className="hover:text-gold transition-colors duration-300">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="hover:text-gold transition-colors duration-500">
+              <Link to="/terms" className="hover:text-gold transition-colors duration-300">
                 Terms of Service
               </Link>
-              <Link to="/sitemap" className="hover:text-gold transition-colors duration-500">
+              <Link to="/sitemap" className="hover:text-gold transition-colors duration-300">
                 Sitemap
               </Link>
             </div>
