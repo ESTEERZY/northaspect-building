@@ -88,6 +88,33 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Locations We Service */}
+          <div>
+            <h4 className="text-lg font-black mb-6 uppercase tracking-[0.1em] text-charcoal">Locations We Service</h4>
+            <ul className="space-y-3 text-slate-600 font-medium text-sm">
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
+                <span>Hobart &amp; Southern TAS</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
+                <span>Launceston &amp; Tamar Valley</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
+                <span>Devonport &amp; North Coast</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
+                <span>Burnie &amp; Cradle Coast</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
+                <span>Penguin &amp; Regional Coastline</span>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-black mb-6 uppercase tracking-[0.1em] text-charcoal">Contact</h4>
