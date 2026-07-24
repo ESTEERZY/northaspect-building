@@ -48,6 +48,21 @@ const Hero = () => {
             Masterworks of modern living. Unparalleled craftsmanship. A seamless architectural journey.
           </p>
 
+          {/* Primary CTA Button */}
+          <div className="mt-10">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById('contact');
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-3 bg-gold text-charcoal px-9 py-4 text-base font-extrabold tracking-widest uppercase hover:bg-white transition-all duration-300 shadow-[0_0_25px_rgba(197,160,89,0.4)] rounded-[2px]"
+            >
+              Get a Free Quote
+            </a>
+          </div>
+
         </div>
       </div>
 

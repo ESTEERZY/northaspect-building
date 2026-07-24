@@ -150,9 +150,9 @@ const Contact = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="group w-full bg-transparent border border-gold/50 text-gold px-4 md:px-10 py-4 md:py-5 text-sm md:text-base font-bold tracking-widest uppercase hover:bg-gold hover:text-charcoal transition-all duration-500 inline-flex items-center justify-center gap-2 md:gap-3 shadow-[0_0_15px_rgba(197,160,89,0.3)] hover:shadow-[0_0_30px_rgba(197,160,89,0.5)] rounded-[2px] whitespace-nowrap"
+                  className="group w-full bg-gold border border-gold text-charcoal px-4 md:px-10 py-4 md:py-5 text-sm md:text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center justify-center gap-2 md:gap-3 shadow-[0_0_20px_rgba(197,160,89,0.4)] hover:shadow-[0_0_30px_rgba(197,160,89,0.6)] rounded-[2px] whitespace-nowrap"
                 >
-                  Start My Project
+                  Get a Free Quote
                   <ArrowRight className="group-hover:translate-x-2 transition-transform duration-500" size={20} />
                 </button>
               </div>

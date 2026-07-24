@@ -64,9 +64,9 @@ const Header = () => {
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
-              className="bg-white/5 text-white border border-white/10 px-8 py-3 text-sm font-bold tracking-widest uppercase hover:bg-gold hover:text-charcoal hover:border-gold transition-all duration-500 inline-flex items-center gap-2 rounded-[2px]"
+              className="bg-gold text-charcoal font-bold px-8 py-3 text-sm tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_15px_rgba(197,160,89,0.3)]"
             >
-              Start a Project
+              Get a Free Quote
             </a>
           </div>
 
@@ -98,13 +98,13 @@ const Header = () => {
               ))}
               <a
                 href="#contact"
-                className="bg-transparent text-gold border border-gold/50 shadow-[0_0_15px_rgba(197,160,89,0.3)] px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-gold hover:text-charcoal transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px] whitespace-nowrap"
+                className="bg-gold text-charcoal border border-gold shadow-[0_0_15px_rgba(197,160,89,0.3)] px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px] whitespace-nowrap"
                 onClick={(e) => {
                   setIsMenuOpen(false)
                   handleScroll(e, '#contact')
                 }}
               >
-                Start a Project
+                Get a Free Quote
               </a>
             </div>
           </div>
