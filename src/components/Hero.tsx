@@ -32,12 +32,11 @@ const Hero = () => {
 
       {/* Centered content wrapper */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-24 flex flex-col items-center text-center">
-        <div className="max-w-4xl flex flex-col items-center">
+        <div className="max-w-5xl flex flex-col items-center">
           
           {/* The Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-5 leading-[1.04] animate-heading-breath">
-            Luxury Homes<br />
-            <span className="text-gold">Designed Around Your Lifestyle.</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-[1.15] max-w-5xl">
+            Luxury Homes <span className="text-gold">Designed Around Your Lifestyle.</span>
           </h1>
 
           {/* The Central Accent Line */}
