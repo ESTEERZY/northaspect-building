@@ -12,13 +12,13 @@ const ProcessBreakdown = () => {
       id: "02",
       title: "Seamless Client Onboarding",
       description: "Experience white-glove service from day one. We pair you with an elite architectural consultant to map every detail.",
-      image: "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800"
+      image: "/images/construction-manager.png"
     },
     {
       id: "03",
       title: "Real-Time Construction Updates",
       description: "Total transparency through the build phase. Watch your dream home come to life with weekly site reports and milestones.",
-      image: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?auto=format&fit=crop&w=1000&q=80"
+      image: "/images/luxury-estate-framing.png"
     }
   ];
 
