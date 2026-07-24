@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
+      className="relative min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
       <style>{`
         .animate-kinetic-zoom {
@@ -31,25 +31,25 @@ const Hero = () => {
       </div>
 
       {/* Centered content wrapper */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32 flex flex-col items-center text-center">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-24 flex flex-col items-center text-center">
         <div className="max-w-4xl flex flex-col items-center">
           
           {/* The Main Heading */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 leading-[1.02] animate-heading-breath">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-white mb-5 leading-[1.04] animate-heading-breath">
             Luxury Homes<br />
             <span className="text-gold">Designed Around Your Lifestyle.</span>
           </h1>
 
           {/* The Central Accent Line */}
-          <div className="h-[2px] bg-gold mx-auto my-6 w-32" />
+          <div className="h-[2px] bg-gold mx-auto my-5 w-24" />
 
           {/* The Subtext Paragraph */}
-          <p className="text-xl lg:text-2xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
+          <p className="text-lg lg:text-xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
             Masterworks of modern living. Unparalleled craftsmanship. A seamless architectural journey.
           </p>
 
           {/* Primary CTA Button */}
-          <div className="mt-10">
+          <div className="mt-8">
             <a
               href="#contact"
               onClick={(e) => {
@@ -57,7 +57,7 @@ const Hero = () => {
                 const element = document.getElementById('contact');
                 if (element) element.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-3 bg-gold text-charcoal px-9 py-4 text-base font-extrabold tracking-widest uppercase hover:bg-white transition-all duration-300 shadow-[0_0_25px_rgba(197,160,89,0.4)] rounded-[2px]"
+              className="inline-flex items-center gap-3 bg-gold text-charcoal px-8 py-3.5 text-sm font-extrabold tracking-widest uppercase hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(197,160,89,0.4)] rounded-[2px]"
             >
               Get a Free Quote
             </a>
@@ -67,7 +67,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom fade to next section (matches design system) */}
-      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-charcoal to-transparent z-[2]"></div>
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-charcoal to-transparent z-[2]"></div>
     </section>
   );
 };
