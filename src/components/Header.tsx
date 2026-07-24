@@ -34,26 +34,26 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal/80 backdrop-blur-md border-b border-white/10 shadow-sm">
-      <nav className="container mx-auto px-6 lg:px-12 py-5">
+      <nav className="container mx-auto px-6 lg:px-12 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link 
             to="/" 
             onClick={handleLogoClick}
-            className="text-2xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-2 hover:text-gold/90 transition-colors duration-300"
+            className="text-xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-2 hover:text-gold/90 transition-colors duration-300"
           >
-            <img src="/favicon.png" alt="Apex Architecture Logo" className="h-8 w-auto object-contain" />
+            <img src="/favicon.png" alt="Apex Architecture Logo" className="h-6 w-auto object-contain" />
             <span>Apex <span className="text-gold">Architecture</span></span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-10">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="text-white/80 hover:text-gold transition-colors duration-500 text-sm font-bold tracking-widest uppercase relative group"
+                className="text-white/80 hover:text-gold transition-colors duration-500 text-xs font-extrabold tracking-widest uppercase relative group"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-500"></span>
@@ -64,7 +64,7 @@ const Header = () => {
             <a
               href="#contact"
               onClick={(e) => handleScroll(e, '#contact')}
-              className="bg-gold text-charcoal font-bold px-8 py-3 text-sm tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_15px_rgba(197,160,89,0.3)]"
+              className="bg-gold text-charcoal font-extrabold px-5 py-2 text-xs tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_12px_rgba(197,160,89,0.3)]"
             >
               Get a Free Quote
             </a>
