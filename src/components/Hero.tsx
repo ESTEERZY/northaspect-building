@@ -32,10 +32,10 @@ const Hero = () => {
 
       {/* Centered content wrapper */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-24 flex flex-col items-center text-center">
-        <div className="max-w-5xl flex flex-col items-center">
+        <div className="max-w-7xl flex flex-col items-center w-full">
           
           {/* The Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-[1.15] max-w-5xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-[1.15] max-w-6xl mx-auto">
             Luxury Homes <span className="text-gold">Designed Around Your Lifestyle.</span>
           </h1>
 
@@ -43,7 +43,7 @@ const Hero = () => {
           <div className="h-[2px] bg-gold mx-auto my-5 w-24" />
 
           {/* The Subtext Paragraph */}
-          <p className="text-lg lg:text-xl font-medium text-white/85 max-w-3xl mx-auto leading-relaxed animate-subtext-breath">
+          <p className="text-lg lg:text-xl font-medium text-white/85 max-w-4xl mx-auto leading-relaxed animate-subtext-breath">
             We design and build bespoke luxury homes that combine timeless architecture, exceptional craftsmanship, and a seamless experience from concept to completion.
           </p>
 
