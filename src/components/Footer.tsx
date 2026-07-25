@@ -93,23 +93,23 @@ const Footer = () => {
             <ul className="space-y-2 text-slate-600 font-medium text-sm">
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Hobart &amp; Southern TAS</span>
+                <span>Sydney &amp; Coastal NSW</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Launceston &amp; Tamar Valley</span>
+                <span>Melbourne &amp; Mornington Peninsula</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Devonport &amp; North Coast</span>
+                <span>Brisbane &amp; Gold Coast, QLD</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Burnie &amp; Cradle Coast</span>
+                <span>Perth &amp; Western Coast, WA</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Penguin &amp; Regional Coastline</span>
+                <span>Adelaide &amp; South Australia</span>
               </li>
             </ul>
           </div>
@@ -121,8 +121,8 @@ const Footer = () => {
               <div className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <a href="tel:+15551234567" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300">
-                    (555) 123-4567
+                  <a href="tel:1300000287" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300">
+                    1300 000 287 (AUS)
                   </a>
                 </div>
               </div>
@@ -138,7 +138,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
                   <p className="text-slate-600 font-medium leading-snug">
-                    7 Cradle View Terrace, Penguin, TAS 7316
+                    Level 32, 100 Barangaroo Ave, Sydney NSW 2000
                   </p>
                 </div>
               </div>
