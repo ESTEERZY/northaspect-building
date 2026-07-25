@@ -42,8 +42,8 @@ const Header = () => {
             onClick={handleLogoClick}
             className="text-xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-2 hover:text-gold/90 transition-colors duration-300"
           >
-            <img src="/favicon.png" alt="Apex Architecture Logo" className="h-6 w-auto object-contain" />
-            <span>Apex <span className="text-gold">Architecture</span></span>
+            <img src="/favicon.svg" alt="Aus Builds Logo" className="h-7 w-auto object-contain" />
+            <span>Aus <span className="text-gold">Builds</span></span>
           </Link>
 
           {/* Desktop Navigation */}

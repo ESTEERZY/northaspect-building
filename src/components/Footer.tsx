@@ -27,7 +27,8 @@ const Footer = () => {
               }}
               className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-3 hover:text-gold/90 transition-colors duration-300"
             >
-              Apex <span className="text-gold">Architecture</span>
+              <img src="/favicon.svg" alt="Aus Builds Logo" className="h-7 w-auto object-contain" />
+              <span>Aus <span className="text-gold">Builds</span></span>
             </Link>
             <p className="text-slate-600 font-medium leading-relaxed text-sm">
               Building excellence since 2014. Your trusted partner for premium residential and commercial construction.
@@ -128,8 +129,8 @@ const Footer = () => {
               <div className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <a href="mailto:info@apexarchitecture.com" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300 break-all">
-                    info@apexarchitecture.com
+                  <a href="mailto:info@ausbuilds.com.au" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300 break-all">
+                    info@ausbuilds.com.au
                   </a>
                 </div>
               </div>
@@ -158,7 +159,7 @@ const Footer = () => {
         <div className="border-t border-slate-200 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-medium text-slate-500">
             <div>
-              © {new Date().getFullYear()} Apex Architecture. All rights reserved.
+              © {new Date().getFullYear()} Aus Builds. All rights reserved.
             </div>
             <div className="flex gap-6">
               <Link to="/privacy" className="hover:text-gold transition-colors duration-300">
