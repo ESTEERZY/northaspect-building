@@ -31,19 +31,20 @@ const Hero = () => {
       </div>
 
       {/* Centered content wrapper */}
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-24 flex flex-col items-center text-center">
-        <div className="max-w-7xl flex flex-col items-center w-full">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-20 flex flex-col items-center text-center">
+        <div className="max-w-3xl flex flex-col items-center w-full">
           
           {/* The Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-[1.15] max-w-6xl mx-auto">
-            Luxury Homes <span className="text-gold">Designed Around Your Lifestyle.</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.12]">
+            Luxury Homes<br />
+            <span className="text-gold">Designed Around Your Lifestyle.</span>
           </h1>
 
           {/* The Central Accent Line */}
-          <div className="h-[2px] bg-gold mx-auto my-5 w-24" />
+          <div className="h-[2px] bg-gold mx-auto my-6 w-20" />
 
           {/* The Subtext Paragraph */}
-          <p className="text-lg lg:text-xl font-medium text-white/85 max-w-4xl mx-auto leading-relaxed animate-subtext-breath">
+          <p className="text-base md:text-lg lg:text-xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
             We design and build bespoke luxury homes that combine timeless architecture, exceptional craftsmanship, and a seamless experience from concept to completion.
           </p>
 
