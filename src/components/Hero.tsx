@@ -36,8 +36,8 @@ const Hero = () => {
           
           {/* The Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.12]">
-            Luxury Homes<br />
-            <span className="text-gold">Designed Around Your Lifestyle.</span>
+            Residential building<br />
+            <span className="text-gold">at its finest</span>
           </h1>
 
           {/* The Central Accent Line */}
