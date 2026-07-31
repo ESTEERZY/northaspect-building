@@ -180,112 +180,124 @@ const Reviews = () => {
     })
 
   return (
-    <section id="reviews" className="py-24 bg-charcoal relative overflow-hidden border-t border-white/10">
-      {/* Background Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/5 blur-[140px] pointer-events-none rounded-full" />
+    <section id="reviews" className="py-28 bg-charcoal relative overflow-hidden border-t border-white/10">
+      {/* Sleek Background Glow & Mesh Effect */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-gold/10 via-gold/5 to-transparent blur-[160px] pointer-events-none rounded-full" />
+      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.02] pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Toast Notification */}
         {toastMessage && (
-          <div className="mb-8 p-4 bg-gold/20 border border-gold text-gold text-sm font-semibold rounded-[2px] flex items-center justify-between animate-fade-in">
-            <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+          <div className="mb-10 p-4 bg-gold/15 border border-gold/40 text-gold text-sm font-semibold rounded-[2px] flex items-center justify-between backdrop-blur-xl animate-fade-in shadow-[0_4px_20px_rgba(197,160,89,0.15)]">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-gold" />
               <span>{toastMessage}</span>
             </div>
-            <button onClick={() => setToastMessage(null)} className="text-gold hover:text-white">
+            <button onClick={() => setToastMessage(null)} className="text-gold/70 hover:text-white transition-colors">
               <X className="w-4 h-4" />
             </button>
           </div>
         )}
 
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3 py-1 rounded-full text-gold text-xs font-black tracking-widest uppercase">
+            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3.5 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase shadow-[0_0_15px_rgba(197,160,89,0.15)]">
               <Award className="w-3.5 h-3.5" />
               Client Excellence &amp; Testimonials
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
-              Trusted by Australia's Most <span className="text-gold">Discerning</span> Property Owners
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+              Trusted by Australia's Most <span className="text-gold font-black">Discerning</span> Property Owners
             </h2>
-            <p className="text-lg text-white/70 font-medium leading-relaxed">
+            <p className="text-base md:text-lg text-white/70 font-normal leading-relaxed">
               Read verified feedback from homeowners, corporate clients, and property developers who entrusted us with their landmark projects.
             </p>
           </div>
 
-          {/* Action & Stats summary */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-[2px]">
+          {/* Sleek Action & Stats Summary */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl border border-white/10 p-7 rounded-[2px] shadow-2xl relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[2px]" />
             <div>
               <div className="flex items-center gap-3">
-                <span className="text-4xl font-black text-white tracking-tight">4.9</span>
-                <div className="flex gap-1 text-gold">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-gold text-gold" />
-                  ))}
+                <span className="text-4xl lg:text-5xl font-black text-white tracking-tight font-sans">4.9</span>
+                <div>
+                  <div className="flex gap-1 text-gold mb-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                    ))}
+                  </div>
+                  <div className="text-[10px] font-black uppercase tracking-[0.15em] text-white/60">
+                    128+ Verified Reviews
+                  </div>
                 </div>
               </div>
-              <div className="text-xs font-extrabold uppercase tracking-widest text-white/60 mt-1">
-                Based on 128+ Verified Reviews
-              </div>
             </div>
-            <div className="h-10 w-px bg-white/10 hidden sm:block" />
+            <div className="h-10 w-px bg-white/15 hidden sm:block" />
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-gold text-charcoal px-6 py-3 text-xs font-black tracking-widest uppercase hover:bg-white transition-all duration-300 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_15px_rgba(197,160,89,0.2)]"
+              className="bg-gold text-charcoal px-7 py-3.5 text-xs font-black tracking-[0.15em] uppercase hover:bg-white hover:text-charcoal transition-all duration-300 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_20px_rgba(197,160,89,0.25)] relative overflow-hidden group/btn"
             >
-              <PlusCircle className="w-4 h-4" />
-              Write a Review
+              <PlusCircle className="w-4 h-4 transition-transform duration-300 group-hover/btn:rotate-90" />
+              <span>Write a Review</span>
             </button>
           </div>
         </div>
 
-        {/* Verification Badges Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 border-y border-white/10 py-6">
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-8 h-8 text-gold flex-shrink-0" />
+        {/* Verification Badges Bar - Sleek Glass Strip */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 border-y border-white/10 py-7 bg-white/[0.015] backdrop-blur-sm px-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-5 h-5 text-gold" />
+            </div>
             <div>
-              <div className="text-sm font-black text-white">Master Builders</div>
-              <div className="text-xs text-white/50">Verified Member MBA</div>
+              <div className="text-xs font-black text-white uppercase tracking-wider">Master Builders</div>
+              <div className="text-[11px] text-white/50 font-medium">Verified Member MBA</div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <Star className="w-8 h-8 text-gold flex-shrink-0 fill-gold/20" />
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+              <Star className="w-5 h-5 text-gold fill-gold" />
+            </div>
             <div>
-              <div className="text-sm font-black text-white">Google Reviews</div>
-              <div className="text-xs text-white/50">4.9 ★★★★★ Rating</div>
+              <div className="text-xs font-black text-white uppercase tracking-wider">Google Reviews</div>
+              <div className="text-[11px] text-white/50 font-medium">4.9 ★★★★★ (128)</div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <Building className="w-8 h-8 text-gold flex-shrink-0" />
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+              <Building className="w-5 h-5 text-gold" />
+            </div>
             <div>
-              <div className="text-sm font-black text-white">Houzz Design 2025</div>
-              <div className="text-xs text-white/50">Best of Service Award</div>
+              <div className="text-xs font-black text-white uppercase tracking-wider">Houzz Design 2025</div>
+              <div className="text-[11px] text-white/50 font-medium">Best of Service Award</div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <Award className="w-8 h-8 text-gold flex-shrink-0" />
+          <div className="flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+              <Award className="w-5 h-5 text-gold" />
+            </div>
             <div>
-              <div className="text-sm font-black text-white">100% Fixed Price</div>
-              <div className="text-xs text-white/50">Guaranteed Contract</div>
+              <div className="text-xs font-black text-white uppercase tracking-wider">100% Fixed Price</div>
+              <div className="text-[11px] text-white/50 font-medium">Guaranteed Contract</div>
             </div>
           </div>
         </div>
 
         {/* Filters & Sorting Bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-10 pb-6">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 mb-10 pb-4 border-b border-white/5">
           {/* Category Pills */}
           <div className="flex items-center gap-2 flex-wrap">
-            <div className="text-xs font-black uppercase text-white/50 flex items-center gap-1.5 mr-2">
-              <Filter className="w-3.5 h-3.5 text-gold" /> Filter:
+            <div className="text-[11px] font-black uppercase tracking-widest text-white/40 flex items-center gap-1.5 mr-2">
+              <Filter className="w-3.5 h-3.5 text-gold" /> Category:
             </div>
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 text-xs font-extrabold uppercase tracking-wider rounded-[2px] transition-all duration-300 border ${
+                className={`px-4 py-2 text-[11px] font-extrabold uppercase tracking-wider rounded-[2px] transition-all duration-300 border ${
                   selectedCategory === cat
-                    ? 'bg-gold text-charcoal border-gold shadow-[0_0_12px_rgba(197,160,89,0.3)]'
-                    : 'bg-white/5 text-white/70 border-white/10 hover:border-gold/40 hover:text-white'
+                    ? 'bg-gold text-charcoal border-gold shadow-[0_0_15px_rgba(197,160,89,0.35)] scale-[1.02]'
+                    : 'bg-white/[0.03] text-white/70 border-white/10 hover:border-gold/40 hover:text-white hover:bg-white/[0.06]'
                 }`}
               >
                 {cat}
@@ -294,12 +306,12 @@ const Reviews = () => {
           </div>
 
           {/* Sort Selector */}
-          <div className="flex items-center gap-2 self-end md:self-auto">
-            <span className="text-xs font-black uppercase text-white/50">Sort:</span>
+          <div className="flex items-center gap-3 self-end md:self-auto">
+            <span className="text-[11px] font-black uppercase tracking-widest text-white/40">Sort By:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as 'highest' | 'recent')}
-              className="bg-white/5 border border-white/10 text-white text-xs font-bold uppercase tracking-wider px-3 py-2 rounded-[2px] focus:outline-none focus:border-gold"
+              className="bg-white/[0.04] border border-white/15 text-white text-[11px] font-extrabold uppercase tracking-wider px-3.5 py-2 rounded-[2px] focus:outline-none focus:border-gold cursor-pointer transition-colors hover:border-white/30"
             >
               <option value="highest" className="bg-charcoal text-white">Highest Rated</option>
               <option value="recent" className="bg-charcoal text-white">Most Recent</option>
@@ -307,105 +319,126 @@ const Reviews = () => {
           </div>
         </div>
 
-        {/* Reviews Grid */}
+        {/* Sleek Reviews Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredReviews.map((review) => (
-            <div
-              key={review.id}
-              className="bg-white/5 backdrop-blur-md border border-white/10 p-8 flex flex-col justify-between hover:border-gold/40 transition-all duration-500 rounded-[2px] group relative"
-            >
-              {/* Top Meta & Star Rating */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-gold">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                    ))}
+          {filteredReviews.map((review) => {
+            // Helper for initial avatar
+            const initials = review.author
+              .split('&')[0]
+              .trim()
+              .split(' ')
+              .map((n) => n[0])
+              .join('')
+              .toUpperCase()
+              .slice(0, 2)
+
+            return (
+              <div
+                key={review.id}
+                className="bg-gradient-to-b from-white/[0.05] to-white/[0.02] backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-500 rounded-[2px] group relative shadow-lg hover:shadow-[0_12px_35px_rgba(0,0,0,0.5)] overflow-hidden"
+              >
+                {/* Top Subtle Hover Accent Line */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div>
+                  {/* Top Meta: Category Tag & Star Rating */}
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="text-[10px] font-black tracking-[0.15em] text-gold uppercase bg-gold/10 px-3 py-1 rounded-[2px] border border-gold/20 shadow-inner">
+                      {review.category}
+                    </span>
+                    <div className="flex items-center gap-1 text-gold">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
+                      ))}
+                    </div>
                   </div>
-                  <span className="text-xs font-extrabold tracking-widest text-gold uppercase bg-gold/10 px-2.5 py-0.5 rounded-[2px] border border-gold/20">
-                    {review.category}
-                  </span>
+
+                  {/* Title & Review Text */}
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 tracking-tight leading-snug group-hover:text-gold transition-colors duration-300">
+                    "{review.title}"
+                  </h3>
+                  <p className="text-white/75 text-sm leading-relaxed mb-6 font-normal">
+                    {review.text}
+                  </p>
                 </div>
 
-                {/* Title & Review Text */}
-                <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-gold transition-colors duration-300">
-                  "{review.title}"
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-6 font-medium">
-                  {review.text}
-                </p>
-              </div>
-
-              {/* Bottom Details & Author */}
-              <div className="pt-6 border-t border-white/10 space-y-4">
-                {/* Optional Project Thumbnail */}
-                {review.projectImage && (
-                  <div className="relative h-32 w-full overflow-hidden rounded-[2px] border border-white/10">
-                    <img
-                      src={review.projectImage}
-                      alt={review.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
-                    <div className="absolute bottom-2 left-2 text-[10px] font-black uppercase text-white/90 bg-charcoal/80 px-2 py-0.5 rounded-[2px]">
-                      Completed Project
+                {/* Bottom Details & Author */}
+                <div className="pt-6 border-t border-white/10 space-y-5">
+                  {/* Optional Project Thumbnail */}
+                  {review.projectImage && (
+                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-white/10 group/img">
+                      <img
+                        src={review.projectImage}
+                        alt={review.title}
+                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent" />
+                      <div className="absolute bottom-2.5 left-2.5 text-[9px] font-black uppercase tracking-widest text-gold bg-charcoal/90 backdrop-blur-md px-2.5 py-1 rounded-[2px] border border-gold/20">
+                        Completed Build
+                      </div>
                     </div>
+                  )}
+
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      {/* Avatar Badge */}
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold/25 to-white/10 border border-gold/40 flex items-center justify-center font-black text-gold text-xs tracking-wider shadow-inner flex-shrink-0">
+                        {initials}
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="font-extrabold text-white text-sm tracking-tight">{review.author}</span>
+                          {review.verified && (
+                            <span title="Verified Client">
+                              <CheckCircle2 className="w-3.5 h-3.5 text-gold flex-shrink-0" />
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-[11px] text-white/50 font-medium">
+                          {review.role} • <span className="text-white/75">{review.location}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Helpful Button */}
+                    <button
+                      onClick={() => handleLike(review.id)}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-extrabold rounded-[2px] border transition-all duration-300 ${
+                        likedReviews[review.id]
+                          ? 'bg-gold/20 border-gold text-gold shadow-[0_0_10px_rgba(197,160,89,0.2)]'
+                          : 'bg-white/[0.03] border-white/10 text-white/60 hover:text-white hover:border-gold/40 hover:bg-white/[0.06]'
+                      }`}
+                    >
+                      <ThumbsUp className="w-3.5 h-3.5" />
+                      <span>{review.helpfulCount}</span>
+                    </button>
                   </div>
-                )}
-
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="font-extrabold text-white text-base tracking-tight">{review.author}</span>
-                      {review.verified && (
-                        <span title="Verified Client">
-                          <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0" />
-                        </span>
-                      )}
-                    </div>
-                    <div className="text-xs text-white/50 font-medium">
-                      {review.role} • <span className="text-white/70">{review.location}</span>
-                    </div>
-                  </div>
-
-                  {/* Helpful Button */}
-                  <button
-                    onClick={() => handleLike(review.id)}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-[2px] border transition-colors ${
-                      likedReviews[review.id]
-                        ? 'bg-gold/20 border-gold text-gold'
-                        : 'bg-white/5 border-white/10 text-white/60 hover:text-white hover:border-white/30'
-                    }`}
-                  >
-                    <ThumbsUp className="w-3.5 h-3.5" />
-                    <span>{review.helpfulCount}</span>
-                  </button>
                 </div>
-              </div>
 
-              {/* Decorative Quote Icon Background */}
-              <Quote className="absolute top-6 right-6 w-16 h-16 text-white/[0.03] pointer-events-none" />
-            </div>
-          ))}
+                {/* Sleek Watermarked Quote Icon */}
+                <Quote className="absolute top-6 right-6 w-20 h-20 text-white/[0.02] group-hover:text-gold/[0.04] transition-colors pointer-events-none" />
+              </div>
+            )
+          })}
         </div>
       </div>
 
       {/* Write a Review Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-charcoal/90 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-charcoal border border-gold/40 p-8 max-w-xl w-full rounded-[2px] shadow-2xl relative animate-slide-up max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4">
+          <div className="bg-charcoal border border-gold/40 p-8 md:p-10 max-w-xl w-full rounded-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative animate-slide-up max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors"
+              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
 
-            <div className="flex items-center gap-2 text-gold text-xs font-black uppercase tracking-widest mb-2">
+            <div className="flex items-center gap-2 text-gold text-xs font-black uppercase tracking-[0.2em] mb-2">
               <Quote className="w-4 h-4" /> Share Your Experience
             </div>
-            <h3 className="text-2xl font-black text-white mb-6">Submit a Client Review</h3>
+            <h3 className="text-2xl md:text-3xl font-black text-white mb-6 tracking-tight">Submit a Client Review</h3>
 
             <form onSubmit={handleFormSubmit} className="space-y-5">
               {/* Rating Selector */}
@@ -419,11 +452,11 @@ const Reviews = () => {
                       key={star}
                       type="button"
                       onClick={() => setFormData({ ...formData, rating: star })}
-                      className="p-1 focus:outline-none"
+                      className="p-1 focus:outline-none transition-transform hover:scale-110"
                     >
                       <Star
                         className={`w-7 h-7 ${
-                          star <= formData.rating ? 'fill-gold text-gold' : 'text-white/20'
+                          star <= formData.rating ? 'fill-gold text-gold' : 'text-white/20 hover:text-white/40'
                         }`}
                       />
                     </button>
@@ -434,7 +467,7 @@ const Reviews = () => {
               {/* Author & Role */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
                     Your Name *
                   </label>
                   <input
@@ -443,11 +476,11 @@ const Reviews = () => {
                     placeholder="e.g. John &amp; Claire Davis"
                     value={formData.author}
                     onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold rounded-[2px]"
+                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
                     Role / Profile
                   </label>
                   <input
@@ -455,7 +488,7 @@ const Reviews = () => {
                     placeholder="e.g. Homeowner, Property Investor"
                     value={formData.role}
                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold rounded-[2px]"
+                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
                   />
                 </div>
               </div>
@@ -463,7 +496,7 @@ const Reviews = () => {
               {/* Location & Category */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
                     Location
                   </label>
                   <input
@@ -471,11 +504,11 @@ const Reviews = () => {
                     placeholder="e.g. Brighton, VIC"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold rounded-[2px]"
+                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
                     Project Category
                   </label>
                   <select
@@ -483,7 +516,7 @@ const Reviews = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, category: e.target.value as Review['category'] })
                     }
-                    className="w-full bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold rounded-[2px]"
+                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] cursor-pointer transition-colors"
                   >
                     <option value="Luxury Residential" className="bg-charcoal text-white">Luxury Residential</option>
                     <option value="Commercial Development" className="bg-charcoal text-white">Commercial Development</option>
@@ -495,7 +528,7 @@ const Reviews = () => {
 
               {/* Headline */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
                   Review Headline *
                 </label>
                 <input
@@ -504,13 +537,13 @@ const Reviews = () => {
                   placeholder="Summary of your experience..."
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold rounded-[2px]"
+                  className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
                 />
               </div>
 
               {/* Review Text */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1">
+                <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
                   Detailed Feedback *
                 </label>
                 <textarea
@@ -519,7 +552,7 @@ const Reviews = () => {
                   placeholder="Share details about the quality, timeliness, communication, and overall build experience..."
                   value={formData.text}
                   onChange={(e) => setFormData({ ...formData, text: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold rounded-[2px]"
+                  className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
                 />
               </div>
 
@@ -527,13 +560,13 @@ const Reviews = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors"
+                  className="px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white/60 hover:text-white transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-gold text-charcoal px-6 py-2.5 text-xs font-black uppercase tracking-widest hover:bg-white transition-all duration-300 rounded-[2px] shadow-[0_0_12px_rgba(197,160,89,0.3)]"
+                  className="bg-gold text-charcoal px-7 py-3 text-xs font-black uppercase tracking-[0.15em] hover:bg-white hover:text-charcoal transition-all duration-300 rounded-[2px] shadow-[0_0_15px_rgba(197,160,89,0.3)]"
                 >
                   Submit Review
                 </button>
