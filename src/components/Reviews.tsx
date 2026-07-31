@@ -9,6 +9,7 @@ export interface Review {
   category: 'Luxury Residential' | 'Commercial Development' | 'Custom Architectural' | 'Renovations & Extensions'
   rating: number
   date: string
+  timestamp: number
   title: string
   text: string
   projectImage?: string
@@ -25,6 +26,7 @@ const INITIAL_REVIEWS: Review[] = [
     category: 'Luxury Residential',
     rating: 5,
     date: 'July 2026',
+    timestamp: Date.parse('2026-07-15T10:00:00Z'),
     title: 'Transformed our coastal vision into a masterpiece',
     text: 'Aus Builds executed our custom multi-level waterfront residence with flawless craftsmanship. Their transparency during cost estimation and structural phase gave us total peace of mind. Every detail—from the polished concrete to timber joinery—exceeded our expectations.',
     projectImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
@@ -39,6 +41,7 @@ const INITIAL_REVIEWS: Review[] = [
     category: 'Commercial Development',
     rating: 5,
     date: 'June 2026',
+    timestamp: Date.parse('2026-06-20T10:00:00Z'),
     title: 'On-time commercial delivery with exceptional rigor',
     text: 'Delivering a 4,000 sqm corporate HQ in Sydney CBD requires strict compliance and logistics management. The team at Aus Builds completed the structural build 2 weeks ahead of schedule without a single safety compromise.',
     projectImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
@@ -53,6 +56,7 @@ const INITIAL_REVIEWS: Review[] = [
     category: 'Custom Architectural',
     rating: 5,
     date: 'May 2026',
+    timestamp: Date.parse('2026-05-10T10:00:00Z'),
     title: 'Architectural precision at the highest standard',
     text: 'Working with complex cantilever designs and acoustic glazing is usually nerve-wracking. Aus Builds coordinated perfectly with our lead architect, turning ambitious schematics into structural perfection. Highly recommended for bespoke builds.',
     projectImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
@@ -67,6 +71,7 @@ const INITIAL_REVIEWS: Review[] = [
     category: 'Renovations & Extensions',
     rating: 5,
     date: 'April 2026',
+    timestamp: Date.parse('2026-04-18T10:00:00Z'),
     title: 'Seamless heritage renovation with modern luxury',
     text: 'Preserving a heritage facade while integrating a modern glass-encased rear wing seemed daunting. The craftsmanship of Aus Builds preserved historical character while giving us state-of-the-art living spaces.',
     projectImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
@@ -81,6 +86,7 @@ const INITIAL_REVIEWS: Review[] = [
     category: 'Commercial Development',
     rating: 5,
     date: 'March 2026',
+    timestamp: Date.parse('2026-03-05T10:00:00Z'),
     title: 'First-class project management and budget control',
     text: 'Their transparency and digital twin tracking kept our board informed at every key milestone. The financial reporting was exact, and the finished luxury boutique hotel speaks for itself.',
     projectImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
@@ -95,6 +101,7 @@ const INITIAL_REVIEWS: Review[] = [
     category: 'Luxury Residential',
     rating: 5,
     date: 'January 2026',
+    timestamp: Date.parse('2026-01-28T10:00:00Z'),
     title: 'World-class luxury build experience from start to finish',
     text: 'From site excavation through to interior finishes, the communication was stellar. They respected our timeline and crafted an extraordinary family sanctuary that will last generations.',
     projectImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
@@ -150,6 +157,7 @@ const Reviews = () => {
       category: formData.category,
       rating: Number(formData.rating),
       date: 'Just now',
+      timestamp: Date.now(),
       title: formData.title,
       text: formData.text,
       verified: true,
@@ -175,8 +183,19 @@ const Reviews = () => {
   const filteredReviews = reviews
     .filter((r) => selectedCategory === 'All' || r.category === selectedCategory)
     .sort((a, b) => {
-      if (sortBy === 'highest') return b.rating - a.rating
-      return 0 // keep order
+      if (sortBy === 'highest') {
+        if (b.rating !== a.rating) {
+          return b.rating - a.rating
+        }
+        if (b.helpfulCount !== a.helpfulCount) {
+          return b.helpfulCount - a.helpfulCount
+        }
+        return b.timestamp - a.timestamp
+      }
+      if (sortBy === 'recent') {
+        return b.timestamp - a.timestamp
+      }
+      return 0
     })
 
   return (
