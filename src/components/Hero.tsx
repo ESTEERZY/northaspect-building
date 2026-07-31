@@ -45,7 +45,7 @@ const Hero = () => {
 
           {/* The Subtext Paragraph */}
           <p className="text-base md:text-lg lg:text-xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
-            We design and build bespoke luxury homes that combine timeless architecture, exceptional craftsmanship, and a seamless experience from concept to completion.
+            We deliver quality projects to our clients
           </p>
 
         </div>
