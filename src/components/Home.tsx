@@ -8,6 +8,7 @@ import Stats from './Stats'
 import About from './About'
 import DesignSignatures from './DesignSignatures'
 import Projects from './Projects'
+import Reviews from './Reviews'
 import Contact from './Contact'
 import Footer from './Footer'
 
@@ -43,6 +44,7 @@ const Home = () => {
       <Stats />
       <About />
       <DesignSignatures />
+      <Reviews />
       <Contact />
       <Footer />
     </>

@@ -11,6 +11,7 @@ const Header = () => {
     { name: 'Signatures', href: '#features' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Process', href: '#process' },
+    { name: 'Reviews', href: '#reviews' },
   ]
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
