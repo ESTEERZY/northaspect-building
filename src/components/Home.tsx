@@ -44,8 +44,8 @@ const Home = () => {
       <Stats />
       <About />
       <DesignSignatures />
-      <Reviews />
       <Contact />
+      <Reviews />
       <Footer />
     </>
   )
