@@ -45,7 +45,7 @@ const Hero = () => {
 
           {/* The Subtext Paragraph */}
           <p className="text-base md:text-lg lg:text-xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
-            We deliver quality projects to our clients
+            We deliver quality builds to all our clients
           </p>
 
         </div>
