@@ -2,7 +2,7 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden flex items-center justify-center bg-charcoal"
+      className="relative h-screen min-h-screen w-full overflow-hidden flex items-center justify-center bg-charcoal"
     >
       <style>{`
         .animate-kinetic-zoom {
