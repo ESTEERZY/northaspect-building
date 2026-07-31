@@ -6,6 +6,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    location: '',
     budget: '',
     message: '',
   });
@@ -111,24 +112,42 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="budget" className="block text-sm font-bold text-white/70 uppercase tracking-widest mb-3">
-                  Estimated Budget *
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-5 py-4 bg-white/5 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
-                >
-                  <option value="" disabled>Select a range</option>
-                  <option value="500k_1m">$500k – $1M</option>
-                  <option value="1m_2m">$1M – $2M</option>
-                  <option value="2m_5m">$2M – $5M</option>
-                  <option value="over_5m">$5M+</option>
-                </select>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="location" className="block text-sm font-bold text-white/70 uppercase tracking-widest mb-3">
+                    Project Location / Address *
+                  </label>
+                  <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-5 py-4 bg-white/5 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                    placeholder="e.g. 124 Ocean Drive, Sorrento VIC"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="budget" className="block text-sm font-bold text-white/70 uppercase tracking-widest mb-3">
+                    Estimated Budget *
+                  </label>
+                  <select
+                    id="budget"
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-5 py-4 bg-white/5 text-white text-base border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all rounded-[2px]"
+                  >
+                    <option value="" disabled>Select a range</option>
+                    <option value="500k_1m">$500k – $1M</option>
+                    <option value="1m_2m">$1M – $2M</option>
+                    <option value="2m_5m">$2M – $5M</option>
+                    <option value="over_5m">$5M+</option>
+                  </select>
+                </div>
               </div>
 
               <div>
