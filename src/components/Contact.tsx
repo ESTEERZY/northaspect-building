@@ -36,6 +36,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 bg-charcoal border-t border-white/10 relative overflow-hidden">
+      <div id="book-a-call" className="absolute -top-24 left-0"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-gold/5 via-charcoal to-charcoal pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -50,21 +51,21 @@ const Contact = () => {
           >
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3.5 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase">
               <ShieldCheck className="w-3.5 h-3.5" />
-              Private Consultation
+              Book a Call &bull; Consultation
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-              Begin Your <span className="text-gold">Journey.</span>
+              Book a Call With <span className="text-gold">Our Team.</span>
             </h2>
 
             <p className="text-base lg:text-lg text-white/70 font-normal leading-relaxed">
-              Tell us about your architectural vision. Our directors will review your parameters and respond within one business day.
+              Tell us about your project vision. Schedule a call with our directors for a private architectural &amp; service consultation.
             </p>
 
             {/* Process Steps */}
             <div className="space-y-5 pt-4">
               {[
-                { num: '01', label: 'Initial Consultation', desc: 'Discuss site context, timeline, and preliminary investment range.' },
+                { num: '01', label: 'Book a Call / Initial Inquiry', desc: 'Discuss site context, timeline, and preliminary investment range.' },
                 { num: '02', label: 'Feasibility & Design', desc: 'Custom architectural drafting and site analysis.' },
                 { num: '03', label: 'Fixed Contract Build', desc: 'Precision construction with real-time digital twin tracking.' },
               ].map((item) => (
@@ -93,8 +94,8 @@ const Contact = () => {
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
             <div className="mb-8 border-b border-white/10 pb-6">
-              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">Request a Consultation</h3>
-              <p className="text-sm text-white/60 font-normal">Share your project specifications for a confidential estimate.</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">Book a Call</h3>
+              <p className="text-sm text-white/60 font-normal">Share your project specifications to schedule a direct consultation call.</p>
             </div>
 
             {isSubmitted ? (
@@ -214,7 +215,7 @@ const Contact = () => {
                     type="submit"
                     className="group w-full bg-gold border border-gold text-charcoal px-6 py-4 text-xs font-black tracking-[0.15em] uppercase hover:bg-white hover:border-white transition-all duration-300 inline-flex items-center justify-center gap-2 rounded-[2px] shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
                   >
-                    <span>Request Consultation</span>
+                    <span>Book a Call</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
