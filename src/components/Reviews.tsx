@@ -516,11 +516,11 @@ const Reviews = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                    Location
+                    Location / Address
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Brighton, VIC"
+                    placeholder="e.g. 12 Ocean St, Brighton VIC"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
