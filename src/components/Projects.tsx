@@ -177,15 +177,15 @@ const Projects = () => {
             Schedule a private consultation with our architectural directors to begin shaping your legacy.
           </p>
           <a
-            href="#calendar"
+            href="#book-a-call"
             onClick={(e) => {
               e.preventDefault()
-              const element = document.getElementById('calendar') || document.getElementById('book-a-call') || document.getElementById('contact')
+              const element = document.getElementById('book-a-call') || document.getElementById('contact')
               element?.scrollIntoView({ behavior: 'smooth' })
             }}
             className="group bg-gold text-charcoal px-12 py-6 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_40px_rgba(212,175,55,0.4)] rounded-[2px] font-sans"
           >
-            Book a Discovery Call
+            Book a Call
             <ArrowRight className="group-hover:translate-x-2 transition-transform" size={22} />
           </a>
         </div>

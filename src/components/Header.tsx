@@ -63,11 +63,11 @@ const Header = () => {
 
             {/* CTA Button */}
             <a
-              href="#calendar"
-              onClick={(e) => handleScroll(e, '#calendar')}
+              href="#contact"
+              onClick={(e) => handleScroll(e, '#contact')}
               className="bg-gold text-charcoal font-extrabold px-5 py-2 text-xs tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_12px_rgba(197,160,89,0.3)]"
             >
-              Book a Discovery Call
+              Book a Call
             </a>
           </div>
 
@@ -98,14 +98,14 @@ const Header = () => {
                 </a>
               ))}
               <a
-                href="#calendar"
+                href="#contact"
                 className="bg-gold text-charcoal border border-gold shadow-[0_0_15px_rgba(197,160,89,0.3)] px-8 py-4 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-300 inline-flex items-center justify-center gap-2 mt-4 rounded-[2px] whitespace-nowrap"
                 onClick={(e) => {
                   setIsMenuOpen(false)
-                  handleScroll(e, '#calendar')
+                  handleScroll(e, '#contact')
                 }}
               >
-                Book a Discovery Call
+                Book a Call
               </a>
             </div>
           </div>

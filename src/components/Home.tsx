@@ -16,16 +16,16 @@ const Home = () => {
   const location = useLocation()
 
   useEffect(() => {
-    // If state contains scrollToContact, smooth scroll to the calendar block
+    // If state contains scrollToContact, smooth scroll to the contact form block
     if (location.state?.scrollToContact) {
-      const targetSection = document.getElementById('calendar') || document.getElementById('book-a-call') || document.getElementById('contact')
-      if (targetSection) {
+      const contactSection = document.getElementById('book-a-call') || document.getElementById('contact')
+      if (contactSection) {
         setTimeout(() => {
-          targetSection.scrollIntoView({ behavior: 'smooth' })
+          contactSection.scrollIntoView({ behavior: 'smooth' })
         }, 150)
       }
     } else if (location.state?.scrollToSection) {
-      const targetId = (location.state.scrollToSection === 'contact' || location.state.scrollToSection === 'book-a-call') ? 'calendar' : location.state.scrollToSection
+      const targetId = location.state.scrollToSection === 'contact' ? 'book-a-call' : location.state.scrollToSection
       const targetSection = document.getElementById(targetId) || document.getElementById(location.state.scrollToSection)
       if (targetSection) {
         setTimeout(() => {
