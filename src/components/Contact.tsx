@@ -51,11 +51,11 @@ const Contact = () => {
           >
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3.5 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase">
               <ShieldCheck className="w-3.5 h-3.5" />
-              Book a Call &bull; Consultation
+              Request a Quote &bull; Consultation
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-              Book a Call With <span className="text-gold">Our Team.</span>
+              Request a Quote From <span className="text-gold">Our Team.</span>
             </h2>
 
             <p className="text-base lg:text-lg text-white/70 font-normal leading-relaxed">
@@ -65,7 +65,7 @@ const Contact = () => {
             {/* Process Steps */}
             <div className="space-y-5 pt-4">
               {[
-                { num: '01', label: 'Book a Call / Initial Inquiry', desc: 'Discuss site context, timeline, and preliminary investment range.' },
+                { num: '01', label: 'Request a Quote / Initial Inquiry', desc: 'Discuss site context, timeline, and preliminary investment range.' },
                 { num: '02', label: 'Feasibility & Design', desc: 'Custom architectural drafting and site analysis.' },
                 { num: '03', label: 'Fixed Contract Build', desc: 'Precision construction with real-time digital twin tracking.' },
               ].map((item) => (
@@ -94,7 +94,7 @@ const Contact = () => {
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
             <div className="mb-8 border-b border-white/10 pb-6">
-              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">Book a Call</h3>
+              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">Request a Quote</h3>
               <p className="text-sm text-white/60 font-normal">Share your project specifications to schedule a direct consultation call.</p>
             </div>
 
@@ -215,7 +215,7 @@ const Contact = () => {
                     type="submit"
                     className="group w-full bg-gold border border-gold text-charcoal px-6 py-4 text-xs font-black tracking-[0.15em] uppercase hover:bg-white hover:border-white transition-all duration-300 inline-flex items-center justify-center gap-2 rounded-[2px] shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
                   >
-                    <span>Book a Call</span>
+                    <span>Request a Quote</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>

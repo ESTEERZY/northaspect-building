@@ -67,7 +67,7 @@ const Header = () => {
               onClick={(e) => handleScroll(e, '#contact')}
               className="bg-gold text-charcoal font-extrabold px-5 py-2 text-xs tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_12px_rgba(197,160,89,0.3)]"
             >
-              Book a Call
+              Request a Quote
             </a>
           </div>
 
@@ -105,7 +105,7 @@ const Header = () => {
                   handleScroll(e, '#contact')
                 }}
               >
-                Book a Call
+                Request a Quote
               </a>
             </div>
           </div>

@@ -57,7 +57,7 @@ const CaseStudyTemplate = () => {
               state={{ scrollToContact: true }}
               className="text-xs font-bold tracking-wider text-gold hover:text-white uppercase transition-colors duration-300"
             >
-              Book a Call
+              Request a Quote
             </Link>
           </div>
         </nav>
@@ -236,7 +236,7 @@ const CaseStudyTemplate = () => {
               state={{ scrollToContact: true }}
               className="group bg-gold text-charcoal px-12 py-6 text-base font-bold tracking-widest uppercase hover:bg-white transition-all duration-500 inline-flex items-center gap-3 shadow-[0_0_20px_rgba(212,175,55,0.25)] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] rounded-[2px] font-sans"
             >
-              <span>Book a Call</span>
+              <span>Request a Quote</span>
               <ArrowRight className="group-hover:translate-x-2 transition-transform duration-300" size={20} />
             </Link>
           </div>
