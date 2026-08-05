@@ -9,10 +9,10 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      text: 'Outstanding work. Delivered on time. The final result is simply breathtaking.',
+      text: 'Outstanding work and project oversight. Minor weather delays handled professionally, final result is breathtaking.',
       author: 'Robert Smith',
       role: 'Business Owner',
-      rating: 5,
+      rating: 4,
     },
     {
       text: 'Professional and dedicated to quality. Made our building experience stress-free.',
@@ -21,12 +21,16 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      text: 'Completed on time and within budget. Exceptional quality and project management.',
+      text: 'Completed with great quality control and digital tracking. Exceptional craftsmanship.',
       author: 'Michael Brown',
       role: 'Commercial Client',
-      rating: 5,
+      rating: 4,
     },
   ]
+
+  const averageRating = (
+    testimonials.reduce((acc, t) => acc + t.rating, 0) / (testimonials.length || 1)
+  ).toFixed(1)
 
   return (
     <section className="py-24 bg-charcoal border-t border-white/5">
@@ -40,11 +44,18 @@ const Testimonials = () => {
 
           <div className="flex items-center justify-center gap-2 pt-4">
             <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-8 h-8 fill-gold text-gold" />
+              {[1, 2, 3, 4, 5].map((star) => (
+                <Star
+                  key={star}
+                  className={`w-8 h-8 ${
+                    star <= Math.round(Number(averageRating))
+                      ? 'fill-gold text-gold'
+                      : 'text-white/20 fill-transparent'
+                  }`}
+                />
               ))}
             </div>
-            <span className="text-2xl font-black tracking-tight text-white ml-4">4.8/5</span>
+            <span className="text-2xl font-black tracking-tight text-white ml-4">{averageRating}/5</span>
             <span className="text-lg text-white/60 font-medium">Average Rating</span>
           </div>
         </div>
@@ -63,8 +74,15 @@ const Testimonials = () => {
 
               {/* Rating Stars */}
               <div className="flex gap-1 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-gold text-gold" />
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    className={`w-5 h-5 ${
+                      star <= testimonial.rating
+                        ? 'fill-gold text-gold'
+                        : 'text-white/20 fill-transparent'
+                    }`}
+                  />
                 ))}
               </div>
 

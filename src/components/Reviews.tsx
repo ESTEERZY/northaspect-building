@@ -39,11 +39,11 @@ const INITIAL_REVIEWS: Review[] = [
     role: 'Managing Director',
     location: 'Barangaroo, NSW',
     category: 'Commercial Development',
-    rating: 5,
+    rating: 4,
     date: 'June 2026',
     timestamp: Date.parse('2026-06-20T10:00:00Z'),
-    title: 'On-time commercial delivery with exceptional rigor',
-    text: 'Delivering a 4,000 sqm corporate HQ in Sydney CBD requires strict compliance and logistics management. The team at Aus Builds completed the structural build 2 weeks ahead of schedule without a single safety compromise.',
+    title: 'High-rigor commercial delivery with strong safety standards',
+    text: 'Delivering a 4,000 sqm corporate HQ in Sydney CBD requires strict compliance and logistics management. The team completed the structural build ahead of schedule. Minor supply lead times on custom acoustic glazing panels, but site coordination was top notch.',
     projectImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 19,
@@ -69,11 +69,11 @@ const INITIAL_REVIEWS: Review[] = [
     role: 'Homeowners',
     location: 'Paddington, QLD',
     category: 'Renovations & Extensions',
-    rating: 5,
+    rating: 4,
     date: 'April 2026',
     timestamp: Date.parse('2026-04-18T10:00:00Z'),
-    title: 'Seamless heritage renovation with modern luxury',
-    text: 'Preserving a heritage facade while integrating a modern glass-encased rear wing seemed daunting. The craftsmanship of Aus Builds preserved historical character while giving us state-of-the-art living spaces.',
+    title: 'Impressive heritage restoration & modern integration',
+    text: 'Preserving a heritage facade while integrating a modern glass-encased rear wing seemed daunting. The site team preserved historical character while giving us state-of-the-art living spaces. Weather events caused a minor timeline shift, but communication was constant.',
     projectImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 15,
@@ -108,6 +108,21 @@ const INITIAL_REVIEWS: Review[] = [
     verified: true,
     helpfulCount: 28,
   },
+  {
+    id: 'rev-7',
+    author: 'David & Catherine Ross',
+    role: 'Homeowners',
+    location: 'Brighton, VIC',
+    category: 'Custom Architectural',
+    rating: 4,
+    date: 'December 2025',
+    timestamp: Date.parse('2025-12-14T10:00:00Z'),
+    title: 'Exceptional structural quality and dedicated site team',
+    text: 'The architectural detailing on our home required custom steel fabrication and extensive timber work. The site supervisors were meticulous and proactive. Occasional cost adjustments due to council variation requests were handled professionally.',
+    projectImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
+    verified: true,
+    helpfulCount: 18,
+  },
 ]
 
 const CATEGORIES = [
@@ -125,6 +140,10 @@ const Reviews = () => {
   const [likedReviews, setLikedReviews] = useState<Record<string, boolean>>({})
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [toastMessage, setToastMessage] = useState<string | null>(null)
+
+  const averageRating = (
+    reviews.reduce((acc, r) => acc + r.rating, 0) / (reviews.length || 1)
+  ).toFixed(1)
 
   // Form State for Write a Review modal
   const [formData, setFormData] = useState({
@@ -238,11 +257,18 @@ const Reviews = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[2px]" />
             <div>
               <div className="flex items-center gap-3">
-                <span className="text-4xl lg:text-5xl font-black text-white tracking-tight font-sans">4.9</span>
+                <span className="text-4xl lg:text-5xl font-black text-white tracking-tight font-sans">{averageRating}</span>
                 <div>
                   <div className="flex gap-1 text-gold mb-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star
+                        key={star}
+                        className={`w-4 h-4 ${
+                          star <= Math.round(Number(averageRating))
+                            ? 'fill-gold text-gold'
+                            : 'text-white/20 fill-transparent'
+                        }`}
+                      />
                     ))}
                   </div>
                   <div className="text-[10px] font-black uppercase tracking-[0.15em] text-white/60">
@@ -279,7 +305,7 @@ const Reviews = () => {
             </div>
             <div>
               <div className="text-xs font-black text-white uppercase tracking-wider">Google Reviews</div>
-              <div className="text-[11px] text-white/50 font-medium">4.9 ★★★★★ (128)</div>
+              <div className="text-[11px] text-white/50 font-medium">{averageRating} ★★★★★ (128)</div>
             </div>
           </div>
           <div className="flex items-center gap-3.5">
@@ -365,9 +391,16 @@ const Reviews = () => {
                     <span className="text-[10px] font-black tracking-[0.15em] text-gold uppercase bg-gold/10 px-3 py-1 rounded-[2px] border border-gold/20 shadow-inner">
                       {review.category}
                     </span>
-                    <div className="flex items-center gap-1 text-gold">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-gold text-gold" />
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star
+                          key={star}
+                          className={`w-3.5 h-3.5 ${
+                            star <= review.rating
+                              ? 'fill-gold text-gold'
+                              : 'text-white/20 fill-transparent'
+                          }`}
+                        />
                       ))}
                     </div>
                   </div>
