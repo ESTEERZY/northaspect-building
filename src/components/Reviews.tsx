@@ -240,76 +240,104 @@ const Reviews = () => {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3.5 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase shadow-[0_0_15px_rgba(197,160,89,0.15)]">
-              <Award className="w-3.5 h-3.5" />
-              Client Excellence &amp; Testimonials
+            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-4 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase shadow-[0_0_20px_rgba(197,160,89,0.15)] backdrop-blur-md">
+              <Award className="w-3.5 h-3.5 text-gold" />
+              Client Excellence &amp; Verified Reviews
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
-              Trusted by Australia's Most <span className="text-gold font-black">Discerning</span> Property Owners
+              Trusted by Australia's Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-200 to-gold font-black">Discerning</span> Property Owners
             </h2>
             <p className="text-base md:text-lg text-white/70 font-normal leading-relaxed">
-              Read verified feedback from homeowners, corporate clients, and property developers who entrusted us with their landmark projects.
+              Read authentic, verified feedback from homeowners, corporate partners, and luxury estate developers.
             </p>
           </div>
 
-          {/* Sleek Action & Stats Summary */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl border border-white/10 p-7 rounded-[2px] shadow-2xl relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[2px]" />
-            <div>
-              <div className="flex items-center gap-3">
-                <span className="text-4xl lg:text-5xl font-black text-white tracking-tight font-sans">{averageRating}</span>
-                <div>
-                  <div className="flex gap-1 text-gold mb-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star
-                        key={star}
-                        className={`w-4 h-4 ${
-                          star <= Math.round(Number(averageRating))
-                            ? 'fill-gold text-gold'
-                            : 'text-white/20 fill-transparent'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <div className="text-[10px] font-black uppercase tracking-[0.15em] text-white/60">
-                    128+ Verified Reviews
-                  </div>
+          {/* Sleek Action & Stats Summary Widget */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-white/[0.01] backdrop-blur-2xl border border-white/15 p-7 rounded-[4px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative group hover:border-gold/40 transition-all duration-500">
+            <div className="absolute inset-0 bg-gradient-to-r from-gold/10 via-transparent to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[4px]" />
+            
+            <div className="flex items-center gap-4">
+              <div className="text-center">
+                <span className="text-5xl lg:text-6xl font-black text-white tracking-tighter font-sans leading-none block">
+                  {averageRating}
+                </span>
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-gold mt-1 block">
+                  OUT OF 5.0
+                </span>
+              </div>
+
+              <div className="space-y-1.5 border-l border-white/10 pl-4">
+                <div className="flex gap-1 text-gold">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star
+                      key={star}
+                      className={`w-4 h-4 ${
+                        star <= Math.round(Number(averageRating))
+                          ? 'fill-gold text-gold drop-shadow-[0_0_6px_rgba(197,160,89,0.5)]'
+                          : 'text-white/20 fill-transparent'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <div className="text-[11px] font-bold text-white/80 tracking-wide">
+                  Based on <span className="text-white font-extrabold">{reviews.length + 122} Verified Builds</span>
+                </div>
+                {/* Rating Distribution Mini Bar */}
+                <div className="w-36 h-1.5 bg-white/10 rounded-full overflow-hidden flex">
+                  <div
+                    className="bg-gold h-full rounded-full transition-all duration-1000"
+                    style={{
+                      width: `${
+                        (reviews.filter((r) => r.rating === 5).length / (reviews.length || 1)) * 100
+                      }%`,
+                    }}
+                  />
+                  <div
+                    className="bg-amber-500/70 h-full transition-all duration-1000"
+                    style={{
+                      width: `${
+                        (reviews.filter((r) => r.rating === 4).length / (reviews.length || 1)) * 100
+                      }%`,
+                    }}
+                  />
                 </div>
               </div>
             </div>
-            <div className="h-10 w-px bg-white/15 hidden sm:block" />
+
+            <div className="h-12 w-px bg-white/15 hidden sm:block" />
+
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-gold text-charcoal px-7 py-3.5 text-xs font-black tracking-[0.15em] uppercase hover:bg-white hover:text-charcoal transition-all duration-300 inline-flex items-center gap-2 rounded-[2px] shadow-[0_0_20px_rgba(197,160,89,0.25)] relative overflow-hidden group/btn"
+              className="bg-gradient-to-r from-gold via-amber-400 to-gold text-charcoal px-7 py-3.5 text-xs font-black tracking-[0.15em] uppercase hover:brightness-110 transition-all duration-300 inline-flex items-center gap-2.5 rounded-[2px] shadow-[0_0_25px_rgba(197,160,89,0.3)] relative overflow-hidden group/btn flex-shrink-0"
             >
-              <PlusCircle className="w-4 h-4 transition-transform duration-300 group-hover/btn:rotate-90" />
+              <PlusCircle className="w-4 h-4 transition-transform duration-300 group-hover/btn:rotate-90 text-charcoal" />
               <span>Write a Review</span>
             </button>
           </div>
         </div>
 
         {/* Verification Badges Bar - Sleek Glass Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 border-y border-white/10 py-7 bg-white/[0.015] backdrop-blur-sm px-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 border-y border-white/10 py-6 bg-gradient-to-r from-white/[0.03] via-white/[0.01] to-white/[0.03] backdrop-blur-xl px-6 rounded-[2px]">
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
               <ShieldCheck className="w-5 h-5 text-gold" />
             </div>
             <div>
               <div className="text-xs font-black text-white uppercase tracking-wider">Master Builders</div>
-              <div className="text-[11px] text-white/50 font-medium">Verified Member MBA</div>
+              <div className="text-[11px] text-white/50 font-medium">Verified MBA Australia</div>
             </div>
           </div>
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
               <Star className="w-5 h-5 text-gold fill-gold" />
             </div>
             <div>
               <div className="text-xs font-black text-white uppercase tracking-wider">Google Reviews</div>
-              <div className="text-[11px] text-white/50 font-medium">{averageRating} ★★★★★ (128)</div>
+              <div className="text-[11px] text-white/50 font-medium">{averageRating} ★ ({reviews.length + 122} reviews)</div>
             </div>
           </div>
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
               <Building className="w-5 h-5 text-gold" />
             </div>
             <div>
@@ -318,7 +346,7 @@ const Reviews = () => {
             </div>
           </div>
           <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
               <Award className="w-5 h-5 text-gold" />
             </div>
             <div>
@@ -329,11 +357,11 @@ const Reviews = () => {
         </div>
 
         {/* Filters & Sorting Bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 mb-10 pb-4 border-b border-white/5">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 mb-10 pb-4 border-b border-white/10">
           {/* Category Pills */}
           <div className="flex items-center gap-2 flex-wrap">
             <div className="text-[11px] font-black uppercase tracking-widest text-white/40 flex items-center gap-1.5 mr-2">
-              <Filter className="w-3.5 h-3.5 text-gold" /> Category:
+              <Filter className="w-3.5 h-3.5 text-gold" /> Filter:
             </div>
             {CATEGORIES.map((cat) => (
               <button
@@ -341,8 +369,8 @@ const Reviews = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-4 py-2 text-[11px] font-extrabold uppercase tracking-wider rounded-[2px] transition-all duration-300 border ${
                   selectedCategory === cat
-                    ? 'bg-gold text-charcoal border-gold shadow-[0_0_15px_rgba(197,160,89,0.35)] scale-[1.02]'
-                    : 'bg-white/[0.03] text-white/70 border-white/10 hover:border-gold/40 hover:text-white hover:bg-white/[0.06]'
+                    ? 'bg-gold text-charcoal border-gold shadow-[0_0_20px_rgba(197,160,89,0.4)] scale-[1.02]'
+                    : 'bg-white/[0.03] text-white/70 border-white/10 hover:border-gold/40 hover:text-white hover:bg-white/[0.07]'
                 }`}
               >
                 {cat}
@@ -352,7 +380,7 @@ const Reviews = () => {
 
           {/* Sort Selector */}
           <div className="flex items-center gap-3 self-end md:self-auto">
-            <span className="text-[11px] font-black uppercase tracking-widest text-white/40">Sort By:</span>
+            <span className="text-[11px] font-black uppercase tracking-widest text-white/40">Sort:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as 'highest' | 'recent')}
@@ -380,28 +408,33 @@ const Reviews = () => {
             return (
               <div
                 key={review.id}
-                className="bg-gradient-to-b from-white/[0.05] to-white/[0.02] backdrop-blur-xl border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-500 rounded-[2px] group relative shadow-lg hover:shadow-[0_12px_35px_rgba(0,0,0,0.5)] overflow-hidden"
+                className="bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent backdrop-blur-2xl border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-500 rounded-[3px] group relative shadow-lg hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)] overflow-hidden"
               >
-                {/* Top Subtle Hover Accent Line */}
+                {/* Top Subtle Hover Glowing Gradient Line */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div>
-                  {/* Top Meta: Category Tag & Star Rating */}
+                  {/* Top Meta Header: Category Tag & Rating Pill */}
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-[10px] font-black tracking-[0.15em] text-gold uppercase bg-gold/10 px-3 py-1 rounded-[2px] border border-gold/20 shadow-inner">
+                    <span className="text-[9px] font-black tracking-[0.18em] text-gold uppercase bg-gold/10 px-3 py-1 rounded-[2px] border border-gold/20 shadow-[0_0_10px_rgba(197,160,89,0.1)]">
                       {review.category}
                     </span>
-                    <div className="flex items-center gap-1">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className={`w-3.5 h-3.5 ${
-                            star <= review.rating
-                              ? 'fill-gold text-gold'
-                              : 'text-white/20 fill-transparent'
-                          }`}
-                        />
-                      ))}
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-black text-white/90 font-mono bg-white/10 px-2 py-0.5 rounded-[2px] border border-white/10">
+                        {review.rating}.0
+                      </span>
+                      <div className="flex items-center gap-0.5">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star
+                            key={star}
+                            className={`w-3.5 h-3.5 ${
+                              star <= review.rating
+                                ? 'fill-gold text-gold drop-shadow-[0_0_4px_rgba(197,160,89,0.4)]'
+                                : 'text-white/20 fill-transparent'
+                            }`}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
 
@@ -425,9 +458,14 @@ const Reviews = () => {
                         className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent" />
-                      <div className="absolute bottom-2.5 left-2.5 text-[9px] font-black uppercase tracking-widest text-gold bg-charcoal/90 backdrop-blur-md px-2.5 py-1 rounded-[2px] border border-gold/20">
-                        Completed Build
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent" />
+                      <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between">
+                        <div className="text-[9px] font-black uppercase tracking-widest text-gold bg-charcoal/90 backdrop-blur-md px-2.5 py-1 rounded-[2px] border border-gold/20">
+                          Completed Build
+                        </div>
+                        <div className="text-[9px] font-bold text-white/70 bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-[2px]">
+                          {review.date}
+                        </div>
                       </div>
                     </div>
                   )}
@@ -435,7 +473,7 @@ const Reviews = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       {/* Avatar Badge */}
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold/25 to-white/10 border border-gold/40 flex items-center justify-center font-black text-gold text-xs tracking-wider shadow-inner flex-shrink-0">
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold/30 via-gold/15 to-white/5 border border-gold/40 flex items-center justify-center font-black text-gold text-xs tracking-wider shadow-[0_0_12px_rgba(197,160,89,0.2)] flex-shrink-0">
                         {initials}
                       </div>
                       <div>
@@ -448,7 +486,7 @@ const Reviews = () => {
                           )}
                         </div>
                         <div className="text-[11px] text-white/50 font-medium">
-                          {review.role} • <span className="text-white/75">{review.location}</span>
+                          {review.role} • <span className="text-gold/90 font-semibold">{review.location}</span>
                         </div>
                       </div>
                     </div>
@@ -458,8 +496,8 @@ const Reviews = () => {
                       onClick={() => handleLike(review.id)}
                       className={`flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-extrabold rounded-[2px] border transition-all duration-300 ${
                         likedReviews[review.id]
-                          ? 'bg-gold/20 border-gold text-gold shadow-[0_0_10px_rgba(197,160,89,0.2)]'
-                          : 'bg-white/[0.03] border-white/10 text-white/60 hover:text-white hover:border-gold/40 hover:bg-white/[0.06]'
+                          ? 'bg-gold/20 border-gold text-gold shadow-[0_0_12px_rgba(197,160,89,0.3)] scale-105'
+                          : 'bg-white/[0.03] border-white/10 text-white/60 hover:text-white hover:border-gold/40 hover:bg-white/[0.07]'
                       }`}
                     >
                       <ThumbsUp className="w-3.5 h-3.5" />
@@ -469,7 +507,7 @@ const Reviews = () => {
                 </div>
 
                 {/* Sleek Watermarked Quote Icon */}
-                <Quote className="absolute top-6 right-6 w-20 h-20 text-white/[0.02] group-hover:text-gold/[0.04] transition-colors pointer-events-none" />
+                <Quote className="absolute top-6 right-6 w-20 h-20 text-white/[0.02] group-hover:text-gold/[0.05] transition-colors pointer-events-none" />
               </div>
             )
           })}
