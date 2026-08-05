@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Star, Quote, CheckCircle2, ThumbsUp, PlusCircle, X, ShieldCheck, Award, Building, Filter } from 'lucide-react'
+import { Star, CheckCircle2, ThumbsUp, PlusCircle, X } from 'lucide-react'
 
 export interface Review {
   id: string
@@ -28,7 +28,7 @@ const INITIAL_REVIEWS: Review[] = [
     date: 'July 2026',
     timestamp: Date.parse('2026-07-15T10:00:00Z'),
     title: 'Transformed our coastal vision into a masterpiece',
-    text: 'Aus Builds executed our custom multi-level waterfront residence with flawless craftsmanship. Their transparency during cost estimation and structural phase gave us total peace of mind. Every detail—from the polished concrete to timber joinery—exceeded our expectations.',
+    text: 'Aus Builds executed our custom multi-level waterfront residence with flawless craftsmanship. Their transparency during cost estimation and structural phase gave us total peace of mind. Every detail exceeded our expectations.',
     projectImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 24,
@@ -42,8 +42,8 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 4,
     date: 'June 2026',
     timestamp: Date.parse('2026-06-20T10:00:00Z'),
-    title: 'High-rigor commercial delivery with strong safety standards',
-    text: 'Delivering a 4,000 sqm corporate HQ in Sydney CBD requires strict compliance and logistics management. The team completed the structural build ahead of schedule. Minor supply lead times on custom acoustic glazing panels, but site coordination was top notch.',
+    title: 'High-rigor commercial delivery & safety',
+    text: 'Delivering a 4,000 sqm corporate HQ in Sydney CBD requires strict compliance and logistics. The team completed the structural phase ahead of schedule with top site coordination.',
     projectImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 19,
@@ -58,7 +58,7 @@ const INITIAL_REVIEWS: Review[] = [
     date: 'May 2026',
     timestamp: Date.parse('2026-05-10T10:00:00Z'),
     title: 'Architectural precision at the highest standard',
-    text: 'Working with complex cantilever designs and acoustic glazing is usually nerve-wracking. Aus Builds coordinated perfectly with our lead architect, turning ambitious schematics into structural perfection. Highly recommended for bespoke builds.',
+    text: 'Working with complex cantilever designs and acoustic glazing is usually nerve-wracking. Aus Builds coordinated perfectly with our lead architect, turning schematics into structural perfection.',
     projectImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 31,
@@ -72,8 +72,8 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 4,
     date: 'April 2026',
     timestamp: Date.parse('2026-04-18T10:00:00Z'),
-    title: 'Impressive heritage restoration & modern integration',
-    text: 'Preserving a heritage facade while integrating a modern glass-encased rear wing seemed daunting. The site team preserved historical character while giving us state-of-the-art living spaces. Weather events caused a minor timeline shift, but communication was constant.',
+    title: 'Heritage restoration with modern luxury',
+    text: 'Preserving a heritage facade while integrating a modern glass rear wing seemed daunting. The site team preserved historical character while giving us state-of-the-art living spaces.',
     projectImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 15,
@@ -87,8 +87,8 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 5,
     date: 'March 2026',
     timestamp: Date.parse('2026-03-05T10:00:00Z'),
-    title: 'First-class project management and budget control',
-    text: 'Their transparency and digital twin tracking kept our board informed at every key milestone. The financial reporting was exact, and the finished luxury boutique hotel speaks for itself.',
+    title: 'First-class management and budget control',
+    text: 'Their transparency and digital twin tracking kept our board informed at every key milestone. The financial reporting was exact, and the finished luxury hotel speaks for itself.',
     projectImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 12,
@@ -102,26 +102,11 @@ const INITIAL_REVIEWS: Review[] = [
     rating: 5,
     date: 'January 2026',
     timestamp: Date.parse('2026-01-28T10:00:00Z'),
-    title: 'World-class luxury build experience from start to finish',
+    title: 'World-class luxury build experience',
     text: 'From site excavation through to interior finishes, the communication was stellar. They respected our timeline and crafted an extraordinary family sanctuary that will last generations.',
     projectImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
     verified: true,
     helpfulCount: 28,
-  },
-  {
-    id: 'rev-7',
-    author: 'David & Catherine Ross',
-    role: 'Homeowners',
-    location: 'Brighton, VIC',
-    category: 'Custom Architectural',
-    rating: 4,
-    date: 'December 2025',
-    timestamp: Date.parse('2025-12-14T10:00:00Z'),
-    title: 'Exceptional structural quality and dedicated site team',
-    text: 'The architectural detailing on our home required custom steel fabrication and extensive timber work. The site supervisors were meticulous and proactive. Occasional cost adjustments due to council variation requests were handled professionally.',
-    projectImage: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80',
-    verified: true,
-    helpfulCount: 18,
   },
 ]
 
@@ -145,7 +130,6 @@ const Reviews = () => {
     reviews.reduce((acc, r) => acc + r.rating, 0) / (reviews.length || 1)
   ).toFixed(1)
 
-  // Form State for Write a Review modal
   const [formData, setFormData] = useState({
     author: '',
     role: 'Homeowner',
@@ -194,208 +178,117 @@ const Reviews = () => {
       title: '',
       text: '',
     })
-    
-    setToastMessage('Thank you! Your review has been successfully submitted and added.')
-    setTimeout(() => setToastMessage(null), 5000)
+
+    setToastMessage('Thank you! Your review has been added.')
+    setTimeout(() => setToastMessage(null), 4000)
   }
 
   const filteredReviews = reviews
     .filter((r) => selectedCategory === 'All' || r.category === selectedCategory)
     .sort((a, b) => {
       if (sortBy === 'highest') {
-        if (b.rating !== a.rating) {
-          return b.rating - a.rating
-        }
-        if (b.helpfulCount !== a.helpfulCount) {
-          return b.helpfulCount - a.helpfulCount
-        }
+        if (b.rating !== a.rating) return b.rating - a.rating
+        if (b.helpfulCount !== a.helpfulCount) return b.helpfulCount - a.helpfulCount
         return b.timestamp - a.timestamp
       }
-      if (sortBy === 'recent') {
-        return b.timestamp - a.timestamp
-      }
-      return 0
+      return b.timestamp - a.timestamp
     })
 
   return (
-    <section id="reviews" className="py-28 bg-charcoal relative overflow-hidden border-t border-white/10">
-      {/* Sleek Background Glow & Mesh Effect */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-gold/10 via-gold/5 to-transparent blur-[160px] pointer-events-none rounded-full" />
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.02] pointer-events-none" />
-
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+    <section id="reviews" className="py-24 bg-[#0d0d0d] text-white relative border-t border-white/10">
+      <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
+        
         {/* Toast Notification */}
         {toastMessage && (
-          <div className="mb-10 p-4 bg-gold/15 border border-gold/40 text-gold text-sm font-semibold rounded-[2px] flex items-center justify-between backdrop-blur-xl animate-fade-in shadow-[0_4px_20px_rgba(197,160,89,0.15)]">
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-gold" />
+          <div className="mb-8 p-4 bg-gold/10 border border-gold/30 text-gold text-xs tracking-wide rounded-sm flex items-center justify-between animate-fade-in">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-gold" />
               <span>{toastMessage}</span>
             </div>
-            <button onClick={() => setToastMessage(null)} className="text-gold/70 hover:text-white transition-colors">
+            <button onClick={() => setToastMessage(null)} className="text-gold/60 hover:text-white">
               <X className="w-4 h-4" />
             </button>
           </div>
         )}
 
-        {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-16">
-          <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-4 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase shadow-[0_0_20px_rgba(197,160,89,0.15)] backdrop-blur-md">
-              <Award className="w-3.5 h-3.5 text-gold" />
-              Client Excellence &amp; Verified Reviews
+        {/* Minimal Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+          <div>
+            <div className="text-[11px] font-mono font-bold tracking-[0.25em] text-gold uppercase mb-3">
+              // CLIENT REVIEWS
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
-              Trusted by Australia's Most <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-amber-200 to-gold font-black">Discerning</span> Property Owners
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white">
+              Verified Client <span className="font-bold text-gold">Feedback</span>
             </h2>
-            <p className="text-base md:text-lg text-white/70 font-normal leading-relaxed">
-              Read authentic, verified feedback from homeowners, corporate partners, and luxury estate developers.
-            </p>
           </div>
 
-          {/* Sleek Action & Stats Summary Widget */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 bg-gradient-to-br from-white/[0.08] via-white/[0.03] to-white/[0.01] backdrop-blur-2xl border border-white/15 p-7 rounded-[4px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative group hover:border-gold/40 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold/10 via-transparent to-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-[4px]" />
-            
-            <div className="flex items-center gap-4">
-              <div className="text-center">
-                <span className="text-5xl lg:text-6xl font-black text-white tracking-tighter font-sans leading-none block">
-                  {averageRating}
-                </span>
-                <span className="text-[10px] font-extrabold uppercase tracking-widest text-gold mt-1 block">
-                  OUT OF 5.0
-                </span>
-              </div>
-
-              <div className="space-y-1.5 border-l border-white/10 pl-4">
-                <div className="flex gap-1 text-gold">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <Star
-                      key={star}
-                      className={`w-4 h-4 ${
-                        star <= Math.round(Number(averageRating))
-                          ? 'fill-gold text-gold drop-shadow-[0_0_6px_rgba(197,160,89,0.5)]'
-                          : 'text-white/20 fill-transparent'
-                      }`}
-                    />
-                  ))}
-                </div>
-                <div className="text-[11px] font-bold text-white/80 tracking-wide">
-                  Based on <span className="text-white font-extrabold">{reviews.length + 122} Verified Builds</span>
-                </div>
-                {/* Rating Distribution Mini Bar */}
-                <div className="w-36 h-1.5 bg-white/10 rounded-full overflow-hidden flex">
-                  <div
-                    className="bg-gold h-full rounded-full transition-all duration-1000"
-                    style={{
-                      width: `${
-                        (reviews.filter((r) => r.rating === 5).length / (reviews.length || 1)) * 100
-                      }%`,
-                    }}
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3 bg-white/[0.03] border border-white/10 px-4 py-2.5 rounded-full">
+              <span className="text-xl font-bold font-mono text-white">{averageRating}</span>
+              <div className="flex gap-0.5 text-gold">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <Star
+                    key={star}
+                    className={`w-3.5 h-3.5 ${
+                      star <= Math.round(Number(averageRating))
+                        ? 'fill-gold text-gold'
+                        : 'text-white/20 fill-transparent'
+                    }`}
                   />
-                  <div
-                    className="bg-amber-500/70 h-full transition-all duration-1000"
-                    style={{
-                      width: `${
-                        (reviews.filter((r) => r.rating === 4).length / (reviews.length || 1)) * 100
-                      }%`,
-                    }}
-                  />
-                </div>
+                ))}
               </div>
+              <span className="text-[11px] text-white/50 tracking-wider uppercase font-medium border-l border-white/10 pl-3">
+                {reviews.length + 120}+ Builds
+              </span>
             </div>
-
-            <div className="h-12 w-px bg-white/15 hidden sm:block" />
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-gradient-to-r from-gold via-amber-400 to-gold text-charcoal px-7 py-3.5 text-xs font-black tracking-[0.15em] uppercase hover:brightness-110 transition-all duration-300 inline-flex items-center gap-2.5 rounded-[2px] shadow-[0_0_25px_rgba(197,160,89,0.3)] relative overflow-hidden group/btn flex-shrink-0"
+              className="border border-gold/40 text-gold hover:bg-gold hover:text-charcoal transition-all duration-300 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-full inline-flex items-center gap-2"
             >
-              <PlusCircle className="w-4 h-4 transition-transform duration-300 group-hover/btn:rotate-90 text-charcoal" />
-              <span>Write a Review</span>
+              <PlusCircle className="w-4 h-4" />
+              <span>Write Review</span>
             </button>
           </div>
         </div>
 
-        {/* Verification Badges Bar - Sleek Glass Strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14 border-y border-white/10 py-6 bg-gradient-to-r from-white/[0.03] via-white/[0.01] to-white/[0.03] backdrop-blur-xl px-6 rounded-[2px]">
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
-              <ShieldCheck className="w-5 h-5 text-gold" />
-            </div>
-            <div>
-              <div className="text-xs font-black text-white uppercase tracking-wider">Master Builders</div>
-              <div className="text-[11px] text-white/50 font-medium">Verified MBA Australia</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
-              <Star className="w-5 h-5 text-gold fill-gold" />
-            </div>
-            <div>
-              <div className="text-xs font-black text-white uppercase tracking-wider">Google Reviews</div>
-              <div className="text-[11px] text-white/50 font-medium">{averageRating} ★ ({reviews.length + 122} reviews)</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
-              <Building className="w-5 h-5 text-gold" />
-            </div>
-            <div>
-              <div className="text-xs font-black text-white uppercase tracking-wider">Houzz Design 2025</div>
-              <div className="text-[11px] text-white/50 font-medium">Best of Service Award</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(197,160,89,0.15)]">
-              <Award className="w-5 h-5 text-gold" />
-            </div>
-            <div>
-              <div className="text-xs font-black text-white uppercase tracking-wider">100% Fixed Price</div>
-              <div className="text-[11px] text-white/50 font-medium">Guaranteed Contract</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Filters & Sorting Bar */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5 mb-10 pb-4 border-b border-white/10">
-          {/* Category Pills */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <div className="text-[11px] font-black uppercase tracking-widest text-white/40 flex items-center gap-1.5 mr-2">
-              <Filter className="w-3.5 h-3.5 text-gold" /> Filter:
-            </div>
+        {/* Sleek Minimal Nav Tabs & Filter Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-10">
+          <div className="flex items-center gap-6 overflow-x-auto scrollbar-none py-1">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 text-[11px] font-extrabold uppercase tracking-wider rounded-[2px] transition-all duration-300 border ${
+                className={`text-xs font-medium uppercase tracking-widest transition-all whitespace-nowrap relative py-1 ${
                   selectedCategory === cat
-                    ? 'bg-gold text-charcoal border-gold shadow-[0_0_20px_rgba(197,160,89,0.4)] scale-[1.02]'
-                    : 'bg-white/[0.03] text-white/70 border-white/10 hover:border-gold/40 hover:text-white hover:bg-white/[0.07]'
+                    ? 'text-gold font-bold'
+                    : 'text-white/40 hover:text-white'
                 }`}
               >
                 {cat}
+                {selectedCategory === cat && (
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold -mb-4" />
+                )}
               </button>
             ))}
           </div>
 
-          {/* Sort Selector */}
-          <div className="flex items-center gap-3 self-end md:self-auto">
-            <span className="text-[11px] font-black uppercase tracking-widest text-white/40">Sort:</span>
+          <div className="flex items-center gap-2 self-end sm:self-auto">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">SORT</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as 'highest' | 'recent')}
-              className="bg-white/[0.04] border border-white/15 text-white text-[11px] font-extrabold uppercase tracking-wider px-3.5 py-2 rounded-[2px] focus:outline-none focus:border-gold cursor-pointer transition-colors hover:border-white/30"
+              className="bg-transparent text-white/70 text-xs font-medium uppercase tracking-wider focus:outline-none cursor-pointer border-b border-white/20 pb-0.5"
             >
-              <option value="highest" className="bg-charcoal text-white">Highest Rated</option>
-              <option value="recent" className="bg-charcoal text-white">Most Recent</option>
+              <option value="highest" className="bg-[#121212] text-white">Highest Rated</option>
+              <option value="recent" className="bg-[#121212] text-white">Most Recent</option>
             </select>
           </div>
         </div>
 
-        {/* Sleek Reviews Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Sleek Grid Layout */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredReviews.map((review) => {
-            // Helper for initial avatar
             const initials = review.author
               .split('&')[0]
               .trim()
@@ -408,96 +301,73 @@ const Reviews = () => {
             return (
               <div
                 key={review.id}
-                className="bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent backdrop-blur-2xl border border-white/10 p-8 flex flex-col justify-between hover:border-gold/50 transition-all duration-500 rounded-[3px] group relative shadow-lg hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)] overflow-hidden"
+                className="bg-white/[0.02] border border-white/10 hover:border-gold/40 p-7 rounded-sm flex flex-col justify-between transition-all duration-300 group relative"
               >
-                {/* Top Subtle Hover Glowing Gradient Line */}
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
                 <div>
-                  {/* Top Meta Header: Category Tag & Rating Pill */}
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-[9px] font-black tracking-[0.18em] text-gold uppercase bg-gold/10 px-3 py-1 rounded-[2px] border border-gold/20 shadow-[0_0_10px_rgba(197,160,89,0.1)]">
+                  {/* Top rating & category */}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="flex items-center gap-1 text-gold">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star
+                          key={star}
+                          className={`w-3.5 h-3.5 ${
+                            star <= review.rating
+                              ? 'fill-gold text-gold'
+                              : 'text-white/15 fill-transparent'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-[10px] font-mono text-white/40 tracking-wider uppercase">
                       {review.category}
                     </span>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-black text-white/90 font-mono bg-white/10 px-2 py-0.5 rounded-[2px] border border-white/10">
-                        {review.rating}.0
-                      </span>
-                      <div className="flex items-center gap-0.5">
-                        {[1, 2, 3, 4, 5].map((star) => (
-                          <Star
-                            key={star}
-                            className={`w-3.5 h-3.5 ${
-                              star <= review.rating
-                                ? 'fill-gold text-gold drop-shadow-[0_0_4px_rgba(197,160,89,0.4)]'
-                                : 'text-white/20 fill-transparent'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
                   </div>
 
                   {/* Title & Review Text */}
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 tracking-tight leading-snug group-hover:text-gold transition-colors duration-300">
+                  <h3 className="text-base font-semibold text-white mb-2 leading-snug group-hover:text-gold transition-colors">
                     "{review.title}"
                   </h3>
-                  <p className="text-white/75 text-sm leading-relaxed mb-6 font-normal">
+                  <p className="text-white/65 text-xs leading-relaxed font-light mb-6">
                     {review.text}
                   </p>
                 </div>
 
-                {/* Bottom Details & Author */}
-                <div className="pt-6 border-t border-white/10 space-y-5">
-                  {/* Optional Project Thumbnail */}
+                <div>
+                  {/* Project image thumbnail if present */}
                   {review.projectImage && (
-                    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[2px] border border-white/10 group/img">
+                    <div className="relative aspect-[21/9] w-full overflow-hidden rounded-sm mb-5 border border-white/5">
                       <img
                         src={review.projectImage}
                         alt={review.title}
-                        className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/30 to-transparent" />
-                      <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between">
-                        <div className="text-[9px] font-black uppercase tracking-widest text-gold bg-charcoal/90 backdrop-blur-md px-2.5 py-1 rounded-[2px] border border-gold/20">
-                          Completed Build
-                        </div>
-                        <div className="text-[9px] font-bold text-white/70 bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-[2px]">
-                          {review.date}
-                        </div>
-                      </div>
                     </div>
                   )}
 
-                  <div className="flex items-center justify-between">
+                  {/* Author & Helpful CTA */}
+                  <div className="pt-4 border-t border-white/5 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      {/* Avatar Badge */}
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold/30 via-gold/15 to-white/5 border border-gold/40 flex items-center justify-center font-black text-gold text-xs tracking-wider shadow-[0_0_12px_rgba(197,160,89,0.2)] flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gold text-xs font-mono font-bold">
                         {initials}
                       </div>
                       <div>
-                        <div className="flex items-center gap-1.5">
-                          <span className="font-extrabold text-white text-sm tracking-tight">{review.author}</span>
-                          {review.verified && (
-                            <span title="Verified Client">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-gold flex-shrink-0" />
-                            </span>
-                          )}
+                        <div className="flex items-center gap-1 text-xs font-medium text-white">
+                          <span>{review.author}</span>
+                          {review.verified && <CheckCircle2 className="w-3 h-3 text-gold" />}
                         </div>
-                        <div className="text-[11px] text-white/50 font-medium">
-                          {review.role} • <span className="text-gold/90 font-semibold">{review.location}</span>
+                        <div className="text-[10px] text-white/40">
+                          {review.role} • <span className="text-white/60">{review.location}</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Helpful Button */}
                     <button
                       onClick={() => handleLike(review.id)}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-extrabold rounded-[2px] border transition-all duration-300 ${
+                      className={`flex items-center gap-1 text-[11px] font-mono transition-colors ${
                         likedReviews[review.id]
-                          ? 'bg-gold/20 border-gold text-gold shadow-[0_0_12px_rgba(197,160,89,0.3)] scale-105'
-                          : 'bg-white/[0.03] border-white/10 text-white/60 hover:text-white hover:border-gold/40 hover:bg-white/[0.07]'
+                          ? 'text-gold font-bold'
+                          : 'text-white/40 hover:text-white'
                       }`}
                     >
                       <ThumbsUp className="w-3.5 h-3.5" />
@@ -505,9 +375,6 @@ const Reviews = () => {
                     </button>
                   </div>
                 </div>
-
-                {/* Sleek Watermarked Quote Icon */}
-                <Quote className="absolute top-6 right-6 w-20 h-20 text-white/[0.02] group-hover:text-gold/[0.05] transition-colors pointer-events-none" />
               </div>
             )
           })}
@@ -516,25 +383,22 @@ const Reviews = () => {
 
       {/* Write a Review Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4">
-          <div className="bg-charcoal border border-gold/40 p-8 md:p-10 max-w-xl w-full rounded-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative animate-slide-up max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-[#121212] border border-white/15 p-8 max-w-lg w-full rounded-sm relative animate-fade-in max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+              className="absolute top-5 right-5 text-white/40 hover:text-white"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-2 text-gold text-xs font-black uppercase tracking-[0.2em] mb-2">
-              <Quote className="w-4 h-4" /> Share Your Experience
-            </div>
-            <h3 className="text-2xl md:text-3xl font-black text-white mb-6 tracking-tight">Submit a Client Review</h3>
+            <div className="text-[10px] font-mono text-gold tracking-widest uppercase mb-1">// SHARE FEEDBACK</div>
+            <h3 className="text-xl font-light text-white mb-6">Submit Client Review</h3>
 
-            <form onSubmit={handleFormSubmit} className="space-y-5">
-              {/* Rating Selector */}
+            <form onSubmit={handleFormSubmit} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-2">
-                  Overall Rating
+                <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-2 font-mono">
+                  Rating
                 </label>
                 <div className="flex gap-2">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -542,11 +406,11 @@ const Reviews = () => {
                       key={star}
                       type="button"
                       onClick={() => setFormData({ ...formData, rating: star })}
-                      className="p-1 focus:outline-none transition-transform hover:scale-110"
+                      className="p-1 focus:outline-none"
                     >
                       <Star
-                        className={`w-7 h-7 ${
-                          star <= formData.rating ? 'fill-gold text-gold' : 'text-white/20 hover:text-white/40'
+                        className={`w-6 h-6 ${
+                          star <= formData.rating ? 'fill-gold text-gold' : 'text-white/20'
                         }`}
                       />
                     </button>
@@ -554,111 +418,107 @@ const Reviews = () => {
                 </div>
               </div>
 
-              {/* Author & Role */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                    Your Name *
+                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
+                    Name *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. John &amp; Claire Davis"
+                    placeholder="e.g. John Davis"
                     value={formData.author}
                     onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
+                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                    Role / Profile
+                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
+                    Role
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Homeowner, Property Investor"
+                    placeholder="e.g. Homeowner"
                     value={formData.role}
                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
+                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
                   />
                 </div>
               </div>
 
-              {/* Location & Category */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                    Location / Address
+                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
+                    Location
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. 12 Ocean St, Brighton VIC"
+                    placeholder="e.g. Melbourne VIC"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
+                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                    Project Category
+                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
+                    Category
                   </label>
                   <select
                     value={formData.category}
                     onChange={(e) =>
                       setFormData({ ...formData, category: e.target.value as Review['category'] })
                     }
-                    className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] cursor-pointer transition-colors"
+                    className="w-full bg-[#181818] border border-white/10 px-3 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm cursor-pointer"
                   >
-                    <option value="Luxury Residential" className="bg-charcoal text-white">Luxury Residential</option>
-                    <option value="Commercial Development" className="bg-charcoal text-white">Commercial Development</option>
-                    <option value="Custom Architectural" className="bg-charcoal text-white">Custom Architectural</option>
-                    <option value="Renovations & Extensions" className="bg-charcoal text-white">Renovations &amp; Extensions</option>
+                    <option value="Luxury Residential">Luxury Residential</option>
+                    <option value="Commercial Development">Commercial Development</option>
+                    <option value="Custom Architectural">Custom Architectural</option>
+                    <option value="Renovations & Extensions">Renovations &amp; Extensions</option>
                   </select>
                 </div>
               </div>
 
-              {/* Headline */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                  Review Headline *
+                <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
+                  Headline *
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="Summary of your experience..."
+                  placeholder="Summary of experience..."
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
+                  className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
                 />
               </div>
 
-              {/* Review Text */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/80 mb-1.5">
-                  Detailed Feedback *
+                <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
+                  Feedback *
                 </label>
                 <textarea
                   required
-                  rows={4}
-                  placeholder="Share details about the quality, timeliness, communication, and overall build experience..."
+                  rows={3}
+                  placeholder="Your feedback..."
                   value={formData.text}
                   onChange={(e) => setFormData({ ...formData, text: e.target.value })}
-                  className="w-full bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 rounded-[2px] transition-colors"
+                  className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
                 />
               </div>
 
-              <div className="pt-4 flex items-center justify-end gap-4 border-t border-white/10">
+              <div className="pt-3 flex items-center justify-end gap-3 border-t border-white/10">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white/60 hover:text-white transition-colors"
+                  className="px-4 py-2 text-xs text-white/50 hover:text-white"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-gold text-charcoal px-7 py-3 text-xs font-black uppercase tracking-[0.15em] hover:bg-white hover:text-charcoal transition-all duration-300 rounded-[2px] shadow-[0_0_15px_rgba(197,160,89,0.3)]"
+                  className="bg-gold text-charcoal px-6 py-2 text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors rounded-sm"
                 >
-                  Submit Review
+                  Submit
                 </button>
               </div>
             </form>
