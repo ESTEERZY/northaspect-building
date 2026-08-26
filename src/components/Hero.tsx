@@ -36,8 +36,8 @@ const Hero = () => {
           
           {/* The Main Heading */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-[1.12]">
-            Residential building<br />
-            <span className="text-gold">at its finest</span>
+            Custom Residential Building<br />
+            <span className="text-gold">&amp; Quality Carpentry</span>
           </h1>
 
           {/* The Central Accent Line */}
@@ -45,7 +45,7 @@ const Hero = () => {
 
           {/* The Subtext Paragraph */}
           <p className="text-base md:text-lg lg:text-xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
-            We deliver quality builds to all our clients
+            Specialist custom home builders, renovations, extensions, and premium carpentry craftsmanship across North West Tasmania.
           </p>
 
         </div>

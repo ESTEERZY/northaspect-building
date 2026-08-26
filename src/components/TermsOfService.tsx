@@ -40,7 +40,7 @@ const TermsOfService = () => {
             <section className="space-y-4">
               <h2 className="text-xl font-bold text-white uppercase tracking-wider font-heading">2. Intellectual Property</h2>
               <p>
-                All designs, images, text, and source code are the exclusive property of Aus Builds. You may not copy, distribute, or modify any content without explicit written consent.
+                All designs, images, text, and source code are the exclusive property of NorthAspect Building. You may not copy, distribute, or modify any content without explicit written consent.
               </p>
             </section>
 
@@ -54,7 +54,7 @@ const TermsOfService = () => {
             <section className="space-y-4">
               <h2 className="text-xl font-bold text-white uppercase tracking-wider font-heading">4. Liability Limitation</h2>
               <p>
-                Aus Builds is not liable for any direct or indirect damages resulting from the use or inability to use this website.
+                NorthAspect Building is not liable for any direct or indirect damages resulting from the use or inability to use this website.
               </p>
             </section>
           </div>

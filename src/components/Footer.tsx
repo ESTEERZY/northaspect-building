@@ -28,11 +28,11 @@ const Footer = () => {
               }}
               className="text-2xl font-black tracking-tighter uppercase text-charcoal flex items-center gap-3 hover:text-gold/90 transition-colors duration-300"
             >
-              <img src="/favicon.svg" alt="Aus Builds Logo" className="h-7 w-auto object-contain" />
-              <span>Aus <span className="text-gold">Builds</span></span>
+              <img src="/favicon.svg" alt="NorthAspect Building Logo" className="h-7 w-auto object-contain" />
+              <span>NorthAspect <span className="text-gold font-light">Building</span></span>
             </Link>
             <p className="text-slate-600 font-medium leading-relaxed text-sm">
-              Building excellence since 2014. Your trusted partner for premium residential and commercial construction.
+              Quality custom residential building, renovations, extensions, and master carpentry specialists based in North West Tasmania.
             </p>
             <div className="flex gap-2.5 pt-1">
               <span
@@ -94,23 +94,23 @@ const Footer = () => {
             <ul className="space-y-2 text-slate-600 font-medium text-sm">
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Sydney &amp; Coastal NSW</span>
+                <span>North West Tasmania &amp; Surrounding Regions</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Melbourne &amp; Mornington Peninsula</span>
+                <span>Devonport &amp; Cradle Coast</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Brisbane &amp; Gold Coast, QLD</span>
+                <span>Burnie &amp; Coastal North West</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Perth &amp; Western Coast, WA</span>
+                <span>Launceston &amp; Northern Tasmania</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Adelaide &amp; South Australia</span>
+                <span>Hobart &amp; Southern Tasmania</span>
               </li>
             </ul>
           </div>
@@ -122,16 +122,16 @@ const Footer = () => {
               <div className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <a href="tel:1300000287" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300">
-                    1300 000 287 (AUS)
+                  <a href="tel:0400000000" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300">
+                    Direct Inquiry (North West TAS)
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <a href="mailto:info@ausbuilds.com.au" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300 break-all">
-                    info@ausbuilds.com.au
+                  <a href="mailto:aspectnorthccooke@gmail.com" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300 break-all">
+                    aspectnorthccooke@gmail.com
                   </a>
                 </div>
               </div>
@@ -139,7 +139,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
                   <p className="text-slate-600 font-medium leading-snug">
-                    Level 32, 100 Barangaroo Ave, Sydney NSW 2000
+                    North West Tasmania, Australia
                   </p>
                 </div>
               </div>
@@ -147,7 +147,7 @@ const Footer = () => {
                 <Clock className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
                   <p className="text-slate-600 font-medium leading-snug">
-                    Mon–Fri: 9:00 AM–5:00 PM<br/>
+                    Mon–Fri: 7:00 AM–5:00 PM<br/>
                     Sat: By Appointment | Sun: Closed
                   </p>
                 </div>
@@ -160,7 +160,7 @@ const Footer = () => {
         <div className="border-t border-slate-200 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-medium text-slate-500">
             <div>
-              © {new Date().getFullYear()} Aus Builds. All rights reserved.
+              © {new Date().getFullYear()} NorthAspect Building. All rights reserved.
             </div>
             <div className="flex gap-6">
               <Link to="/privacy" className="hover:text-gold transition-colors duration-300">

@@ -46,8 +46,8 @@ const CaseStudyTemplate = () => {
           </Link>
           
           <Link to="/" className="text-2xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-2">
-            <img src="/favicon.svg" alt="Aus Builds Logo" className="h-7 w-auto object-contain" />
-            <span>Aus <span className="text-gold">Builds</span></span>
+            <img src="/favicon.svg" alt="NorthAspect Building Logo" className="h-7 w-auto object-contain" />
+            <span>NorthAspect <span className="text-gold font-light">Building</span></span>
           </Link>
 
           {/* Dummy element to balance flexbox */}
@@ -228,7 +228,7 @@ const CaseStudyTemplate = () => {
               Ready to Manifest<br />Your Masterwork?
             </h2>
             <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Connect with Cole and the Aus Builds team to discuss your bespoke structural concept. Let us turn your vision into permanent residential form.
+              Connect with the NorthAspect Building team to discuss your custom residential build, renovation, or extension in North West Tasmania.
             </p>
             
             <Link
@@ -246,7 +246,7 @@ const CaseStudyTemplate = () => {
       {/* Footer copyright section for completeness */}
       <footer className="py-12 bg-[#080808] border-t border-white/5 text-center text-xs font-semibold tracking-wider text-white/30 uppercase z-10 relative">
         <div className="container mx-auto px-6">
-          © {new Date().getFullYear()} Aus Builds. All rights reserved. Meticulous structural integrity.
+          © {new Date().getFullYear()} NorthAspect Building. All rights reserved. Quality residential construction &amp; carpentry.
         </div>
       </footer>
 

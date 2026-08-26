@@ -55,19 +55,19 @@ const Contact = () => {
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-              Request a Quote From <span className="text-gold">Our Team.</span>
+              Request a Quote From <span className="text-gold">NorthAspect Building.</span>
             </h2>
 
             <p className="text-base lg:text-lg text-white/70 font-normal leading-relaxed">
-              Tell us about your project vision. Schedule a call with our directors for a private architectural &amp; service consultation.
+              Tell us about your custom residential build, extension, renovation, or detailed carpentry project in North West Tasmania.
             </p>
 
             {/* Process Steps */}
             <div className="space-y-5 pt-4">
               {[
-                { num: '01', label: 'Request a Quote / Initial Inquiry', desc: 'Discuss site context, timeline, and preliminary investment range.' },
-                { num: '02', label: 'Feasibility & Design', desc: 'Custom architectural drafting and site analysis.' },
-                { num: '03', label: 'Fixed Contract Build', desc: 'Precision construction with real-time digital twin tracking.' },
+                { num: '01', label: 'Request a Quote / Initial Inquiry', desc: 'Discuss site context, scope, timeline, and preliminary investment range.' },
+                { num: '02', label: 'Feasibility & Planning', desc: 'Custom architectural consultation, scope breakdown, and site analysis.' },
+                { num: '03', label: 'Quality Construction', desc: 'Precision residential building and master carpentry crafted to perfection.' },
               ].map((item) => (
                 <div key={item.num} className="flex items-start gap-4 p-3.5 rounded-[2px] bg-white/[0.02] border border-white/5 hover:border-gold/30 transition-colors">
                   <div className="flex-shrink-0 w-10 h-10 bg-gold/10 border border-gold/20 text-gold flex items-center justify-center rounded-[2px] text-xs font-black">
@@ -95,7 +95,7 @@ const Contact = () => {
 
             <div className="mb-8 border-b border-white/10 pb-6">
               <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">Request a Quote</h3>
-              <p className="text-sm text-white/60 font-normal">Share your project specifications to schedule a direct consultation call.</p>
+              <p className="text-sm text-white/60 font-normal">Share your project specifications to schedule a direct consultation call with our team.</p>
             </div>
 
             {isSubmitted ? (
@@ -107,7 +107,7 @@ const Contact = () => {
                 <CheckCircle2 className="w-12 h-12 text-gold mx-auto" />
                 <h4 className="text-xl font-black text-white tracking-tight">Consultation Request Received</h4>
                 <p className="text-sm text-white/70 max-w-md mx-auto leading-relaxed">
-                  Thank you for reaching out. One of our senior directors will examine your project details and contact you shortly.
+                  Thank you for reaching out to NorthAspect Building. Our team will review your details and contact you promptly at aspectnorthccooke@gmail.com.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
@@ -167,7 +167,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] placeholder:text-white/30"
-                      placeholder="e.g. 124 Ocean Drive, Sorrento VIC"
+                      placeholder="e.g. Devonport, North West Tasmania"
                     />
                   </div>
 

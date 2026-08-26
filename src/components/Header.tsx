@@ -43,8 +43,8 @@ const Header = () => {
             onClick={handleLogoClick}
             className="text-xl font-black tracking-[-0.08em] text-white uppercase flex items-center gap-2 hover:text-gold/90 transition-colors duration-300"
           >
-            <img src="/favicon.svg" alt="Aus Builds Logo" className="h-7 w-auto object-contain" />
-            <span>Aus <span className="text-gold">Builds</span></span>
+            <img src="/favicon.svg" alt="NorthAspect Building Logo" className="h-7 w-auto object-contain" />
+            <span>NorthAspect <span className="text-gold font-light">Building</span></span>
           </Link>
 
           {/* Desktop Navigation */}

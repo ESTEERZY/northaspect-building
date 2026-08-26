@@ -33,7 +33,7 @@ const PrivacyPolicy = () => {
             <section className="space-y-4">
               <h2 className="text-xl font-bold text-white uppercase tracking-wider font-heading">1. Information We Collect</h2>
               <p>
-                At Aus Builds, we collect personal information that you directly provide to us, including your name, email address, phone number, and architectural project details. We also collect anonymous site usage statistics to improve your browsing experience.
+                At NorthAspect Building, we collect personal information that you directly provide to us, including your name, email address, phone number, and residential project details. We also collect anonymous site usage statistics to improve your browsing experience.
               </p>
             </section>
 
@@ -57,8 +57,8 @@ const PrivacyPolicy = () => {
                 If you have any questions or concerns regarding this Privacy Policy, please reach out to our office at:
               </p>
               <p className="text-gold font-sans">
-                Email: info@ausbuilds.com.au<br />
-                Phone: (555) 123-4567
+                Email: aspectnorthccooke@gmail.com<br />
+                Location: North West Tasmania, Australia
               </p>
             </section>
           </div>
