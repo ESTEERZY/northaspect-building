@@ -4,18 +4,18 @@ const DesignSignatures = () => {
   const signatures = [
     {
       image: '/case-studies/industrial-loft/image1.png',
-      title: 'Modern Architecture',
-      description: 'Award-winning designs. Maximized natural light. Open living spaces.',
+      title: 'Custom Residential Builds',
+      description: 'Bespoke modern home construction tailored to your site and lifestyle across North West Tasmania.',
     },
     {
       image: '/case-studies/suburban-elegance/image1.png',
-      title: 'Clean Timber Finishes',
-      description: 'Premium timber finishes. Sustainably sourced. Added warmth and character.',
+      title: 'Fine Carpentry & Timber',
+      description: 'Master timber framing, feature hardwood decking, custom joinery, and artisan architectural finishes.',
     },
     {
       image: '/images/luxury-kitchen.png',
-      title: 'Luxury Kitchens',
-      description: 'State-of-the-art culinary spaces. Stone benchtops. Integrated appliances.',
+      title: 'Renovations & Extensions',
+      description: 'Seamless house extensions, modern kitchen remodels, and complete structural transformations.',
     },
   ];
 
