@@ -228,7 +228,7 @@ const CaseStudyTemplate = () => {
               Ready to Manifest<br />Your Masterwork?
             </h2>
             <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Connect with the NorthAspect Building team to discuss your custom residential build, renovation, or extension in North West Tasmania.
+              Connect with the NorthAspect Building team to discuss your custom residential build, renovation, or extension across Sydney's Northern Beaches &amp; North Shore.
             </p>
             
             <Link

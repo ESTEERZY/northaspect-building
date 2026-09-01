@@ -25,14 +25,14 @@ export const projectsData: CaseStudyData[] = [
   {
     id: 'industrial-loft',
     title: 'Coastal Timber Build',
-    location: 'North West Tasmania',
+    location: 'Manly, Northern Beaches',
     scope: '450 sqm / Custom Residential Build',
     heroImage: '/case-studies/industrial-loft/image1.png',
-    overview: 'A custom residential build showcasing architectural steel and fine Tasmanian timber framing. The home balances rugged structural permanence with refined coastal living spaces, custom dark joinery, and expansive living zones.',
+    overview: 'A custom residential build showcasing architectural steel and fine timber framing. The home balances rugged structural permanence with refined coastal living spaces, custom dark joinery, and expansive living zones.',
     highlights: [
-      'Precision Tasmanian timber framing and custom structural steel detailing',
+      'Precision timber framing and custom structural steel detailing',
       'Handcrafted hardwood joinery and custom architectural cabinetry',
-      'Open-plan living layout with passive thermal control for Tasmanian climates'
+      'Open-plan living layout with passive thermal control for coastal living'
     ],
     metrics: [
       { label: 'Year Completed', value: '2026' },
@@ -62,8 +62,8 @@ export const projectsData: CaseStudyData[] = [
   },
   {
     id: 'minimalist-pavilion',
-    title: 'Cradle Coast Pavilion',
-    location: 'Devonport, TAS',
+    title: 'Northern Beaches Pavilion',
+    location: 'Avalon Beach, NSW',
     scope: '380 sqm / Architectural Extension & Renovation',
     heroImage: '/case-studies/minimalist-pavilion/image1.png',
     overview: 'A modern pavilion extension nestled into the coastal landscape. Designed as a light-filled residential sanctuary, this renovation utilizes floor-to-ceiling double glazing and custom timber soffits to connect indoor living with nature.',
@@ -75,7 +75,7 @@ export const projectsData: CaseStudyData[] = [
     metrics: [
       { label: 'Year Completed', value: '2026' },
       { label: 'Structural System', value: 'Custom Timber & Steel Hybrid' },
-      { label: 'Primary Materials', value: 'Tasmanian Oak, Polished Concrete, Glass' },
+      { label: 'Primary Materials', value: 'Australian Hardwood, Polished Concrete, Glass' },
       { label: 'Energy Rating', value: '7.5-Star Energy Rating' },
       { label: 'Master Builder', value: 'NorthAspect Building' },
       { label: 'Interior Scale', value: '380 sqm' }
@@ -100,11 +100,11 @@ export const projectsData: CaseStudyData[] = [
   },
   {
     id: 'suburban-elegance',
-    title: 'Tamar Valley Residence',
-    location: 'Northern Tasmania',
+    title: 'North Shore Residence',
+    location: 'Mosman, North Shore',
     scope: '520 sqm / Custom Family Home',
     heroImage: '/case-studies/suburban-elegance/image1.png',
-    overview: 'A masterfully crafted custom home built for modern family living in North West Tasmania. The residence features expansive outdoor deck spaces, custom timber screening, and an elegant two-story facade with high-performance insulation.',
+    overview: 'A masterfully crafted custom home built for modern family living across Sydney\'s North Shore. The residence features expansive outdoor deck spaces, custom timber screening, and an elegant two-story facade with high-performance insulation.',
     highlights: [
       'Expansive timber entertaining deck with custom hardwood pergolas',
       'Open-plan kitchen, dining, and living zones filled with natural light',
@@ -113,7 +113,7 @@ export const projectsData: CaseStudyData[] = [
     metrics: [
       { label: 'Year Completed', value: '2026' },
       { label: 'Structural System', value: 'Advanced Timber Frame' },
-      { label: 'Primary Materials', value: 'Tasmanian Timber, Rendered Cladding, Glass' },
+      { label: 'Primary Materials', value: 'Australian Timber, Rendered Cladding, Glass' },
       { label: 'Energy Rating', value: '7-Star Energy Rating' },
       { label: 'Master Builder', value: 'NorthAspect Building' },
       { label: 'Interior Scale', value: '520 sqm' }

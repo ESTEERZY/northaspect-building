@@ -5,7 +5,7 @@ const DesignSignatures = () => {
     {
       image: '/case-studies/industrial-loft/image1.png',
       title: 'Custom Residential Builds',
-      description: 'Bespoke modern home construction tailored to your site and lifestyle across North West Tasmania.',
+      description: 'Bespoke modern home construction tailored to your site and lifestyle across Sydney\'s Northern Beaches & North Shore.',
     },
     {
       image: '/case-studies/suburban-elegance/image1.png',

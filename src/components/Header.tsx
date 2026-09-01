@@ -8,6 +8,7 @@ const Header = () => {
   const navigate = useNavigate()
 
   const navLinks = [
+    { name: 'Services', href: '#services' },
     { name: 'Signatures', href: '#features' },
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Locations', href: '#service-areas' },

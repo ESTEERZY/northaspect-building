@@ -7,6 +7,7 @@ import ProcessBreakdown from './ProcessBreakdown'
 import Stats from './Stats'
 import About from './About'
 import DesignSignatures from './DesignSignatures'
+import ServicesTaxonomy from './ServicesTaxonomy'
 import ServiceAreas from './ServiceAreas'
 import Projects from './Projects'
 import Reviews from './Reviews'
@@ -41,6 +42,7 @@ const Home = () => {
       <Header />
       <Hero />
       <Projects />
+      <ServicesTaxonomy />
       <ProcessBreakdown />
       <BlueprintToggle />
       <Stats />

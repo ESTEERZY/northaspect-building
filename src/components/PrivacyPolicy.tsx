@@ -58,7 +58,7 @@ const PrivacyPolicy = () => {
               </p>
               <p className="text-gold font-sans">
                 Email: aspectnorthccooke@gmail.com<br />
-                Location: North West Tasmania, Australia
+                Location: Northern Beaches &amp; North Shore, Sydney NSW
               </p>
             </section>
           </div>

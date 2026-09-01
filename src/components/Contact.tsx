@@ -1,17 +1,41 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, User, Mail, MapPin, DollarSign, MessageSquare, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { ArrowRight, User, Mail, MapPin, DollarSign, MessageSquare, CheckCircle2, ShieldCheck, Phone, Wrench } from 'lucide-react';
+import { clientConfig, budgetTiers } from '../data/clientConfig';
+import { serviceTaxonomy } from '../data/servicesData';
+import { qualifyLeadGeography } from '../data/serviceAreas';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    serviceCategory: '',
     location: '',
     budget: '',
     message: '',
   });
 
+  const [locationFeedback, setLocationFeedback] = useState<{
+    isQualified: boolean;
+    message: string;
+  } | null>(null);
+
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleLocationChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setFormData((prev) => ({ ...prev, location: val }));
+    if (val.trim().length >= 3) {
+      const result = qualifyLeadGeography(val);
+      setLocationFeedback({
+        isQualified: result.isQualified,
+        message: result.message,
+      });
+    } else {
+      setLocationFeedback(null);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,11 +44,14 @@ const Contact = () => {
       setFormData({
         name: '',
         email: '',
+        phone: '',
+        serviceCategory: '',
         location: '',
         budget: '',
         message: '',
       });
-    }, 6000);
+      setLocationFeedback(null);
+    }, 8000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -51,31 +78,60 @@ const Contact = () => {
           >
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3.5 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase">
               <ShieldCheck className="w-3.5 h-3.5" />
-              Request a Quote &bull; Consultation
+              Direct Lead Intake &bull; Consultation
             </div>
 
             <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight">
-              Request a Quote From <span className="text-gold">NorthAspect Building.</span>
+              Request a Quote From <span className="text-gold">{clientConfig.contactName}</span>
             </h2>
 
             <p className="text-base lg:text-lg text-white/70 font-normal leading-relaxed">
-              Tell us about your custom residential build, extension, renovation, or detailed carpentry project across Sydney's Northern Beaches &amp; North Shore.
+              Specializing in custom residential additions, renovations, structural alterations, remedial repairs, and outdoor carpentry projects ranging from <strong>{clientConfig.targetBudgetLabel}</strong>.
             </p>
 
+            {/* Direct Contact Cards */}
+            <div className="space-y-3 pt-2">
+              <a
+                href={`tel:${clientConfig.phoneRaw}`}
+                className="flex items-center gap-3 p-3.5 rounded-[2px] bg-white/[0.03] border border-white/10 hover:border-gold transition-colors"
+              >
+                <div className="w-10 h-10 bg-gold/10 border border-gold/30 text-gold flex items-center justify-center rounded-[2px]">
+                  <Phone size={18} />
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-white/50 uppercase tracking-widest">Call Directly</div>
+                  <div className="text-sm font-black text-white">{clientConfig.phone}</div>
+                </div>
+              </a>
+
+              <a
+                href={`mailto:${clientConfig.email}`}
+                className="flex items-center gap-3 p-3.5 rounded-[2px] bg-white/[0.03] border border-white/10 hover:border-gold transition-colors"
+              >
+                <div className="w-10 h-10 bg-gold/10 border border-gold/30 text-gold flex items-center justify-center rounded-[2px]">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <div className="text-[10px] font-bold text-white/50 uppercase tracking-widest">Email Inquiry</div>
+                  <div className="text-xs font-bold text-gold break-all">{clientConfig.email}</div>
+                </div>
+              </a>
+            </div>
+
             {/* Process Steps */}
-            <div className="space-y-5 pt-4">
+            <div className="space-y-4 pt-2">
               {[
-                { num: '01', label: 'Request a Quote / Initial Inquiry', desc: 'Discuss site context, scope, timeline, and preliminary investment range.' },
-                { num: '02', label: 'Feasibility & Planning', desc: 'Custom architectural consultation, scope breakdown, and site analysis.' },
-                { num: '03', label: 'Quality Construction', desc: 'Precision residential building and master carpentry crafted to perfection.' },
+                { num: '01', label: 'Service & Budget Intake', desc: 'Select your service category and target project budget.' },
+                { num: '02', label: 'Geographical Qualification', desc: 'Verified lead routing across Northern Beaches & North Shore postcodes.' },
+                { num: '03', label: 'Consultation & Site Scope', desc: 'Direct consultation with Chris to plan your structural build.' },
               ].map((item) => (
-                <div key={item.num} className="flex items-start gap-4 p-3.5 rounded-[2px] bg-white/[0.02] border border-white/5 hover:border-gold/30 transition-colors">
-                  <div className="flex-shrink-0 w-10 h-10 bg-gold/10 border border-gold/20 text-gold flex items-center justify-center rounded-[2px] text-xs font-black">
+                <div key={item.num} className="flex items-start gap-4 p-3 rounded-[2px] bg-white/[0.02] border border-white/5">
+                  <div className="flex-shrink-0 w-8 h-8 bg-gold/10 border border-gold/20 text-gold flex items-center justify-center rounded-[2px] text-xs font-black">
                     {item.num}
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-white tracking-wide">{item.label}</p>
-                    <p className="text-xs text-white/60 font-medium leading-relaxed">{item.desc}</p>
+                    <p className="text-xs font-bold text-white tracking-wide">{item.label}</p>
+                    <p className="text-[11px] text-white/60 font-medium leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -94,8 +150,8 @@ const Contact = () => {
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent" />
 
             <div className="mb-8 border-b border-white/10 pb-6">
-              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">Request a Quote</h3>
-              <p className="text-sm text-white/60 font-normal">Share your project specifications to schedule a direct consultation call with our team.</p>
+              <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-2">Request a Quote / Intake</h3>
+              <p className="text-sm text-white/60 font-normal">Select your service, suburb, and budget to route your project directly to Chris.</p>
             </div>
 
             {isSubmitted ? (
@@ -105,9 +161,9 @@ const Contact = () => {
                 className="py-12 px-6 text-center space-y-4 bg-gold/10 border border-gold/30 rounded-[2px]"
               >
                 <CheckCircle2 className="w-12 h-12 text-gold mx-auto" />
-                <h4 className="text-xl font-black text-white tracking-tight">Consultation Request Received</h4>
+                <h4 className="text-xl font-black text-white tracking-tight">Project Qualification Submitted</h4>
                 <p className="text-sm text-white/70 max-w-md mx-auto leading-relaxed">
-                  Thank you for reaching out to NorthAspect Building. Our team will review your details and contact you promptly at aspectnorthccooke@gmail.com.
+                  Thank you for submitting your project specifications. <strong>Chris ({clientConfig.businessName})</strong> will review your details and contact you shortly at <strong>{clientConfig.email}</strong> or <strong>{clientConfig.phone}</strong>.
                 </p>
                 <button
                   onClick={() => setIsSubmitted(false)}
@@ -118,7 +174,7 @@ const Contact = () => {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Row 1: Name & Email */}
+                {/* Row 1: Name & Phone */}
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
@@ -132,48 +188,97 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] placeholder:text-white/30"
-                      placeholder="Jane Smith"
+                      placeholder="e.g. Sarah Jenkins"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
-                      <Mail className="w-3.5 h-3.5 text-gold" /> Email Address *
+                    <label htmlFor="phone" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
+                      <Phone className="w-3.5 h-3.5 text-gold" /> Phone Number *
                     </label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] placeholder:text-white/30"
-                      placeholder="jane@example.com"
+                      placeholder="e.g. 0414 000 000"
                     />
                   </div>
                 </div>
 
-                {/* Row 2: Location & Budget */}
+                {/* Email Address */}
+                <div>
+                  <label htmlFor="email" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-gold" /> Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] placeholder:text-white/30"
+                    placeholder="sarah@example.com"
+                  />
+                </div>
+
+                {/* Service Category Selection */}
+                <div>
+                  <label htmlFor="serviceCategory" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
+                    <Wrench className="w-3.5 h-3.5 text-gold" /> Service Required *
+                  </label>
+                  <select
+                    id="serviceCategory"
+                    name="serviceCategory"
+                    value={formData.serviceCategory}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] cursor-pointer"
+                  >
+                    <option value="" disabled className="bg-charcoal text-white/50">Select primary service capability</option>
+                    {serviceTaxonomy.map((cat) => (
+                      <optgroup key={cat.id} label={cat.category} className="bg-charcoal text-gold font-bold">
+                        {cat.capabilities.map((cap) => (
+                          <option key={cap} value={cap} className="bg-charcoal text-white font-normal pl-4">
+                            {cap}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Row 2: Location & Target Budget */}
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="location" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-gold" /> Project Location / Address *
+                      <MapPin className="w-3.5 h-3.5 text-gold" /> Suburb / Postcode *
                     </label>
                     <input
                       type="text"
                       id="location"
                       name="location"
                       value={formData.location}
-                      onChange={handleChange}
+                      onChange={handleLocationChange}
                       required
                       className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] placeholder:text-white/30"
-                      placeholder="e.g. Manly 2095, Mosman 2088, Mona Vale 2103"
+                      placeholder="e.g. Manly 2095, Mosman 2088"
                     />
+                    {locationFeedback && (
+                      <div className="mt-1.5 text-[10px] font-bold text-gold flex items-center gap-1">
+                        <CheckCircle2 size={12} className="text-gold" />
+                        <span>{locationFeedback.message}</span>
+                      </div>
+                    )}
                   </div>
 
                   <div>
                     <label htmlFor="budget" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
-                      <DollarSign className="w-3.5 h-3.5 text-gold" /> Estimated Budget *
+                      <DollarSign className="w-3.5 h-3.5 text-gold" /> Target Project Budget *
                     </label>
                     <select
                       id="budget"
@@ -184,10 +289,11 @@ const Contact = () => {
                       className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] cursor-pointer"
                     >
                       <option value="" disabled className="bg-charcoal text-white/50">Select investment range</option>
-                      <option value="500k_1m" className="bg-charcoal text-white">$500k – $1M</option>
-                      <option value="1m_2m" className="bg-charcoal text-white">$1M – $2M</option>
-                      <option value="2m_5m" className="bg-charcoal text-white">$2M – $5M</option>
-                      <option value="over_5m" className="bg-charcoal text-white">$5M+</option>
+                      {budgetTiers.map((tier) => (
+                        <option key={tier.id} value={tier.id} className="bg-charcoal text-white">
+                          {tier.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>
@@ -195,7 +301,7 @@ const Contact = () => {
                 {/* Message */}
                 <div>
                   <label htmlFor="message" className="block text-[11px] font-extrabold uppercase tracking-widest text-white/70 mb-2 flex items-center gap-1.5">
-                    <MessageSquare className="w-3.5 h-3.5 text-gold" /> Project Vision & Details *
+                    <MessageSquare className="w-3.5 h-3.5 text-gold" /> Project Scope &amp; Details *
                   </label>
                   <textarea
                     id="message"
@@ -203,9 +309,9 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={4}
+                    rows={3}
                     className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all resize-none rounded-[2px] placeholder:text-white/30"
-                    placeholder="Describe your architectural style, site constraints, preferred timeline..."
+                    placeholder="Describe your site layout, timber/material preferences, structural modifications..."
                   />
                 </div>
 
@@ -215,7 +321,7 @@ const Contact = () => {
                     type="submit"
                     className="group w-full bg-gold border border-gold text-charcoal px-6 py-4 text-xs font-black tracking-[0.15em] uppercase hover:bg-white hover:border-white transition-all duration-300 inline-flex items-center justify-center gap-2 rounded-[2px] shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
                   >
-                    <span>Request a Quote</span>
+                    <span>Submit Project Intake</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
                 </div>
@@ -223,7 +329,7 @@ const Contact = () => {
                 {/* Privacy Guarantee */}
                 <div className="pt-3 border-t border-white/10 flex items-center justify-center gap-2 text-[10px] font-bold text-white/50 uppercase tracking-widest text-center">
                   <ShieldCheck className="w-3.5 h-3.5 text-gold flex-shrink-0" />
-                  Strictly Confidential • NDA Protected • No Spam Guarantee
+                  Direct Consultation with Chris • NDA Protected • Confidential
                 </div>
               </form>
             )}

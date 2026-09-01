@@ -138,8 +138,8 @@ const Footer = () => {
               <div className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
-                  <a href="tel:0400000000" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300">
-                    Direct Inquiry (Sydney NSW)
+                  <a href="tel:0414920942" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300 font-bold">
+                    0414 920 942 (Chris)
                   </a>
                 </div>
               </div>
