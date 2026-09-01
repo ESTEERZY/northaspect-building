@@ -85,22 +85,6 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="#service-areas"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    if (location.pathname === '/') {
-                      document.getElementById('service-areas')?.scrollIntoView({ behavior: 'smooth' })
-                    } else {
-                      navigate('/', { state: { scrollToSection: 'service-areas' } })
-                    }
-                  }}
-                  className="text-slate-600 font-medium hover:text-gold transition-colors duration-300"
-                >
-                  Service Suburbs
-                </a>
-              </li>
             </ul>
           </div>
 
