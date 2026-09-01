@@ -59,7 +59,7 @@ const Contact = () => {
             </h2>
 
             <p className="text-base lg:text-lg text-white/70 font-normal leading-relaxed">
-              Tell us about your custom residential build, extension, renovation, or detailed carpentry project in North West Tasmania.
+              Tell us about your custom residential build, extension, renovation, or detailed carpentry project across Sydney's Northern Beaches &amp; North Shore.
             </p>
 
             {/* Process Steps */}
@@ -167,7 +167,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-white/[0.04] text-white text-sm border border-white/10 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 transition-all rounded-[2px] placeholder:text-white/30"
-                      placeholder="e.g. Devonport, North West Tasmania"
+                      placeholder="e.g. Manly 2095, Mosman 2088, Mona Vale 2103"
                     />
                   </div>
 

@@ -32,7 +32,7 @@ const Footer = () => {
               <span>NorthAspect <span className="text-gold font-light">Building</span></span>
             </Link>
             <p className="text-slate-600 font-medium leading-relaxed text-sm">
-              Quality custom residential building, renovations, extensions, and master carpentry specialists based in North West Tasmania.
+              Quality custom residential building, renovations, extensions, and master carpentry specialists based across Sydney's Northern Beaches &amp; North Shore.
             </p>
             <div className="flex gap-2.5 pt-1">
               <span
@@ -85,6 +85,22 @@ const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="#service-areas"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    if (location.pathname === '/') {
+                      document.getElementById('service-areas')?.scrollIntoView({ behavior: 'smooth' })
+                    } else {
+                      navigate('/', { state: { scrollToSection: 'service-areas' } })
+                    }
+                  }}
+                  className="text-slate-600 font-medium hover:text-gold transition-colors duration-300"
+                >
+                  Service Suburbs
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -94,23 +110,23 @@ const Footer = () => {
             <ul className="space-y-2 text-slate-600 font-medium text-sm">
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>North West Tasmania &amp; Surrounding Regions</span>
+                <span>Northern Beaches &amp; North Shore (Sydney)</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Devonport &amp; Cradle Coast</span>
+                <span>Manly, Freshwater, Dee Why &amp; Mona Vale</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Burnie &amp; Coastal North West</span>
+                <span>Newport, Bayview, Narrabeen &amp; Terrey Hills</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Launceston &amp; Northern Tasmania</span>
+                <span>Mosman, Neutral Bay, Cremorne &amp; Chatswood</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0" />
-                <span>Hobart &amp; Southern Tasmania</span>
+                <span>Killara, Lindfield, St Ives &amp; Roseville</span>
               </li>
             </ul>
           </div>
@@ -123,7 +139,7 @@ const Footer = () => {
                 <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
                   <a href="tel:0400000000" className="text-slate-600 font-medium hover:text-gold transition-colors duration-300">
-                    Direct Inquiry (North West TAS)
+                    Direct Inquiry (Sydney NSW)
                   </a>
                 </div>
               </div>
@@ -139,7 +155,7 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" strokeWidth={2} />
                 <div>
                   <p className="text-slate-600 font-medium leading-snug">
-                    North West Tasmania, Australia
+                    Northern Beaches &amp; North Shore, Sydney NSW
                   </p>
                 </div>
               </div>

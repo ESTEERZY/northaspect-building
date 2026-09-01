@@ -45,7 +45,7 @@ const Hero = () => {
 
           {/* The Subtext Paragraph */}
           <p className="text-base md:text-lg lg:text-xl font-medium text-white/85 max-w-2xl mx-auto leading-relaxed animate-subtext-breath">
-            Specialist custom home builders, renovations, extensions, and premium carpentry craftsmanship across North West Tasmania.
+            Specialist custom home builders, renovations, extensions, and premium carpentry craftsmanship across Sydney's Northern Beaches &amp; North Shore.
           </p>
 
         </div>

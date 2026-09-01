@@ -41,7 +41,7 @@ const About = () => {
             </div>
 
             <p className="text-lg text-white/70 leading-relaxed font-sans">
-              NorthAspect Building was founded on an unyielding dedication to artisan craftsmanship in custom residential construction, renovations, extensions, and detailed carpentry. Based in North West Tasmania, we combine robust structural integrity with refined architectural finishes to create spaces that endure.
+              NorthAspect Building was founded on an unyielding dedication to artisan craftsmanship in custom residential construction, renovations, extensions, and detailed carpentry. Based across Sydney's Northern Beaches &amp; North Shore, we combine robust structural integrity with refined architectural finishes to create spaces that endure.
             </p>
 
             <div className="space-y-6 pt-4 border-t border-white/10">

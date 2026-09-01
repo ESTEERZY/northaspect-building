@@ -7,6 +7,7 @@ import ProcessBreakdown from './ProcessBreakdown'
 import Stats from './Stats'
 import About from './About'
 import DesignSignatures from './DesignSignatures'
+import ServiceAreas from './ServiceAreas'
 import Projects from './Projects'
 import Reviews from './Reviews'
 import Contact from './Contact'
@@ -45,6 +46,7 @@ const Home = () => {
       <Stats />
       <About />
       <DesignSignatures />
+      <ServiceAreas />
       <Contact />
       <Reviews />
       <Footer />
