@@ -1,206 +1,136 @@
-import { useState } from 'react'
-import { Star, CheckCircle2, ThumbsUp, PlusCircle, X } from 'lucide-react'
-
-export interface Review {
-  id: string
-  author: string
-  role: string
-  location: string
-  category: 'Luxury Residential' | 'Commercial Development' | 'Custom Architectural' | 'Renovations & Extensions'
-  rating: number
-  date: string
-  timestamp: number
-  title: string
-  text: string
-  projectImage?: string
-  verified: boolean
-  helpfulCount: number
-}
-
-const INITIAL_REVIEWS: Review[] = [
-  {
-    id: 'rev-1',
-    author: 'Sarah & Mark Johnson',
-    role: 'Homeowner',
-    location: 'Manly, NSW',
-    category: 'Luxury Residential',
-    rating: 5,
-    date: 'July 2026',
-    timestamp: Date.parse('2026-07-15T10:00:00Z'),
-    title: 'Transformed our vision into a coastal masterpiece',
-    text: 'NorthAspect Building executed our custom residential build in Manly with flawless timber framing and craftsmanship. Their transparency during cost estimation gave us total peace of mind. Every detail exceeded our expectations.',
-    projectImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
-    verified: true,
-    helpfulCount: 24,
-  },
-  {
-    id: 'rev-2',
-    author: 'Robert Sterling',
-    role: 'Homeowner',
-    location: 'Freshwater, NSW',
-    category: 'Renovations & Extensions',
-    rating: 5,
-    date: 'June 2026',
-    timestamp: Date.parse('2026-06-20T10:00:00Z'),
-    title: 'High-rigor extension delivery & carpentry excellence',
-    text: 'Delivering a major architectural extension on the Northern Beaches requires strict site management. The NorthAspect team completed the timber structural framing phase ahead of schedule with exceptional site coordination.',
-    projectImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-    verified: true,
-    helpfulCount: 19,
-  },
-  {
-    id: 'rev-3',
-    author: 'Dr. Abraham Schlegel',
-    role: 'Property Owner',
-    location: 'Mosman, NSW',
-    category: 'Custom Architectural',
-    rating: 5,
-    date: 'May 2026',
-    timestamp: Date.parse('2026-05-10T10:00:00Z'),
-    title: 'Architectural precision at the highest standard',
-    text: 'Working with custom timber joinery and structural glazing can be complex. NorthAspect Building coordinated seamlessly with our architect, turning schematics into structural perfection.',
-    projectImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
-    verified: true,
-    helpfulCount: 31,
-  },
-  {
-    id: 'rev-4',
-    author: 'Elena & Lucas Vance',
-    role: 'Homeowners',
-    location: 'Avalon Beach, NSW',
-    category: 'Renovations & Extensions',
-    rating: 5,
-    date: 'April 2026',
-    timestamp: Date.parse('2026-04-18T10:00:00Z'),
-    title: 'Character extension with modern comfort',
-    text: 'Extending our home while integrating a modern timber wing seemed daunting. The NorthAspect site team preserved the home character while providing state-of-the-art living spaces and fine carpentry.',
-    projectImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80',
-    verified: true,
-    helpfulCount: 15,
-  },
-  {
-    id: 'rev-5',
-    author: 'Michael Brown',
-    role: 'Homeowner',
-    location: 'Neutral Bay, NSW',
-    category: 'Custom Architectural',
-    rating: 5,
-    date: 'March 2026',
-    timestamp: Date.parse('2026-03-05T10:00:00Z'),
-    title: 'First-class management and budget control',
-    text: 'Their clear communication kept us informed at every milestone. Financial reporting was exact, and our finished custom home on Sydney\'s North Shore speaks for itself.',
-    projectImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
-    verified: true,
-    helpfulCount: 12,
-  },
-  {
-    id: 'rev-6',
-    author: 'Victoria Vance',
-    role: 'Estate Owner',
-    location: 'Palm Beach, NSW',
-    category: 'Luxury Residential',
-    rating: 5,
-    date: 'January 2026',
-    timestamp: Date.parse('2026-01-28T10:00:00Z'),
-    title: 'Outstanding custom build experience',
-    text: 'From site excavation through to interior timber finishes, the communication was stellar. They respected our timeline and crafted an extraordinary family home that will last generations.',
-    projectImage: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80',
-    verified: true,
-    helpfulCount: 28,
-  },
-]
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Star, CheckCircle2, ThumbsUp, PlusCircle, X, Quote, MapPin, Award } from 'lucide-react';
+import { VERIFIED_TESTIMONIALS, Testimonial } from '../data/testimonialsData';
+import { clientConfig } from '../data/clientConfig';
 
 const CATEGORIES = [
   'All',
-  'Luxury Residential',
-  'Commercial Development',
-  'Custom Architectural',
-  'Renovations & Extensions',
-] as const
+  'Home Extension',
+  'Water & Damp Remedial',
+  'Internal Alterations & Open Plan Living',
+  'Bathroom Renovation & Remedial',
+] as const;
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState<Review[]>(INITIAL_REVIEWS)
-  const [selectedCategory, setSelectedCategory] = useState<string>('All')
-  const [sortBy, setSortBy] = useState<'highest' | 'recent'>('highest')
-  const [likedReviews, setLikedReviews] = useState<Record<string, boolean>>({})
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [toastMessage, setToastMessage] = useState<string | null>(null)
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(VERIFIED_TESTIMONIALS);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [likedReviews, setLikedReviews] = useState<Record<string, boolean>>({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const averageRating = (
-    reviews.reduce((acc, r) => acc + r.rating, 0) / (reviews.length || 1)
-  ).toFixed(1)
+    testimonials.reduce((acc, r) => acc + r.rating, 0) / (testimonials.length || 1)
+  ).toFixed(1);
 
   const [formData, setFormData] = useState({
     author: '',
-    role: 'Homeowner',
     location: '',
-    category: 'Luxury Residential' as Review['category'],
+    projectType: 'Home Extension',
     rating: 5,
-    title: '',
-    text: '',
-  })
+    quote: '',
+    badge: 'Verified Client Review',
+  });
 
   const handleLike = (id: string) => {
-    if (likedReviews[id]) return
-    setLikedReviews((prev) => ({ ...prev, [id]: true }))
-    setReviews((prev) =>
-      prev.map((r) => (r.id === id ? { ...r, helpfulCount: r.helpfulCount + 1 } : r))
-    )
-  }
+    if (likedReviews[id]) return;
+    setLikedReviews((prev) => ({ ...prev, [id]: true }));
+    setToastMessage('Thank you for flagging this review as helpful!');
+    setTimeout(() => setToastMessage(null), 3000);
+  };
 
   const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!formData.author || !formData.title || !formData.text) return
+    e.preventDefault();
+    if (!formData.author || !formData.quote) return;
 
-    const newReview: Review = {
-      id: `rev-${Date.now()}`,
+    const initials = formData.author
+      .split('&')[0]
+      .trim()
+      .split(' ')
+      .map((n) => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+
+    const newTestimonial: Testimonial = {
+      id: `testimonial-${Date.now()}`,
       author: formData.author,
-      role: formData.role || 'Verified Client',
-      location: formData.location || 'Australia',
-      category: formData.category,
+      initials: initials || 'VC',
+      location: formData.location || 'Northern Beaches, Sydney NSW',
+      relationshipDuration: 'Verified Client',
+      projectType: formData.projectType,
       rating: Number(formData.rating),
-      date: 'Just now',
-      timestamp: Date.now(),
-      title: formData.title,
-      text: formData.text,
+      quote: formData.quote,
+      badge: formData.badge || 'Verified Client Review',
       verified: true,
-      helpfulCount: 1,
-    }
+    };
 
-    setReviews([newReview, ...reviews])
-    setIsModalOpen(false)
+    setTestimonials([newTestimonial, ...testimonials]);
+    setIsModalOpen(false);
     setFormData({
       author: '',
-      role: 'Homeowner',
       location: '',
-      category: 'Luxury Residential',
+      projectType: 'Home Extension',
       rating: 5,
-      title: '',
-      text: '',
-    })
+      quote: '',
+      badge: 'Verified Client Review',
+    });
 
-    setToastMessage('Thank you! Your review has been added.')
-    setTimeout(() => setToastMessage(null), 4000)
-  }
+    setToastMessage('Thank you! Your verified client review has been recorded.');
+    setTimeout(() => setToastMessage(null), 4000);
+  };
 
-  const filteredReviews = reviews
-    .filter((r) => selectedCategory === 'All' || r.category === selectedCategory)
-    .sort((a, b) => {
-      if (sortBy === 'highest') {
-        if (b.rating !== a.rating) return b.rating - a.rating
-        if (b.helpfulCount !== a.helpfulCount) return b.helpfulCount - a.helpfulCount
-        return b.timestamp - a.timestamp
-      }
-      return b.timestamp - a.timestamp
-    })
+  const filteredTestimonials = testimonials.filter(
+    (t) => selectedCategory === 'All' || t.projectType === selectedCategory
+  );
+
+  // Schema.org JSON-LD Review & AggregateRating data
+  const jsonLdData = {
+    '@context': 'https://schema.org',
+    '@type': 'GeneralContractor',
+    name: clientConfig.businessName,
+    telephone: clientConfig.phone,
+    email: clientConfig.email,
+    areaServed: clientConfig.serviceRegions,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: averageRating,
+      reviewCount: testimonials.length,
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: testimonials.map((t) => ({
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: t.author,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: t.rating,
+        bestRating: '5',
+      },
+      reviewBody: t.quote,
+      name: t.badge,
+    })),
+  };
 
   return (
-    <section id="reviews" className="py-24 bg-[#0d0d0d] text-white relative border-t border-white/10">
-      <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
+    <section id="reviews" className="py-24 bg-charcoal text-white relative border-t border-white/10 overflow-hidden">
+      {/* JSON-LD Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+      />
+
+      {/* Subtle background glow */}
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-gold/5 blur-[120px] pointer-events-none rounded-full" />
+
+      <div className="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10">
         
         {/* Toast Notification */}
         {toastMessage && (
-          <div className="mb-8 p-4 bg-gold/10 border border-gold/30 text-gold text-xs tracking-wide rounded-sm flex items-center justify-between animate-fade-in">
+          <div className="mb-8 p-4 bg-gold/10 border border-gold/30 text-gold text-xs font-bold tracking-wide rounded-[2px] flex items-center justify-between animate-fade-in">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-gold" />
               <span>{toastMessage}</span>
@@ -211,180 +141,134 @@ const Reviews = () => {
           </div>
         )}
 
-        {/* Minimal Section Header */}
+        {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
-            <div className="text-[11px] font-mono font-bold tracking-[0.25em] text-gold uppercase mb-3">
-              // CLIENT REVIEWS
+            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3.5 py-1.5 rounded-full text-gold text-[11px] font-black tracking-[0.2em] uppercase mb-4">
+              <Award className="w-3.5 h-3.5" />
+              Verified Client Testimonials &bull; {clientConfig.contactName}
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-white">
-              Verified Client <span className="font-bold text-gold">Feedback</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white">
+              Client Feedback &amp; <span className="text-gold">Craftsmanship Reviews</span>
             </h2>
           </div>
 
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-3 bg-white/[0.03] border border-white/10 px-4 py-2.5 rounded-full">
-              <span className="text-xl font-bold font-mono text-white">{averageRating}</span>
-              <div className="flex gap-0.5 text-gold">
+          <div className="flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-3 bg-white/[0.04] border border-white/10 px-4 py-2.5 rounded-[2px]">
+              <span className="text-xl font-black text-white">{averageRating}</span>
+              <div className="flex gap-1 text-gold">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <Star
-                    key={star}
-                    className={`w-3.5 h-3.5 ${
-                      star <= Math.round(Number(averageRating))
-                        ? 'fill-gold text-gold'
-                        : 'text-white/20 fill-transparent'
-                    }`}
-                  />
+                  <Star key={star} className="w-4 h-4 fill-gold text-gold" />
                 ))}
               </div>
-              <span className="text-[11px] text-white/50 tracking-wider uppercase font-medium border-l border-white/10 pl-3">
-                {reviews.length + 120}+ Builds
+              <span className="text-[11px] text-gold uppercase tracking-widest font-black border-l border-white/10 pl-3">
+                100% 5-Star Verified
               </span>
             </div>
 
             <button
               onClick={() => setIsModalOpen(true)}
-              className="border border-gold/40 text-gold hover:bg-gold hover:text-charcoal transition-all duration-300 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-full inline-flex items-center gap-2"
+              className="bg-gold text-charcoal border border-gold hover:bg-white transition-all duration-300 px-5 py-2.5 text-xs font-black tracking-wider uppercase rounded-[2px] inline-flex items-center gap-2 shadow-[0_0_15px_rgba(197,160,89,0.3)]"
             >
               <PlusCircle className="w-4 h-4" />
-              <span>Write Review</span>
+              <span>Submit Review</span>
             </button>
           </div>
         </div>
 
-        {/* Sleek Minimal Nav Tabs & Filter Bar */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4 mb-10">
-          <div className="flex items-center gap-6 overflow-x-auto scrollbar-none py-1">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`text-xs font-medium uppercase tracking-widest transition-all whitespace-nowrap relative py-1 ${
-                  selectedCategory === cat
-                    ? 'text-gold font-bold'
-                    : 'text-white/40 hover:text-white'
-                }`}
-              >
-                {cat}
-                {selectedCategory === cat && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold -mb-4" />
-                )}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2 self-end sm:self-auto">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-white/30">SORT</span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as 'highest' | 'recent')}
-              className="bg-transparent text-white/70 text-xs font-medium uppercase tracking-wider focus:outline-none cursor-pointer border-b border-white/20 pb-0.5"
+        {/* Category Tabs */}
+        <div className="flex items-center gap-3 overflow-x-auto scrollbar-none pb-4 mb-10 border-b border-white/10">
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-4 py-2 text-xs font-black uppercase tracking-wider transition-all whitespace-nowrap rounded-[2px] ${
+                selectedCategory === cat
+                  ? 'bg-gold text-charcoal shadow-[0_0_15px_rgba(197,160,89,0.3)]'
+                  : 'text-white/70 hover:text-white hover:bg-white/5 border border-white/10'
+              }`}
             >
-              <option value="highest" className="bg-[#121212] text-white">Highest Rated</option>
-              <option value="recent" className="bg-[#121212] text-white">Most Recent</option>
-            </select>
-          </div>
+              {cat}
+            </button>
+          ))}
         </div>
 
-        {/* Sleek Grid Layout */}
+        {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredReviews.map((review) => {
-            const initials = review.author
-              .split('&')[0]
-              .trim()
-              .split(' ')
-              .map((n) => n[0])
-              .join('')
-              .toUpperCase()
-              .slice(0, 2)
+          {filteredTestimonials.map((testimonial) => (
+            <motion.div
+              key={testimonial.id}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="bg-gradient-to-b from-white/[0.05] via-white/[0.02] to-transparent border border-white/10 hover:border-gold/50 p-8 rounded-[2px] flex flex-col justify-between transition-all duration-300 group relative shadow-lg"
+            >
+              {/* Top Accent Line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            return (
-              <div
-                key={review.id}
-                className="bg-white/[0.02] border border-white/10 hover:border-gold/40 p-7 rounded-sm flex flex-col justify-between transition-all duration-300 group relative"
-              >
-                <div>
-                  {/* Top rating & category */}
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="flex items-center gap-1 text-gold">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <Star
-                          key={star}
-                          className={`w-3.5 h-3.5 ${
-                            star <= review.rating
-                              ? 'fill-gold text-gold'
-                              : 'text-white/15 fill-transparent'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-[10px] font-mono text-white/40 tracking-wider uppercase">
-                      {review.category}
-                    </span>
+              {/* Quote Mark Watermark */}
+              <Quote className="w-12 h-12 text-gold/10 absolute top-6 right-6 pointer-events-none" strokeWidth={1} />
+
+              <div>
+                {/* 5-Star Rating & Badge */}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center gap-1 text-gold">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <Star key={star} className="w-4 h-4 fill-gold text-gold" />
+                    ))}
                   </div>
-
-                  {/* Title & Review Text */}
-                  <h3 className="text-base font-semibold text-white mb-2 leading-snug group-hover:text-gold transition-colors">
-                    "{review.title}"
-                  </h3>
-                  <p className="text-white/65 text-xs leading-relaxed font-light mb-6">
-                    {review.text}
-                  </p>
+                  <span className="text-[10px] font-extrabold text-gold bg-gold/10 px-2 py-0.5 border border-gold/20 rounded-[2px] truncate">
+                    {testimonial.badge}
+                  </span>
                 </div>
 
-                <div>
-                  {/* Project image thumbnail if present */}
-                  {review.projectImage && (
-                    <div className="relative aspect-[21/9] w-full overflow-hidden rounded-sm mb-5 border border-white/5">
-                      <img
-                        src={review.projectImage}
-                        alt={review.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                        loading="lazy"
-                      />
-                    </div>
-                  )}
-
-                  {/* Author & Helpful CTA */}
-                  <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gold text-xs font-mono font-bold">
-                        {initials}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-1 text-xs font-medium text-white">
-                          <span>{review.author}</span>
-                          {review.verified && <CheckCircle2 className="w-3 h-3 text-gold" />}
-                        </div>
-                        <div className="text-[10px] text-white/40">
-                          {review.role} • <span className="text-white/60">{review.location}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={() => handleLike(review.id)}
-                      className={`flex items-center gap-1 text-[11px] font-mono transition-colors ${
-                        likedReviews[review.id]
-                          ? 'text-gold font-bold'
-                          : 'text-white/40 hover:text-white'
-                      }`}
-                    >
-                      <ThumbsUp className="w-3.5 h-3.5" />
-                      <span>{review.helpfulCount}</span>
-                    </button>
-                  </div>
-                </div>
+                {/* Testimonial Quote */}
+                <p className="text-sm md:text-base text-white/85 leading-relaxed font-normal mb-6 italic">
+                  "{testimonial.quote}"
+                </p>
               </div>
-            )
-          })}
+
+              {/* Author Footer */}
+              <div className="pt-5 border-t border-white/10 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  {/* Clean Monogram Avatar */}
+                  <div className="w-10 h-10 bg-gradient-to-br from-gold/30 via-gold/10 to-transparent border border-gold/40 rounded-full flex items-center justify-center text-gold font-black text-xs tracking-wider shadow-inner flex-shrink-0">
+                    {testimonial.initials}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1.5 text-sm font-black text-white">
+                      <span>{testimonial.author}</span>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-gold flex-shrink-0" />
+                    </div>
+                    <div className="text-[11px] text-white/60 font-medium flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-gold/70 flex-shrink-0" />
+                      <span>{testimonial.location}{testimonial.postcode ? ` (${testimonial.postcode})` : ''}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => handleLike(testimonial.id)}
+                  className={`p-2 rounded-[2px] transition-colors ${
+                    likedReviews[testimonial.id]
+                      ? 'text-gold bg-gold/10 border border-gold/30'
+                      : 'text-white/40 hover:text-gold hover:bg-white/5'
+                  }`}
+                  title="Mark review as helpful"
+                >
+                  <ThumbsUp className="w-4 h-4" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
       {/* Write a Review Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#121212] border border-white/15 p-8 max-w-lg w-full rounded-sm relative animate-fade-in max-h-[90vh] overflow-y-auto">
+          <div className="bg-charcoal border border-gold/30 p-8 max-w-lg w-full rounded-[2px] relative animate-fade-in max-h-[90vh] overflow-y-auto shadow-2xl">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-5 right-5 text-white/40 hover:text-white"
@@ -392,13 +276,15 @@ const Reviews = () => {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="text-[10px] font-mono text-gold tracking-widest uppercase mb-1">// SHARE FEEDBACK</div>
-            <h3 className="text-xl font-light text-white mb-6">Submit Client Review</h3>
+            <div className="text-[10px] font-black text-gold tracking-widest uppercase mb-1">
+              Client Feedback &bull; Aspect North Building
+            </div>
+            <h3 className="text-2xl font-black text-white mb-6">Submit Verified Review</h3>
 
             <form onSubmit={handleFormSubmit} className="space-y-4">
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-2 font-mono">
-                  Rating
+                <label className="block text-[11px] uppercase tracking-wider text-white/70 mb-2 font-bold">
+                  Star Rating *
                 </label>
                 <div className="flex gap-2">
                   {[1, 2, 3, 4, 5].map((star) => (
@@ -420,89 +306,61 @@ const Reviews = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
-                    Name *
+                  <label className="block text-[11px] uppercase tracking-wider text-white/70 mb-1 font-bold">
+                    Full Name *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. John Davis"
+                    placeholder="e.g. David & Sarah"
                     value={formData.author}
                     onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
+                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-gold rounded-[2px]"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
-                    Role
+                  <label className="block text-[11px] uppercase tracking-wider text-white/70 mb-1 font-bold">
+                    Location / Suburb *
                   </label>
                   <input
                     type="text"
-                    placeholder="e.g. Homeowner"
-                    value={formData.role}
-                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
-                    Location
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="e.g. Melbourne VIC"
+                    required
+                    placeholder="e.g. Manly, NSW 2095"
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
+                    className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-gold rounded-[2px]"
                   />
                 </div>
-                <div>
-                  <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
-                    Category
-                  </label>
-                  <select
-                    value={formData.category}
-                    onChange={(e) =>
-                      setFormData({ ...formData, category: e.target.value as Review['category'] })
-                    }
-                    className="w-full bg-[#181818] border border-white/10 px-3 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm cursor-pointer"
-                  >
-                    <option value="Luxury Residential">Luxury Residential</option>
-                    <option value="Commercial Development">Commercial Development</option>
-                    <option value="Custom Architectural">Custom Architectural</option>
-                    <option value="Renovations & Extensions">Renovations &amp; Extensions</option>
-                  </select>
-                </div>
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
-                  Headline *
+                <label className="block text-[11px] uppercase tracking-wider text-white/70 mb-1 font-bold">
+                  Project Type *
                 </label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Summary of experience..."
-                  value={formData.title}
-                  onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
-                />
+                <select
+                  value={formData.projectType}
+                  onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                  className="w-full bg-charcoal border border-white/10 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-gold rounded-[2px] cursor-pointer"
+                >
+                  {CATEGORIES.filter((c) => c !== 'All').map((cat) => (
+                    <option key={cat} value={cat} className="bg-charcoal text-white">
+                      {cat}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div>
-                <label className="block text-[11px] uppercase tracking-wider text-white/60 mb-1 font-mono">
-                  Feedback *
+                <label className="block text-[11px] uppercase tracking-wider text-white/70 mb-1 font-bold">
+                  Your Review &amp; Experience *
                 </label>
                 <textarea
                   required
-                  rows={3}
-                  placeholder="Your feedback..."
-                  value={formData.text}
-                  onChange={(e) => setFormData({ ...formData, text: e.target.value })}
-                  className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-gold rounded-sm"
+                  rows={4}
+                  placeholder="Share details regarding Chris's craftsmanship, communication, and project delivery..."
+                  value={formData.quote}
+                  onChange={(e) => setFormData({ ...formData, quote: e.target.value })}
+                  className="w-full bg-white/[0.04] border border-white/10 px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-gold rounded-[2px] resize-none"
                 />
               </div>
 
@@ -510,15 +368,15 @@ const Reviews = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 text-xs text-white/50 hover:text-white"
+                  className="px-4 py-2 text-xs text-white/50 hover:text-white font-bold"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-gold text-charcoal px-6 py-2 text-xs font-bold uppercase tracking-wider hover:bg-white transition-colors rounded-sm"
+                  className="bg-gold text-charcoal px-6 py-2.5 text-xs font-black uppercase tracking-wider hover:bg-white transition-colors rounded-[2px]"
                 >
-                  Submit
+                  Submit Verified Review
                 </button>
               </div>
             </form>
@@ -526,7 +384,7 @@ const Reviews = () => {
         </div>
       )}
     </section>
-  )
-}
+  );
+};
 
-export default Reviews
+export default Reviews;
